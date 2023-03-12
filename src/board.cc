@@ -38,7 +38,6 @@ void Board::printBoard() {
 }
 
 void Board::makeMove(int pos, int i2) {
-  this->genValidMoves(pos, this->turn);
   bool validMove = false;
   for (auto move : this->moves) {
     if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
@@ -56,6 +55,48 @@ void Board::makeMove(int pos, int i2) {
     }
   } else {
     std::cout << "Invalid move!" << std::endl;
+  }
+}
+
+void Board::checkPawnMoves(int pos, char turn) {
+  if (turn == 'b') {
+    if (pos < 16) {
+      if (board[pos + 8] == 0) {
+        this->moves.push_back(std::make_tuple(pos, pos + 8));
+        if (board[pos + 16] == 0) {
+          this->moves.push_back(std::make_tuple(pos, pos + 16));
+        }
+      }
+    } else {
+      if (board[pos + 8] == 0) {
+        this->moves.push_back(std::make_tuple(pos, pos + 8));
+      }
+    }
+    if (NOT_COL_8(pos) && board[pos + 9] < blackPawn) {
+      this->moves.push_back(std::make_tuple(pos, pos + 9));
+    }
+    if (NOT_COL_1(pos) && board[pos + 7] < blackPawn) {
+      this->moves.push_back(std::make_tuple(pos, pos + 7));
+    }
+  } else if (turn == 'w') {
+    if (pos > 47) {
+      if (board[pos - 8] == 0) {
+        this->moves.push_back(std::make_tuple(pos, pos - 8));
+        if (board[pos - 16] == 0) {
+          this->moves.push_back(std::make_tuple(pos, pos - 16));
+        }
+      }
+    } else {
+      if (board[pos - 8] == 0) {
+        this->moves.push_back(std::make_tuple(pos, pos - 8));
+      }
+    }
+    if (NOT_COL_8(pos) && board[pos - 7] > whiteKing) {
+      this->moves.push_back(std::make_tuple(pos, pos - 7));
+    }
+    if (NOT_COL_1(pos) && board[pos - 9] > whiteKing) {
+      this->moves.push_back(std::make_tuple(pos, pos - 9));
+    }
   }
 }
 
@@ -526,34 +567,34 @@ void Board::checkKingMoves(int pos, char turn) {
     // Top Left
     if (NOT_COL_1(pos) && pos - 9 >= 0 &&
         (board[pos - 9] == 0 || board[pos - 9] > whiteKing)) {
-      if (!checkForChecks(pos - 9, turn)) {
+      if (checkForChecks(pos - 9, turn)) {
         this->moves.push_back(std::make_tuple(pos, pos - 9));
       }
     }
     // Top Right
     if (NOT_COL_8(pos) && pos - 7 >= 0 &&
         (board[pos - 7] == 0 || board[pos - 7] > whiteKing)) {
-      if (!checkForChecks(pos - 7, turn)) {
+      if (checkForChecks(pos - 7, turn)) {
         this->moves.push_back(std::make_tuple(pos, pos - 7));
       }
     }
     // Top
     if (pos - 8 >= 0 && (board[pos - 8] == 0 || board[pos - 8] > whiteKing)) {
-      if (!checkForChecks(pos - 8, turn)) {
+      if (checkForChecks(pos - 8, turn)) {
         this->moves.push_back(std::make_tuple(pos, pos - 8));
       }
     }
     // Bottom Left
     if (NOT_COL_1(pos) && pos + 7 < 64 &&
         (board[pos + 7] == 0 || board[pos + 7] > whiteKing)) {
-      if (!checkForChecks(pos + 7, turn)) {
+      if (checkForChecks(pos + 7, turn)) {
         this->moves.push_back(std::make_tuple(pos, pos + 7));
       }
     }
     // Bottom Right
     if (NOT_COL_8(pos) && pos + 9 < 64 &&
         (board[pos + 9] == 0 || board[pos + 9] > whiteKing)) {
-      if (!checkForChecks(pos + 9, turn)) {
+      if (checkForChecks(pos + 9, turn)) {
         this->moves.push_back(std::make_tuple(pos, pos + 9));
       }
     }
@@ -637,17 +678,7 @@ void Board::genValidMoves(int pos, char turn) {
     case 1:
       // Pawn
       // TODO: Add en passant
-      if (pos - 8 >= 0 && board[pos - 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos - 8));
-      }
-      // TODO: Does this need (pos - 9 >= 0) ?
-      if (NOT_COL_1(pos) && pos - 9 >= 0 && board[pos - 9] > whiteKing) {
-        this->moves.push_back(std::make_tuple(pos, pos - 9));
-      }
-      // TODO: Does this need (pos - 7 >= 0) ?
-      if (NOT_COL_8(pos) && pos - 7 >= 0 && board[pos - 7] > whiteKing) {
-        this->moves.push_back(std::make_tuple(pos, pos - 7));
-      }
+      this->checkPawnMoves(pos, turn);
       break;
     case 2:
       // Rook
@@ -676,17 +707,7 @@ void Board::genValidMoves(int pos, char turn) {
     case 7:
       // Black Pawn
       // TODO: Add en passant
-      if (pos + 8 < 64 && board[pos + 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos + 8));
-      }
-      // TODO: Does this need (pos - 9 >= 0) ?
-      if (NOT_COL_1(pos) && pos + 9 >= 0 && board[pos + 9] > whiteKing) {
-        this->moves.push_back(std::make_tuple(pos, pos + 9));
-      }
-      // TODO: Does this need (pos - 7 >= 0) ?
-      if (NOT_COL_8(pos) && pos + 7 >= 0 && board[pos + 7] > whiteKing) {
-        this->moves.push_back(std::make_tuple(pos, pos + 7));
-      }
+      this->checkPawnMoves(pos, turn);
       break;
     case 8:
       // Black Rook

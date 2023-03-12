@@ -38,6 +38,7 @@ public:
   unsigned int getPos(std::string input);
   void printBoard();
   void makeMove(int pos, int i2);
+  void checkPawnMoves(int pos, char turn);
   void checkRookMoves(int pos, char turn);
   void checkBishopMoves(int pos, char turn);
   void checkKnightMoves(int pos, char turn);
