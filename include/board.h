@@ -34,6 +34,8 @@ public:
   };
   char turn = 'w';
   std::vector<std::tuple<int, int>> moves;
+  std::string getInput();
+  unsigned int getPos(std::string input);
   void printBoard();
   void makeMove(int pos, int i2);
   void checkRookMoves(int pos, char turn);

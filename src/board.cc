@@ -8,21 +8,55 @@
 
 Board::Board() {}
 
+std::string Board::getInput() {
+  std::string input;
+  std::cout << "Enter move: ";
+  std::cin >> input;
+  return input;
+}
+
+unsigned int Board::getPos(std::string input) {
+  const std::unordered_map<char, int> col = {{'a', 0}, {'b', 1}, {'c', 2},
+                                             {'d', 3}, {'e', 4}, {'f', 5},
+                                             {'g', 6}, {'h', 7}};
+  const std::unordered_map<char, int> row = {{'1', 7}, {'2', 6}, {'3', 5},
+                                             {'4', 4}, {'5', 3}, {'6', 2},
+                                             {'7', 1}, {'8', 0}};
+  return row.at(input[1]) * 8 + col.at(input[0]);
+}
+
 void Board::printBoard() {
-  std::unordered_map<int, char> pieces = {
+  const std::unordered_map<int, char> pieces = {
       {0, '-'}, {1, 'P'}, {2, 'R'}, {3, 'N'},  {4, 'B'},  {5, 'Q'}, {6, 'K'},
       {7, 'p'}, {8, 'r'}, {9, 'n'}, {10, 'b'}, {11, 'q'}, {12, 'k'}};
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {
-      std::cout << pieces[board[i * 8 + j]] << " ";
+      std::cout << pieces.at(board[i * 8 + j]) << " ";
     }
     std::cout << std::endl;
   }
 }
 
 void Board::makeMove(int pos, int i2) {
-  this->board[i2] = this->board[pos];
-  this->board[pos] = 0;
+  this->genValidMoves(pos, this->turn);
+  bool validMove = false;
+  for (auto move : this->moves) {
+    if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
+      this->board[i2] = this->board[pos];
+      this->board[pos] = 0;
+      validMove = true;
+      break;
+    }
+  }
+  if (validMove) {
+    if (this->turn == 'w') {
+      this->turn = 'b';
+    } else {
+      this->turn = 'w';
+    }
+  } else {
+    std::cout << "Invalid move!" << std::endl;
+  }
 }
 
 // TODO: Refactor this function
@@ -484,6 +518,7 @@ bool Board::checkForChecks(int pos, char turn) {
       return true;
     }
   }
+  return false;
 }
 
 void Board::checkKingMoves(int pos, char turn) {
