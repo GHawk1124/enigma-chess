@@ -2,7 +2,6 @@
 
 #include <array>
 #include <iostream>
-#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -142,17 +141,17 @@ std::string Board::getInput() {
 }
 
 unsigned int Board::getPos(std::string input) {
-  const std::unordered_map<const char, const int> col = {
+  const std::unordered_map<char, int> col = {
       {'a', 0}, {'b', 1}, {'c', 2}, {'d', 3},
       {'e', 4}, {'f', 5}, {'g', 6}, {'h', 7}};
-  const std::unordered_map<const char, const int> row = {
+  const std::unordered_map<char, int> row = {
       {'1', 7}, {'2', 6}, {'3', 5}, {'4', 4},
       {'5', 3}, {'6', 2}, {'7', 1}, {'8', 0}};
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
 void Board::printBoard() {
-  const std::unordered_map<const int, const char> pieces = {
+  const std::unordered_map<int, char> pieces = {
       {0, '-'}, {1, 'P'}, {2, 'R'}, {3, 'N'},  {4, 'B'},  {5, 'Q'}, {6, 'K'},
       {7, 'p'}, {8, 'r'}, {9, 'n'}, {10, 'b'}, {11, 'q'}, {12, 'k'}};
   for (int i = 0; i < 8; i++) {

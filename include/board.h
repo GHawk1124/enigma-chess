@@ -4,6 +4,7 @@
 #include <array>
 #include <tuple>
 #include <vector>
+#include <string>
 
 class Board {
 public:
