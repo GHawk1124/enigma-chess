@@ -1,12 +1,138 @@
 #include "board.h"
 
+#include <array>
 #include <iostream>
+#include <string>
 #include <unordered_map>
+#include <vector>
 
 #define NOT_COL_1(x) (x % 8 != 0)
 #define NOT_COL_8(x) (x % 8 != 7)
 
 Board::Board() {}
+
+std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
+  std::array<unsigned int, 64> board = {0};
+  int rank = 7;
+  int file = 0;
+  for (char c : fen_string) {
+    if (c == '/') {
+      rank--;
+      file = 0;
+    } else if (c >= '1' && c <= '8') {
+      file += c - '0';
+    } else {
+      int pieceValue;
+      switch (c) {
+      case 'P':
+        pieceValue = whitePawn;
+        break;
+      case 'N':
+        pieceValue = whiteKnight;
+        break;
+      case 'B':
+        pieceValue = whiteBishop;
+        break;
+      case 'R':
+        pieceValue = whiteRook;
+        break;
+      case 'Q':
+        pieceValue = whiteQueen;
+        break;
+      case 'K':
+        pieceValue = whiteKing;
+        break;
+      case 'p':
+        pieceValue = blackPawn;
+        break;
+      case 'n':
+        pieceValue = blackKnight;
+        break;
+      case 'b':
+        pieceValue = blackBishop;
+        break;
+      case 'r':
+        pieceValue = blackRook;
+        break;
+      case 'q':
+        pieceValue = blackQueen;
+        break;
+      case 'k':
+        pieceValue = blackKing;
+        break;
+      default:
+        // Invalid FEN string
+        return {};
+      }
+      board[rank * 8 + file] = pieceValue;
+      file++;
+    }
+  }
+  return board;
+}
+
+std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
+  std::string fen_string;
+  for (int rank = 7; rank >= 0; rank--) {
+    int empty = 0;
+    for (int file = 0; file < 8; file++) {
+      int piece = board[rank * 8 + file];
+      if (piece == Empty) {
+        empty++;
+      } else {
+        if (empty > 0) {
+          fen_string += std::to_string(empty);
+          empty = 0;
+        }
+        switch (piece) {
+        case whitePawn:
+          fen_string += 'P';
+          break;
+        case whiteKnight:
+          fen_string += 'N';
+          break;
+        case whiteBishop:
+          fen_string += 'B';
+          break;
+        case whiteRook:
+          fen_string += 'R';
+          break;
+        case whiteQueen:
+          fen_string += 'Q';
+          break;
+        case whiteKing:
+          fen_string += 'K';
+          break;
+        case blackPawn:
+          fen_string += 'p';
+          break;
+        case blackKnight:
+          fen_string += 'n';
+          break;
+        case blackBishop:
+          fen_string += 'b';
+          break;
+        case blackRook:
+          fen_string += 'r';
+          break;
+        case blackQueen:
+          fen_string += 'q';
+          break;
+        case blackKing:
+          fen_string += 'k';
+          break;
+        }
+      }
+    }
+    if (empty > 0) {
+      fen_string += std::to_string(empty);
+    }
+    if (rank > 0) {
+      fen_string += '/';
+    }
+  }
+  return fen_string;
+}
 
 std::string Board::getInput() {
   std::string input;
@@ -16,17 +142,17 @@ std::string Board::getInput() {
 }
 
 unsigned int Board::getPos(std::string input) {
-  const std::unordered_map<char, int> col = {{'a', 0}, {'b', 1}, {'c', 2},
-                                             {'d', 3}, {'e', 4}, {'f', 5},
-                                             {'g', 6}, {'h', 7}};
-  const std::unordered_map<char, int> row = {{'1', 7}, {'2', 6}, {'3', 5},
-                                             {'4', 4}, {'5', 3}, {'6', 2},
-                                             {'7', 1}, {'8', 0}};
+  const std::unordered_map<const char, const int> col = {
+      {'a', 0}, {'b', 1}, {'c', 2}, {'d', 3},
+      {'e', 4}, {'f', 5}, {'g', 6}, {'h', 7}};
+  const std::unordered_map<const char, const int> row = {
+      {'1', 7}, {'2', 6}, {'3', 5}, {'4', 4},
+      {'5', 3}, {'6', 2}, {'7', 1}, {'8', 0}};
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
 void Board::printBoard() {
-  const std::unordered_map<int, char> pieces = {
+  const std::unordered_map<const int, const char> pieces = {
       {0, '-'}, {1, 'P'}, {2, 'R'}, {3, 'N'},  {4, 'B'},  {5, 'Q'}, {6, 'K'},
       {7, 'p'}, {8, 'r'}, {9, 'n'}, {10, 'b'}, {11, 'q'}, {12, 'k'}};
   for (int i = 0; i < 8; i++) {
@@ -165,9 +291,6 @@ void Board::checkRookMoves(int pos, char turn) {
 void Board::checkBishopMoves(int pos, char turn) {
   // Check diagonal towards bottom right
   for (int i = pos + 9; i < 56 + pos % 8; i += 9) {
-    if (i % 8 == 7) {
-      break;
-    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
     } else if (turn == 'w' && board[i] > whiteKing) {
@@ -176,15 +299,13 @@ void Board::checkBishopMoves(int pos, char turn) {
     } else if (turn == 'b' && board[i] < blackPawn) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
-    } else {
+    }
+    if (i % 8 == 7) {
       break;
     }
   }
   // Check diagonal towards top right
-  for (int i = pos - 7; i >= pos % 8; i -= 7) {
-    if (i % 8 == 7) {
-      break;
-    }
+  for (int i = pos - 7; i > pos % 8; i -= 7) {
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
     } else if (turn == 'w' && board[i] > whiteKing) {
@@ -193,15 +314,13 @@ void Board::checkBishopMoves(int pos, char turn) {
     } else if (turn == 'b' && board[i] < blackPawn) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
-    } else {
+    }
+    if (i % 8 == 0) {
       break;
     }
   }
   // Check diagonal towards bottom left
   for (int i = pos + 7; i < 56 + pos % 8; i += 7) {
-    if (i % 8 == 0) {
-      break;
-    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
     } else if (turn == 'w' && board[i] > whiteKing) {
@@ -210,15 +329,13 @@ void Board::checkBishopMoves(int pos, char turn) {
     } else if (turn == 'b' && board[i] < blackPawn) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
-    } else {
+    }
+    if (i % 8 == 0) {
       break;
     }
   }
   // Check diagonal towards top left
-  for (int i = pos - 9; i >= pos % 8; i -= 9) {
-    if (i % 8 == 0) {
-      break;
-    }
+  for (int i = pos - 9; i > pos % 8; i -= 9) {
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
     } else if (turn == 'w' && board[i] > whiteKing) {
@@ -227,7 +344,8 @@ void Board::checkBishopMoves(int pos, char turn) {
     } else if (turn == 'b' && board[i] < blackPawn) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
-    } else {
+    }
+    if (i % 8 == 7) {
       break;
     }
   }
@@ -379,8 +497,6 @@ bool Board::checkForChecks(int pos, char turn) {
     } else if (turn == 'b' && board[i] == whiteBishop ||
                board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check diagonal towards top right
@@ -393,8 +509,6 @@ bool Board::checkForChecks(int pos, char turn) {
     } else if (turn == 'b' && board[i] == whiteBishop ||
                board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check diagonal towards top left
@@ -407,8 +521,6 @@ bool Board::checkForChecks(int pos, char turn) {
     } else if (turn == 'b' && board[i] == whiteBishop ||
                board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check diagonal towards bottom left
@@ -421,8 +533,6 @@ bool Board::checkForChecks(int pos, char turn) {
     } else if (turn == 'b' && board[i] == whiteBishop ||
                board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -436,8 +546,6 @@ bool Board::checkForChecks(int pos, char turn) {
       return true;
     } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check horizontal towards left
@@ -449,8 +557,6 @@ bool Board::checkForChecks(int pos, char turn) {
       return true;
     } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check vertical towards top
@@ -459,8 +565,6 @@ bool Board::checkForChecks(int pos, char turn) {
       return true;
     } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
   // Check vertical towards bottom
@@ -469,8 +573,6 @@ bool Board::checkForChecks(int pos, char turn) {
       return true;
     } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -700,6 +802,9 @@ void Board::genValidMoves(int pos, char turn) {
     case 6:
       // King
       this->checkKingMoves(pos, turn);
+      break;
+    default:
+      std::cout << "Invalid move" << std::endl;
       break;
     }
   } else if (turn == 'b') {
