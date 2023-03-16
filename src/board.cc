@@ -135,7 +135,7 @@ std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
 
 std::string Board::getInput() {
   std::string input;
-  std::cout << "Enter move: ";
+  std::cout << (turn == 'w' ? "White " : "Black ") << "to move: ";
   std::cin >> input;
   return input;
 }
@@ -160,14 +160,47 @@ void Board::printBoard() {
     }
     std::cout << std::endl;
   }
+  std::cout << std::endl;
 }
 
 void Board::makeMove(int pos, int i2) {
   bool validMove = false;
   for (auto move : this->moves) {
     if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
+
+      // Special case for castling
+      if (i2 == pos - 2 && (this->board[pos] == whiteKing ||
+          this->board[pos] == blackKing)) {
+        this->board[pos - 1] = this->board[pos - 4];
+        this->board[pos - 4] = 0;
+      } else if (i2 == pos + 2 && (this->board[pos] == whiteKing ||
+          this->board[pos] == blackKing)) {
+        this->board[pos + 1] = this->board[pos + 3];
+        this->board[pos + 3] = 0;
+      }
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
+
+      // Check if piece moved was a rook or king (for castling)
+      int piece = this->board[i2];
+      if (piece == whiteRook) {
+        if (pos == 56) {
+          this->queensideWRookMoved = true;
+        } else if (pos == 63) {
+          this->kingsideWRookMoved = true;
+        }
+      } else if (piece == blackRook) {
+        if (pos == 0) {
+          this->queensideBRookMoved = true;
+        } else if (pos == 7) {
+          this->kingsideBRookMoved = true;
+        }
+      } else if (piece == whiteKing) {
+        this->wKingMoved = true;
+      } else if (piece == blackKing) {
+        this->bKingMoved = true;
+      }
+
       validMove = true;
       break;
     }
@@ -717,6 +750,20 @@ void Board::checkKingMoves(int pos, char turn) {
         this->moves.push_back(std::make_tuple(pos, pos - 1));
       }
     }
+    // Castling
+    if (!wKingMoved) {
+      if (!this->queensideWRookMoved && this->board[57] == Empty &&
+          this->board[58] == Empty && this->board[59] == Empty &&
+          checkForChecks(57, turn) && checkForChecks(58, turn) &&
+          checkForChecks(59, turn) && checkForChecks(60, turn)) {
+        this->moves.push_back(std::make_tuple(60, 58));
+      }
+      if (!this->kingsideWRookMoved && this->board[61] == Empty &&
+          this->board[62] == Empty && checkForChecks(60, turn) &&
+          checkForChecks(61, turn) && checkForChecks(62, turn)) {
+        this->moves.push_back(std::make_tuple(60, 62));
+      }
+    }
   } else if (turn == 'b') {
     // Top Left
     if (NOT_COL_1(pos) && pos - 9 >= 0 &&
@@ -770,6 +817,20 @@ void Board::checkKingMoves(int pos, char turn) {
         this->moves.push_back(std::make_tuple(pos, pos - 1));
       }
     }
+    // Castling
+    if (!bKingMoved) {
+      if (!this->queensideBRookMoved && this->board[1] == Empty &&
+          this->board[2] == Empty && this->board[3] == Empty &&
+          checkForChecks(1, turn) && checkForChecks(2, turn) &&
+          checkForChecks(3, turn) && checkForChecks(4, turn)) {
+        this->moves.push_back(std::make_tuple(4, 2));
+      }
+      if (!this->kingsideBRookMoved && this->board[5] == Empty &&
+          this->board[6] == Empty && checkForChecks(4, turn) &&
+          checkForChecks(5, turn) && checkForChecks(6, turn)) {
+        this->moves.push_back(std::make_tuple(4, 6));
+      }
+    }
   }
 }
 
@@ -803,7 +864,7 @@ void Board::genValidMoves(int pos, char turn) {
       this->checkKingMoves(pos, turn);
       break;
     default:
-      std::cout << "Invalid move" << std::endl;
+      std::cout << "Error: no piece at input location" << std::endl;
       break;
     }
   } else if (turn == 'b') {
@@ -835,7 +896,7 @@ void Board::genValidMoves(int pos, char turn) {
       this->checkKingMoves(pos, turn);
       break;
     default:
-      std::cout << "Invalid move" << std::endl;
+      std::cout << "Error: no piece at input location" << std::endl;
       break;
     }
   }
