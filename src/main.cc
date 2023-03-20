@@ -13,6 +13,7 @@ int main() {
     unsigned int i2 = board.getPos(input.substr(2, 2));
     board.genValidMoves(pos, board.turn);
     board.makeMove(pos, i2);
+    board.moves.clear();
   }
   return 0;
 }
