@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-// YOU CAN STILL CASTLE THROUGH CHECK, THAT NEEDS TO BE FIXED
+// Check for checks method needs to be debugged before anything
 int main() {
   Board board;
   while (true) {
