@@ -3,7 +3,20 @@
 #include <string>
 #include <iostream>
 
-// Checking is not implemented, however I added it to the makeMove method, so genValidMoves will still produce moves that are invalid if you are in check, makeMove will just reject this move. Not sure if this needs to be changed for the bot
+// Checking is not implemented, however I added it to the makeMove method,
+// so genValidMoves will still produce moves that are invalid if you are in check,
+// makeMove will just reject this move. Not sure if this needs to be changed for the ai.
+// The game still won't formally recognize checkmate, however it won't let you make any moves
+// Castling should work
+// Discovered checks should be handled now
+// I added some print statements to help debug (prints valid moves, prints if you are in check)
+//
+// TO DO:
+// En passant
+// Checkmate recognition
+// Pawn promotion
+// Stalemate
+
 int main() {
   Board board;
   while (true) {
