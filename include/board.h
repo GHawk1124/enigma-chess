@@ -1,18 +1,10 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <array>
 #include <tuple>
 #include <vector>
-
-/*
- - Pawn = 1
- - Rook = 2
- - Knight = 3
- - Bishop = 4
- - Queen = 5
- - King = 6
- - Empty = 0
-*/
+#include <string>
 
 class Board {
 public:
@@ -35,9 +27,20 @@ public:
   char turn = 'w';
   std::vector<std::tuple<int, int>> moves;
   std::string getInput();
+  bool kingsideWRookMoved = false;
+  bool queensideWRookMoved = false;
+  bool kingsideBRookMoved = false;
+  bool queensideBRookMoved = false;
+  bool wKingMoved = false;
+  bool bKingMoved = false;
+
   unsigned int getPos(std::string input);
+  std::array<unsigned int, 64> decode_fen(const std::string &fen);
+  std::array<unsigned int, 64> decode_fen(const char *fen);
+  std::string encode_fen(const std::array<unsigned int, 64> &board);
   void printBoard();
   void makeMove(int pos, int i2);
+
   void checkPawnMoves(int pos, char turn);
   void checkRookMoves(int pos, char turn);
   void checkBishopMoves(int pos, char turn);
@@ -45,13 +48,24 @@ public:
   bool checkForChecks(int pos, char turn);
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
+
   void clearBoard();
 
 private:
-  unsigned int board[64] = {
-      8, 9, 10, 11, 12, 10, 9, 8, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, 0, 0, 0, 0,
-      0, 0, 0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0,  0,  1,  1,  1, 1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 4, 3, 2,
+  std::array<unsigned int, 64> board = {
+      blackRook,   blackKnight, blackBishop, blackQueen,  blackKing,
+      blackBishop, blackKnight, blackRook,   blackPawn,   blackPawn,
+      blackPawn,   blackPawn,   blackPawn,   blackPawn,   blackPawn,
+      blackPawn,   Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       Empty,       Empty,
+      Empty,       Empty,       Empty,       whitePawn,   whitePawn,
+      whitePawn,   whitePawn,   whitePawn,   whitePawn,   whitePawn,
+      whitePawn,   whiteRook,   whiteKnight, whiteBishop, whiteQueen,
+      whiteKing,   whiteBishop, whiteKnight, whiteRook,
   };
 };
 
