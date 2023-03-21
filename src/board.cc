@@ -168,6 +168,7 @@ void Board::makeMove(int pos, int i2) {
   for (auto move : this->moves) {
     if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
 
+
       // Special case for castling
       if (i2 == pos - 2 && (this->board[pos] == whiteKing ||
           this->board[pos] == blackKing)) {
@@ -178,8 +179,25 @@ void Board::makeMove(int pos, int i2) {
         this->board[pos + 1] = this->board[pos + 3];
         this->board[pos + 3] = 0;
       }
+
+      int temp = board[i2];
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
+
+      // Checks to see if you are in check as a result of your move
+      int kingPos = 0;
+      for (int i = 0; i < 64; i++) {
+        if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
+          kingPos = i;
+          break;
+        }
+      }
+      if (checkForChecks(kingPos, turn)) {
+        std::cout << "You are in check" << std::endl;
+        this->board[pos] = this->board[i2];
+        this->board[i2] = temp;
+        break;
+      }
 
       // Check if piece moved was a rook or king (for castling)
       int piece = this->board[i2];
@@ -529,45 +547,57 @@ bool Board::checkForChecks(int pos, char turn) {
   // Diagonal Section
   // Check diagonal towards bottom right
   for (int i = pos + 9; i < 64; i += 9) {
-    if (turn == 'w' && board[i] == blackBishop || board[i] == blackQueen) {
+    if (i % 8 == 0) {
+      break;
+    }
+    if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteBishop ||
-               board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteBishop ||
+               board[i] == whiteQueen)) {
       return true;
-    } else if (board[i] > 0 || i % 8 == 7) {
+    } else if (board[i] > 0) {
       break;
     }
   }
   // Check diagonal towards top right
   for (int i = pos - 7; i > 0; i -= 7) {
-    if (turn == 'w' && board[i] == blackBishop || board[i] == blackQueen) {
+    if (i % 8 == 0) {
+      break;
+    }
+    if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteBishop ||
-               board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteBishop ||
+               board[i] == whiteQueen)) {
       return true;
-    } else if (board[i] > 0 || i % 8 == 7) {
+    } else if (board[i] > 0) {
       break;
     }
   }
   // Check diagonal towards top left
   for (int i = pos - 9; i >= 0; i -= 9) {
-    if (turn == 'w' && board[i] == blackBishop || board[i] == blackQueen) {
+    if (i % 8 == 7) {
+      break;
+    }
+    if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteBishop ||
-               board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteBishop ||
+               board[i] == whiteQueen)) {
       return true;
-    } else if (board[i] > 0 || i % 8 == 0) {
+    } else if (board[i] > 0) {
       break;
     }
   }
   // Check diagonal towards bottom left
   for (int i = pos + 7; i < 63; i += 7) {
-    if (turn == 'w' && board[i] == blackBishop || board[i] == blackQueen) {
+    if (i % 8 == 7) {
+      break;
+    }
+    if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteBishop ||
-               board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteBishop ||
+               board[i] == whiteQueen)) {
       return true;
-    } else if (board[i] > 0 || i % 8 == 0) {
+    } else if (board[i] > 0) {
       break;
     }
   }
@@ -575,9 +605,9 @@ bool Board::checkForChecks(int pos, char turn) {
   // Horizontal Section
   // Check horizontal towards right
   for (int i = pos + 1; i < (int)(pos / 8) * 8 + 8; i++) {
-    if (turn == 'w' && board[i] == blackRook || board[i] == blackQueen) {
+    if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -585,9 +615,9 @@ bool Board::checkForChecks(int pos, char turn) {
   }
   // Check horizontal towards left
   for (int i = pos - 1; i >= (int)(pos / 8) * 8; i--) {
-    if (turn == 'w' && board[i] == blackRook || board[i] == blackQueen) {
+    if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -595,9 +625,9 @@ bool Board::checkForChecks(int pos, char turn) {
   }
   // Check vertical towards top
   for (int i = pos - 8; i >= 0; i -= 8) {
-    if (turn == 'w' && board[i] == blackRook || board[i] == blackQueen) {
+    if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -605,9 +635,9 @@ bool Board::checkForChecks(int pos, char turn) {
   }
   // Check vertical towards bottom
   for (int i = pos + 8; i < 64; i += 8) {
-    if (turn == 'w' && board[i] == blackRook || board[i] == blackQueen) {
+    if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && board[i] == whiteRook || board[i] == whiteQueen) {
+    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;

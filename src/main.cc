@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-// Check for checks method needs to be debugged before anything
+// Checking is not implemented, however I added it to the makeMove method, so genValidMoves will still produce moves that are invalid if you are in check, makeMove will just reject this move. Not sure if this needs to be changed for the bot
 int main() {
   Board board;
   while (true) {
