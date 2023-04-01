@@ -34,6 +34,7 @@
 // Checkmate recognition
 // Pawn promotion
 // Stalemate
+// Draw by Repetition
 
 int main() {
   Board board;
