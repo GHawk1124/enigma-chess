@@ -49,7 +49,7 @@ public:
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
   void genAllValidMoves(char turn);
-
+  void printValidMoves();
   void clearBoard();
 
 private:

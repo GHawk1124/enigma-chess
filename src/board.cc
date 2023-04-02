@@ -152,6 +152,31 @@ unsigned int Board::getPos(std::string input) {
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
+void Board::printValidMoves() {
+    
+  const std::unordered_map<int, char> col = {{0, 'a'}, {1, 'b'}, {2, 'c'},
+                                             {3, 'd'}, {4, 'e'}, {5, 'f'},
+                                             {6, 'g'}, {7, 'h'}};
+  const std::unordered_map<int, char> row = {{7, '1'}, {6, '2'}, {5, '3'},
+                                             {4, '4'}, {3, '5'}, {2, '6'},
+                                             {1, '7'}, {0, '8'}};
+
+  std::cout << "Valid moves: ";
+  for (auto move : this->moves) {
+    int input = std::get<0>(move);
+    int row1 = input / 1000;
+    int col1 = (input % 1000) / 100;
+    int row2 = (input % 100) / 10;
+    int col2 = input % 10;
+    std::string result;
+    result.push_back(col.at(col1));
+    result.push_back(row.at(row1));
+    result.push_back(col.at(col2));
+    result.push_back(row.at(row2));
+    std::cout << result + " ";
+  }
+}
+
 void Board::printBoard() {
   const std::unordered_map<int, char> pieces = {
       {0, '-'}, {1, 'P'}, {2, 'R'}, {3, 'N'},  {4, 'B'},  {5, 'Q'}, {6, 'K'},
@@ -920,9 +945,13 @@ void Board::genAllValidMoves(char turn) {
   }
   for (int i = 0; i < this->moves.size(); i++) {
     if (checkForChecks(i, this->turn)) {
+      auto move = this->moves[i];
+      int moveInt = std::get<0>(move);
+      std::cout << "Check found on move: " << moveInt << std::endl;
       this->moves.erase(this->moves.begin() + i);
     }
   }
+  std::cout << "Number of valid moves: " << this->moves.size() << std::endl;
 }
 
 void Board::genValidMoves(int pos, char turn) {
@@ -991,12 +1020,6 @@ void Board::genValidMoves(int pos, char turn) {
       break;
     }
   }
-
-  std::cout << "Valid moves: ";
-  for (auto move : this->moves) {
-    std::cout << std::get<0>(move) << std::get<1>(move) << " ";
-  }
-  std::cout << std::endl;
 }
 
 void Board::clearBoard() {}
