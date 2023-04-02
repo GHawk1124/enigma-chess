@@ -55,7 +55,7 @@ private:
   std::array<unsigned int, 64> board = {
       blackRook,   blackKnight, blackBishop, blackQueen,  blackKing,
       blackBishop, blackKnight, blackRook,   blackPawn,   blackPawn,
-      blackPawn,   blackPawn,   blackPawn,   blackPawn,   blackPawn,
+      blackPawn,   blackPawn,   blackPawn,   blackPawn,   whitePawn,
       blackPawn,   Empty,       Empty,       Empty,       Empty,
       Empty,       Empty,       Empty,       Empty,       Empty,
       Empty,       Empty,       Empty,       Empty,       Empty,

@@ -1,5 +1,7 @@
 #include "board.h"
 
+#include <iostream>
+#include <cctype>
 #include <array>
 #include <iostream>
 #include <unordered_map>
@@ -180,6 +182,7 @@ void Board::makeMove(int pos, int i2) {
         this->board[pos + 3] = 0;
       }
 
+      // Make the move
       int temp = board[i2];
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
@@ -199,7 +202,7 @@ void Board::makeMove(int pos, int i2) {
         break;
       }
 
-      // Check if piece moved was a rook or king (for castling)
+      // Check if piece moved was a rook or king (for castling) or a pawn (for pawn promotion check)
       int piece = this->board[i2];
       if (piece == whiteRook) {
         if (pos == 56) {
@@ -217,8 +220,45 @@ void Board::makeMove(int pos, int i2) {
         this->wKingMoved = true;
       } else if (piece == blackKing) {
         this->bKingMoved = true;
+      } else if (piece == whitePawn && i2 < 8 ||
+                 piece == blackPawn && i2 > 55) {
+        // promote pawn
+        char piece;
+        std::cout << "type q for queen, r for rook, b for bishop, or n "
+                     "for knight: ";
+        while (1) {
+          try {
+            std::cin >> piece;
+            piece = tolower(piece);
+            if (!(piece == 'q' || piece == 'r' || piece == 'b' ||
+                  piece == 'n')) {
+              throw std::invalid_argument("Piece entered is not valid");
+            }
+            break;
+          } catch (std::exception e) {
+            std::cout << "Please enter q for queen, r for rook, b for bishop, "
+                         "or n for knight: ";
+            std::cin >> piece;
+          }
+        }
+        int pieceAsInt = 0;
+        char turn = this->turn;
+        switch (piece) {
+        case 'q':
+          pieceAsInt = turn == 'w' ? 5 : 11;
+          break;
+        case 'r':
+          pieceAsInt = turn == 'w' ? 2 : 8;
+          break;
+        case 'b':
+          pieceAsInt = turn == 'w' ? 4 : 10;
+          break;
+        case 'n':
+          pieceAsInt = turn == 'w' ? 3 : 9;
+          break;
+        }
+        this->board[i2] = pieceAsInt;
       }
-
       validMove = true;
       break;
     }
