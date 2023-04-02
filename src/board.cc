@@ -226,21 +226,8 @@ void Board::makeMove(int pos, int i2) {
         char piece;
         std::cout << "type q for queen, r for rook, b for bishop, or n "
                      "for knight: ";
-        while (1) {
-          try {
-            std::cin >> piece;
-            piece = tolower(piece);
-            if (!(piece == 'q' || piece == 'r' || piece == 'b' ||
-                  piece == 'n')) {
-              throw std::invalid_argument("Piece entered is not valid");
-            }
-            break;
-          } catch (std::exception e) {
-            std::cout << "Please enter q for queen, r for rook, b for bishop, "
-                         "or n for knight: ";
-            std::cin >> piece;
-          }
-        }
+        std::cin >> piece;
+        piece = tolower(piece);
         int pieceAsInt = 0;
         char turn = this->turn;
         switch (piece) {
@@ -910,6 +897,34 @@ void Board::checkKingMoves(int pos, char turn) {
   }
 }
 
+void Board::genAllValidMoves(char turn) {
+  int kingPos = 0;
+  if (this->turn == 'w') {
+    for (int i = 0; i < 64; i++) {
+      if (this->board[i] > 0 && this->board[i] < 7) {
+        genValidMoves(i, this->turn);
+        if (this->board[i] == whiteKing) {
+          kingPos = i;
+        }
+      }
+    }
+  } else if (this->turn == 'b') {
+      for (int i = 0; i < 64; i++) {
+      if (this->board[i] > 6) {
+        genValidMoves(i, this->turn);
+        if (this->board[i] == whiteKing) {
+          kingPos = i;
+        }
+      }
+    }
+  }
+  for (int i = 0; i < this->moves.size(); i++) {
+    if (checkForChecks(i, this->turn)) {
+      this->moves.erase(this->moves.begin() + i);
+    }
+  }
+}
+
 void Board::genValidMoves(int pos, char turn) {
   if (turn == 'w') {
     switch (this->board[pos]) {
@@ -977,14 +992,11 @@ void Board::genValidMoves(int pos, char turn) {
     }
   }
 
-
   std::cout << "Valid moves: ";
   for (auto move : this->moves) {
     std::cout << std::get<0>(move) << std::get<1>(move) << " ";
   }
   std::cout << std::endl;
-
-
 }
 
 void Board::clearBoard() {}

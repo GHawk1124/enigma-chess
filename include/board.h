@@ -48,6 +48,7 @@ public:
   bool checkForChecks(int pos, char turn);
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
+  void genAllValidMoves(char turn);
 
   void clearBoard();
 
@@ -55,7 +56,7 @@ private:
   std::array<unsigned int, 64> board = {
       blackRook,   blackKnight, blackBishop, blackQueen,  blackKing,
       blackBishop, blackKnight, blackRook,   blackPawn,   blackPawn,
-      blackPawn,   blackPawn,   blackPawn,   blackPawn,   whitePawn,
+      blackPawn,   blackPawn,   blackPawn,   blackPawn,   blackPawn,
       blackPawn,   Empty,       Empty,       Empty,       Empty,
       Empty,       Empty,       Empty,       Empty,       Empty,
       Empty,       Empty,       Empty,       Empty,       Empty,
