@@ -163,18 +163,16 @@ void Board::printValidMoves() {
 
   std::cout << "Valid moves: ";
   for (auto move : this->moves) {
-    int input = std::get<0>(move);
-    int row1 = input / 1000;
-    int col1 = (input % 1000) / 100;
-    int row2 = (input % 100) / 10;
-    int col2 = input % 10;
+    int i1 = std::get<0>(move);
+    int i2 = std::get<1>(move);
     std::string result;
-    result.push_back(col.at(col1));
-    result.push_back(row.at(row1));
-    result.push_back(col.at(col2));
-    result.push_back(row.at(row2));
+    result.push_back(col.at(i1 % 8));
+    result.push_back(row.at(i1 / 8));
+    result.push_back(col.at(i2 % 8));
+    result.push_back(row.at(i2 / 8));
     std::cout << result + " ";
   }
+  std::cout << std::endl;
 }
 
 void Board::printBoard() {
@@ -242,8 +240,10 @@ void Board::makeMove(int pos, int i2) {
           this->kingsideBRookMoved = true;
         }
       } else if (piece == whiteKing) {
+        this->wKingPos = i2;
         this->wKingMoved = true;
       } else if (piece == blackKing) {
+        this->bKingPos = i2;
         this->bKingMoved = true;
       } else if (piece == whitePawn && i2 < 8 ||
                  piece == blackPawn && i2 > 55) {
@@ -923,35 +923,39 @@ void Board::checkKingMoves(int pos, char turn) {
 }
 
 void Board::genAllValidMoves(char turn) {
-  int kingPos = 0;
+  // Iterate through board, calling genValidMoves on each piece that is yours except king
   if (this->turn == 'w') {
     for (int i = 0; i < 64; i++) {
-      if (this->board[i] > 0 && this->board[i] < 7) {
-        genValidMoves(i, this->turn);
-        if (this->board[i] == whiteKing) {
-          kingPos = i;
-        }
+      if (this->board[i] > 0 && this->board[i] < 6) {
+        this->genValidMoves(i, this->turn);
       }
     }
   } else if (this->turn == 'b') {
       for (int i = 0; i < 64; i++) {
-      if (this->board[i] > 6) {
-        genValidMoves(i, this->turn);
-        if (this->board[i] == whiteKing) {
-          kingPos = i;
-        }
+      if (this->board[i] > 6 && this->board[i] < 12) {
+        this->genValidMoves(i, this->turn);
       }
     }
   }
+
+  // If king is in check after move, erase move from moves vector
   for (int i = 0; i < this->moves.size(); i++) {
-    if (checkForChecks(i, this->turn)) {
-      auto move = this->moves[i];
-      int moveInt = std::get<0>(move);
-      std::cout << "Check found on move: " << moveInt << std::endl;
+    int pos = std::get<0>(this->moves[i]);
+    int i2 = std::get<1>(this->moves[i]);
+    this->board[i2] = this->board[pos];
+    this->board[pos] = 0;
+    bool inCheck =
+        this->checkForChecks(turn == 'w' ? this->wKingPos : bKingPos, turn);
+    this->board[pos] = this->board[i2];
+    this->board[i2] = 0;
+    if (inCheck) {
       this->moves.erase(this->moves.begin() + i);
     }
   }
-  std::cout << "Number of valid moves: " << this->moves.size() << std::endl;
+
+  // Add king moves into moves vector
+  int kingPos = turn == 'w' ? wKingPos : bKingPos;
+  this->genValidMoves(kingPos, turn);
 }
 
 void Board::genValidMoves(int pos, char turn) {

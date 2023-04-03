@@ -33,6 +33,8 @@ public:
   bool queensideBRookMoved = false;
   bool wKingMoved = false;
   bool bKingMoved = false;
+  int wKingPos = 60;
+  int bKingPos = 4;
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);
