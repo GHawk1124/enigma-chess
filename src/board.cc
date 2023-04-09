@@ -942,14 +942,16 @@ void Board::genAllValidMoves(char turn) {
   for (int i = 0; i < this->moves.size(); i++) {
     int pos = std::get<0>(this->moves[i]);
     int i2 = std::get<1>(this->moves[i]);
+    int temp = this->board[i2];
     this->board[i2] = this->board[pos];
     this->board[pos] = 0;
     bool inCheck =
-        this->checkForChecks(turn == 'w' ? this->wKingPos : bKingPos, turn);
+        this->checkForChecks(turn == 'w' ? wKingPos : bKingPos, turn);
     this->board[pos] = this->board[i2];
-    this->board[i2] = 0;
+    this->board[i2] = temp;
     if (inCheck) {
       this->moves.erase(this->moves.begin() + i);
+      i--;
     }
   }
 
