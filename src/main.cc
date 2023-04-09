@@ -4,7 +4,6 @@
 
 
 // TO DO:
-// En passant
 // Draw by Repetition
 
 int main() {

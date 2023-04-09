@@ -40,6 +40,7 @@ public:
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);
   std::array<unsigned int, 64> decode_fen(const char *fen);
+  std::array<unsigned int, 64> getBoard();
   std::string encode_fen(const std::array<unsigned int, 64> &board);
   void printBoard();
   void makeMove(int pos, int i2);

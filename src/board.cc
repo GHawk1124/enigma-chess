@@ -12,6 +12,8 @@
 
 Board::Board() {}
 
+std::array<unsigned int, 64> Board::getBoard() { return this->board; }
+
 std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
   std::array<unsigned int, 64> board = {0};
   int rank = 7;
@@ -207,8 +209,6 @@ void Board::makeMove(int pos, int i2) {
       // special case for en passant
       if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
           (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
-        std::cout << "Setting " << std::get<1>(enPassant) << " square to 0"
-                  << std::endl;
         this->board[std::get<1>(enPassant)] = 0;
       }
 
