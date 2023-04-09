@@ -2,14 +2,9 @@
 #include <string>
 #include <iostream>
 
-// Random pieces are dissapearing, but other than that genAllValidMoves works well I believe...
-// the method for checking if you are in check in the genAllValidMoves method needs to be reworked
-// to fix this bug; I think you need to create a temp board maybe and pass that into a checkForChecks method
 
-//
 // TO DO:
 // En passant
-// Stalemate?
 // Draw by Repetition
 
 int main() {

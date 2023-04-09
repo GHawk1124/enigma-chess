@@ -193,39 +193,46 @@ void Board::makeMove(int pos, int i2) {
   for (auto move : this->moves) {
     if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
 
-
       // Special case for castling
-      if (i2 == pos - 2 && (this->board[pos] == whiteKing ||
-          this->board[pos] == blackKing)) {
+      if (i2 == pos - 2 &&
+          (this->board[pos] == whiteKing || this->board[pos] == blackKing)) {
         this->board[pos - 1] = this->board[pos - 4];
         this->board[pos - 4] = 0;
       } else if (i2 == pos + 2 && (this->board[pos] == whiteKing ||
-          this->board[pos] == blackKing)) {
+                                   this->board[pos] == blackKing)) {
         this->board[pos + 1] = this->board[pos + 3];
         this->board[pos + 3] = 0;
       }
 
+      // special case for en passant
+      if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
+          (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+        std::cout << "Setting " << std::get<1>(enPassant) << " square to 0"
+                  << std::endl;
+        this->board[std::get<1>(enPassant)] = 0;
+      }
+
       // Make the move
-      int temp = board[i2];
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
 
-      // Checks to see if you are in check as a result of your move
-      int kingPos = 0;
-      for (int i = 0; i < 64; i++) {
-        if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
-          kingPos = i;
-          break;
-        }
-      }
-      if (checkForChecks(kingPos, turn)) {
-        std::cout << "You are in check" << std::endl;
-        this->board[pos] = this->board[i2];
-        this->board[i2] = temp;
-        break;
-      }
+      // WE SHOULDN'T NEED THIS BECAUSE genAllValidMoves SHOULD ALREADY CHECK
+      //// Checks to see if you are in check as a result of your move
+      //int kingPos = 0;
+      //for (int i = 0; i < 64; i++) {
+      //  if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
+      //    kingPos = i;
+      //    break;
+      //  }
+      //}
+      //if (checkForChecks(kingPos, turn)) {
+      //  std::cout << "You are in check" << std::endl;
+      //  this->board[pos] = this->board[i2];
+      //  this->board[i2] = temp;
+      //  break;
+      //}
 
-      // Check if piece moved was a rook or king (for castling) or a pawn (for pawn promotion check)
+      // Check if piece moved was a rook or king (for castling) or a pawn (for pawn promotion)
       int piece = this->board[i2];
       if (piece == whiteRook) {
         if (pos == 56) {
@@ -270,6 +277,19 @@ void Board::makeMove(int pos, int i2) {
           break;
         }
         this->board[i2] = pieceAsInt;
+      } else if (piece == whitePawn && pos == i2 + 16) {
+        if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) || (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
+          std::get<0>(enPassant) = true;
+          std::get<1>(enPassant) = i2;
+        }
+      } else if (piece == blackPawn && pos == i2 - 16) {
+        if ((board[i2 + 1] == whitePawn && NOT_COL_8(i2)) ||
+            (board[i2 - 1] == whitePawn && NOT_COL_1(i2))) {
+          std::get<0>(enPassant) = true;
+          std::get<1>(enPassant) = i2;
+        }
+      } else {
+        this->enPassant = std::make_tuple(false, -1);
       }
       validMove = true;
       break;
@@ -306,6 +326,9 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos + 7] < blackPawn && board[pos + 7] != 0) {
       this->moves.push_back(std::make_tuple(pos, pos + 7));
     }
+    if (std::get<0>(enPassant) == true && abs(std::get<1>(enPassant) - pos) == 1) {
+      this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) + 8));
+    }
   } else if (turn == 'w') {
     if (pos > 47) {
       if (board[pos - 8] == 0) {
@@ -325,11 +348,13 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos - 9] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, pos - 9));
     }
+    if (std::get<0>(enPassant) == true && abs(std::get<1>(enPassant) - pos) == 1) {
+      this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) - 8));
+    }
   }
 }
 
 // TODO: Refactor this function
-// TODO: Take king valid?
 void Board::checkRookMoves(int pos, char turn) {
   // Check row towards right
   for (int i = pos + 1; i < (int)(pos / 8) * 8 + 8; i++) {
@@ -943,10 +968,22 @@ void Board::genAllValidMoves(char turn) {
     int pos = std::get<0>(this->moves[i]);
     int i2 = std::get<1>(this->moves[i]);
     int temp = this->board[i2];
+    // Special case for en Passant
+    bool enPassantMoveMade = false;
+    if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
+           (abs(i2 - pos) == 7 ||
+        abs(i2 - pos) == 9) && board[i2] == 0) {
+      enPassantMoveMade = true;
+      this->board[std::get<1>(enPassant)] = 0;
+    }
     this->board[i2] = this->board[pos];
     this->board[pos] = 0;
     bool inCheck =
         this->checkForChecks(turn == 'w' ? wKingPos : bKingPos, turn);
+    // Reset pieces
+    if (enPassantMoveMade) {
+      this->board[std::get<1>(enPassant)] = turn == 'w' ? blackPawn : whitePawn;
+    }
     this->board[pos] = this->board[i2];
     this->board[i2] = temp;
     if (inCheck) {

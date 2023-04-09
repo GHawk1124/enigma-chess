@@ -35,6 +35,7 @@ public:
   bool bKingMoved = false;
   int wKingPos = 60;
   int bKingPos = 4;
+  std::tuple<bool, int> enPassant = std::make_tuple(false, -1);
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);
