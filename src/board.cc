@@ -1,8 +1,7 @@
 #include "board.h"
 
-#include <iostream>
-#include <cctype>
 #include <array>
+#include <cctype>
 #include <iostream>
 #include <unordered_map>
 #include <vector>
@@ -14,16 +13,41 @@ Board::Board() {}
 
 std::array<unsigned int, 64> Board::getBoard() { return this->board; }
 
+void Board::setBoard(std::array<unsigned int, 64> board) {
+  this->board = board;
+}
+
 std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
   std::array<unsigned int, 64> board = {0};
-  int rank = 7;
+  int rank = 0;
   int file = 0;
+  bool whites_turn = true;
+  bool white_kingside_castle = false;
+  bool white_queenside_castle = false;
+  bool black_kingside_castle = false;
+  bool black_queenside_castle = false;
+
   for (char c : fen_string) {
     if (c == '/') {
-      rank--;
+      rank++;
       file = 0;
     } else if (c >= '1' && c <= '8') {
       file += c - '0';
+    } else if (c == ' ') {
+      // next part of the FEN string
+      if (fen_string.substr(0, 1) == "b") {
+        whites_turn = false;
+      }
+
+      // skip the next part of the FEN string (en passant)
+      size_t i = fen_string.find(' ', fen_string.find(' ') + 1);
+      std::string castle_str = fen_string.substr(i + 1, 4);
+      white_kingside_castle = castle_str.find('K') != std::string::npos;
+      white_queenside_castle = castle_str.find('Q') != std::string::npos;
+      black_kingside_castle = castle_str.find('k') != std::string::npos;
+      black_queenside_castle = castle_str.find('q') != std::string::npos;
+
+      break;
     } else {
       int pieceValue;
       switch (c) {
@@ -71,13 +95,27 @@ std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
       file++;
     }
   }
+
+  // set turn flag
+  this->turn = whites_turn ? 'w' : 'b';
+
+  // set castle flags
+  this->white_kingside_castle = white_kingside_castle;
+  this->white_queenside_castle = white_queenside_castle;
+  this->black_kingside_castle = black_kingside_castle;
+  this->black_queenside_castle = black_queenside_castle;
+
   return board;
+}
+
+std::array<unsigned int, 64> Board::decode_fen_c(const char *fen_string) {
+  return decode_fen(std::string(fen_string));
 }
 
 std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
   std::string fen_string;
+  int empty = 0;
   for (int rank = 7; rank >= 0; rank--) {
-    int empty = 0;
     for (int file = 0; file < 8; file++) {
       int piece = board[rank * 8 + file];
       if (piece == Empty) {
@@ -129,12 +167,43 @@ std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
     }
     if (empty > 0) {
       fen_string += std::to_string(empty);
+      empty = 0;
     }
     if (rank > 0) {
       fen_string += '/';
     }
   }
+
+  fen_string += ' ';
+  fen_string += this->turn;
+
+  fen_string += ' ';
+  if (this->white_kingside_castle) {
+    fen_string += 'K';
+  }
+  if (this->white_queenside_castle) {
+    fen_string += 'Q';
+  }
+  if (this->black_kingside_castle) {
+    fen_string += 'k';
+  }
+  if (this->black_queenside_castle) {
+    fen_string += 'q';
+  }
+  if (!this->white_kingside_castle && !this->white_queenside_castle &&
+      !this->black_kingside_castle && !this->black_queenside_castle) {
+    fen_string += '-';
+  }
+
+  fen_string += " - 0 1";
   return fen_string;
+}
+
+char *Board::encode_fen_c(const std::array<unsigned int, 64> &board) {
+  std::string fen_string = encode_fen(board);
+  char *fen = new char[fen_string.length() + 1];
+  std::strcpy(fen, fen_string.c_str());
+  return fen;
 }
 
 std::string Board::getInput() {
@@ -145,17 +214,16 @@ std::string Board::getInput() {
 }
 
 unsigned int Board::getPos(std::string input) {
-  const std::unordered_map<char, int> col = {
-      {'a', 0}, {'b', 1}, {'c', 2}, {'d', 3},
-      {'e', 4}, {'f', 5}, {'g', 6}, {'h', 7}};
-  const std::unordered_map<char, int> row = {
-      {'1', 7}, {'2', 6}, {'3', 5}, {'4', 4},
-      {'5', 3}, {'6', 2}, {'7', 1}, {'8', 0}};
+  const std::unordered_map<char, int> col = {{'a', 0}, {'b', 1}, {'c', 2},
+                                             {'d', 3}, {'e', 4}, {'f', 5},
+                                             {'g', 6}, {'h', 7}};
+  const std::unordered_map<char, int> row = {{'1', 7}, {'2', 6}, {'3', 5},
+                                             {'4', 4}, {'5', 3}, {'6', 2},
+                                             {'7', 1}, {'8', 0}};
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
 void Board::printValidMoves() {
-    
   const std::unordered_map<int, char> col = {{0, 'a'}, {1, 'b'}, {2, 'c'},
                                              {3, 'd'}, {4, 'e'}, {5, 'f'},
                                              {6, 'g'}, {7, 'h'}};
@@ -218,21 +286,22 @@ void Board::makeMove(int pos, int i2) {
 
       // WE SHOULDN'T NEED THIS BECAUSE genAllValidMoves SHOULD ALREADY CHECK
       //// Checks to see if you are in check as a result of your move
-      //int kingPos = 0;
-      //for (int i = 0; i < 64; i++) {
-      //  if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
-      //    kingPos = i;
-      //    break;
-      //  }
-      //}
-      //if (checkForChecks(kingPos, turn)) {
-      //  std::cout << "You are in check" << std::endl;
-      //  this->board[pos] = this->board[i2];
-      //  this->board[i2] = temp;
-      //  break;
-      //}
+      // int kingPos = 0;
+      // for (int i = 0; i < 64; i++) {
+      //   if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
+      //     kingPos = i;
+      //     break;
+      //   }
+      // }
+      // if (checkForChecks(kingPos, turn)) {
+      //   std::cout << "You are in check" << std::endl;
+      //   this->board[pos] = this->board[i2];
+      //   this->board[i2] = temp;
+      //   break;
+      // }
 
-      // Check if piece moved was a rook or king (for castling) or a pawn (for pawn promotion)
+      // Check if piece moved was a rook or king (for castling) or a pawn (for
+      // pawn promotion)
       int piece = this->board[i2];
       if (piece == whiteRook) {
         if (pos == 56) {
@@ -278,7 +347,8 @@ void Board::makeMove(int pos, int i2) {
         }
         this->board[i2] = pieceAsInt;
       } else if (piece == whitePawn && pos == i2 + 16) {
-        if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) || (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
+        if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
+            (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
           std::get<0>(enPassant) = true;
           std::get<1>(enPassant) = i2;
         }
@@ -326,7 +396,8 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos + 7] < blackPawn && board[pos + 7] != 0) {
       this->moves.push_back(std::make_tuple(pos, pos + 7));
     }
-    if (std::get<0>(enPassant) == true && abs(std::get<1>(enPassant) - pos) == 1) {
+    if (std::get<0>(enPassant) == true &&
+        abs(std::get<1>(enPassant) - pos) == 1) {
       this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) + 8));
     }
   } else if (turn == 'w') {
@@ -348,7 +419,8 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos - 9] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, pos - 9));
     }
-    if (std::get<0>(enPassant) == true && abs(std::get<1>(enPassant) - pos) == 1) {
+    if (std::get<0>(enPassant) == true &&
+        abs(std::get<1>(enPassant) - pos) == 1) {
       this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) - 8));
     }
   }
@@ -629,8 +701,8 @@ bool Board::checkForChecks(int pos, char turn) {
     }
     if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteBishop ||
-               board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteBishop || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -643,8 +715,8 @@ bool Board::checkForChecks(int pos, char turn) {
     }
     if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteBishop ||
-               board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteBishop || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -657,8 +729,8 @@ bool Board::checkForChecks(int pos, char turn) {
     }
     if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteBishop ||
-               board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteBishop || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -671,8 +743,8 @@ bool Board::checkForChecks(int pos, char turn) {
     }
     if (turn == 'w' && (board[i] == blackBishop || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteBishop ||
-               board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteBishop || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -684,7 +756,8 @@ bool Board::checkForChecks(int pos, char turn) {
   for (int i = pos + 1; i < (int)(pos / 8) * 8 + 8; i++) {
     if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -694,7 +767,8 @@ bool Board::checkForChecks(int pos, char turn) {
   for (int i = pos - 1; i >= (int)(pos / 8) * 8; i--) {
     if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -704,7 +778,8 @@ bool Board::checkForChecks(int pos, char turn) {
   for (int i = pos - 8; i >= 0; i -= 8) {
     if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -714,7 +789,8 @@ bool Board::checkForChecks(int pos, char turn) {
   for (int i = pos + 8; i < 64; i += 8) {
     if (turn == 'w' && (board[i] == blackRook || board[i] == blackQueen)) {
       return true;
-    } else if (turn == 'b' && (board[i] == whiteRook || board[i] == whiteQueen)) {
+    } else if (turn == 'b' &&
+               (board[i] == whiteRook || board[i] == whiteQueen)) {
       return true;
     } else if (board[i] > 0) {
       break;
@@ -948,7 +1024,8 @@ void Board::checkKingMoves(int pos, char turn) {
 }
 
 void Board::genAllValidMoves(char turn) {
-  // Iterate through board, calling genValidMoves on each piece that is yours except king
+  // Iterate through board, calling genValidMoves on each piece that is yours
+  // except king
   if (this->turn == 'w') {
     for (int i = 0; i < 64; i++) {
       if (this->board[i] > 0 && this->board[i] < 6) {
@@ -956,7 +1033,7 @@ void Board::genAllValidMoves(char turn) {
       }
     }
   } else if (this->turn == 'b') {
-      for (int i = 0; i < 64; i++) {
+    for (int i = 0; i < 64; i++) {
       if (this->board[i] > 6 && this->board[i] < 12) {
         this->genValidMoves(i, this->turn);
       }
@@ -971,8 +1048,7 @@ void Board::genAllValidMoves(char turn) {
     // Special case for en Passant
     bool enPassantMoveMade = false;
     if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
-           (abs(i2 - pos) == 7 ||
-        abs(i2 - pos) == 9) && board[i2] == 0) {
+        (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
       enPassantMoveMade = true;
       this->board[std::get<1>(enPassant)] = 0;
     }

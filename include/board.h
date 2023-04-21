@@ -27,6 +27,10 @@ public:
   char turn = 'w';
   std::vector<std::tuple<int, int>> moves;
   std::string getInput();
+  bool white_kingside_castle = true;
+  bool white_queenside_castle = true;
+  bool black_kingside_castle = true;
+  bool black_queenside_castle = true;
   bool kingsideWRookMoved = false;
   bool queensideWRookMoved = false;
   bool kingsideBRookMoved = false;
@@ -39,9 +43,11 @@ public:
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);
-  std::array<unsigned int, 64> decode_fen(const char *fen);
+  std::array<unsigned int, 64> decode_fen_c(const char *fen);
   std::array<unsigned int, 64> getBoard();
+  void setBoard(std::array<unsigned int, 64> board);
   std::string encode_fen(const std::array<unsigned int, 64> &board);
+  char* encode_fen_c(const std::array<unsigned int, 64> &board);
   void printBoard();
   void makeMove(int pos, int i2);
 

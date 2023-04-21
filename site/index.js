@@ -12,7 +12,7 @@ const onDrop = (source, target, piece) => {
     return 'snapback';
   }
   updateFEN();
-  window.setTimeout(makeRandomMove, 500);
+  window.setTimeout(makeRandomMoveJS, 500);
 };
 
 function onDragStart(source, piece, position, orientation) {
@@ -26,7 +26,7 @@ function onSnapEnd() {
   updateFEN();
 }
 
-function makeRandomMove() {
+function makeRandomMoveJS() {
   var possibleMoves = game.moves();
   if (game.game_over()) return;
   var randomIdx = Math.floor(Math.random() * possibleMoves.length);
