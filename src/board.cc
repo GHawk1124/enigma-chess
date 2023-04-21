@@ -27,7 +27,8 @@ std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
   bool black_kingside_castle = false;
   bool black_queenside_castle = false;
 
-  for (char c : fen_string) {
+  for (int i = 0; i < fen_string.length(); i++) {
+    auto c = fen_string[i];
     if (c == '/') {
       rank++;
       file = 0;
@@ -35,7 +36,7 @@ std::array<unsigned int, 64> Board::decode_fen(const std::string &fen_string) {
       file += c - '0';
     } else if (c == ' ') {
       // next part of the FEN string
-      if (fen_string.substr(0, 1) == "b") {
+      if (fen_string[i + 1] == 'b') {
         whites_turn = false;
       }
 
@@ -115,7 +116,7 @@ std::array<unsigned int, 64> Board::decode_fen_c(const char *fen_string) {
 std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
   std::string fen_string;
   int empty = 0;
-  for (int rank = 7; rank >= 0; rank--) {
+  for (int rank = 0; rank <= 7; rank++) {
     for (int file = 0; file < 8; file++) {
       int piece = board[rank * 8 + file];
       if (piece == Empty) {
@@ -169,7 +170,7 @@ std::string Board::encode_fen(const std::array<unsigned int, 64> &board) {
       fen_string += std::to_string(empty);
       empty = 0;
     }
-    if (rank > 0) {
+    if (rank < 7) {
       fen_string += '/';
     }
   }
@@ -265,7 +266,7 @@ void Board::makeMove(int pos, int i2) {
     moves.clear();
     std::get<1>(checkmateDrawInformation) = true;
   } else if (moves.size() == 0 &&
-             checkForChecks(turn == 'w' ? bKingPos : wKingPos)) {
+             checkForChecks(pos, turn == 'w' ? bKingPos : wKingPos)) {
     std::get<0>(checkmateDrawInformation) = true;
   } else if (moves.size() == 0) {
     std::get<1>(checkmateDrawInformation) = true;
@@ -286,9 +287,9 @@ void Board::makeMove(int pos, int i2) {
       }
 
       // special case for en passant
-      if ((board[pos] == whitePawn || board[pos] == blackPawn)
+      if ((board[pos] == whitePawn) || (board[pos] == blackPawn))
         movesSinceLastPawnMovedAndPieceTaken = 0;
-        if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+      if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
         this->board[std::get<1>(enPassant)] = 0;
       }
 
@@ -381,8 +382,9 @@ void Board::makeMove(int pos, int i2) {
     }
   }
   if (validMove) {
-    std::string fenString = this->encode_fen(board);
-    int temp = boardConfigurations
+    // Not sure what these were for
+    // std::string fenString = this->encode_fen(board);
+    // int temp = boardConfigurations;
     if (this->turn == 'w') {
       this->turn = 'b';
     } else {
@@ -1041,14 +1043,10 @@ void Board::checkKingMoves(int pos, char turn) {
 }
 
 void Board::genAllValidMoves(char turn) {
-<<<<<<< HEAD
+  // TODO: Should this be called?
+  moves.clear();
   // Iterate through board, calling genValidMoves on each piece that is yours
   // except king
-=======
-  moves.clear();
-
-  // Iterate through board, calling genValidMoves on each piece that is yours except king
->>>>>>> 97d5b4453efee3eba8a6e5eda3e16de87c71948a
   if (this->turn == 'w') {
     for (int i = 0; i < 64; i++) {
       if (this->board[i] > 0 && this->board[i] < 6) {
@@ -1094,7 +1092,6 @@ void Board::genAllValidMoves(char turn) {
   // Add king moves into moves vector
   int kingPos = turn == 'w' ? wKingPos : bKingPos;
   this->genValidMoves(kingPos, turn);
-
 }
 
 void Board::genValidMoves(int pos, char turn) {

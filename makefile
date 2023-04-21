@@ -15,7 +15,7 @@ JS_OUTPUT := $(BUILDDIR)/enigma-chess.js
 
 .PHONY: all clean deploy
 
-all: $(OUTPUT) $(WASM_OUTPUT) $(WAST_OUTPUT)
+all: $(OUTPUT) $(WASM_OUTPUT) $(WAST_OUTPUT) deploy
 
 $(OUTPUT): $(OBJECTS)
 	$(CC) $^ -g -o $@ $(CFLAGS)
@@ -30,7 +30,7 @@ $(WASM_OUTPUT): $(OBJECTS)
 $(WAST_OUTPUT): $(WASM_OUTPUT)
 	wasm2wat $< -o $@
 
-deploy: all
+deploy:
 	mkdir -p site
 	cp $(OUTPUT) site/
 	cp $(WASM_OUTPUT) site/

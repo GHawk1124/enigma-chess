@@ -43,7 +43,7 @@ public:
   std::tuple<bool, bool> checkmateDrawInformation =
       std::make_tuple(false, false);
   int movesSinceLastPawnMovedAndPieceTaken = 0;
-  std::unordered_map<std::string, int> boardConfigurations = ();
+  std::unordered_map<std::string, int> boardConfigurations;
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);

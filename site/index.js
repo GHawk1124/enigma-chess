@@ -2,7 +2,7 @@ const updateFEN = function () {
   $('#fen').text('FEN: ' + game.fen());
 };
 
-const game = new Chess();
+game = new Chess();
 
 playerColor = 'w';
 
@@ -12,7 +12,7 @@ const onDrop = (source, target, piece) => {
     return 'snapback';
   }
   updateFEN();
-  window.setTimeout(makeRandomMoveJS, 500);
+  window.setTimeout(makeRandomMove, 500);
 };
 
 function onDragStart(source, piece, position, orientation) {
@@ -26,11 +26,12 @@ function onSnapEnd() {
   updateFEN();
 }
 
-function makeRandomMoveJS() {
-  var possibleMoves = game.moves();
+function makeRandomMove() {
+  // var possibleMoves = game.moves();
   if (game.game_over()) return;
-  var randomIdx = Math.floor(Math.random() * possibleMoves.length);
-  game.move(possibleMoves[randomIdx]);
+  // var randomIdx = Math.floor(Math.random() * possibleMoves.length);
+  pos = makeMoveWASM(game.fen());
+  game.load(pos);
   board.position(game.fen());
 }
 

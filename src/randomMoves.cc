@@ -12,15 +12,10 @@ EXTERN EMSCRIPTEN_KEEPALIVE char *make_random_valid_move(char *fen) {
   Board board;
   auto decoded = board.decode_fen_c(fen);
   board.setBoard(decoded);
-  board.printBoard();
   board.genAllValidMoves(board.turn);
-  printf("Number of valid moves: %d", board.moves.size());
-  printf("random number: %d", rand());
-  printf("random number: %d", rand() % board.moves.size());
   int random_move = rand() % board.moves.size();
   board.makeMove(std::get<0>(board.moves[random_move]),
                  std::get<1>(board.moves[random_move]));
-  board.printBoard();
   char *new_board_state = board.encode_fen_c(board.getBoard());
   return new_board_state;
 }
