@@ -40,6 +40,10 @@ public:
   int wKingPos = 60;
   int bKingPos = 4;
   std::tuple<bool, int> enPassant = std::make_tuple(false, -1);
+  std::tuple<bool, bool> checkmateDrawInformation =
+      std::make_tuple(false, false);
+  int movesSinceLastPawnMovedAndPieceTaken = 0;
+  std::unordered_map<std::string, int> boardConfigurations = ();
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);

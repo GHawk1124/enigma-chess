@@ -260,8 +260,19 @@ void Board::printBoard() {
 
 void Board::makeMove(int pos, int i2) {
   bool validMove = false;
+  // First check for draw by 50 moves, checkmate, and stalemate
+  if (movesSinceLastPawnMovedAndPieceTaken >= 50) {
+    moves.clear();
+    std::get<1>(checkmateDrawInformation) = true;
+  } else if (moves.size() == 0 &&
+             checkForChecks(turn == 'w' ? bKingPos : wKingPos)) {
+    std::get<0>(checkmateDrawInformation) = true;
+  } else if (moves.size() == 0) {
+    std::get<1>(checkmateDrawInformation) = true;
+  }
   for (auto move : this->moves) {
     if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
+      movesSinceLastPawnMovedAndPieceTaken++;
 
       // Special case for castling
       if (i2 == pos - 2 &&
@@ -275,12 +286,16 @@ void Board::makeMove(int pos, int i2) {
       }
 
       // special case for en passant
-      if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
-          (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+      if ((board[pos] == whitePawn || board[pos] == blackPawn)
+        movesSinceLastPawnMovedAndPieceTaken = 0;
+        if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
         this->board[std::get<1>(enPassant)] = 0;
       }
 
-      // Make the move
+      // Make the move (check if something is taken for 50 move draw)
+      if (this->board[i2] > 0) {
+        movesSinceLastPawnMovedAndPieceTaken = 0;
+      }
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
 
@@ -366,6 +381,8 @@ void Board::makeMove(int pos, int i2) {
     }
   }
   if (validMove) {
+    std::string fenString = this->encode_fen(board);
+    int temp = boardConfigurations
     if (this->turn == 'w') {
       this->turn = 'b';
     } else {
@@ -1024,8 +1041,14 @@ void Board::checkKingMoves(int pos, char turn) {
 }
 
 void Board::genAllValidMoves(char turn) {
+<<<<<<< HEAD
   // Iterate through board, calling genValidMoves on each piece that is yours
   // except king
+=======
+  moves.clear();
+
+  // Iterate through board, calling genValidMoves on each piece that is yours except king
+>>>>>>> 97d5b4453efee3eba8a6e5eda3e16de87c71948a
   if (this->turn == 'w') {
     for (int i = 0; i < 64; i++) {
       if (this->board[i] > 0 && this->board[i] < 6) {
@@ -1071,6 +1094,7 @@ void Board::genAllValidMoves(char turn) {
   // Add king moves into moves vector
   int kingPos = turn == 'w' ? wKingPos : bKingPos;
   this->genValidMoves(kingPos, turn);
+
 }
 
 void Board::genValidMoves(int pos, char turn) {
