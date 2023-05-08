@@ -300,22 +300,6 @@ void Board::makeMove(int pos, int i2) {
       this->board[i2] = this->board[pos];
       this->board[pos] = 0;
 
-      // WE SHOULDN'T NEED THIS BECAUSE genAllValidMoves SHOULD ALREADY CHECK
-      //// Checks to see if you are in check as a result of your move
-      // int kingPos = 0;
-      // for (int i = 0; i < 64; i++) {
-      //   if (board[i] == (turn == 'w' ? whiteKing : blackKing)) {
-      //     kingPos = i;
-      //     break;
-      //   }
-      // }
-      // if (checkForChecks(kingPos, turn)) {
-      //   std::cout << "You are in check" << std::endl;
-      //   this->board[pos] = this->board[i2];
-      //   this->board[i2] = temp;
-      //   break;
-      // }
-
       // Check if piece moved was a rook or king (for castling) or a pawn (for
       // pawn promotion)
       int piece = this->board[i2];
@@ -1095,6 +1079,22 @@ void Board::genAllValidMoves(char turn) {
 }
 
 void Board::genValidMoves(int pos, char turn) {
+
+  // When a fen string is passed back to the engine, the previous moves are not recognied therefore the king
+  // positions have to be found again. We only do this once per move, however, because as the engine is looking
+  // ahead the king position will be updated everytime makeMove is called
+  if (bKingPos == -1 || wKingPos == -1) {
+    for (int i = 0; i < 64; i++) {
+      if (board[i] == whiteKing) {
+        wKingPos = i;
+      } else if (board[i] == blackKing) {
+        bKingPos = i;
+      }
+    }
+  }
+
+
+
   if (turn == 'w') {
     switch (this->board[pos]) {
     case 1:
