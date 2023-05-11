@@ -54,8 +54,7 @@ std::string MiniMax::minimax() {
   }
   this->board.genAllValidMoves(this->player);
   for (int i = 0; i < this->board.moves.size(); i++) {
-    this->board.makeMove(std::get<0>(this->board.moves[i]),
-                         std::get<1>(this->board.moves[i]));
+    this->board.makeMove(board.moves[i]);
     this->score = this->evaluate(this->board.getBoard());
     this->board.clearBoard();
     best_moves[0].push_back(std::to_string(std::get<0>(this->board.moves[i])) +
@@ -65,8 +64,7 @@ std::string MiniMax::minimax() {
     for (int j = 0; j < best_moves[i - 1].size(); j++) {
       this->board.genAllValidMoves(this->player);
       for (int k = 0; k < this->board.moves.size(); k++) {
-        this->board.makeMove(std::get<0>(this->board.moves[k]),
-                             std::get<1>(this->board.moves[k]));
+        this->board.makeMove(board.moves[k]);
         this->score = this->evaluate(this->board.getBoard());
         this->board.clearBoard();
         best_moves[i].push_back(best_moves[i - 1][j] +

@@ -259,7 +259,9 @@ void Board::printBoard() {
   std::cout << std::endl;
 }
 
-void Board::makeMove(int pos, int i2) {
+void Board::makeMove(std::tuple<int, int> move) {
+  int pos = std::get<0>(move);
+  int i2 = std::get<1>(move);
   bool validMove = false;
   // First check for draw by 50 moves, checkmate, and stalemate
   if (movesSinceLastPawnMovedAndPieceTaken >= 50) {
@@ -271,113 +273,140 @@ void Board::makeMove(int pos, int i2) {
   } else if (moves.size() == 0) {
     std::get<1>(checkmateDrawInformation) = true;
   }
-  for (auto move : this->moves) {
-    if (std::get<0>(move) == pos && std::get<1>(move) == i2) {
-      movesSinceLastPawnMovedAndPieceTaken++;
+  movesSinceLastPawnMovedAndPieceTaken++;
 
-      // Special case for castling
-      if (i2 == pos - 2 &&
-          (this->board[pos] == whiteKing || this->board[pos] == blackKing)) {
-        this->board[pos - 1] = this->board[pos - 4];
-        this->board[pos - 4] = 0;
-      } else if (i2 == pos + 2 && (this->board[pos] == whiteKing ||
-                                   this->board[pos] == blackKing)) {
-        this->board[pos + 1] = this->board[pos + 3];
-        this->board[pos + 3] = 0;
-      }
-
-      // special case for en passant
-      if ((board[pos] == whitePawn) || (board[pos] == blackPawn))
-        movesSinceLastPawnMovedAndPieceTaken = 0;
-      if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
-        this->board[std::get<1>(enPassant)] = 0;
-      }
-
-      // Make the move (check if something is taken for 50 move draw)
-      if (this->board[i2] > 0) {
-        movesSinceLastPawnMovedAndPieceTaken = 0;
-      }
-      this->board[i2] = this->board[pos];
-      this->board[pos] = 0;
-
-      // Check if piece moved was a rook or king (for castling) or a pawn (for
-      // pawn promotion)
-      int piece = this->board[i2];
-      if (piece == whiteRook) {
-        if (pos == 56) {
-          this->queensideWRookMoved = true;
-        } else if (pos == 63) {
-          this->kingsideWRookMoved = true;
-        }
-      } else if (piece == blackRook) {
-        if (pos == 0) {
-          this->queensideBRookMoved = true;
-        } else if (pos == 7) {
-          this->kingsideBRookMoved = true;
-        }
-      } else if (piece == whiteKing) {
-        this->wKingPos = i2;
-        this->wKingMoved = true;
-      } else if (piece == blackKing) {
-        this->bKingPos = i2;
-        this->bKingMoved = true;
-      } else if (piece == whitePawn && i2 < 8 ||
-                 piece == blackPawn && i2 > 55) {
-        // promote pawn
-        char piece;
-        std::cout << "type q for queen, r for rook, b for bishop, or n "
-                     "for knight: ";
-        std::cin >> piece;
-        piece = tolower(piece);
-        int pieceAsInt = 0;
-        char turn = this->turn;
-        switch (piece) {
-        case 'q':
-          pieceAsInt = turn == 'w' ? 5 : 11;
-          break;
-        case 'r':
-          pieceAsInt = turn == 'w' ? 2 : 8;
-          break;
-        case 'b':
-          pieceAsInt = turn == 'w' ? 4 : 10;
-          break;
-        case 'n':
-          pieceAsInt = turn == 'w' ? 3 : 9;
-          break;
-        }
-        this->board[i2] = pieceAsInt;
-      } else if (piece == whitePawn && pos == i2 + 16) {
-        if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
-            (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
-          std::get<0>(enPassant) = true;
-          std::get<1>(enPassant) = i2;
-        }
-      } else if (piece == blackPawn && pos == i2 - 16) {
-        if ((board[i2 + 1] == whitePawn && NOT_COL_8(i2)) ||
-            (board[i2 - 1] == whitePawn && NOT_COL_1(i2))) {
-          std::get<0>(enPassant) = true;
-          std::get<1>(enPassant) = i2;
-        }
-      } else {
-        this->enPassant = std::make_tuple(false, -1);
-      }
-      validMove = true;
-      break;
-    }
+  // Special case for castling
+  if (i2 == pos - 2 &&
+      (this->board[pos] == whiteKing || this->board[pos] == blackKing)) {
+    this->board[pos - 1] = this->board[pos - 4];
+    this->board[pos - 4] = 0;
+  } else if (i2 == pos + 2 && (this->board[pos] == whiteKing ||
+                                this->board[pos] == blackKing)) {
+    this->board[pos + 1] = this->board[pos + 3];
+    this->board[pos + 3] = 0;
   }
-  if (validMove) {
-    // Not sure what these were for
-    // std::string fenString = this->encode_fen(board);
-    // int temp = boardConfigurations;
-    if (this->turn == 'w') {
-      this->turn = 'b';
-    } else {
-      this->turn = 'w';
+
+  // special case for en passant
+  if ((board[pos] == whitePawn) || (board[pos] == blackPawn))
+    movesSinceLastPawnMovedAndPieceTaken = 0;
+  if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+    this->board[std::get<1>(enPassant)] = 0;
+  }
+
+  // Make the move (check if something is taken for 50 move draw)
+  if (this->board[i2] > 0) {
+    movesSinceLastPawnMovedAndPieceTaken = 0;
+  }
+  this->board[i2] = this->board[pos];
+  this->board[pos] = 0;
+
+  // Check if piece moved was a rook or king (for castling) or a pawn (for
+  // pawn promotion)
+  int piece = this->board[i2];
+  if (piece == whiteRook) {
+    if (pos == 56) {
+      this->queensideWRookMoved = true;
+    } else if (pos == 63) {
+      this->kingsideWRookMoved = true;
+    }
+  } else if (piece == blackRook) {
+    if (pos == 0) {
+      this->queensideBRookMoved = true;
+    } else if (pos == 7) {
+      this->kingsideBRookMoved = true;
+    }
+  } else if (piece == whiteKing) {
+    this->wKingPos = i2;
+    this->wKingMoved = true;
+  } else if (piece == blackKing) {
+    this->bKingPos = i2;
+    this->bKingMoved = true;
+  } else if (piece == whitePawn && i2 < 8 ||
+              piece == blackPawn && i2 > 55) {
+    // promote pawn
+    // char piece;
+    // std::cout << "type q for queen, r for rook, b for bishop, or n "
+    //               "for knight: ";
+    // std::cin >> piece;
+    // piece = tolower(piece);
+    // int pieceAsInt = 0;
+    // char turn = this->turn;
+    // switch (piece) {
+    // case 'q':
+    //   pieceAsInt = turn == 'w' ? 5 : 11;
+    //   break;
+    // case 'r':
+    //   pieceAsInt = turn == 'w' ? 2 : 8;
+    //   break;
+    // case 'b':
+    //   pieceAsInt = turn == 'w' ? 4 : 10;
+    //   break;
+    // case 'n':
+    //   pieceAsInt = turn == 'w' ? 3 : 9;
+    //   break;
+    // }
+    this->board[i2] = turn == 'w'? whiteQueen : blackQueen;
+  } else if (piece == whitePawn && pos == i2 + 16) {
+    if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
+        (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
+      std::get<0>(enPassant) = true;
+      std::get<1>(enPassant) = i2;
+    }
+  } else if (piece == blackPawn && pos == i2 - 16) {
+    if ((board[i2 + 1] == whitePawn && NOT_COL_8(i2)) ||
+        (board[i2 - 1] == whitePawn && NOT_COL_1(i2))) {
+      std::get<0>(enPassant) = true;
+      std::get<1>(enPassant) = i2;
     }
   } else {
-    std::cout << "Invalid move!" << std::endl;
+    this->enPassant = std::make_tuple(false, -1);
+  }
+  // Not sure what these were for
+  // std::string fenString = this->encode_fen(board);
+  // int temp = boardConfigurations;
+  if (this->turn == 'w') {
+    this->turn = 'b';
+  } else {
+    this->turn = 'w';
   }
 }
+
+
+// doesn't handle en passant
+void Board::unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMoved) {
+  int pos = std::get<0>(move);
+  int i2 = std::get<1>(move);
+  board[pos] = board[i2];
+  board[i2] = i2BeforeMove;
+  // Case for castling
+  if (i2 == pos - 2 &&
+      (this->board[pos] == whiteKing || this->board[pos] == blackKing)) {
+    this->board[pos - 4] = this->board[pos - 1];
+    this->board[pos - 1] = 0;
+  } else if (i2 == pos + 2 && (this->board[pos] == whiteKing ||
+                                this->board[pos] == blackKing)) {
+    this->board[pos + 3] = this->board[pos + 1];
+    this->board[pos + 1] = 0;
+  }
+  // Case for pawn promotion
+  if (i2 / 8 == 0 && pieceMoved == whitePawn) {
+    board[pos] = whitePawn;
+  } else if (i2 / 8 == 7 && pieceMoved == blackPawn) {
+    board[pos] = blackPawn;
+  }
+  // Update kingPos if necessary
+  if (board[pos] == whiteKing) {
+    this->wKingPos = pos;
+  } else if (board[pos] == blackKing) {
+    this->bKingPos = pos;
+  }
+  if (this->turn == 'w') {
+    this->turn = 'b';
+  } else {
+    this->turn = 'w';
+  }
+}
+
 
 void Board::checkPawnMoves(int pos, char turn) {
   if (turn == 'b') {
@@ -636,7 +665,7 @@ void Board::checkKnightMoves(int pos, char turn) {
   }
 }
 
-// TODO: Move if statement out of for loop
+// Checks if a square on the board (pos) is currently in check
 bool Board::checkForChecks(int pos, char turn) {
   // Knight Section
   // Check top right
@@ -889,6 +918,12 @@ bool Board::checkForChecks(int pos, char turn) {
 }
 
 void Board::checkKingMoves(int pos, char turn) {
+
+  // Temporarily remove the king from the board because it might block the path of checks (a copy will remain
+  // behind once the king moves)
+  int kingRemoved = board[pos];
+  board[pos] = 0;
+
   if (turn == 'w') {
     // Top Left
     if (NOT_COL_1(pos) && pos - 9 >= 0 &&
@@ -1024,12 +1059,15 @@ void Board::checkKingMoves(int pos, char turn) {
       }
     }
   }
+  
+  // Put the king back
+  board[pos] = kingRemoved;
 }
 
-void Board::genAllValidMoves(char turn) {
+std::vector<std::tuple<int, int>> Board::genAllValidMoves(char turn) {
   // TODO: Should this be called?
   moves.clear();
-  // Iterate through board, calling genValidMoves on each piece that is yours
+  // Iterate through board, calling Moves on each piece that is yours
   // except king
   if (this->turn == 'w') {
     for (int i = 0; i < 64; i++) {
@@ -1076,6 +1114,7 @@ void Board::genAllValidMoves(char turn) {
   // Add king moves into moves vector
   int kingPos = turn == 'w' ? wKingPos : bKingPos;
   this->genValidMoves(kingPos, turn);
+  return moves;
 }
 
 void Board::genValidMoves(int pos, char turn) {

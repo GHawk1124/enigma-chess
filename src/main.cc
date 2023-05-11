@@ -18,7 +18,7 @@ int main() {
     unsigned int pos = board.getPos(input.substr(0, 2));
     unsigned int i2 = board.getPos(input.substr(2, 2));
     board.printValidMoves();
-    board.makeMove(pos, i2);
+    board.makeMove(std::make_tuple(pos, i2));
     board.moves.clear();
   }
   

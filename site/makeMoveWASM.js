@@ -59,7 +59,7 @@ window.onerror = function () {
 function makeMoveWASM(inputFEN) {
   // Allocate memory for the input string
   const inputPtr = Module._malloc(inputFEN.length + 1);
-  Module.stringToUTF8(inputFEN, inputPtr, inputFEN.length + 1);
+  Module.stringToUTF8(inputFEN, inputPtr, inputFEN.length + 1); 
 
   // Call the C function
   const resultPtr = Module.ccall(

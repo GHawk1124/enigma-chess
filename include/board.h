@@ -37,13 +37,13 @@ public:
   bool queensideBRookMoved = false;
   bool wKingMoved = false;
   bool bKingMoved = false;
-  int wKingPos = 60;
-  int bKingPos = 4;
+  int wKingPos = -1;
+  int bKingPos = -1;
   std::tuple<bool, int> enPassant = std::make_tuple(false, -1);
   std::tuple<bool, bool> checkmateDrawInformation =
       std::make_tuple(false, false);
   int movesSinceLastPawnMovedAndPieceTaken = 0;
-  std::unordered_map<std::string, int> boardConfigurations;
+  // std::unordered_map<std::string, int> boardConfigurations;
 
   unsigned int getPos(std::string input);
   std::array<unsigned int, 64> decode_fen(const std::string &fen);
@@ -53,7 +53,8 @@ public:
   std::string encode_fen(const std::array<unsigned int, 64> &board);
   char* encode_fen_c(const std::array<unsigned int, 64> &board);
   void printBoard();
-  void makeMove(int pos, int i2);
+  void makeMove(std::tuple<int, int> move);
+  void unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMoved);
 
   void checkPawnMoves(int pos, char turn);
   void checkRookMoves(int pos, char turn);
@@ -62,9 +63,13 @@ public:
   bool checkForChecks(int pos, char turn);
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
-  void genAllValidMoves(char turn);
+  std::vector<std::tuple<int, int>> genAllValidMoves(char turn);
   void printValidMoves();
   void clearBoard();
+
+  int evaluate();
+  std::tuple<int, int> miniMax(int depth);
+  int miniMaxRec(int depth, double maxScore);
 
 private:
   std::array<unsigned int, 64> board = {
