@@ -9,32 +9,38 @@
 double Board::evaluate() {
   // std::unordered_map<int, double> wPawnSquareToBonus = {{}}
   std::set diagonalSquares = {0, 7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49, 54, 56, 63};
-  std::set centerSquares = {27, 28, 35, 36};
+  std::set center4Squares = {27, 28, 35, 36};
+  std::set center16Squares = {18, 19, 20, 21, 26, 27, 28, 29, 34, 35, 36, 37, 42, 43, 44, 45};
   int turnSwap = turn == 'w'? 1 : -1;
   double score = 0;
   for (int i = 0; i < 64; i++) {
     switch (this->board[i]) {
       case whitePawn:
         if ((i / 8) == 4) {
-          score += 1.5;
+          score += 1.4;
         } else if ((i / 8) == 5) {
           score += 1.3;
         } else {
           score += 1;
         }
-        if (centerSquares.count(i) == 1) {
+        if (center4Squares.count(i) == 1) {
           score += 0.4;
         }
         break;
       case whiteBishop:
+        score += 3;
         if (diagonalSquares.count(i) == 1) {
-          score += 3.5;
-        } else {
-          score += 3;
+          score += 0.5;
+        }
+        if (center16Squares.count(i) == 1) {
+          score += 0.2;
         }
         break;
       case whiteKnight:
         score += 3;
+        if (center16Squares.count(i) == 1) {
+          score += 0.5;
+        }
         break;
       case whiteRook:
         score += 5;
@@ -42,6 +48,12 @@ double Board::evaluate() {
       case whiteQueen:
         score += 11;
         break;
+      case whiteKing:
+        if (i == 58) {
+          score += 0.2;
+        } else if (i == 62) {
+          score += 0.5;
+        }
       case blackPawn:
         if ((i / 8) == 3) {
           score -= 1.5;
@@ -50,19 +62,24 @@ double Board::evaluate() {
         } else {
           score -= 1;
         }
-        if (centerSquares.count(i) == 1) {
+        if (center4Squares.count(i) == 1) {
           score -= 0.4;
         }
         break;
       case blackBishop:
+        score -= 3;
         if (diagonalSquares.count(i) == 1) {
-          score -= 3.5;
-        } else {
-          score -= 3;
+          score -= 0.5;
+        }
+        if (center16Squares.count(i) == 1) {
+          score -= 0.2;
         }
         break;
       case blackKnight:
         score -= 3;
+        if (center16Squares.count(i) == 1) {
+          score -= 0.5;
+        }
         break;
       case blackRook:
         score -= 5;
@@ -70,7 +87,12 @@ double Board::evaluate() {
       case blackQueen:
         score -= 11;
         break;
-        break;
+      case blackKing:
+        if (i == 2) {
+          score -= 0.2;
+        } else if (i == 6) {
+          score -= 0.5;
+        }
     }
   }
   return turnSwap * score;

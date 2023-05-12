@@ -329,23 +329,23 @@ void Board::makeMove(std::tuple<int, int> move) {
     this->bKingMoved = true;
   } else if (piece == whitePawn && i2 < 8 ||
               piece == blackPawn && i2 > 55) {
-    this->board[i2] = turn == 'w'? whiteQueen : blackQueen;
+    this->board[i2] = turn == 'w'? whiteQueen : blackQueen;}
   // If a pawn was moved up two spaces, checks for en passant possible on next move and sets the variable accordingly
-  } else if (piece == whitePawn && pos == i2 + 16) {
-    if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
-        (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
-      std::get<0>(enPassant) = true;
-      std::get<1>(enPassant) = i2;
-    }
-  } else if (piece == blackPawn && pos == i2 - 16) {
-    if ((board[i2 + 1] == whitePawn && NOT_COL_8(i2)) ||
-        (board[i2 - 1] == whitePawn && NOT_COL_1(i2))) {
-      std::get<0>(enPassant) = true;
-      std::get<1>(enPassant) = i2;
-    }
-  } else {
-    this->enPassant = std::make_tuple(false, -1);
-  }
+  // } else if (piece == whitePawn && pos == i2 + 16) {
+  //   if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
+  //       (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
+  //     std::get<0>(enPassant) = true;
+  //     std::get<1>(enPassant) = i2;
+  //   }
+  // } else if (piece == blackPawn && pos == i2 - 16) {
+  //   if ((board[i2 + 1] == whitePawn && NOT_COL_8(i2)) ||
+  //       (board[i2 - 1] == whitePawn && NOT_COL_1(i2))) {
+  //     std::get<0>(enPassant) = true;
+  //     std::get<1>(enPassant) = i2;
+  //   }
+  // } else {
+  //   this->enPassant = std::make_tuple(false, -1);
+  // }
   // Not sure what these were for
   // std::string fenString = this->encode_fen(board);
   // int temp = boardConfigurations;
@@ -417,10 +417,10 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos + 7] < blackPawn && board[pos + 7] != 0) {
       this->moves.push_back(std::make_tuple(pos, pos + 7));
     }
-    if (std::get<0>(enPassant) == true &&
-        abs(std::get<1>(enPassant) - pos) == 1) {
-      this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) + 8));
-    }
+    // if (std::get<0>(enPassant) == true &&
+    //     abs(std::get<1>(enPassant) - pos) == 1) {
+    //   this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) + 8));
+    // }
   } else if (turn == 'w') {
     if (pos > 47) {
       if (board[pos - 8] == 0) {
@@ -440,10 +440,10 @@ void Board::checkPawnMoves(int pos, char turn) {
     if (NOT_COL_1(pos) && board[pos - 9] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, pos - 9));
     }
-    if (std::get<0>(enPassant) == true &&
-        abs(std::get<1>(enPassant) - pos) == 1) {
-      this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) - 8));
-    }
+    // if (std::get<0>(enPassant) == true &&
+    //     abs(std::get<1>(enPassant) - pos) == 1) {
+    //   this->moves.push_back(std::make_tuple(pos, std::get<1>(enPassant) - 8));
+    // }
   }
 }
 
@@ -1091,20 +1091,20 @@ std::vector<std::tuple<int, int>> Board::genAllValidMoves(char turn) {
     int i2 = std::get<1>(this->moves[i]);
     int temp = this->board[i2];
     // Special case for en Passant
-    bool enPassantMoveMade = false;
-    if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
-        (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
-      enPassantMoveMade = true;
-      this->board[std::get<1>(enPassant)] = 0;
-    }
+    // bool enPassantMoveMade = false;
+    // if ((board[pos] == whitePawn || board[pos] == blackPawn) &&
+    //     (abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+    //   enPassantMoveMade = true;
+    //   this->board[std::get<1>(enPassant)] = 0;
+    // }
     this->board[i2] = this->board[pos];
     this->board[pos] = 0;
     bool inCheck =
         this->checkForChecks(turn == 'w' ? wKingPos : bKingPos, turn);
     // Reset pieces
-    if (enPassantMoveMade) {
-      this->board[std::get<1>(enPassant)] = turn == 'w' ? blackPawn : whitePawn;
-    }
+    // if (enPassantMoveMade) {
+    //   this->board[std::get<1>(enPassant)] = turn == 'w' ? blackPawn : whitePawn;
+    // }
     this->board[pos] = this->board[i2];
     this->board[i2] = temp;
     if (inCheck) {
