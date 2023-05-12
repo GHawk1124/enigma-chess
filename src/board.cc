@@ -288,11 +288,16 @@ void Board::makeMove(std::tuple<int, int> move) {
   }
 
   // special case for en passant
-  if ((board[pos] == whitePawn) || (board[pos] == blackPawn))
-    movesSinceLastPawnMovedAndPieceTaken = 0;
-  if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
-    this->board[std::get<1>(enPassant)] = 0;
-  }
+  // I THINK THIS NEEDS EDITING I THINK THE SECOND IF STATEMENT SHOULD BE INSIDE THE FIRST???
+  // if ((board[pos] == whitePawn) || (board[pos] == blackPawn)) {
+  //   if ((abs(i2 - pos) == 7 || abs(i2 - pos) == 9) && board[i2] == 0) {
+  //     this->board[std::get<1>(enPassant)] = 0;
+  //     std::get<0>(enPassantMove) = true;
+  //     std::get<1>(enPassantMove) = this->board[std::get<1>(enPassant)];
+  //   } else {
+  //     this->enPassantMove = std::make_tuple(false, -1);
+  //   }
+  // }
 
   // Make the move (check if something is taken for 50 move draw)
   if (this->board[i2] > 0) {
@@ -324,29 +329,8 @@ void Board::makeMove(std::tuple<int, int> move) {
     this->bKingMoved = true;
   } else if (piece == whitePawn && i2 < 8 ||
               piece == blackPawn && i2 > 55) {
-    // promote pawn
-    // char piece;
-    // std::cout << "type q for queen, r for rook, b for bishop, or n "
-    //               "for knight: ";
-    // std::cin >> piece;
-    // piece = tolower(piece);
-    // int pieceAsInt = 0;
-    // char turn = this->turn;
-    // switch (piece) {
-    // case 'q':
-    //   pieceAsInt = turn == 'w' ? 5 : 11;
-    //   break;
-    // case 'r':
-    //   pieceAsInt = turn == 'w' ? 2 : 8;
-    //   break;
-    // case 'b':
-    //   pieceAsInt = turn == 'w' ? 4 : 10;
-    //   break;
-    // case 'n':
-    //   pieceAsInt = turn == 'w' ? 3 : 9;
-    //   break;
-    // }
     this->board[i2] = turn == 'w'? whiteQueen : blackQueen;
+  // If a pawn was moved up two spaces, checks for en passant possible on next move and sets the variable accordingly
   } else if (piece == whitePawn && pos == i2 + 16) {
     if ((board[i2 + 1] == blackPawn && NOT_COL_8(i2)) ||
         (board[i2 - 1] == blackPawn && NOT_COL_1(i2))) {
@@ -395,6 +379,10 @@ void Board::unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMov
   } else if (i2 / 8 == 7 && pieceMoved == blackPawn) {
     board[pos] = blackPawn;
   }
+  // Case for en passant
+  // if (std::get<0>(enPassantMove)) {
+  //   this->board[std::get<1>(enPassantMove)] = this->turn == 'w'? whitePawn : blackPawn;
+  // }
   // Update kingPos if necessary
   if (board[pos] == whiteKing) {
     this->wKingPos = pos;

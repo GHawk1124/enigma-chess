@@ -55,6 +55,7 @@ public:
   void printBoard();
   void makeMove(std::tuple<int, int> move);
   void unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMoved);
+  std::tuple<bool, int> enPassantMove = std::make_tuple(false, -1);
 
   void checkPawnMoves(int pos, char turn);
   void checkRookMoves(int pos, char turn);
