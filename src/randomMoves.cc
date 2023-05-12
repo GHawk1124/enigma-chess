@@ -2,7 +2,7 @@
 #include "mini_max.h"
 #include "stdio.h"
 #include <emscripten/emscripten.h>
-
+#include <iostream>
 #include <tuple>
 
 #ifdef __cplusplus
@@ -17,7 +17,7 @@ EXTERN EMSCRIPTEN_KEEPALIVE char *make_random_valid_move(char *fen) {
   auto decoded = board.decode_fen_c(fen);
   board.setBoard(decoded);
 
-  std::tuple<int, int> move = board.miniMax(2);
+  std::tuple<int, int> move = board.miniMax(3);
   board.makeMove(move);
 
 

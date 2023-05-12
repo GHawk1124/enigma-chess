@@ -3,9 +3,10 @@
 #include <array>
 #include <unordered_map>
 #include <vector>
+#include <iostream>
 #include <set>
 
-int Board::evaluate() {
+double Board::evaluate() {
   // std::unordered_map<int, double> wPawnSquareToBonus = {{}}
   std::set diagonalSquares = {0, 7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49, 54, 56, 63};
   std::set centerSquares = {27, 28, 35, 36};
@@ -69,7 +70,6 @@ int Board::evaluate() {
       case blackQueen:
         score -= 11;
         break;
-      default:
         break;
     }
   }
@@ -82,28 +82,29 @@ int Board::evaluate() {
 // In this way you can keep track of which move to make (a number by itself is meaningless) I don't know a better way to do this
 std::tuple<int, int> Board::miniMax(int depth) {
   std::vector<std::tuple<int, int>> possibleMoves = this->genAllValidMoves(this->turn);
-  int bestMoveScore = INT_MIN;
+  double bestMoveScore = (double)INT_MIN;
   std::tuple<int, int> bestMove = possibleMoves[0];
 
   for (std::tuple<int, int> move : possibleMoves) {
     int pieceMoved = this->board[std::get<0>(move)];
     int pieceAtI2 = this->board[std::get<1>(move)];
     this->makeMove(move);
-    int moveScore = this->miniMaxRec(depth, this->evaluate());
+    double moveScore = -1 * this->miniMaxRec(depth, INT_MIN, -bestMoveScore);
     if (moveScore > bestMoveScore) {
       bestMoveScore = moveScore;
       bestMove = move;
     }
     this->unmakeMove(move, pieceAtI2, pieceMoved);
   }
+  
   return bestMove;
 }
 
 
-int Board::miniMaxRec(int depth, double maxScore) {
+double Board::miniMaxRec(int depth, double alpha, double beta) {
   // Base case: if depth is zero, return 
   if (depth == 0) {
-    return maxScore;
+    return this->evaluate();
   }
 
   // GenAllValidMoves, iterate through, and find best score and return that
@@ -112,24 +113,26 @@ int Board::miniMaxRec(int depth, double maxScore) {
   // if vector is empty, this is checkmate or a draw
   if (moves.size() == 0) {
     if (this->checkForChecks(this->turn == 'w'? this->wKingPos : this->bKingPos, this->turn)) {
-      return INT_MAX;
+      return (double)INT_MIN;
     }
     else {
       return 0;
     }
   }
   
-  int bestScore = INT_MIN;
   for (std::tuple<int, int> move : moves) {
     int pieceMoved = this->board[std::get<0>(move)];
     int pieceAtI2 = this->board[std::get<1>(move)];
     this->makeMove(move);
-    int score = this->miniMaxRec(depth - 1, -1 * this->evaluate());
-    if (score > bestScore) {
-      bestScore = score;
-    }
+    double score = -1 * this->miniMaxRec(depth - 1, -beta, -alpha);
     this->unmakeMove(move, pieceAtI2, pieceMoved);
+    if (score >= beta) {
+      return beta;
+    }
+    if (score > alpha) {
+      alpha = score;
+    }
   }
-  return -1 * bestScore;
+  return alpha;
 }
 

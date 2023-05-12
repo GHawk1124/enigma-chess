@@ -64,12 +64,12 @@ public:
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
   std::vector<std::tuple<int, int>> genAllValidMoves(char turn);
-  void printValidMoves();
+  void printValidMoves(std::vector<std::tuple<int, int>> inputMovesVector);
   void clearBoard();
 
-  int evaluate();
+  double evaluate();
   std::tuple<int, int> miniMax(int depth);
-  int miniMaxRec(int depth, double maxScore);
+  double miniMaxRec(int depth, double alpha, double beta);
 
 private:
   std::array<unsigned int, 64> board = {

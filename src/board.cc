@@ -5,6 +5,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <cstring>
 
 #define NOT_COL_1(x) (x % 8 != 0)
 #define NOT_COL_8(x) (x % 8 != 7)
@@ -224,7 +225,7 @@ unsigned int Board::getPos(std::string input) {
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
-void Board::printValidMoves() {
+void Board::printValidMoves(std::vector<std::tuple<int, int>> inputMovesVector) {
   const std::unordered_map<int, char> col = {{0, 'a'}, {1, 'b'}, {2, 'c'},
                                              {3, 'd'}, {4, 'e'}, {5, 'f'},
                                              {6, 'g'}, {7, 'h'}};
@@ -233,7 +234,7 @@ void Board::printValidMoves() {
                                              {1, '7'}, {0, '8'}};
 
   std::cout << "Valid moves: ";
-  for (auto move : this->moves) {
+  for (auto move : inputMovesVector) {
     int i1 = std::get<0>(move);
     int i2 = std::get<1>(move);
     std::string result;
@@ -521,12 +522,12 @@ void Board::checkRookMoves(int pos, char turn) {
 // TODO: Move if statement out of for loop
 void Board::checkBishopMoves(int pos, char turn) {
   // Check diagonal towards bottom right
-  for (int i = pos + 9; i < 56 + pos % 8; i += 9) {
+  for (int i = pos + 9; i < 64; i += 9) {
+    if (i % 8 == 0) {
+      break;
+    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
-      if (i % 8 == 7) {
-        break;
-      }
     } else if (turn == 'w' && board[i] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
@@ -538,12 +539,12 @@ void Board::checkBishopMoves(int pos, char turn) {
     }
   }
   // Check diagonal towards top right
-  for (int i = pos - 7; i > pos % 8; i -= 7) {
+  for (int i = pos - 7; i >= 0; i -= 7) {
+    if (i % 8 == 0) {
+      break;
+    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
-      if (i % 8 == 7) {
-        break;
-      }
     } else if (turn == 'w' && board[i] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
@@ -555,12 +556,12 @@ void Board::checkBishopMoves(int pos, char turn) {
     }
   }
   // Check diagonal towards bottom left
-  for (int i = pos + 7; i < 56 + pos % 8; i += 7) {
+  for (int i = pos + 7; i < 64; i += 7) {
+    if (i % 8 == 7) {
+      break;
+    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
-      if (i % 8 == 0) {
-        break;
-      }
     } else if (turn == 'w' && board[i] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
@@ -572,12 +573,12 @@ void Board::checkBishopMoves(int pos, char turn) {
     }
   }
   // Check diagonal towards top left
-  for (int i = pos - 9; i > pos % 8; i -= 9) {
+  for (int i = pos - 9; i >= 0; i -= 9) {
+    if (i % 8 == 7) {
+      break;
+    }
     if (board[i] == 0) {
       this->moves.push_back(std::make_tuple(pos, i));
-      if (i % 8 == 0) {
-        break;
-      }
     } else if (turn == 'w' && board[i] > whiteKing) {
       this->moves.push_back(std::make_tuple(pos, i));
       break;
@@ -741,7 +742,7 @@ bool Board::checkForChecks(int pos, char turn) {
     }
   }
   // Check diagonal towards top right
-  for (int i = pos - 7; i > 0; i -= 7) {
+  for (int i = pos - 7; i >= 0; i -= 7) {
     if (i % 8 == 0) {
       break;
     }
@@ -769,7 +770,7 @@ bool Board::checkForChecks(int pos, char turn) {
     }
   }
   // Check diagonal towards bottom left
-  for (int i = pos + 7; i < 63; i += 7) {
+  for (int i = pos + 7; i < 64; i += 7) {
     if (i % 8 == 7) {
       break;
     }
@@ -1065,6 +1066,19 @@ void Board::checkKingMoves(int pos, char turn) {
 }
 
 std::vector<std::tuple<int, int>> Board::genAllValidMoves(char turn) {
+  // When a fen string is passed back to the engine, the previous moves are not recognied therefore the king
+  // positions have to be found again. We only do this once per move, however, because as the engine is looking
+  // ahead the king position will be updated everytime makeMove is called
+  if (bKingPos == -1 || wKingPos == -1) {
+    for (int i = 0; i < 64; i++) {
+      if (board[i] == whiteKing) {
+        wKingPos = i;
+      } else if (board[i] == blackKing) {
+        bKingPos = i;
+      }
+    }
+  }
+
   // TODO: Should this be called?
   moves.clear();
   // Iterate through board, calling Moves on each piece that is yours
@@ -1118,22 +1132,6 @@ std::vector<std::tuple<int, int>> Board::genAllValidMoves(char turn) {
 }
 
 void Board::genValidMoves(int pos, char turn) {
-
-  // When a fen string is passed back to the engine, the previous moves are not recognied therefore the king
-  // positions have to be found again. We only do this once per move, however, because as the engine is looking
-  // ahead the king position will be updated everytime makeMove is called
-  if (bKingPos == -1 || wKingPos == -1) {
-    for (int i = 0; i < 64; i++) {
-      if (board[i] == whiteKing) {
-        wKingPos = i;
-      } else if (board[i] == blackKing) {
-        bKingPos = i;
-      }
-    }
-  }
-
-
-
   if (turn == 'w') {
     switch (this->board[pos]) {
     case 1:
