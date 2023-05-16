@@ -25,7 +25,7 @@ public:
     blackKing = 12,
   };
   char turn = 'w';
-  std::vector<std::tuple<int, int>> moves;
+  std::vector<std::tuple<int, int, int>> moves;
   std::string getInput();
   bool white_kingside_castle = true;
   bool white_queenside_castle = true;
@@ -53,8 +53,8 @@ public:
   std::string encode_fen(const std::array<unsigned int, 64> &board);
   char* encode_fen_c(const std::array<unsigned int, 64> &board);
   void printBoard();
-  void makeMove(std::tuple<int, int> move);
-  void unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMoved);
+  void makeMove(std::tuple<int, int, int> move);
+  void unmakeMove(std::tuple<int, int, int> move, int i2BeforeMove, int pieceMoved);
   std::tuple<bool, int> enPassantMove = std::make_tuple(false, -1);
 
   void checkPawnMoves(int pos, char turn);
@@ -64,13 +64,15 @@ public:
   bool checkForChecks(int pos, char turn);
   void checkKingMoves(int pos, char turn);
   void genValidMoves(int pos, char turn);
-  std::vector<std::tuple<int, int>> genAllValidMoves(char turn);
-  void printValidMoves(std::vector<std::tuple<int, int>> inputMovesVector);
+  std::vector<std::tuple<int, int, int>> genAllValidMoves(char turn);
+  void printValidMoves(std::vector<std::tuple<int, int, int>> inputMovesVector);
   void clearBoard();
 
   double evaluate();
-  std::tuple<int, int> miniMax(int depth);
+  std::tuple<int, int, int> miniMax(int depth, std::vector<std::tuple<int, int, int>> possibleMoves);
+  std::tuple<int, int, int> runMiniMax(int depth);
   double miniMaxRec(int depth, double alpha, double beta);
+  std::vector<std::tuple<int, int, int>> orderMoves(std::vector<std::tuple<int, int, int>> moves);
 
 private:
   std::array<unsigned int, 64> board = {

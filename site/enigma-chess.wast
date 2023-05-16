@@ -7,11 +7,11 @@
   (type (;5;) (func (param i32 i32 i32)))
   (type (;6;) (func (param i32 i32 i32 i32 i32 i32) (result i32)))
   (type (;7;) (func))
-  (type (;8;) (func (param i32 i32 i32 i32 i32) (result i32)))
-  (type (;9;) (func (param i32 i32 i32 i32)))
-  (type (;10;) (func (result i32)))
-  (type (;11;) (func (param i32 i32 i32 i32 i32 i32)))
-  (type (;12;) (func (param i32 i32 i32 i32) (result i32)))
+  (type (;8;) (func (param i32 i32 i32 i32)))
+  (type (;9;) (func (param i32 i32 i32 i32 i32) (result i32)))
+  (type (;10;) (func (param i32 i32 i32 i32) (result i32)))
+  (type (;11;) (func (result i32)))
+  (type (;12;) (func (param i32 i32 i32 i32 i32 i32)))
   (type (;13;) (func (param i32 i32 i32 i32 i32 i32 i32 i32) (result i32)))
   (type (;14;) (func (param i32 i32 i32 i32 i32)))
   (type (;15;) (func (param i32 i32 i32 i32 i32 i32 i32) (result i32)))
@@ -69,13 +69,13 @@
   (import "env" "emscripten_memcpy_big" (func $emscripten_memcpy_big (type 5)))
   (import "env" "abort" (func $abort (type 7)))
   (import "env" "emscripten_resize_heap" (func $emscripten_resize_heap (type 0)))
-  (import "wasi_snapshot_preview1" "fd_write" (func $__wasi_fd_write (type 12)))
-  (import "wasi_snapshot_preview1" "fd_read" (func $__wasi_fd_read (type 12)))
+  (import "wasi_snapshot_preview1" "fd_write" (func $__wasi_fd_write (type 10)))
+  (import "wasi_snapshot_preview1" "fd_read" (func $__wasi_fd_read (type 10)))
   (import "wasi_snapshot_preview1" "fd_close" (func $__wasi_fd_close (type 0)))
   (import "wasi_snapshot_preview1" "environ_sizes_get" (func $__wasi_environ_sizes_get (type 1)))
   (import "wasi_snapshot_preview1" "environ_get" (func $__wasi_environ_get (type 1)))
-  (import "env" "strftime_l" (func $strftime_l (type 8)))
-  (import "wasi_snapshot_preview1" "fd_seek" (func $legalimport$__wasi_fd_seek (type 8)))
+  (import "env" "strftime_l" (func $strftime_l (type 9)))
+  (import "wasi_snapshot_preview1" "fd_seek" (func $legalimport$__wasi_fd_seek (type 9)))
   (func $__wasm_call_ctors (type 7)
     call $_GLOBAL__I_000100
     call $__emscripten_environ_constructor
@@ -98,7 +98,7 @@
     local.get 1
     i32.const 4
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::vector_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_abi:v15007___
     drop
     local.get 1
     i32.const 1
@@ -199,7 +199,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::vector_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -229,10 +229,10 @@
     local.get 1
     i32.const 7
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::__default_init_tag>_std::nullptr_t&&__std::__2::__default_init_tag&&_
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::__default_init_tag>_std::nullptr_t&&__std::__2::__default_init_tag&&_
     drop
     local.get 2
-    call $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_
+    call $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
     local.get 1
     i32.const 16
     i32.add
@@ -286,7 +286,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::__default_init_tag>_std::nullptr_t&&__std::__2::__default_init_tag&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::__default_init_tag>_std::nullptr_t&&__std::__2::__default_init_tag&&_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -307,17 +307,17 @@
     local.tee 4
     local.get 3
     i32.load offset=8
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
     drop
     local.get 4
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__compressed_pair_elem_abi:v15007__std::__2::__default_init_tag_
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__compressed_pair_elem_abi:v15007__std::__2::__default_init_tag_
     drop
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_ (type 4) (param i32)
+  (func $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_ (type 4) (param i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
@@ -841,7 +841,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::substr_abi:v15007__unsigned_long__unsigned_long__const (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::substr_abi:v15007__unsigned_long__unsigned_long__const (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -1971,7 +1971,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::numeric_limits<long>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<long>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<long__true>::max_abi:v15007___)
   (func $std::__2::ctype<char>_const&_std::__2::use_facet_abi:v15007_<std::__2::ctype<char>>_std::__2::locale_const&_ (type 0) (param i32) (result i32)
     (local i32 i32)
@@ -2056,7 +2056,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::char_traits<char>::eof__ (type 10) (result i32)
+  (func $std::__2::char_traits<char>::eof__ (type 11) (result i32)
     i32.const -1)
   (func $std::__2::char_traits<char>::eq_int_type_int__int_ (type 1) (param i32 i32) (result i32)
     (local i32)
@@ -2309,7 +2309,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2327,7 +2327,7 @@
     local.tee 2
     local.get 2
     i32.load
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>*_
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>*_
     drop
     local.get 1
     i32.load offset=12
@@ -2337,7 +2337,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::end_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::end_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2355,7 +2355,7 @@
     local.tee 2
     local.get 2
     i32.load offset=4
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>*_
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>*_
     drop
     local.get 1
     i32.load offset=12
@@ -2365,7 +2365,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
+  (func $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2382,7 +2382,7 @@
     i32.load offset=12
     local.get 2
     i32.load offset=8
-    call $bool_std::__2::operator==_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&_
+    call $bool_std::__2::operator==_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_
     i32.const -1
     i32.xor
     i32.const 1
@@ -2393,7 +2393,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator*_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2404,7 +2404,7 @@
     local.get 1
     i32.load offset=12
     i32.load)
-  (func $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_ (type 0) (param i32) (result i32)
+  (func $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2423,7 +2423,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_ (type 0) (param i32) (result i32)
+  (func $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2444,7 +2444,28 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator++_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12
+    i32.const 8
+    i32.add
+    call $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007___
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2457,7 +2478,7 @@
     local.tee 1
     local.get 1
     i32.load
-    i32.const 8
+    i32.const 12
     i32.add
     i32.store
     local.get 1)
@@ -2523,7 +2544,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>*_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>*_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2544,7 +2565,7 @@
     i32.load offset=4
     i32.store
     local.get 4)
-  (func $bool_std::__2::operator==_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
+  (func $bool_std::__2::operator==_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -2559,10 +2580,10 @@
     i32.store offset=8
     local.get 2
     i32.load offset=12
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     local.get 2
     i32.load offset=8
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     i32.eq
     local.set 3
     local.get 2
@@ -2689,6 +2710,16 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
+  (func $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007___ (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12)
   (func $std::__2::basic_ios<char__std::__2::char_traits<char>>::widen_abi:v15007__char__const (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -2728,7 +2759,7 @@
     global.set $__stack_pointer
     local.get 3
     i32.extend8_s)
-  (func $Board::makeMove_std::__2::tuple<int__int>_ (type 2) (param i32 i32)
+  (func $Board::makeMove_std::__2::tuple<int__int__int>_ (type 2) (param i32 i32)
     (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -2743,12 +2774,12 @@
     local.set 3
     local.get 2
     local.get 1
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     i32.store offset=24
     local.get 2
     local.get 1
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     i32.store offset=20
     local.get 2
@@ -2763,7 +2794,7 @@
         local.get 3
         i32.const 4
         i32.add
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::clear_abi:v15007___
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::clear_abi:v15007___
         local.get 3
         i32.const 44
         i32.add
@@ -2777,7 +2808,7 @@
           local.get 3
           i32.const 4
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
           br_if 0 (;@3;)
           local.get 3
           local.get 2
@@ -2814,7 +2845,7 @@
         local.get 3
         i32.const 4
         i32.add
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
         i32.eqz
         if  ;; label = @3
           local.get 3
@@ -3153,7 +3184,7 @@
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::clear_abi:v15007___ (type 4) (param i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::clear_abi:v15007___ (type 4) (param i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -3167,16 +3198,16 @@
     local.get 1
     i32.load offset=12
     local.tee 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
     i32.store offset=8
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__clear_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__clear_abi:v15007___
     local.get 2
     local.get 1
     i32.load offset=8
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const
     local.get 2
-    call $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_
+    call $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
     local.get 1
     i32.const 16
     i32.add
@@ -3202,7 +3233,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -3217,8 +3248,8 @@
     local.get 2
     i32.load
     i32.sub
-    i32.const 3
-    i32.shr_s)
+    i32.const 12
+    i32.div_s)
   (func $Board::checkForChecks_int__char_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
@@ -5212,7 +5243,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__clear_abi:v15007___ (type 4) (param i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__clear_abi:v15007___ (type 4) (param i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -5227,12 +5258,12 @@
     local.tee 2
     local.get 2
     i32.load
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const (type 2) (param i32 i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -5248,37 +5279,37 @@
     local.get 3
     i32.load offset=12
     local.tee 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.set 4
     local.get 2
     local.get 4
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 3
     i32.load offset=8
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_ (type 4) (param i32)
+  (func $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_ (type 4) (param i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
@@ -5304,7 +5335,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $Board::unmakeMove_std::__2::tuple<int__int>__int__int_ (type 9) (param i32 i32 i32 i32)
+  (func $Board::unmakeMove_std::__2::tuple<int__int__int>__int__int_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -5325,12 +5356,12 @@
     local.set 5
     local.get 4
     local.get 1
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     i32.store offset=16
     local.get 4
     local.get 1
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     i32.store offset=12
     local.get 5
@@ -5587,25 +5618,25 @@
   (func $Board::checkPawnMoves_int__char_ (type 5) (param i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 144
+    i32.const 224
     i32.sub
     local.tee 3
     global.set $__stack_pointer
     local.get 3
     local.get 0
-    i32.store offset=140
+    i32.store offset=220
     local.get 3
     local.get 1
-    i32.store offset=136
+    i32.store offset=216
     local.get 3
     local.get 2
-    i32.store8 offset=135
+    i32.store8 offset=215
     local.get 3
-    i32.load offset=140
+    i32.load offset=220
     local.set 4
     block  ;; label = @1
       local.get 3
-      i32.load8_u offset=135
+      i32.load8_u offset=215
       i32.const 255
       i32.and
       i32.const 98
@@ -5613,7 +5644,7 @@
       if  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 16
           i32.lt_s
           if  ;; label = @4
@@ -5621,7 +5652,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=136
+            i32.load offset=216
             i32.const 8
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5630,32 +5661,38 @@
             if  ;; label = @5
               local.get 3
               local.get 3
-              i32.load offset=136
+              i32.load offset=216
               i32.const 8
               i32.add
-              i32.store offset=120
+              i32.store offset=196
               local.get 3
-              i32.const 124
+              i32.const 1
+              i32.store offset=192
+              local.get 3
+              i32.const 200
               i32.add
               local.get 3
-              i32.const 136
+              i32.const 216
               i32.add
               local.get 3
-              i32.const 120
+              i32.const 196
               i32.add
-              call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+              local.get 3
+              i32.const 192
+              i32.add
+              call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
               local.get 4
               i32.const 4
               i32.add
               local.get 3
-              i32.const 124
+              i32.const 200
               i32.add
-              call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+              call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
               local.get 4
               i32.const 60
               i32.add
               local.get 3
-              i32.load offset=136
+              i32.load offset=216
               i32.const 16
               i32.add
               call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5664,27 +5701,33 @@
               if  ;; label = @6
                 local.get 3
                 local.get 3
-                i32.load offset=136
+                i32.load offset=216
                 i32.const 16
                 i32.add
-                i32.store offset=108
+                i32.store offset=176
                 local.get 3
-                i32.const 112
+                i32.const 2
+                i32.store offset=172
+                local.get 3
+                i32.const 180
                 i32.add
                 local.get 3
-                i32.const 136
+                i32.const 216
                 i32.add
                 local.get 3
-                i32.const 108
+                i32.const 176
                 i32.add
-                call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+                local.get 3
+                i32.const 172
+                i32.add
+                call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
                 local.get 4
                 i32.const 4
                 i32.add
                 local.get 3
-                i32.const 112
+                i32.const 180
                 i32.add
-                call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+                call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
               end
             end
             br 1 (;@3;)
@@ -5693,7 +5736,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 8
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5702,32 +5745,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=136
+            i32.load offset=216
             i32.const 8
             i32.add
-            i32.store offset=96
+            i32.store offset=156
             local.get 3
-            i32.const 100
+            i32.const 1
+            i32.store offset=152
+            local.get 3
+            i32.const 160
             i32.add
             local.get 3
-            i32.const 136
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 96
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 152
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 100
+            i32.const 160
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 8
           i32.rem_s
           i32.const 7
@@ -5737,7 +5786,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 9
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5749,7 +5798,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 9
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5758,31 +5807,37 @@
           br_if 0 (;@3;)
           local.get 3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 9
           i32.add
-          i32.store offset=84
+          i32.store offset=136
           local.get 3
-          i32.const 88
+          i32.const 7
+          i32.store offset=132
+          local.get 3
+          i32.const 140
+          i32.add
+          local.get 3
+          i32.const 216
           i32.add
           local.get 3
           i32.const 136
           i32.add
           local.get 3
-          i32.const 84
+          i32.const 132
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 88
+          i32.const 140
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.and
           i32.eqz
@@ -5791,7 +5846,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5803,7 +5858,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5812,32 +5867,38 @@
           br_if 0 (;@3;)
           local.get 3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.add
-          i32.store offset=72
+          i32.store offset=116
           local.get 3
-          i32.const 76
+          i32.const 7
+          i32.store offset=112
+          local.get 3
+          i32.const 120
           i32.add
           local.get 3
-          i32.const 136
+          i32.const 216
           i32.add
           local.get 3
-          i32.const 72
+          i32.const 116
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 112
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 76
+          i32.const 120
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
         br 1 (;@1;)
       end
       local.get 3
-      i32.load8_u offset=135
+      i32.load8_u offset=215
       i32.const 255
       i32.and
       i32.const 119
@@ -5845,7 +5906,7 @@
       if  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 47
           i32.gt_s
           if  ;; label = @4
@@ -5853,7 +5914,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=136
+            i32.load offset=216
             i32.const 8
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5862,32 +5923,38 @@
             if  ;; label = @5
               local.get 3
               local.get 3
-              i32.load offset=136
+              i32.load offset=216
               i32.const 8
               i32.sub
-              i32.store offset=60
+              i32.store offset=96
               local.get 3
-              i32.const -64
-              i32.sub
+              i32.const 1
+              i32.store offset=92
               local.get 3
-              i32.const 136
+              i32.const 100
               i32.add
               local.get 3
-              i32.const 60
+              i32.const 216
               i32.add
-              call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+              local.get 3
+              i32.const 96
+              i32.add
+              local.get 3
+              i32.const 92
+              i32.add
+              call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
               local.get 4
               i32.const 4
               i32.add
               local.get 3
-              i32.const -64
-              i32.sub
-              call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+              i32.const 100
+              i32.add
+              call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
               local.get 4
               i32.const 60
               i32.add
               local.get 3
-              i32.load offset=136
+              i32.load offset=216
               i32.const 16
               i32.sub
               call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5896,27 +5963,33 @@
               if  ;; label = @6
                 local.get 3
                 local.get 3
-                i32.load offset=136
+                i32.load offset=216
                 i32.const 16
                 i32.sub
-                i32.store offset=48
+                i32.store offset=76
                 local.get 3
-                i32.const 52
+                i32.const 2
+                i32.store offset=72
+                local.get 3
+                i32.const 80
                 i32.add
                 local.get 3
-                i32.const 136
+                i32.const 216
                 i32.add
                 local.get 3
-                i32.const 48
+                i32.const 76
                 i32.add
-                call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+                local.get 3
+                i32.const 72
+                i32.add
+                call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
                 local.get 4
                 i32.const 4
                 i32.add
                 local.get 3
-                i32.const 52
+                i32.const 80
                 i32.add
-                call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+                call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
               end
             end
             br 1 (;@3;)
@@ -5925,7 +5998,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 8
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5934,32 +6007,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=136
+            i32.load offset=216
             i32.const 8
             i32.sub
-            i32.store offset=36
+            i32.store offset=56
             local.get 3
-            i32.const 40
+            i32.const 1
+            i32.store offset=52
+            local.get 3
+            i32.const 60
             i32.add
             local.get 3
-            i32.const 136
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 36
+            i32.const 56
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 52
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 40
+            i32.const 60
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 8
           i32.rem_s
           i32.const 7
@@ -5969,7 +6048,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -5979,31 +6058,37 @@
           br_if 0 (;@3;)
           local.get 3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.sub
-          i32.store offset=24
+          i32.store offset=36
           local.get 3
-          i32.const 28
+          i32.const 7
+          i32.store offset=32
+          local.get 3
+          i32.const 40
           i32.add
           local.get 3
-          i32.const 136
+          i32.const 216
           i32.add
           local.get 3
-          i32.const 24
+          i32.const 36
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 32
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 28
+          i32.const 40
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 7
           i32.and
           i32.eqz
@@ -6012,7 +6097,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 9
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -6022,59 +6107,70 @@
           br_if 0 (;@3;)
           local.get 3
           local.get 3
-          i32.load offset=136
+          i32.load offset=216
           i32.const 9
           i32.sub
+          i32.store offset=16
+          local.get 3
+          i32.const 7
           i32.store offset=12
           local.get 3
-          i32.const 16
+          i32.const 20
           i32.add
           local.get 3
-          i32.const 136
+          i32.const 216
+          i32.add
+          local.get 3
+          i32.const 16
           i32.add
           local.get 3
           i32.const 12
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 16
+          i32.const 20
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     local.get 3
-    i32.const 144
+    i32.const 224
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_ (type 5) (param i32 i32 i32)
+  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 3
+    local.tee 4
     global.set $__stack_pointer
-    local.get 3
+    local.get 4
     local.get 1
     i32.store offset=12
-    local.get 3
+    local.get 4
     local.get 2
     i32.store offset=8
+    local.get 4
+    local.get 3
+    i32.store offset=4
     local.get 0
-    local.get 3
+    local.get 4
     i32.load offset=12
-    local.get 3
+    local.get 4
     i32.load offset=8
-    call $std::__2::tuple<int__int>::tuple_abi:v15007_<int&__int__0>_int&__int&&_
+    local.get 4
+    i32.load offset=4
+    call $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int&__int__int__0>_int&__int&&__int&&_
     drop
-    local.get 3
+    local.get 4
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_ (type 2) (param i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -6093,26 +6189,26 @@
       local.tee 3
       i32.load offset=4
       local.get 3
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007___
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
       i32.load
       i32.lt_u
       if  ;; label = @2
         local.get 3
         local.get 2
         i32.load offset=8
-        call $void_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__construct_one_at_end_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>&&_
+        call $void_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__construct_one_at_end_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>&&_
         br 1 (;@1;)
       end
       local.get 3
       local.get 2
       i32.load offset=8
-      call $void_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__push_back_slow_path<std::__2::tuple<int__int>>_std::__2::tuple<int__int>&&_
+      call $void_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__push_back_slow_path<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>&&_
     end
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -6126,14 +6222,14 @@
     i32.load offset=12
     i32.const 8
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::first_abi:v15007___
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::first_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $void_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__construct_one_at_end_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>&&_ (type 2) (param i32 i32)
+  (func $void_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__construct_one_at_end_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>&&_ (type 2) (param i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -6153,32 +6249,32 @@
     i32.load offset=28
     local.tee 3
     i32.const 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&__unsigned_long_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__unsigned_long_
     drop
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
     local.get 2
     i32.load offset=16
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     local.get 2
     i32.load offset=24
-    call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_
+    call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_
     local.get 2
     local.get 2
     i32.load offset=16
-    i32.const 8
+    i32.const 12
     i32.add
     i32.store offset=16
     local.get 2
     i32.const 12
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::~_ConstructTransaction__
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::~_ConstructTransaction__
     drop
     local.get 2
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $void_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__push_back_slow_path<std::__2::tuple<int__int>>_std::__2::tuple<int__int>&&_ (type 2) (param i32 i32)
+  (func $void_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__push_back_slow_path<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>&&_ (type 2) (param i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -6195,106 +6291,111 @@
     local.get 2
     i32.load offset=28
     local.tee 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
     i32.store offset=20
     local.get 2
     local.get 3
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
     i32.const 1
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__recommend_abi:v15007__unsigned_long__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__recommend_abi:v15007__unsigned_long__const
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
     local.get 2
     i32.load offset=20
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::allocator<std::__2::tuple<int__int>>&_
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::allocator<std::__2::tuple<int__int__int>>&_
     drop
     local.get 2
     i32.load offset=20
     local.get 2
     i32.load offset=8
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     local.get 2
     i32.load offset=24
-    call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_
+    call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_
     local.get 2
     local.get 2
     i32.load offset=8
-    i32.const 8
+    i32.const 12
     i32.add
     i32.store offset=8
     local.get 3
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__swap_out_circular_buffer_std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>&_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__swap_out_circular_buffer_std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>&_
     local.get 2
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::~__split_buffer__
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::~__split_buffer__
     drop
     local.get 2
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<int__int>::tuple_abi:v15007_<int&__int__0>_int&__int&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int&__int__int__0>_int&__int&&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 16
+    i32.const 32
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
-    local.get 0
-    i32.store offset=12
-    local.get 3
-    local.get 1
-    i32.store offset=8
-    local.get 3
-    local.get 2
-    i32.store offset=4
-    local.get 3
-    i32.load offset=12
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=28
+    local.get 4
+    local.get 1
+    i32.store offset=24
+    local.get 4
+    local.get 2
+    i32.store offset=20
+    local.get 4
     local.get 3
-    i32.load offset=8
-    local.get 3
-    i32.load offset=4
-    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int&__int>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&&_
+    i32.store offset=16
+    local.get 4
+    i32.load offset=28
+    local.tee 5
+    local.get 4
+    i32.load offset=24
+    local.get 4
+    i32.load offset=20
+    local.get 4
+    i32.load offset=16
+    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int&__int__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&&__int&&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $Board::checkRookMoves_int__char_ (type 5) (param i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 128
+    i32.const 224
     i32.sub
     local.tee 3
     global.set $__stack_pointer
     local.get 3
     local.get 0
-    i32.store offset=124
+    i32.store offset=220
     local.get 3
     local.get 1
-    i32.store offset=120
+    i32.store offset=216
     local.get 3
     local.get 2
-    i32.store8 offset=119
+    i32.store8 offset=215
     local.get 3
-    i32.load offset=124
+    i32.load offset=220
     local.set 4
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 1
     i32.add
-    i32.store offset=112
+    i32.store offset=208
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=112
+        i32.load offset=208
         local.get 3
-        i32.load offset=120
+        i32.load offset=216
         i32.const 8
         i32.div_s
         i32.const 3
@@ -6308,33 +6409,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=112
+          i32.load offset=208
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 104
+            i32.const 0
+            i32.store offset=192
+            local.get 3
+            i32.const 196
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 192
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 104
+            i32.const 196
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -6344,34 +6451,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=112
+            i32.load offset=208
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 96
+            i32.const 3
+            i32.store offset=176
+            local.get 3
+            i32.const 180
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 176
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 96
+            i32.const 180
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -6381,54 +6494,60 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=112
+            i32.load offset=208
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 88
+            i32.const 3
+            i32.store offset=160
+            local.get 3
+            i32.const 164
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 160
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 88
+            i32.const 164
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           br 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=112
+        i32.load offset=208
         i32.const 1
         i32.add
-        i32.store offset=112
+        i32.store offset=208
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 1
     i32.sub
-    i32.store offset=84
+    i32.store offset=156
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=84
+        i32.load offset=156
         local.get 3
-        i32.load offset=120
+        i32.load offset=216
         i32.const 8
         i32.div_s
         i32.const 3
@@ -6440,33 +6559,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=84
+          i32.load offset=156
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 76
+            i32.const 0
+            i32.store offset=140
+            local.get 3
+            i32.const 144
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 140
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 76
+            i32.const 144
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -6476,34 +6601,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=84
+            i32.load offset=156
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 68
+            i32.const 3
+            i32.store offset=124
+            local.get 3
+            i32.const 128
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 124
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 68
+            i32.const 128
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -6513,52 +6644,58 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=84
+            i32.load offset=156
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 60
+            i32.const 3
+            i32.store offset=108
+            local.get 3
+            i32.const 112
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 108
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 60
+            i32.const 112
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           br 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=84
+        i32.load offset=156
         i32.const 1
         i32.sub
-        i32.store offset=84
+        i32.store offset=156
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 8
     i32.sub
-    i32.store offset=56
+    i32.store offset=104
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=56
+        i32.load offset=104
         i32.const 0
         i32.lt_s
         br_if 0 (;@2;)
@@ -6567,33 +6704,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=56
+          i32.load offset=104
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 48
+            i32.const 0
+            i32.store offset=88
+            local.get 3
+            i32.const 92
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 56
+            i32.const 104
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 88
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 48
+            i32.const 92
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -6603,34 +6746,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=56
+            i32.load offset=104
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 40
+            i32.const 3
+            i32.store offset=72
+            local.get 3
+            i32.const 76
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 56
+            i32.const 104
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 72
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 40
+            i32.const 76
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -6640,52 +6789,58 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=56
+            i32.load offset=104
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 32
+            i32.const 3
+            i32.store offset=56
+            local.get 3
+            i32.const 60
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
+            i32.add
+            local.get 3
+            i32.const 104
             i32.add
             local.get 3
             i32.const 56
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 32
+            i32.const 60
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           br 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=56
+        i32.load offset=104
         i32.const 8
         i32.sub
-        i32.store offset=56
+        i32.store offset=104
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 8
     i32.add
-    i32.store offset=28
+    i32.store offset=52
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=28
+        i32.load offset=52
         i32.const 64
         i32.ge_s
         br_if 0 (;@2;)
@@ -6694,33 +6849,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=28
+          i32.load offset=52
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 20
+            i32.const 0
+            i32.store offset=36
+            local.get 3
+            i32.const 40
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 28
+            i32.const 52
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 36
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 20
+            i32.const 40
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -6730,34 +6891,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=28
+            i32.load offset=52
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 12
+            i32.const 3
+            i32.store offset=20
+            local.get 3
+            i32.const 24
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 28
+            i32.const 52
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 20
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 12
+            i32.const 24
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -6767,134 +6934,150 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=28
+            i32.load offset=52
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
+            i32.const 3
+            i32.store offset=4
+            local.get 3
+            i32.const 8
+            i32.add
+            local.get 3
+            i32.const 216
+            i32.add
+            local.get 3
+            i32.const 52
+            i32.add
+            local.get 3
             i32.const 4
             i32.add
-            local.get 3
-            i32.const 120
-            i32.add
-            local.get 3
-            i32.const 28
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 4
+            i32.const 8
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           br 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=28
+        i32.load offset=52
         i32.const 8
         i32.add
-        i32.store offset=28
+        i32.store offset=52
         br 1 (;@1;)
       end
     end
     local.get 3
-    i32.const 128
+    i32.const 224
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_ (type 5) (param i32 i32 i32)
+  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 3
+    local.tee 4
     global.set $__stack_pointer
-    local.get 3
+    local.get 4
     local.get 1
     i32.store offset=12
-    local.get 3
+    local.get 4
     local.get 2
     i32.store offset=8
+    local.get 4
+    local.get 3
+    i32.store offset=4
     local.get 0
-    local.get 3
+    local.get 4
     i32.load offset=12
-    local.get 3
+    local.get 4
     i32.load offset=8
-    call $std::__2::tuple<int__int>::tuple_abi:v15007_<int&__int&__0>_int&__int&_
+    local.get 4
+    i32.load offset=4
+    call $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int&__int&__int__0>_int&__int&__int&&_
     drop
-    local.get 3
+    local.get 4
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<int__int>::tuple_abi:v15007_<int&__int&__0>_int&__int&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int&__int&__int__0>_int&__int&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 16
+    i32.const 32
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
-    local.get 0
-    i32.store offset=12
-    local.get 3
-    local.get 1
-    i32.store offset=8
-    local.get 3
-    local.get 2
-    i32.store offset=4
-    local.get 3
-    i32.load offset=12
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=28
+    local.get 4
+    local.get 1
+    i32.store offset=24
+    local.get 4
+    local.get 2
+    i32.store offset=20
+    local.get 4
     local.get 3
-    i32.load offset=8
-    local.get 3
-    i32.load offset=4
-    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int&__int&>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&_
+    i32.store offset=16
+    local.get 4
+    i32.load offset=28
+    local.tee 5
+    local.get 4
+    i32.load offset=24
+    local.get 4
+    i32.load offset=20
+    local.get 4
+    i32.load offset=16
+    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int&__int&__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&__int&&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $Board::checkBishopMoves_int__char_ (type 5) (param i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 128
+    i32.const 224
     i32.sub
     local.tee 3
     global.set $__stack_pointer
     local.get 3
     local.get 0
-    i32.store offset=124
+    i32.store offset=220
     local.get 3
     local.get 1
-    i32.store offset=120
+    i32.store offset=216
     local.get 3
     local.get 2
-    i32.store8 offset=119
+    i32.store8 offset=215
     local.get 3
-    i32.load offset=124
+    i32.load offset=220
     local.set 4
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 9
     i32.add
-    i32.store offset=112
+    i32.store offset=208
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=112
+        i32.load offset=208
         i32.const 64
         i32.ge_s
         br_if 0 (;@2;)
         local.get 3
-        i32.load offset=112
+        i32.load offset=208
         i32.const 7
         i32.and
         i32.eqz
@@ -6904,33 +7087,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=112
+          i32.load offset=208
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 104
+            i32.const 0
+            i32.store offset=192
+            local.get 3
+            i32.const 196
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 192
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 104
+            i32.const 196
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -6940,34 +7129,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=112
+            i32.load offset=208
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 96
+            i32.const 4
+            i32.store offset=176
+            local.get 3
+            i32.const 180
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 176
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 96
+            i32.const 180
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -6977,64 +7172,70 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=112
+            i32.load offset=208
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 88
+            i32.const 4
+            i32.store offset=160
+            local.get 3
+            i32.const 164
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 112
+            i32.const 208
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 160
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 88
+            i32.const 164
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=112
+          i32.load offset=208
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           br_if 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=112
+        i32.load offset=208
         i32.const 9
         i32.add
-        i32.store offset=112
+        i32.store offset=208
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 7
     i32.sub
-    i32.store offset=84
+    i32.store offset=156
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=84
+        i32.load offset=156
         i32.const 0
         i32.lt_s
         br_if 0 (;@2;)
         local.get 3
-        i32.load offset=84
+        i32.load offset=156
         i32.const 7
         i32.and
         i32.eqz
@@ -7044,33 +7245,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=84
+          i32.load offset=156
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 76
+            i32.const 0
+            i32.store offset=140
+            local.get 3
+            i32.const 144
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 140
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 76
+            i32.const 144
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -7080,34 +7287,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=84
+            i32.load offset=156
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 68
+            i32.const 4
+            i32.store offset=124
+            local.get 3
+            i32.const 128
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 124
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 68
+            i32.const 128
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -7117,64 +7330,70 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=84
+            i32.load offset=156
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 60
+            i32.const 4
+            i32.store offset=108
+            local.get 3
+            i32.const 112
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 84
+            i32.const 156
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 108
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 60
+            i32.const 112
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=84
+          i32.load offset=156
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           br_if 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=84
+        i32.load offset=156
         i32.const 7
         i32.sub
-        i32.store offset=84
+        i32.store offset=156
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 7
     i32.add
-    i32.store offset=56
+    i32.store offset=104
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=56
+        i32.load offset=104
         i32.const 64
         i32.ge_s
         br_if 0 (;@2;)
         local.get 3
-        i32.load offset=56
+        i32.load offset=104
         i32.const 8
         i32.rem_s
         i32.const 7
@@ -7185,33 +7404,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=56
+          i32.load offset=104
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 48
+            i32.const 0
+            i32.store offset=88
+            local.get 3
+            i32.const 92
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 56
+            i32.const 104
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 88
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 48
+            i32.const 92
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -7221,34 +7446,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=56
+            i32.load offset=104
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 40
+            i32.const 4
+            i32.store offset=72
+            local.get 3
+            i32.const 76
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 56
+            i32.const 104
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 72
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 40
+            i32.const 76
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -7258,64 +7489,70 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=56
+            i32.load offset=104
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
             i32.ge_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 32
+            i32.const 4
+            i32.store offset=56
+            local.get 3
+            i32.const 60
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
+            i32.add
+            local.get 3
+            i32.const 104
             i32.add
             local.get 3
             i32.const 56
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 32
+            i32.const 60
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=56
+          i32.load offset=104
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           br_if 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=56
+        i32.load offset=104
         i32.const 7
         i32.add
-        i32.store offset=56
+        i32.store offset=104
         br 1 (;@1;)
       end
     end
     local.get 3
     local.get 3
-    i32.load offset=120
+    i32.load offset=216
     i32.const 9
     i32.sub
-    i32.store offset=28
+    i32.store offset=52
     loop  ;; label = @1
       block  ;; label = @2
         local.get 3
-        i32.load offset=28
+        i32.load offset=52
         i32.const 0
         i32.lt_s
         br_if 0 (;@2;)
         local.get 3
-        i32.load offset=28
+        i32.load offset=52
         i32.const 8
         i32.rem_s
         i32.const 7
@@ -7326,33 +7563,39 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=28
+          i32.load offset=52
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.eqz
           if  ;; label = @4
             local.get 3
-            i32.const 20
+            i32.const 0
+            i32.store offset=36
+            local.get 3
+            i32.const 40
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 28
+            i32.const 52
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 36
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 20
+            i32.const 40
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 119
@@ -7362,34 +7605,40 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=28
+            i32.load offset=52
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 6
             i32.le_u
             br_if 0 (;@4;)
             local.get 3
-            i32.const 12
+            i32.const 4
+            i32.store offset=20
+            local.get 3
+            i32.const 24
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 28
+            i32.const 52
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 20
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 12
+            i32.const 24
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           block  ;; label = @4
             local.get 3
-            i32.load8_u offset=119
+            i32.load8_u offset=215
             i32.const 255
             i32.and
             i32.const 98
@@ -7399,7 +7648,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=28
+            i32.load offset=52
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
@@ -7407,74 +7656,80 @@
             br_if 0 (;@4;)
             local.get 3
             i32.const 4
+            i32.store offset=4
+            local.get 3
+            i32.const 8
             i32.add
             local.get 3
-            i32.const 120
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 28
+            i32.const 52
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type>_std::__2::make_tuple_abi:v15007_<int&__int&>_int&__int&_
+            local.get 3
+            i32.const 4
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int&__int>_int&__int&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 4
+            i32.const 8
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
             br 2 (;@2;)
           end
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=28
+          i32.load offset=52
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           br_if 1 (;@2;)
         end
         local.get 3
         local.get 3
-        i32.load offset=28
+        i32.load offset=52
         i32.const 9
         i32.sub
-        i32.store offset=28
+        i32.store offset=52
         br 1 (;@1;)
       end
     end
     local.get 3
-    i32.const 128
+    i32.const 224
     i32.add
     global.set $__stack_pointer)
   (func $Board::checkKnightMoves_int__char_ (type 5) (param i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 208
+    i32.const 336
     i32.sub
     local.tee 3
     global.set $__stack_pointer
     local.get 3
     local.get 0
-    i32.store offset=204
+    i32.store offset=332
     local.get 3
     local.get 1
-    i32.store offset=200
+    i32.store offset=328
     local.get 3
     local.get 2
-    i32.store8 offset=199
+    i32.store8 offset=327
     local.get 3
-    i32.load offset=204
+    i32.load offset=332
     local.set 4
     block  ;; label = @1
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 8
       i32.rem_s
       i32.const 7
       i32.ge_s
       br_if 0 (;@1;)
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 15
       i32.sub
       i32.const 0
@@ -7483,7 +7738,7 @@
       block  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 119
@@ -7493,7 +7748,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -7505,7 +7760,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 15
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -7514,32 +7769,461 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.sub
-          i32.store offset=184
+          i32.store offset=308
           local.get 3
-          i32.const 188
+          i32.const 1
+          i32.store offset=304
+          local.get 3
+          i32.const 312
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 308
+          i32.add
+          local.get 3
+          i32.const 304
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 312
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          br 1 (;@2;)
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 98
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 15
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 7
+          i32.ge_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 15
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 15
+          i32.sub
+          i32.store offset=288
+          local.get 3
+          i32.const 1
+          i32.store offset=284
+          local.get 3
+          i32.const 292
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 288
+          i32.add
+          local.get 3
+          i32.const 284
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 292
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+        end
+      end
+    end
+    block  ;; label = @1
+      local.get 3
+      i32.load offset=328
+      i32.const 8
+      i32.rem_s
+      i32.const 0
+      i32.le_s
+      br_if 0 (;@1;)
+      local.get 3
+      i32.load offset=328
+      i32.const 17
+      i32.sub
+      i32.const 0
+      i32.lt_s
+      br_if 0 (;@1;)
+      block  ;; label = @2
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 119
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 17
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 6
+          i32.le_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 17
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 17
+          i32.sub
+          i32.store offset=268
+          local.get 3
+          i32.const 1
+          i32.store offset=264
+          local.get 3
+          i32.const 272
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 268
+          i32.add
+          local.get 3
+          i32.const 264
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 272
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          br 1 (;@2;)
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 98
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 17
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 7
+          i32.ge_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 17
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 17
+          i32.sub
+          i32.store offset=248
+          local.get 3
+          i32.const 1
+          i32.store offset=244
+          local.get 3
+          i32.const 252
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 248
+          i32.add
+          local.get 3
+          i32.const 244
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 252
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+        end
+      end
+    end
+    block  ;; label = @1
+      local.get 3
+      i32.load offset=328
+      i32.const 8
+      i32.rem_s
+      i32.const 6
+      i32.ge_s
+      br_if 0 (;@1;)
+      local.get 3
+      i32.load offset=328
+      i32.const 6
+      i32.sub
+      i32.const 0
+      i32.lt_s
+      br_if 0 (;@1;)
+      block  ;; label = @2
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 119
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 6
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 6
+          i32.le_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 6
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 6
+          i32.sub
+          i32.store offset=228
+          local.get 3
+          i32.const 1
+          i32.store offset=224
+          local.get 3
+          i32.const 232
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 228
+          i32.add
+          local.get 3
+          i32.const 224
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 232
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          br 1 (;@2;)
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 98
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 6
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 7
+          i32.ge_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 6
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 6
+          i32.sub
+          i32.store offset=208
+          local.get 3
+          i32.const 1
+          i32.store offset=204
+          local.get 3
+          i32.const 212
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 208
+          i32.add
+          local.get 3
+          i32.const 204
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
+          i32.add
+          local.get 3
+          i32.const 212
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+        end
+      end
+    end
+    block  ;; label = @1
+      local.get 3
+      i32.load offset=328
+      i32.const 8
+      i32.rem_s
+      i32.const 6
+      i32.ge_s
+      br_if 0 (;@1;)
+      local.get 3
+      i32.load offset=328
+      i32.const 10
+      i32.add
+      i32.const 64
+      i32.ge_s
+      br_if 0 (;@1;)
+      block  ;; label = @2
+        block  ;; label = @3
+          local.get 3
+          i32.load8_u offset=327
+          i32.const 255
+          i32.and
+          i32.const 119
+          i32.ne
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=328
+          i32.const 10
+          i32.add
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          i32.const 6
+          i32.le_u
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=328
+            i32.const 10
+            i32.add
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            br_if 1 (;@3;)
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=328
+          i32.const 10
+          i32.add
+          i32.store offset=188
+          local.get 3
+          i32.const 1
+          i32.store offset=184
+          local.get 3
+          i32.const 192
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 188
           i32.add
           local.get 3
           i32.const 184
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 188
+          i32.const 192
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           br 1 (;@2;)
         end
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 98
@@ -7549,9 +8233,9 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
-          i32.const 15
-          i32.sub
+          i32.load offset=328
+          i32.const 10
+          i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           i32.const 7
@@ -7561,436 +8245,55 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
-            i32.const 15
-            i32.sub
+            i32.load offset=328
+            i32.const 10
+            i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             br_if 1 (;@3;)
           end
           local.get 3
           local.get 3
-          i32.load offset=200
-          i32.const 15
-          i32.sub
-          i32.store offset=172
+          i32.load offset=328
+          i32.const 10
+          i32.add
+          i32.store offset=168
           local.get 3
-          i32.const 176
+          i32.const 1
+          i32.store offset=164
+          local.get 3
+          i32.const 172
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
+          i32.add
+          local.get 3
+          i32.const 168
+          i32.add
+          local.get 3
+          i32.const 164
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+          local.get 4
+          i32.const 4
           i32.add
           local.get 3
           i32.const 172
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 176
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     block  ;; label = @1
       local.get 3
-      i32.load offset=200
-      i32.const 8
-      i32.rem_s
-      i32.const 0
-      i32.le_s
-      br_if 0 (;@1;)
-      local.get 3
-      i32.load offset=200
-      i32.const 17
-      i32.sub
-      i32.const 0
-      i32.lt_s
-      br_if 0 (;@1;)
-      block  ;; label = @2
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 119
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 17
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 6
-          i32.le_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 17
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 17
-          i32.sub
-          i32.store offset=160
-          local.get 3
-          i32.const 164
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 160
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 164
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          br 1 (;@2;)
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 98
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 17
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 7
-          i32.ge_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 17
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 17
-          i32.sub
-          i32.store offset=148
-          local.get 3
-          i32.const 152
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 148
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 152
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-        end
-      end
-    end
-    block  ;; label = @1
-      local.get 3
-      i32.load offset=200
-      i32.const 8
-      i32.rem_s
-      i32.const 6
-      i32.ge_s
-      br_if 0 (;@1;)
-      local.get 3
-      i32.load offset=200
-      i32.const 6
-      i32.sub
-      i32.const 0
-      i32.lt_s
-      br_if 0 (;@1;)
-      block  ;; label = @2
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 119
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 6
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 6
-          i32.le_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 6
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 6
-          i32.sub
-          i32.store offset=136
-          local.get 3
-          i32.const 140
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 136
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 140
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          br 1 (;@2;)
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 98
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 6
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 7
-          i32.ge_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 6
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 6
-          i32.sub
-          i32.store offset=124
-          local.get 3
-          i32.const 128
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 124
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 128
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-        end
-      end
-    end
-    block  ;; label = @1
-      local.get 3
-      i32.load offset=200
-      i32.const 8
-      i32.rem_s
-      i32.const 6
-      i32.ge_s
-      br_if 0 (;@1;)
-      local.get 3
-      i32.load offset=200
-      i32.const 10
-      i32.add
-      i32.const 64
-      i32.ge_s
-      br_if 0 (;@1;)
-      block  ;; label = @2
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 119
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 10
-          i32.add
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 6
-          i32.le_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 10
-            i32.add
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 10
-          i32.add
-          i32.store offset=112
-          local.get 3
-          i32.const 116
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 112
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 116
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          br 1 (;@2;)
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load8_u offset=199
-          i32.const 255
-          i32.and
-          i32.const 98
-          i32.ne
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=200
-          i32.const 10
-          i32.add
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          i32.const 7
-          i32.ge_u
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=200
-            i32.const 10
-            i32.add
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            br_if 1 (;@3;)
-          end
-          local.get 3
-          local.get 3
-          i32.load offset=200
-          i32.const 10
-          i32.add
-          i32.store offset=100
-          local.get 3
-          i32.const 104
-          i32.add
-          local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
-          i32.const 100
-          i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-          local.get 4
-          i32.const 4
-          i32.add
-          local.get 3
-          i32.const 104
-          i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-        end
-      end
-    end
-    block  ;; label = @1
-      local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 8
       i32.rem_s
       i32.const 7
       i32.ge_s
       br_if 0 (;@1;)
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 17
       i32.add
       i32.const 64
@@ -7999,7 +8302,7 @@
       block  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 119
@@ -8009,7 +8312,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 17
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8021,7 +8324,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 17
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8030,32 +8333,38 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 17
           i32.add
-          i32.store offset=88
+          i32.store offset=148
           local.get 3
-          i32.const 92
+          i32.const 1
+          i32.store offset=144
+          local.get 3
+          i32.const 152
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 88
+          i32.const 148
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 144
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 92
+          i32.const 152
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           br 1 (;@2;)
         end
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 98
@@ -8065,7 +8374,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 17
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8077,7 +8386,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 17
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8086,40 +8395,46 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 17
           i32.add
-          i32.store offset=76
+          i32.store offset=128
           local.get 3
-          i32.const 80
+          i32.const 1
+          i32.store offset=124
+          local.get 3
+          i32.const 132
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 76
+          i32.const 128
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 124
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 80
+          i32.const 132
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     block  ;; label = @1
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 8
       i32.rem_s
       i32.const 0
       i32.le_s
       br_if 0 (;@1;)
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 15
       i32.add
       i32.const 64
@@ -8128,7 +8443,7 @@
       block  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 119
@@ -8138,7 +8453,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8150,7 +8465,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 15
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8159,32 +8474,38 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.add
-          i32.store offset=64
+          i32.store offset=108
           local.get 3
-          i32.const 68
+          i32.const 1
+          i32.store offset=104
+          local.get 3
+          i32.const 112
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const -64
-          i32.sub
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          i32.const 108
+          i32.add
+          local.get 3
+          i32.const 104
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 68
+          i32.const 112
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           br 1 (;@2;)
         end
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 98
@@ -8194,7 +8515,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8206,7 +8527,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 15
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8215,40 +8536,46 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 15
           i32.add
-          i32.store offset=52
+          i32.store offset=88
           local.get 3
-          i32.const 56
+          i32.const 1
+          i32.store offset=84
+          local.get 3
+          i32.const 92
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 52
+          i32.const 88
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 84
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 56
+          i32.const 92
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     block  ;; label = @1
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 8
       i32.rem_s
       i32.const 1
       i32.le_s
       br_if 0 (;@1;)
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 10
       i32.sub
       i32.const 0
@@ -8257,7 +8584,7 @@
       block  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 119
@@ -8267,7 +8594,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 10
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8279,7 +8606,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 10
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8288,32 +8615,38 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 10
           i32.sub
-          i32.store offset=40
+          i32.store offset=68
           local.get 3
-          i32.const 44
+          i32.const 1
+          i32.store offset=64
+          local.get 3
+          i32.const 72
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 40
+          i32.const 68
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const -64
+          i32.sub
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 44
+          i32.const 72
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           br 1 (;@2;)
         end
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 98
@@ -8323,7 +8656,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 10
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8335,7 +8668,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 10
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8344,40 +8677,46 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 10
           i32.sub
-          i32.store offset=28
+          i32.store offset=48
           local.get 3
-          i32.const 32
+          i32.const 1
+          i32.store offset=44
+          local.get 3
+          i32.const 52
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 28
+          i32.const 48
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 44
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 32
+          i32.const 52
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     block  ;; label = @1
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 8
       i32.rem_s
       i32.const 1
       i32.le_s
       br_if 0 (;@1;)
       local.get 3
-      i32.load offset=200
+      i32.load offset=328
       i32.const 6
       i32.add
       i32.const 64
@@ -8386,7 +8725,7 @@
       block  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 119
@@ -8396,7 +8735,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 6
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8408,7 +8747,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 6
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8417,32 +8756,38 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 6
           i32.add
-          i32.store offset=16
+          i32.store offset=28
           local.get 3
-          i32.const 20
+          i32.const 1
+          i32.store offset=24
+          local.get 3
+          i32.const 32
           i32.add
           local.get 3
-          i32.const 200
+          i32.const 328
           i32.add
           local.get 3
-          i32.const 16
+          i32.const 28
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          local.get 3
+          i32.const 24
+          i32.add
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 20
+          i32.const 32
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           br 1 (;@2;)
         end
         block  ;; label = @3
           local.get 3
-          i32.load8_u offset=199
+          i32.load8_u offset=327
           i32.const 255
           i32.and
           i32.const 98
@@ -8452,7 +8797,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 6
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8464,7 +8809,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=200
+            i32.load offset=328
             i32.const 6
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8473,72 +8818,78 @@
           end
           local.get 3
           local.get 3
-          i32.load offset=200
+          i32.load offset=328
           i32.const 6
           i32.add
+          i32.store offset=8
+          local.get 3
+          i32.const 1
           i32.store offset=4
+          local.get 3
+          i32.const 12
+          i32.add
+          local.get 3
+          i32.const 328
+          i32.add
           local.get 3
           i32.const 8
           i32.add
           local.get 3
-          i32.const 200
-          i32.add
-          local.get 3
           i32.const 4
           i32.add
-          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+          call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
           local.get 4
           i32.const 4
           i32.add
           local.get 3
-          i32.const 8
+          i32.const 12
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
         end
       end
     end
     local.get 3
-    i32.const 208
+    i32.const 336
     i32.add
     global.set $__stack_pointer)
   (func $Board::checkKingMoves_int__char_ (type 5) (param i32 i32 i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
-    i32.const 272
+    i32.const 432
     i32.sub
     local.tee 3
     global.set $__stack_pointer
     local.get 3
     local.get 0
-    i32.store offset=268
+    i32.store offset=428
     local.get 3
     local.get 1
-    i32.store offset=264
+    i32.store offset=424
     local.get 3
     local.get 2
-    i32.store8 offset=263
+    i32.store8 offset=423
     local.get 3
     local.get 3
-    i32.load offset=268
+    i32.load offset=428
     local.tee 4
     i32.const 60
     i32.add
     local.get 3
-    i32.load offset=264
+    i32.load offset=424
     call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
     i32.load
-    i32.store offset=256
+    i32.store offset=416
     local.get 4
     i32.const 60
     i32.add
     local.get 3
-    i32.load offset=264
+    i32.load offset=424
     call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
     i32.const 0
     i32.store
     block  ;; label = @1
       local.get 3
-      i32.load8_u offset=263
+      i32.load8_u offset=423
       i32.const 255
       i32.and
       i32.const 119
@@ -8546,13 +8897,13 @@
       if  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.and
           i32.eqz
           br_if 0 (;@3;)
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           i32.const 0
@@ -8562,7 +8913,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8572,7 +8923,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8583,11 +8934,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8596,39 +8947,45 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.sub
-            i32.store offset=244
+            i32.store offset=400
             local.get 3
-            i32.const 248
+            i32.const 0
+            i32.store offset=396
+            local.get 3
+            i32.const 404
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 244
+            i32.const 400
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 396
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 248
+            i32.const 404
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.rem_s
           i32.const 7
           i32.eq
           br_if 0 (;@3;)
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.sub
           i32.const 0
@@ -8638,7 +8995,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8648,7 +9005,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 7
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8659,11 +9016,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8672,32 +9029,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 7
             i32.sub
-            i32.store offset=232
+            i32.store offset=380
             local.get 3
-            i32.const 236
+            i32.const 0
+            i32.store offset=376
+            local.get 3
+            i32.const 384
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 232
+            i32.const 380
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 376
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 236
+            i32.const 384
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.sub
           i32.const 0
@@ -8707,7 +9070,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8717,7 +9080,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 8
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8728,11 +9091,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8741,38 +9104,44 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 8
             i32.sub
-            i32.store offset=220
+            i32.store offset=360
             local.get 3
-            i32.const 224
+            i32.const 0
+            i32.store offset=356
+            local.get 3
+            i32.const 364
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 220
+            i32.const 360
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 356
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 224
+            i32.const 364
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.and
           i32.eqz
           br_if 0 (;@3;)
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.add
           i32.const 64
@@ -8782,7 +9151,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8792,7 +9161,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 7
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8803,11 +9172,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.add
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8816,39 +9185,45 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 7
             i32.add
-            i32.store offset=208
+            i32.store offset=340
             local.get 3
-            i32.const 212
+            i32.const 0
+            i32.store offset=336
+            local.get 3
+            i32.const 344
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 208
+            i32.const 340
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 336
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 212
+            i32.const 344
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.rem_s
           i32.const 7
           i32.eq
           br_if 0 (;@3;)
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.add
           i32.const 64
@@ -8858,7 +9233,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8868,7 +9243,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8879,11 +9254,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.add
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8892,32 +9267,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.add
-            i32.store offset=196
+            i32.store offset=320
             local.get 3
-            i32.const 200
+            i32.const 0
+            i32.store offset=316
+            local.get 3
+            i32.const 324
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 196
+            i32.const 320
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 316
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 200
+            i32.const 324
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.add
           i32.const 64
@@ -8927,7 +9308,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8937,7 +9318,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 8
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -8948,11 +9329,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.add
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -8961,32 +9342,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 8
             i32.add
-            i32.store offset=184
+            i32.store offset=300
             local.get 3
-            i32.const 188
+            i32.const 0
+            i32.store offset=296
+            local.get 3
+            i32.const 304
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 184
+            i32.const 300
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 296
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 188
+            i32.const 304
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.rem_s
           i32.const 7
@@ -8996,7 +9383,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 1
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9006,7 +9393,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 1
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9017,11 +9404,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 1
           i32.add
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9030,32 +9417,38 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 1
             i32.add
-            i32.store offset=172
+            i32.store offset=280
             local.get 3
-            i32.const 176
+            i32.const 0
+            i32.store offset=276
+            local.get 3
+            i32.const 284
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
-            i32.const 172
+            i32.const 280
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 276
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 176
+            i32.const 284
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.and
           i32.eqz
@@ -9064,7 +9457,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 1
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9074,7 +9467,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 1
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9085,11 +9478,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 1
           i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9098,27 +9491,33 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 1
             i32.sub
-            i32.store offset=160
+            i32.store offset=260
             local.get 3
-            i32.const 164
-            i32.add
+            i32.const 0
+            i32.store offset=256
             local.get 3
             i32.const 264
             i32.add
             local.get 3
-            i32.const 160
+            i32.const 424
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 260
+            i32.add
+            local.get 3
+            i32.const 256
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 164
+            i32.const 264
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         local.get 4
@@ -9157,7 +9556,7 @@
             local.get 4
             i32.const 57
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9166,7 +9565,7 @@
             local.get 4
             i32.const 58
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9175,7 +9574,7 @@
             local.get 4
             i32.const 59
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9184,7 +9583,7 @@
             local.get 4
             i32.const 60
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9192,27 +9591,33 @@
             br_if 0 (;@4;)
             local.get 3
             i32.const 60
-            i32.store offset=148
+            i32.store offset=240
             local.get 3
             i32.const 58
-            i32.store offset=144
+            i32.store offset=236
             local.get 3
-            i32.const 152
+            i32.const 2
+            i32.store offset=232
+            local.get 3
+            i32.const 244
             i32.add
             local.get 3
-            i32.const 148
+            i32.const 240
             i32.add
             local.get 3
-            i32.const 144
+            i32.const 236
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int>_int&&__int&&_
+            local.get 3
+            i32.const 232
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int__int>_int&&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 152
+            i32.const 244
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
           block  ;; label = @4
             local.get 4
@@ -9237,7 +9642,7 @@
             local.get 4
             i32.const 60
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9246,7 +9651,7 @@
             local.get 4
             i32.const 61
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9255,7 +9660,7 @@
             local.get 4
             i32.const 62
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9263,33 +9668,39 @@
             br_if 0 (;@4;)
             local.get 3
             i32.const 60
-            i32.store offset=132
+            i32.store offset=216
             local.get 3
             i32.const 62
-            i32.store offset=128
+            i32.store offset=212
             local.get 3
-            i32.const 136
+            i32.const 4
+            i32.store offset=208
+            local.get 3
+            i32.const 220
             i32.add
             local.get 3
-            i32.const 132
+            i32.const 216
             i32.add
             local.get 3
-            i32.const 128
+            i32.const 212
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int>_int&&__int&&_
+            local.get 3
+            i32.const 208
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int__int>_int&&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 136
+            i32.const 220
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         br 1 (;@1;)
       end
       local.get 3
-      i32.load8_u offset=263
+      i32.load8_u offset=423
       i32.const 255
       i32.and
       i32.const 98
@@ -9297,13 +9708,13 @@
       if  ;; label = @2
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 7
           i32.and
           i32.eqz
           br_if 0 (;@3;)
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           i32.const 0
@@ -9313,7 +9724,7 @@
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9323,7 +9734,7 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
@@ -9334,11 +9745,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 9
           i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9347,51 +9758,370 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 9
             i32.sub
-            i32.store offset=116
+            i32.store offset=192
             local.get 3
-            i32.const 120
+            i32.const 0
+            i32.store offset=188
+            local.get 3
+            i32.const 196
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 192
+            i32.add
+            local.get 3
+            i32.const 188
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
+            i32.add
+            local.get 3
+            i32.const 196
+            i32.add
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          end
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load offset=424
+          i32.const 8
+          i32.rem_s
+          i32.const 7
+          i32.eq
+          br_if 0 (;@3;)
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.sub
+          i32.const 0
+          i32.lt_s
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=424
+            i32.const 7
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.const 7
+            i32.ge_u
+            br_if 1 (;@3;)
+          end
+          local.get 4
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.sub
+          local.get 3
+          i32.load8_u offset=423
+          i32.extend8_s
+          call $Board::checkForChecks_int__char_
+          i32.const 1
+          i32.and
+          i32.eqz
+          if  ;; label = @4
+            local.get 3
+            local.get 3
+            i32.load offset=424
+            i32.const 7
+            i32.sub
+            i32.store offset=172
+            local.get 3
+            i32.const 0
+            i32.store offset=168
+            local.get 3
+            i32.const 176
+            i32.add
+            local.get 3
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 172
+            i32.add
+            local.get 3
+            i32.const 168
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
+            i32.add
+            local.get 3
+            i32.const 176
+            i32.add
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          end
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load offset=424
+          i32.const 8
+          i32.sub
+          i32.const 0
+          i32.lt_s
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=424
+          i32.const 8
+          i32.sub
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=424
+            i32.const 8
+            i32.sub
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.const 7
+            i32.ge_u
+            br_if 1 (;@3;)
+          end
+          local.get 4
+          local.get 3
+          i32.load offset=424
+          i32.const 8
+          i32.sub
+          local.get 3
+          i32.load8_u offset=423
+          i32.extend8_s
+          call $Board::checkForChecks_int__char_
+          i32.const 1
+          i32.and
+          i32.eqz
+          if  ;; label = @4
+            local.get 3
+            local.get 3
+            i32.load offset=424
+            i32.const 8
+            i32.sub
+            i32.store offset=152
+            local.get 3
+            i32.const 0
+            i32.store offset=148
+            local.get 3
+            i32.const 156
+            i32.add
+            local.get 3
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 152
+            i32.add
+            local.get 3
+            i32.const 148
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
+            i32.add
+            local.get 3
+            i32.const 156
+            i32.add
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          end
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.and
+          i32.eqz
+          br_if 0 (;@3;)
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.add
+          i32.const 64
+          i32.ge_s
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.add
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=424
+            i32.const 7
+            i32.add
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.const 7
+            i32.ge_u
+            br_if 1 (;@3;)
+          end
+          local.get 4
+          local.get 3
+          i32.load offset=424
+          i32.const 7
+          i32.add
+          local.get 3
+          i32.load8_u offset=423
+          i32.extend8_s
+          call $Board::checkForChecks_int__char_
+          i32.const 1
+          i32.and
+          i32.eqz
+          if  ;; label = @4
+            local.get 3
+            local.get 3
+            i32.load offset=424
+            i32.const 7
+            i32.add
+            i32.store offset=132
+            local.get 3
+            i32.const 0
+            i32.store offset=128
+            local.get 3
+            i32.const 136
+            i32.add
+            local.get 3
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 132
+            i32.add
+            local.get 3
+            i32.const 128
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
+            i32.add
+            local.get 3
+            i32.const 136
+            i32.add
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+          end
+        end
+        block  ;; label = @3
+          local.get 3
+          i32.load offset=424
+          i32.const 8
+          i32.rem_s
+          i32.const 7
+          i32.eq
+          br_if 0 (;@3;)
+          local.get 3
+          i32.load offset=424
+          i32.const 9
+          i32.add
+          i32.const 64
+          i32.ge_s
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 60
+          i32.add
+          local.get 3
+          i32.load offset=424
+          i32.const 9
+          i32.add
+          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+          i32.load
+          if  ;; label = @4
+            local.get 4
+            i32.const 60
+            i32.add
+            local.get 3
+            i32.load offset=424
+            i32.const 9
+            i32.add
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.const 7
+            i32.ge_u
+            br_if 1 (;@3;)
+          end
+          local.get 4
+          local.get 3
+          i32.load offset=424
+          i32.const 9
+          i32.add
+          local.get 3
+          i32.load8_u offset=423
+          i32.extend8_s
+          call $Board::checkForChecks_int__char_
+          i32.const 1
+          i32.and
+          i32.eqz
+          if  ;; label = @4
+            local.get 3
+            local.get 3
+            i32.load offset=424
+            i32.const 9
+            i32.add
+            i32.store offset=112
+            local.get 3
+            i32.const 0
+            i32.store offset=108
+            local.get 3
+            i32.const 116
+            i32.add
+            local.get 3
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 112
+            i32.add
+            local.get 3
+            i32.const 108
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
             i32.add
             local.get 3
             i32.const 116
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 120
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
-          i32.rem_s
-          i32.const 7
-          i32.eq
-          br_if 0 (;@3;)
-          local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.sub
-          i32.const 0
-          i32.lt_s
+          i32.add
+          i32.const 64
+          i32.ge_s
           br_if 0 (;@3;)
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.sub
+          i32.load offset=424
+          i32.const 8
+          i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           if  ;; label = @4
@@ -9399,9 +10129,9 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
-            i32.const 7
-            i32.sub
+            i32.load offset=424
+            i32.const 8
+            i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
@@ -9410,80 +10140,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.sub
-          local.get 3
-          i32.load8_u offset=263
-          i32.extend8_s
-          call $Board::checkForChecks_int__char_
-          i32.const 1
-          i32.and
-          i32.eqz
-          if  ;; label = @4
-            local.get 3
-            local.get 3
-            i32.load offset=264
-            i32.const 7
-            i32.sub
-            i32.store offset=104
-            local.get 3
-            i32.const 108
-            i32.add
-            local.get 3
-            i32.const 264
-            i32.add
-            local.get 3
-            i32.const 104
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 108
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          end
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
-          i32.sub
-          i32.const 0
-          i32.lt_s
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=264
-            i32.const 8
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.const 7
-            i32.ge_u
-            br_if 1 (;@3;)
-          end
-          local.get 4
-          local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.sub
-          local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9492,125 +10153,49 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
+            i32.load offset=424
             i32.const 8
-            i32.sub
+            i32.add
             i32.store offset=92
+            local.get 3
+            i32.const 0
+            i32.store offset=88
             local.get 3
             i32.const 96
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
             i32.add
             local.get 3
             i32.const 92
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            local.get 3
+            i32.const 88
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
             i32.const 96
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.and
-          i32.eqz
-          br_if 0 (;@3;)
-          local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.add
-          i32.const 64
-          i32.ge_s
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.add
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=264
-            i32.const 7
-            i32.add
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.const 7
-            i32.ge_u
-            br_if 1 (;@3;)
-          end
-          local.get 4
-          local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.add
-          local.get 3
-          i32.load8_u offset=263
-          i32.extend8_s
-          call $Board::checkForChecks_int__char_
-          i32.const 1
-          i32.and
-          i32.eqz
-          if  ;; label = @4
-            local.get 3
-            local.get 3
-            i32.load offset=264
-            i32.const 7
-            i32.add
-            i32.store offset=80
-            local.get 3
-            i32.const 84
-            i32.add
-            local.get 3
-            i32.const 264
-            i32.add
-            local.get 3
-            i32.const 80
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 84
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          end
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load offset=264
+          i32.load offset=424
           i32.const 8
           i32.rem_s
           i32.const 7
           i32.eq
           br_if 0 (;@3;)
-          local.get 3
-          i32.load offset=264
-          i32.const 9
-          i32.add
-          i32.const 64
-          i32.ge_s
-          br_if 0 (;@3;)
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
-          i32.const 9
+          i32.load offset=424
+          i32.const 1
           i32.add
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
@@ -9619,8 +10204,8 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
-            i32.const 9
+            i32.load offset=424
+            i32.const 1
             i32.add
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
@@ -9630,11 +10215,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
-          i32.const 9
+          i32.load offset=424
+          i32.const 1
           i32.add
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9643,44 +10228,49 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
-            i32.const 9
+            i32.load offset=424
+            i32.const 1
             i32.add
+            i32.store offset=72
+            local.get 3
+            i32.const 0
             i32.store offset=68
             local.get 3
-            i32.const 72
+            i32.const 76
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 72
             i32.add
             local.get 3
             i32.const 68
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 72
+            i32.const 76
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         block  ;; label = @3
           local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.add
-          i32.const 64
-          i32.ge_s
+          i32.load offset=424
+          i32.const 7
+          i32.and
+          i32.eqz
           br_if 0 (;@3;)
           local.get 4
           i32.const 60
           i32.add
           local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.add
+          i32.load offset=424
+          i32.const 1
+          i32.sub
           call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
           i32.load
           if  ;; label = @4
@@ -9688,9 +10278,9 @@
             i32.const 60
             i32.add
             local.get 3
-            i32.load offset=264
-            i32.const 8
-            i32.add
+            i32.load offset=424
+            i32.const 1
+            i32.sub
             call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
             i32.load
             i32.const 7
@@ -9699,11 +10289,11 @@
           end
           local.get 4
           local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.add
+          i32.load offset=424
+          i32.const 1
+          i32.sub
           local.get 3
-          i32.load8_u offset=263
+          i32.load8_u offset=423
           i32.extend8_s
           call $Board::checkForChecks_int__char_
           i32.const 1
@@ -9712,164 +10302,33 @@
           if  ;; label = @4
             local.get 3
             local.get 3
-            i32.load offset=264
-            i32.const 8
-            i32.add
-            i32.store offset=56
+            i32.load offset=424
+            i32.const 1
+            i32.sub
+            i32.store offset=52
             local.get 3
-            i32.const 60
+            i32.const 0
+            i32.store offset=48
+            local.get 3
+            i32.const 56
             i32.add
             local.get 3
-            i32.const 264
+            i32.const 424
+            i32.add
+            local.get 3
+            i32.const 52
+            i32.add
+            local.get 3
+            i32.const 48
+            i32.add
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int__int>_int&__int&&__int&&_
+            local.get 4
+            i32.const 4
             i32.add
             local.get 3
             i32.const 56
             i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 60
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          end
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load offset=264
-          i32.const 8
-          i32.rem_s
-          i32.const 7
-          i32.eq
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=264
-          i32.const 1
-          i32.add
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=264
-            i32.const 1
-            i32.add
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.const 7
-            i32.ge_u
-            br_if 1 (;@3;)
-          end
-          local.get 4
-          local.get 3
-          i32.load offset=264
-          i32.const 1
-          i32.add
-          local.get 3
-          i32.load8_u offset=263
-          i32.extend8_s
-          call $Board::checkForChecks_int__char_
-          i32.const 1
-          i32.and
-          i32.eqz
-          if  ;; label = @4
-            local.get 3
-            local.get 3
-            i32.load offset=264
-            i32.const 1
-            i32.add
-            i32.store offset=44
-            local.get 3
-            i32.const 48
-            i32.add
-            local.get 3
-            i32.const 264
-            i32.add
-            local.get 3
-            i32.const 44
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 48
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
-          end
-        end
-        block  ;; label = @3
-          local.get 3
-          i32.load offset=264
-          i32.const 7
-          i32.and
-          i32.eqz
-          br_if 0 (;@3;)
-          local.get 4
-          i32.const 60
-          i32.add
-          local.get 3
-          i32.load offset=264
-          i32.const 1
-          i32.sub
-          call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-          i32.load
-          if  ;; label = @4
-            local.get 4
-            i32.const 60
-            i32.add
-            local.get 3
-            i32.load offset=264
-            i32.const 1
-            i32.sub
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.const 7
-            i32.ge_u
-            br_if 1 (;@3;)
-          end
-          local.get 4
-          local.get 3
-          i32.load offset=264
-          i32.const 1
-          i32.sub
-          local.get 3
-          i32.load8_u offset=263
-          i32.extend8_s
-          call $Board::checkForChecks_int__char_
-          i32.const 1
-          i32.and
-          i32.eqz
-          if  ;; label = @4
-            local.get 3
-            local.get 3
-            i32.load offset=264
-            i32.const 1
-            i32.sub
-            i32.store offset=32
-            local.get 3
-            i32.const 36
-            i32.add
-            local.get 3
-            i32.const 264
-            i32.add
-            local.get 3
-            i32.const 32
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int&>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int&__int>_int&__int&&_
-            local.get 4
-            i32.const 4
-            i32.add
-            local.get 3
-            i32.const 36
-            i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
         local.get 4
@@ -9908,7 +10367,7 @@
             local.get 4
             i32.const 1
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9917,7 +10376,7 @@
             local.get 4
             i32.const 2
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9926,7 +10385,7 @@
             local.get 4
             i32.const 3
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9935,7 +10394,7 @@
             local.get 4
             i32.const 4
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9943,27 +10402,33 @@
             br_if 0 (;@4;)
             local.get 3
             i32.const 4
-            i32.store offset=20
+            i32.store offset=32
             local.get 3
             i32.const 2
-            i32.store offset=16
+            i32.store offset=28
+            local.get 3
+            i32.const 2
+            i32.store offset=24
+            local.get 3
+            i32.const 36
+            i32.add
+            local.get 3
+            i32.const 32
+            i32.add
+            local.get 3
+            i32.const 28
+            i32.add
             local.get 3
             i32.const 24
             i32.add
-            local.get 3
-            i32.const 20
-            i32.add
-            local.get 3
-            i32.const 16
-            i32.add
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int>_int&&__int&&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int__int>_int&&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 24
+            i32.const 36
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
           block  ;; label = @4
             local.get 4
@@ -9988,7 +10453,7 @@
             local.get 4
             i32.const 4
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -9997,7 +10462,7 @@
             local.get 4
             i32.const 5
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -10006,7 +10471,7 @@
             local.get 4
             i32.const 6
             local.get 3
-            i32.load8_u offset=263
+            i32.load8_u offset=423
             i32.extend8_s
             call $Board::checkForChecks_int__char_
             i32.const 1
@@ -10014,10 +10479,16 @@
             br_if 0 (;@4;)
             local.get 3
             i32.const 4
+            i32.store offset=8
+            local.get 3
+            i32.const 6
             i32.store offset=4
             local.get 3
-            i32.const 6
+            i32.const 4
             i32.store
+            local.get 3
+            i32.const 12
+            i32.add
             local.get 3
             i32.const 8
             i32.add
@@ -10025,87 +10496,97 @@
             i32.const 4
             i32.add
             local.get 3
-            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int>_int&&__int&&_
+            call $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int__int>_int&&__int&&__int&&_
             local.get 4
             i32.const 4
             i32.add
             local.get 3
-            i32.const 8
+            i32.const 12
             i32.add
-            call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int>&&_
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
           end
         end
       end
     end
     local.get 3
-    i32.load offset=256
+    i32.load offset=416
     local.set 5
     local.get 4
     i32.const 60
     i32.add
     local.get 3
-    i32.load offset=264
+    i32.load offset=424
     call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
     local.get 5
     i32.store
     local.get 3
-    i32.const 272
+    i32.const 432
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int>_int&&__int&&_ (type 5) (param i32 i32 i32)
+  (func $std::__2::tuple<std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type__std::__2::__unwrap_ref_decay<int>::type>_std::__2::make_tuple_abi:v15007_<int__int__int>_int&&__int&&__int&&_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 3
+    local.tee 4
     global.set $__stack_pointer
-    local.get 3
+    local.get 4
     local.get 1
     i32.store offset=12
-    local.get 3
+    local.get 4
     local.get 2
     i32.store offset=8
+    local.get 4
+    local.get 3
+    i32.store offset=4
     local.get 0
-    local.get 3
+    local.get 4
     i32.load offset=12
-    local.get 3
+    local.get 4
     i32.load offset=8
-    call $std::__2::tuple<int__int>::tuple_abi:v15007_<int__int__0>_int&&__int&&_
+    local.get 4
+    i32.load offset=4
+    call $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int__int__int__0>_int&&__int&&__int&&_
     drop
-    local.get 3
+    local.get 4
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<int__int>::tuple_abi:v15007_<int__int__0>_int&&__int&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>::tuple_abi:v15007_<int__int__int__0>_int&&__int&&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 16
+    i32.const 32
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
-    local.get 0
-    i32.store offset=12
-    local.get 3
-    local.get 1
-    i32.store offset=8
-    local.get 3
-    local.get 2
-    i32.store offset=4
-    local.get 3
-    i32.load offset=12
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=28
+    local.get 4
+    local.get 1
+    i32.store offset=24
+    local.get 4
+    local.get 2
+    i32.store offset=20
+    local.get 4
     local.get 3
-    i32.load offset=8
-    local.get 3
-    i32.load offset=4
-    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int__int>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&&__int&&_
+    i32.store offset=16
+    local.get 4
+    i32.load offset=28
+    local.tee 5
+    local.get 4
+    i32.load offset=24
+    local.get 4
+    i32.load offset=20
+    local.get 4
+    i32.load offset=16
+    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int__int__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&&__int&&__int&&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $Board::genAllValidMoves_char_ (type 5) (param i32 i32 i32)
     (local i32 i32 i32 i32 i32)
     global.get $__stack_pointer
@@ -10192,7 +10673,7 @@
     local.get 4
     i32.const 4
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::clear_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::clear_abi:v15007___
     block  ;; label = @1
       local.get 4
       i32.load8_u
@@ -10316,7 +10797,7 @@
       local.get 4
       i32.const 4
       i32.add
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
       i32.lt_u
       if  ;; label = @2
         local.get 3
@@ -10325,8 +10806,8 @@
         i32.add
         local.get 3
         i32.load offset=36
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::operator___abi:v15007__unsigned_long_
-        call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+        call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
         i32.load
         i32.store offset=32
         local.get 3
@@ -10335,8 +10816,8 @@
         i32.add
         local.get 3
         i32.load offset=36
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::operator___abi:v15007__unsigned_long_
-        call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+        call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
         i32.load
         i32.store offset=28
         local.get 3
@@ -10432,7 +10913,7 @@
           local.get 4
           i32.const 4
           i32.add
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007___
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007___
           i32.store offset=8
           local.get 3
           local.get 3
@@ -10440,7 +10921,7 @@
           i32.add
           local.get 3
           i32.load offset=36
-          call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator+_abi:v15007__long__const
+          call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator+_abi:v15007__long__const
           i32.store offset=12
           local.get 3
           i32.const 16
@@ -10449,7 +10930,7 @@
           i32.const 12
           i32.add
           i32.const 0
-          call $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::__wrap_iter_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::enable_if<is_convertible<std::__2::tuple<int__int>*__std::__2::tuple<int__int>_const*>::value__void>::type*_
+          call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::__wrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::enable_if<is_convertible<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>_const*>::value__void>::type*_
           drop
           local.get 3
           local.get 4
@@ -10457,7 +10938,7 @@
           i32.add
           local.get 3
           i32.load offset=16
-          call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::erase_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::erase_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_
           i32.store offset=4
           local.get 3
           local.get 3
@@ -10503,7 +10984,7 @@
     local.get 4
     i32.const 4
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>_const&_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_const&_
     drop
     local.get 3
     i32.const -64
@@ -10723,7 +11204,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::operator___abi:v15007__unsigned_long_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_ (type 1) (param i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -10739,10 +11220,10 @@
     i32.load
     local.get 2
     i32.load offset=8
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator+_abi:v15007__long__const (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator+_abi:v15007__long__const (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -10765,7 +11246,7 @@
     i32.add
     local.get 2
     i32.load offset=4
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator+=_abi:v15007__long_
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator+=_abi:v15007__long_
     drop
     local.get 2
     i32.load offset=12
@@ -10775,7 +11256,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::__wrap_iter_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::enable_if<is_convertible<std::__2::tuple<int__int>*__std::__2::tuple<int__int>_const*>::value__void>::type*_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::__wrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::enable_if<is_convertible<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>_const*>::value__void>::type*_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -10796,14 +11277,14 @@
     local.tee 4
     local.get 3
     i32.load offset=8
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     i32.store
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::erase_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::erase_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_ (type 1) (param i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -10820,7 +11301,7 @@
     local.get 2
     i32.load offset=20
     local.tee 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::cbegin_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::cbegin_abi:v15007____const
     i32.store offset=12
     local.get 2
     local.get 2
@@ -10829,41 +11310,41 @@
     local.get 2
     i32.const 12
     i32.add
-    call $decltype_fp.base___-_fp0.base____std::__2::operator-_abi:v15007_<std::__2::tuple<int__int>_const*__std::__2::tuple<int__int>_const*>_std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_const&_
+    call $decltype_fp.base___-_fp0.base____std::__2::operator-_abi:v15007_<std::__2::tuple<int__int__int>_const*__std::__2::tuple<int__int__int>_const*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_const&_
     i32.store offset=16
     local.get 2
     local.get 3
     i32.load
     local.get 2
     i32.load offset=16
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     i32.store offset=8
     local.get 3
     local.get 2
     i32.load offset=8
-    i32.const 8
+    i32.const 12
     i32.add
     local.get 3
     i32.load offset=4
     local.get 2
     i32.load offset=8
-    call $std::__2::tuple<int__int>*_std::__2::move_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::move_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 3
     local.get 2
     i32.load offset=8
-    i32.const 8
+    i32.const 12
     i32.sub
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 2
     i32.const 28
     i32.add
     local.get 3
     local.get 2
     i32.load offset=8
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>*_
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>*_
     drop
     local.get 2
     i32.load offset=28
@@ -10873,7 +11354,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>_const&_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_const&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 48
@@ -10902,8 +11383,8 @@
     i32.store offset=32
     local.get 2
     i32.load offset=36
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007____const
-    call $std::__2::allocator<std::__2::tuple<int__int>>_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::select_on_container_copy_construction_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void__void>_std::__2::allocator<std::__2::tuple<int__int>>_const&_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007____const
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::select_on_container_copy_construction_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void__void>_std::__2::allocator<std::__2::tuple<int__int__int>>_const&_
     local.get 3
     i32.const 8
     i32.add
@@ -10913,26 +11394,26 @@
     local.get 2
     i32.const 31
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int>>>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int>>&&_
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int__int>>>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int__int>>&&_
     drop
     local.get 2
     i32.const 16
     i32.add
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&_
     drop
     local.get 2
     i32.const 20
     i32.add
     local.get 2
     i32.load offset=16
-    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>_std::__2::__make_transaction_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector_
+    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>_std::__2::__make_transaction_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector_
     local.get 3
-    call $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_
+    call $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
     local.get 2
     local.get 2
     i32.load offset=36
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
     i32.store offset=12
     local.get 2
     i32.load offset=12
@@ -10940,7 +11421,7 @@
       local.get 3
       local.get 2
       i32.load offset=12
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__vallocate_abi:v15007__unsigned_long_
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__vallocate_abi:v15007__unsigned_long_
       local.get 3
       local.get 2
       i32.load offset=36
@@ -10950,16 +11431,16 @@
       i32.load offset=4
       local.get 2
       i32.load offset=12
-      call $std::__2::enable_if<__is_cpp17_forward_iterator<std::__2::tuple<int__int>*>::value__void>::type_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__construct_at_end<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__unsigned_long_
+      call $std::__2::enable_if<__is_cpp17_forward_iterator<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__construct_at_end<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__unsigned_long_
     end
     local.get 2
     i32.const 20
     i32.add
-    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::__complete_abi:v15007___
+    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::__complete_abi:v15007___
     local.get 2
     i32.const 20
     i32.add
-    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::~__transaction_abi:v15007___
+    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::~__transaction_abi:v15007___
     drop
     local.get 2
     i32.load offset=44
@@ -10969,7 +11450,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::cbegin_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::cbegin_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -10982,7 +11463,7 @@
     local.get 1
     local.get 1
     i32.load offset=8
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007____const
     i32.store offset=12
     local.get 1
     i32.load offset=12
@@ -10992,7 +11473,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $decltype_fp.base___-_fp0.base____std::__2::operator-_abi:v15007_<std::__2::tuple<int__int>_const*__std::__2::tuple<int__int>_const*>_std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>_const&_ (type 1) (param i32 i32) (result i32)
+  (func $decltype_fp.base___-_fp0.base____std::__2::operator-_abi:v15007_<std::__2::tuple<int__int__int>_const*__std::__2::tuple<int__int__int>_const*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>_const&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11007,20 +11488,20 @@
     i32.store offset=8
     local.get 2
     i32.load offset=12
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::base_abi:v15007____const
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::base_abi:v15007____const
     local.get 2
     i32.load offset=8
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::base_abi:v15007____const
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::base_abi:v15007____const
     i32.sub
-    i32.const 3
-    i32.shr_s
+    i32.const 12
+    i32.div_s
     local.set 3
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::tuple<int__int>*_std::__2::move_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>*_std::__2::move_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -11045,7 +11526,7 @@
     i32.load offset=24
     local.get 3
     i32.load offset=20
-    call $std::__2::enable_if<is_copy_constructible<std::__2::tuple<int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int>*>::value__std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $std::__2::enable_if<is_copy_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int__int>*>::value__std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     local.get 3
     i32.load offset=16
     local.set 4
@@ -11054,7 +11535,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11072,24 +11553,24 @@
     local.tee 3
     local.get 2
     i32.load offset=8
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 2
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
     i32.store offset=4
     local.get 3
     local.get 2
     i32.load offset=8
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 3
     local.get 2
     i32.load offset=4
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_shrink_abi:v15007__unsigned_long__const
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__invalidate_iterators_past_abi:v15007__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11100,7 +11581,7 @@
     local.get 2
     local.get 1
     i32.store offset=8)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator+=_abi:v15007__long_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator+=_abi:v15007__long_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11118,12 +11599,12 @@
     i32.load
     local.get 2
     i32.load offset=8
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     i32.store
     local.get 3)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::base_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::base_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11134,7 +11615,7 @@
     local.get 1
     i32.load offset=12
     i32.load)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11148,20 +11629,20 @@
     i32.load offset=12
     i32.const 8
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::second_abi:v15007____const
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::second_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::select_on_container_copy_construction_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void__void>_std::__2::allocator<std::__2::tuple<int__int>>_const&_ (type 4) (param i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::select_on_container_copy_construction_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void__void>_std::__2::allocator<std::__2::tuple<int__int__int>>_const&_ (type 4) (param i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
     local.get 0
     i32.store offset=12)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int>>>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int>>&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int__int>>>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int__int>>&&_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11182,19 +11663,19 @@
     local.tee 4
     local.get 3
     i32.load offset=8
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
     drop
     local.get 4
     local.get 3
     i32.load offset=4
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int>>&&_
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&&_
     drop
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11212,7 +11693,7 @@
     i32.load offset=8
     i32.store
     local.get 3)
-  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>_std::__2::__make_transaction_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector_ (type 2) (param i32 i32)
+  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>_std::__2::__make_transaction_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11232,13 +11713,13 @@
     local.get 0
     local.get 2
     i32.load offset=4
-    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::__transaction_abi:v15007__std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector_
+    call $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::__transaction_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector_
     drop
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__vallocate_abi:v15007__unsigned_long_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__vallocate_abi:v15007__unsigned_long_ (type 2) (param i32 i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11256,19 +11737,19 @@
     local.get 2
     i32.load offset=12
     local.tee 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::max_size___const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size___const
     i32.gt_u
     if  ;; label = @1
       local.get 3
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__throw_length_error_abi:v15007____const
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__throw_length_error_abi:v15007____const
       unreachable
     end
     local.get 2
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
     local.get 2
     i32.load offset=8
-    call $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>>_std::__2::allocator<std::__2::tuple<int__int>>&__unsigned_long_
+    call $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>>_std::__2::allocator<std::__2::tuple<int__int__int>>&__unsigned_long_
     local.get 3
     local.get 2
     i32.load
@@ -11281,22 +11762,22 @@
     i32.load
     local.get 2
     i32.load offset=4
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     local.set 4
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
     local.get 4
     i32.store
     local.get 3
     i32.const 0
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_new_abi:v15007__unsigned_long__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_new_abi:v15007__unsigned_long__const
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::enable_if<__is_cpp17_forward_iterator<std::__2::tuple<int__int>*>::value__void>::type_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__construct_at_end<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__unsigned_long_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::enable_if<__is_cpp17_forward_iterator<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__construct_at_end<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__unsigned_long_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -11323,29 +11804,29 @@
     local.tee 5
     local.get 4
     i32.load offset=16
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&__unsigned_long_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__unsigned_long_
     drop
     local.get 4
     local.get 5
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
     local.get 4
     i32.load offset=24
     local.get 4
     i32.load offset=20
     local.get 4
     i32.load offset=8
-    call $std::__2::tuple<int__int>*_std::__2::__uninitialized_allocator_copy_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__uninitialized_allocator_copy_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     i32.store offset=8
     local.get 4
     i32.const 4
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::~_ConstructTransaction__
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::~_ConstructTransaction__
     drop
     local.get 4
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::__complete_abi:v15007___ (type 4) (param i32)
+  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::__complete_abi:v15007___ (type 4) (param i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11357,7 +11838,7 @@
     i32.load offset=12
     i32.const 1
     i32.store8 offset=4)
-  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::~__transaction_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::~__transaction_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11379,7 +11860,7 @@
     i32.eqz
     if  ;; label = @1
       local.get 2
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::operator___abi:v15007___
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::operator___abi:v15007___
     end
     local.get 1
     i32.load offset=12
@@ -11520,41 +12001,51 @@
     i32.and
     i32.store8
     local.get 3)
-  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int&__int>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int&__int__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 16
+    i32.const 32
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
-    local.get 0
-    i32.store offset=8
-    local.get 3
-    local.get 1
-    i32.store offset=4
-    local.get 3
-    local.get 2
-    i32.store
-    local.get 3
-    i32.load offset=8
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
     local.get 3
-    i32.load offset=4
+    i32.store offset=12
+    local.get 4
+    i32.load offset=24
+    local.tee 5
+    local.get 4
+    i32.load offset=20
     call $std::__2::__tuple_leaf<0ul__int__false>::__tuple_leaf_abi:v15007_<int&__void>_int&_
     drop
-    local.get 4
+    local.get 5
     i32.const 4
     i32.add
-    local.get 3
-    i32.load
+    local.get 4
+    i32.load offset=16
     call $std::__2::__tuple_leaf<1ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 5
+    i32.const 8
+    i32.add
+    local.get 4
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<2ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
+    drop
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $std::__2::__tuple_leaf<0ul__int__false>::__tuple_leaf_abi:v15007_<int&__void>_int&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -11574,41 +12065,70 @@
     i32.load
     i32.store
     local.get 3)
-  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int&__int&>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__tuple_leaf<2ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
+    local.tee 2
     local.get 0
-    i32.store offset=8
-    local.get 3
-    local.get 1
-    i32.store offset=4
-    local.get 3
+    i32.store offset=12
     local.get 2
-    i32.store
-    local.get 3
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.tee 3
+    local.get 2
     i32.load offset=8
+    i32.load
+    i32.store
+    local.get 3)
+  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int&__int&__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&__int&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
     local.get 3
-    i32.load offset=4
+    i32.store offset=12
+    local.get 4
+    i32.load offset=24
+    local.tee 5
+    local.get 4
+    i32.load offset=20
     call $std::__2::__tuple_leaf<0ul__int__false>::__tuple_leaf_abi:v15007_<int&__void>_int&_
     drop
-    local.get 4
+    local.get 5
     i32.const 4
     i32.add
-    local.get 3
-    i32.load
+    local.get 4
+    i32.load offset=16
     call $std::__2::__tuple_leaf<1ul__int__false>::__tuple_leaf_abi:v15007_<int&__void>_int&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 5
+    i32.const 8
+    i32.add
+    local.get 4
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<2ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
+    drop
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $std::__2::__tuple_leaf<1ul__int__false>::__tuple_leaf_abi:v15007_<int&__void>_int&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -11628,41 +12148,51 @@
     i32.load
     i32.store
     local.get 3)
-  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul>__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__int__int__int__int>_std::__2::__tuple_indices<0ul__1ul>__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&&__int&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::__tuple_impl_abi:v15007_<0ul__1ul__2ul__int__int__int__int__int__int>_std::__2::__tuple_indices<0ul__1ul__2ul>__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<>__std::__2::__tuple_types<>__int&&__int&&__int&&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
-    i32.const 16
+    i32.const 32
     i32.sub
-    local.tee 3
-    global.set $__stack_pointer
-    local.get 3
-    local.get 0
-    i32.store offset=8
-    local.get 3
-    local.get 1
-    i32.store offset=4
-    local.get 3
-    local.get 2
-    i32.store
-    local.get 3
-    i32.load offset=8
     local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
     local.get 3
-    i32.load offset=4
+    i32.store offset=12
+    local.get 4
+    i32.load offset=24
+    local.tee 5
+    local.get 4
+    i32.load offset=20
     call $std::__2::__tuple_leaf<0ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
     drop
-    local.get 4
+    local.get 5
     i32.const 4
     i32.add
-    local.get 3
-    i32.load
+    local.get 4
+    i32.load offset=16
     call $std::__2::__tuple_leaf<1ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
     drop
-    local.get 3
-    i32.const 16
+    local.get 5
+    i32.const 8
+    i32.add
+    local.get 4
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<2ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_
+    drop
+    local.get 4
+    i32.const 32
     i32.add
     global.set $__stack_pointer
-    local.get 4)
+    local.get 5)
   (func $std::__2::__tuple_leaf<0ul__int__false>::__tuple_leaf_abi:v15007_<int__void>_int&&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -11682,7 +12212,7 @@
     i32.load
     i32.store
     local.get 3)
-  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11699,7 +12229,7 @@
     i32.const 0
     i32.store
     local.get 3)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__compressed_pair_elem_abi:v15007__std::__2::__default_init_tag_ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__compressed_pair_elem_abi:v15007__std::__2::__default_init_tag_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11712,14 +12242,14 @@
     local.get 1
     i32.load offset=8
     local.tee 2
-    call $std::__2::allocator<std::__2::tuple<int__int>>::allocator_abi:v15007___
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>::allocator_abi:v15007___
     drop
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>::allocator_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>::allocator_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -11732,14 +12262,14 @@
     local.get 1
     i32.load offset=12
     local.tee 2
-    call $std::__2::__non_trivial_if<true__std::__2::allocator<std::__2::tuple<int__int>>>::__non_trivial_if_abi:v15007___
+    call $std::__2::__non_trivial_if<true__std::__2::allocator<std::__2::tuple<int__int__int>>>::__non_trivial_if_abi:v15007___
     drop
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__non_trivial_if<true__std::__2::allocator<std::__2::tuple<int__int>>>::__non_trivial_if_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__non_trivial_if<true__std::__2::allocator<std::__2::tuple<int__int__int>>>::__non_trivial_if_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -12716,9 +13246,9 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::numeric_limits<unsigned_long>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<unsigned_long>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<unsigned_long__true>::max_abi:v15007___)
-  (func $std::__2::__libcpp_numeric_limits<long__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<long__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const 2147483647)
   (func $std::__2::char_traits<char>::to_int_type_char_ (type 0) (param i32) (result i32)
     (local i32)
@@ -12737,7 +13267,7 @@
     local.get 0
     i32.store offset=12
     i32.const -1)
-  (func $std::__2::__libcpp_numeric_limits<unsigned_long__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<unsigned_long__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const -1)
   (func $std::__2::__compressed_pair_elem<unsigned_long__0__false>::__compressed_pair_elem_abi:v15007_<int__void>_int&&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
@@ -13572,7 +14102,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::pair<char_const*__char*>_std::__2::__copy_abi:v15007_<char_const*__char_const*__char*__0>_char_const*__char_const*__char*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<char_const*__char*>_std::__2::__copy_abi:v15007_<char_const*__char_const*__char*__0>_char_const*__char_const*__char*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 48
@@ -13685,7 +14215,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::pair<char_const*__char*>_std::__2::__copy_impl_abi:v15007_<char_const__char__void>_char_const*__char_const*__char*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<char_const*__char*>_std::__2::__copy_impl_abi:v15007_<char_const__char__void>_char_const*__char_const*__char*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -14084,7 +14614,7 @@
     end
     local.get 3
     i32.load offset=12)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__base_destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14112,19 +14642,19 @@
       i32.eqz
       if  ;; label = @2
         local.get 3
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
         local.set 4
         local.get 2
         local.get 2
         i32.load offset=4
-        i32.const 8
+        i32.const 12
         i32.sub
         local.tee 5
         i32.store offset=4
         local.get 4
         local.get 5
-        call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
-        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*_
+        call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
+        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*_
         br 1 (;@1;)
       end
     end
@@ -14136,7 +14666,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14149,14 +14679,14 @@
     local.get 1
     i32.load offset=12
     i32.load
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14169,20 +14699,20 @@
     local.get 1
     i32.load offset=12
     local.tee 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007____const
     i32.load
     local.get 2
     i32.load
     i32.sub
-    i32.const 3
-    i32.shr_s
+    i32.const 12
+    i32.div_s
     local.set 3
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const (type 14) (param i32 i32 i32 i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const (type 14) (param i32 i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -14202,7 +14732,7 @@
     local.get 5
     local.get 4
     i32.store offset=12)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14216,14 +14746,14 @@
     i32.load offset=12
     i32.const 8
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::second_abi:v15007___
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::second_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_ (type 0) (param i32) (result i32)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_ (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14233,7 +14763,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14250,12 +14780,12 @@
     i32.load offset=12
     local.get 2
     i32.load offset=8
-    call $std::__2::allocator<std::__2::tuple<int__int>>::destroy_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>::destroy_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>::destroy_abi:v15007__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>::destroy_abi:v15007__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14266,7 +14796,7 @@
     local.get 2
     local.get 1
     i32.store offset=8)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::second_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::second_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14278,14 +14808,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__get_abi:v15007___
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__get_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__get_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__get_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14295,7 +14825,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14309,14 +14839,14 @@
     i32.load offset=12
     i32.const 8
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::first_abi:v15007____const
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::first_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::first_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::first_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14328,14 +14858,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007____const
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14345,7 +14875,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::first_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::first_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14357,14 +14887,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007___
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&__unsigned_long_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::_ConstructTransaction_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__unsigned_long_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14395,12 +14925,12 @@
     i32.load offset=4
     local.get 3
     i32.load offset=4
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     i32.store offset=8
     local.get 4)
-  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_ (type 5) (param i32 i32 i32)
+  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14422,12 +14952,12 @@
     i32.load offset=8
     local.get 3
     i32.load offset=4
-    call $void_std::__2::allocator<std::__2::tuple<int__int>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_
+    call $void_std::__2::allocator<std::__2::tuple<int__int__int>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::_ConstructTransaction::~_ConstructTransaction__ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::_ConstructTransaction::~_ConstructTransaction__ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14443,7 +14973,7 @@
     i32.load offset=4
     i32.store offset=4
     local.get 1)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__recommend_abi:v15007__unsigned_long__const (type 1) (param i32 i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__recommend_abi:v15007__unsigned_long__const (type 1) (param i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -14460,7 +14990,7 @@
     local.get 2
     i32.load offset=24
     local.tee 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::max_size___const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size___const
     i32.store offset=16
     local.get 2
     i32.load offset=20
@@ -14469,12 +14999,12 @@
     i32.gt_u
     if  ;; label = @1
       local.get 3
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__throw_length_error_abi:v15007____const
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__throw_length_error_abi:v15007____const
       unreachable
     end
     local.get 2
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
     i32.store offset=12
     block  ;; label = @1
       local.get 2
@@ -14516,7 +15046,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::allocator<std::__2::tuple<int__int>>&_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::allocator<std::__2::tuple<int__int__int>>&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -14551,7 +15081,7 @@
     i32.add
     local.get 4
     i32.load offset=12
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int>>&>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int>>&_
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int__int>>&>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int__int>>&_
     drop
     block  ;; label = @1
       local.get 4
@@ -14565,10 +15095,10 @@
       end
       local.get 4
       local.get 5
-      call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__alloc_abi:v15007___
+      call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__alloc_abi:v15007___
       local.get 4
       i32.load offset=20
-      call $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>>_std::__2::allocator<std::__2::tuple<int__int>>&__unsigned_long_
+      call $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>>_std::__2::allocator<std::__2::tuple<int__int__int>>&__unsigned_long_
       local.get 5
       local.get 4
       i32.load
@@ -14583,8 +15113,8 @@
     i32.load
     local.get 4
     i32.load offset=16
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     local.tee 6
     i32.store offset=8
@@ -14595,12 +15125,12 @@
     i32.load
     local.get 4
     i32.load offset=20
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
     local.set 7
     local.get 5
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__end_cap_abi:v15007___
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__end_cap_abi:v15007___
     local.get 7
     i32.store
     local.get 4
@@ -14611,7 +15141,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 8)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__swap_out_circular_buffer_std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>&_ (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__swap_out_circular_buffer_std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>&_ (type 2) (param i32 i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -14627,23 +15157,23 @@
     local.get 2
     i32.load offset=28
     local.tee 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_delete_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_delete_abi:v15007____const
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
     local.set 4
     local.get 2
     i32.const 16
     i32.add
     local.get 3
     i32.load offset=4
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int__int>*_
     drop
     local.get 2
     i32.const 12
     i32.add
     local.get 3
     i32.load
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int__int>*_
     drop
     local.get 2
     i32.const 8
@@ -14651,7 +15181,7 @@
     local.get 2
     i32.load offset=24
     i32.load offset=4
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int__int>*_
     drop
     local.get 2
     local.get 4
@@ -14661,12 +15191,12 @@
     i32.load offset=12
     local.get 2
     i32.load offset=8
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_
     i32.store offset=20
     local.get 2
     i32.const 20
     i32.add
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     local.set 5
     local.get 2
     i32.load offset=24
@@ -14677,7 +15207,7 @@
     i32.load offset=24
     i32.const 4
     i32.add
-    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&__std::__2::tuple<int__int>*&_
+    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
     local.get 3
     i32.const 4
     i32.add
@@ -14685,13 +15215,13 @@
     i32.load offset=24
     i32.const 8
     i32.add
-    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&__std::__2::tuple<int__int>*&_
+    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__end_cap_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
     local.get 2
     i32.load offset=24
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__end_cap_abi:v15007___
-    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&__std::__2::tuple<int__int>*&_
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__end_cap_abi:v15007___
+    call $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
     local.get 2
     i32.load offset=24
     local.get 2
@@ -14700,15 +15230,15 @@
     i32.store
     local.get 3
     local.get 3
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_new_abi:v15007__unsigned_long__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_new_abi:v15007__unsigned_long__const
     local.get 3
-    call $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_
+    call $void_std::__2::__debug_db_invalidate_all_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
     local.get 2
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::~__split_buffer__ (type 0) (param i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::~__split_buffer__ (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14724,17 +15254,17 @@
     local.tee 2
     i32.store offset=12
     local.get 2
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::clear_abi:v15007___
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::clear_abi:v15007___
     local.get 2
     i32.load
     if  ;; label = @1
       local.get 2
-      call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__alloc_abi:v15007___
+      call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__alloc_abi:v15007___
       local.get 2
       i32.load
       local.get 2
-      call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::capacity_abi:v15007____const
-      call $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__unsigned_long_
+      call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::capacity_abi:v15007____const
+      call $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__unsigned_long_
     end
     local.get 1
     i32.load offset=12
@@ -14744,7 +15274,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14754,8 +15284,8 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $void_std::__2::allocator<std::__2::tuple<int__int>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_ (type 5) (param i32 i32 i32)
-    (local i32)
+  (func $void_std::__2::allocator<std::__2::tuple<int__int__int>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_ (type 5) (param i32 i32 i32)
+    (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
@@ -14770,11 +15300,17 @@
     i32.store offset=4
     local.get 3
     i32.load offset=8
+    local.tee 4
     local.get 3
     i32.load offset=4
+    local.tee 5
     i64.load align=4
-    i64.store align=4)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::max_size___const (type 0) (param i32) (result i32)
+    i64.store align=4
+    local.get 4
+    local.get 5
+    i32.load offset=8
+    i32.store offset=8)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size___const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14787,8 +15323,8 @@
     local.get 1
     local.get 1
     i32.load offset=12
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007____const
-    call $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int>>_const&_
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007____const
+    call $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>_const&_
     i32.store offset=8
     local.get 1
     call $std::__2::numeric_limits<long>::max_abi:v15007___
@@ -14807,7 +15343,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__throw_length_error_abi:v15007____const (type 4) (param i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__throw_length_error_abi:v15007____const (type 4) (param i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14820,7 +15356,7 @@
     i32.const 1475
     call $std::__2::__throw_length_error_abi:v15007__char_const*_
     unreachable)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int>>&>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int>>&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int__int>>&>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int__int>>&_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14841,21 +15377,21 @@
     local.tee 4
     local.get 3
     i32.load offset=8
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__compressed_pair_elem_abi:v15007_<std::nullptr_t__void>_std::nullptr_t&&_
     drop
     local.get 4
     i32.const 4
     i32.add
     local.get 3
     i32.load offset=4
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>&__1__false>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>&__void>_std::__2::allocator<std::__2::tuple<int__int>>&_
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>&__1__false>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>&__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&_
     drop
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__alloc_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__alloc_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14869,14 +15405,14 @@
     i32.load offset=12
     i32.const 12
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::second_abi:v15007___
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::second_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>>_std::__2::allocator<std::__2::tuple<int__int>>&__unsigned_long_ (type 5) (param i32 i32 i32)
+  (func $std::__2::__allocation_result<std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::pointer>_std::__2::__allocate_at_least_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>>_std::__2::allocator<std::__2::tuple<int__int__int>>&__unsigned_long_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14894,7 +15430,7 @@
     i32.load offset=12
     local.get 3
     i32.load offset=8
-    call $std::__2::allocator<std::__2::tuple<int__int>>::allocate_abi:v15007__unsigned_long_
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>::allocate_abi:v15007__unsigned_long_
     i32.store
     local.get 0
     local.get 3
@@ -14904,7 +15440,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__end_cap_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__end_cap_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14918,14 +15454,14 @@
     i32.load offset=12
     i32.const 12
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::first_abi:v15007___
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::first_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_delete_abi:v15007____const (type 4) (param i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_delete_abi:v15007____const (type 4) (param i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14938,37 +15474,37 @@
     local.get 2
     i32.load offset=12
     local.tee 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.set 3
     local.get 1
     local.get 3
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 1
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int>*_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::reverse_iterator_abi:v15007__std::__2::tuple<int__int__int>*_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -14986,7 +15522,7 @@
     i32.load offset=8
     i32.store
     local.get 3)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -15016,7 +15552,7 @@
       local.get 4
       i32.const 20
       i32.add
-      call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_
+      call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_
       i32.const 1
       i32.and
       if  ;; label = @2
@@ -15025,21 +15561,21 @@
         local.get 4
         i32.const 16
         i32.add
-        call $std::__2::decay<decltype___to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int>*>>::__call_declval<std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::reverse_iterator<std::__2::tuple<int__int>*>__void>_std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_
+        call $std::__2::decay<decltype___to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>>::__call_declval<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__void>_std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_
         local.get 4
         i32.const 24
         i32.add
-        call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator*_abi:v15007____const
-        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&&_
+        call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const
+        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&&_
         local.get 4
         i32.const 24
         i32.add
-        call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator++_abi:v15007___
+        call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___
         drop
         local.get 4
         i32.const 16
         i32.add
-        call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator++_abi:v15007___
+        call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___
         drop
         br 1 (;@1;)
       end
@@ -15056,7 +15592,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 5)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::base_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::base_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15067,7 +15603,7 @@
     local.get 1
     i32.load offset=12
     i32.load)
-  (func $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&__std::__2::tuple<int__int>*&_ (type 2) (param i32 i32)
+  (func $std::__2::enable_if<is_move_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_move_assignable<std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::swap_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15094,7 +15630,7 @@
     local.get 2
     i32.load offset=4
     i32.store)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_new_abi:v15007__unsigned_long__const (type 2) (param i32 i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_new_abi:v15007__unsigned_long__const (type 2) (param i32 i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15110,37 +15646,37 @@
     local.get 3
     i32.load offset=12
     local.tee 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.set 4
     local.get 2
     local.get 4
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-    i32.const 3
-    i32.shl
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+    i32.const 12
+    i32.mul
     i32.add
     local.get 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::data_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::data_abi:v15007____const
     local.get 3
     i32.load offset=8
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_contiguous_container_abi:v15007__void_const*__void_const*__void_const*__void_const*__const
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::clear_abi:v15007___ (type 4) (param i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::clear_abi:v15007___ (type 4) (param i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15155,12 +15691,12 @@
     local.tee 2
     local.get 2
     i32.load offset=4
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::capacity_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::capacity_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15173,20 +15709,20 @@
     local.get 1
     i32.load offset=12
     local.tee 2
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__end_cap_abi:v15007____const
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__end_cap_abi:v15007____const
     i32.load
     local.get 2
     i32.load
     i32.sub
-    i32.const 3
-    i32.shr_s
+    i32.const 12
+    i32.div_s
     local.set 3
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__unsigned_long_ (type 5) (param i32 i32 i32)
+  (func $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__unsigned_long_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15208,12 +15744,12 @@
     i32.load offset=8
     local.get 3
     i32.load offset=4
-    call $std::__2::allocator<std::__2::tuple<int__int>>::deallocate_abi:v15007__std::__2::tuple<int__int>*__unsigned_long_
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>::deallocate_abi:v15007__std::__2::tuple<int__int__int>*__unsigned_long_
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int>>_const&_ (type 0) (param i32) (result i32)
+  (func $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>_const&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15225,7 +15761,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::allocator<std::__2::tuple<int__int>>::max_size_abi:v15007____const
+    call $std::__2::allocator<std::__2::tuple<int__int__int>>::max_size_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
@@ -15294,14 +15830,14 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>::max_size_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>::max_size_abi:v15007____const (type 0) (param i32) (result i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
     local.get 0
     i32.store offset=12
-    i32.const 536870911)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>>::second_abi:v15007____const (type 0) (param i32) (result i32)
+    i32.const 357913941)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::second_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15313,14 +15849,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__get_abi:v15007____const
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__get_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__get_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__get_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15330,7 +15866,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>&__1__false>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>&__void>_std::__2::allocator<std::__2::tuple<int__int>>&_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>&__1__false>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>&__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15348,7 +15884,7 @@
     i32.load offset=8
     i32.store
     local.get 3)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>::allocate_abi:v15007__unsigned_long_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>::allocate_abi:v15007__unsigned_long_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15365,7 +15901,7 @@
     i32.load offset=8
     local.get 2
     i32.load offset=12
-    call $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int>>_const&_
+    call $unsigned_long_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::max_size_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>_const&_
     i32.gt_u
     if  ;; label = @1
       call $std::__throw_bad_array_new_length_abi:v15007___
@@ -15373,8 +15909,8 @@
     end
     local.get 2
     i32.load offset=8
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.const 4
     call $std::__2::__libcpp_allocate_abi:v15007__unsigned_long__unsigned_long_
     local.set 3
@@ -15383,7 +15919,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::second_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::second_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15397,14 +15933,14 @@
     i32.load offset=12
     i32.const 4
     i32.add
-    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>&__1__false>::__get_abi:v15007___
+    call $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>&__1__false>::__get_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::first_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::first_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15416,14 +15952,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007___
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007___
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>&__1__false>::__get_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>&__1__false>::__get_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15434,7 +15970,7 @@
     local.get 1
     i32.load offset=12
     i32.load)
-  (func $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
+  (func $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15449,10 +15985,10 @@
     i32.store offset=8
     local.get 2
     i32.load offset=12
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     local.get 2
     i32.load offset=8
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::base_abi:v15007____const
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
     i32.ne
     local.set 3
     local.get 2
@@ -15460,7 +15996,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::decay<decltype___to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int>*>>::__call_declval<std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::reverse_iterator<std::__2::tuple<int__int>*>__void>_std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_ (type 0) (param i32) (result i32)
+  (func $std::__2::decay<decltype___to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>>::__call_declval<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__void>_std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15472,14 +16008,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int>*>__void>::__call_abi:v15007__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_
+    call $std::__2::__to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__void>::__call_abi:v15007__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator*_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15495,12 +16031,12 @@
     local.get 1
     local.get 1
     i32.load offset=8
-    i32.const 8
+    i32.const 12
     i32.sub
     local.tee 2
     i32.store offset=8
     local.get 2)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator++_abi:v15007___ (type 0) (param i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15513,11 +16049,11 @@
     local.tee 1
     local.get 1
     i32.load
-    i32.const 8
+    i32.const 12
     i32.sub
     i32.store
     local.get 1)
-  (func $std::__2::__to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int>*>__void>::__call_abi:v15007__std::__2::reverse_iterator<std::__2::tuple<int__int>*>_const&_ (type 0) (param i32) (result i32)
+  (func $std::__2::__to_address_helper<std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>__void>::__call_abi:v15007__std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>_const&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15529,15 +16065,15 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator->_abi:v15007____const
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator->_abi:v15007____const
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator->_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator->_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15549,14 +16085,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::reverse_iterator<std::__2::tuple<int__int>*>::operator*_abi:v15007____const
+    call $std::__2::reverse_iterator<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*_ (type 2) (param i32 i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15573,12 +16109,12 @@
     i32.load offset=12
     local.get 2
     i32.load offset=8
-    call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*__std::__2::integral_constant<bool__false>_
+    call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*__std::__2::integral_constant<bool__false>_
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::allocator<std::__2::tuple<int__int>>::deallocate_abi:v15007__std::__2::tuple<int__int>*__unsigned_long_ (type 5) (param i32 i32 i32)
+  (func $std::__2::allocator<std::__2::tuple<int__int__int>>::deallocate_abi:v15007__std::__2::tuple<int__int__int>*__unsigned_long_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15598,15 +16134,15 @@
     i32.load offset=8
     local.get 3
     i32.load offset=4
-    i32.const 3
-    i32.shl
+    i32.const 12
+    i32.mul
     i32.const 4
     call $std::__2::__libcpp_deallocate_abi:v15007__void*__unsigned_long__unsigned_long_
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__end_cap_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__end_cap_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15620,14 +16156,14 @@
     i32.load offset=12
     i32.const 12
     i32.add
-    call $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::first_abi:v15007____const
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::first_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int>*__std::__2::integral_constant<bool__false>_ (type 2) (param i32 i32)
+  (func $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__destruct_at_end_abi:v15007__std::__2::tuple<int__int__int>*__std::__2::integral_constant<bool__false>_ (type 2) (param i32 i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15652,19 +16188,19 @@
       i32.eqz
       if  ;; label = @2
         local.get 3
-        call $std::__2::__split_buffer<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>&>::__alloc_abi:v15007___
+        call $std::__2::__split_buffer<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>&>::__alloc_abi:v15007___
         local.set 4
         local.get 3
         local.get 3
         i32.load offset=8
-        i32.const 8
+        i32.const 12
         i32.sub
         local.tee 5
         i32.store offset=8
         local.get 4
         local.get 5
-        call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
-        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int>__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*_
+        call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
+        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::destroy_abi:v15007_<std::__2::tuple<int__int__int>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*_
         br 1 (;@1;)
       end
     end
@@ -15672,7 +16208,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__compressed_pair<std::__2::tuple<int__int>*__std::__2::allocator<std::__2::tuple<int__int>>&>::first_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>&>::first_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15684,14 +16220,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int>*__0__false>::__get_abi:v15007____const
+    call $std::__2::__compressed_pair_elem<std::__2::tuple<int__int__int>*__0__false>::__get_abi:v15007____const
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::base_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::base_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15702,7 +16238,7 @@
     local.get 1
     i32.load offset=12
     i32.load)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007____const (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007____const (type 0) (param i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15720,7 +16256,7 @@
     local.tee 2
     local.get 2
     i32.load
-    call $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>_const*_
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>_const*_
     drop
     local.get 1
     i32.load offset=12
@@ -15730,7 +16266,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::enable_if<is_copy_constructible<std::__2::tuple<int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int>*>::value__std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::enable_if<is_copy_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int__int>*>::value_&&_is_copy_constructible<std::__2::tuple<int__int__int>*>::value__std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -15751,27 +16287,27 @@
     i32.add
     local.get 4
     i32.load offset=28
-    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>__0>_std::__2::tuple<int__int>*_
+    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>__0>_std::__2::tuple<int__int__int>*_
     local.get 4
     i32.load offset=24
-    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>__0>_std::__2::tuple<int__int>*_
+    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>__0>_std::__2::tuple<int__int__int>*_
     local.get 4
     i32.load offset=20
-    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>__0>_std::__2::tuple<int__int>*_
-    call $std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>__0>_std::__2::tuple<int__int__int>*_
+    call $std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     local.get 4
     local.get 4
     i32.load offset=28
     local.get 4
     i32.load offset=12
-    call $std::__2::tuple<int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     i32.store offset=8
     local.get 4
     local.get 4
     i32.load offset=20
     local.get 4
     i32.load offset=16
-    call $std::__2::tuple<int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     i32.store offset=4
     local.get 0
     local.get 4
@@ -15780,12 +16316,12 @@
     local.get 4
     i32.const 4
     i32.add
-    call $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&&__std::__2::tuple<int__int>*&&_
+    call $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&&__std::__2::tuple<int__int__int>*&&_
     local.get 4
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::__wrap_iter<std::__2::tuple<int__int>_const*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int>_const*_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::__wrap_iter<std::__2::tuple<int__int__int>_const*>::__wrap_iter_abi:v15007__void_const*__std::__2::tuple<int__int__int>_const*_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15806,7 +16342,7 @@
     i32.load offset=4
     i32.store
     local.get 4)
-  (func $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>__0>_std::__2::tuple<int__int>*_ (type 0) (param i32) (result i32)
+  (func $decltype_std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_std::declval<std::__2::tuple<int__int__int>*>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>__0>_std::__2::tuple<int__int__int>*_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15818,14 +16354,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_abi:v15007__std::__2::tuple<int__int>*_
+    call $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_abi:v15007__std::__2::tuple<int__int__int>*_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15852,23 +16388,23 @@
         local.get 4
         i32.const 12
         i32.add
-        call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int>*&>_std::__2::tuple<int__int>*&_
+        call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
         local.set 5
         local.get 4
         i32.load offset=4
         local.get 5
-        call $std::__2::tuple<int__int>::operator=_abi:v15007__std::__2::tuple<int__int>&&_
+        call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
         drop
         local.get 4
         local.get 4
         i32.load offset=12
-        i32.const 8
+        i32.const 12
         i32.add
         i32.store offset=12
         local.get 4
         local.get 4
         i32.load offset=4
-        i32.const 8
+        i32.const 12
         i32.add
         i32.store offset=4
         br 1 (;@1;)
@@ -15881,12 +16417,12 @@
     local.get 4
     i32.const 4
     i32.add
-    call $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&&__std::__2::tuple<int__int>*&&_
+    call $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&&__std::__2::tuple<int__int__int>*&&_
     local.get 4
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::tuple<int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__rewrap_iter_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15903,14 +16439,14 @@
     i32.load offset=12
     local.get 2
     i32.load offset=8
-    call $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__rewrap_abi:v15007__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_
+    call $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__rewrap_abi:v15007__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
     local.set 3
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::tuple<int__int>*&&__std::__2::tuple<int__int>*&&_ (type 5) (param i32 i32 i32)
+  (func $std::__2::pair<std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type__std::__2::__unwrap_ref_decay<std::__2::tuple<int__int__int>*>::type>_std::__2::make_pair_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*&&__std::__2::tuple<int__int__int>*&&_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15928,13 +16464,13 @@
     i32.load offset=12
     local.get 3
     i32.load offset=8
-    call $std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>::pair_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*___void*_0>_std::__2::tuple<int__int>*&&__std::__2::tuple<int__int>*&&_
+    call $std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>::pair_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*___void*_0>_std::__2::tuple<int__int__int>*&&__std::__2::tuple<int__int__int>*&&_
     drop
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int>*&>_std::__2::tuple<int__int>*&_ (type 0) (param i32) (result i32)
+  (func $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15944,7 +16480,7 @@
     local.get 1
     local.get 0
     i32.store offset=12
-    call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__validate_iter_reference_abi:v15007_<std::__2::tuple<int__int>*&>__
+    call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__validate_iter_reference_abi:v15007_<std::__2::tuple<int__int__int>*&>__
     local.get 1
     i32.load offset=12
     i32.load
@@ -15954,7 +16490,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::tuple<int__int>::operator=_abi:v15007__std::__2::tuple<int__int>&&_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15972,13 +16508,13 @@
     local.tee 3
     local.get 2
     i32.load offset=8
-    call $void_std::__2::__memberwise_forward_assign_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__int__int__0ul__1ul>_std::__2::tuple<int__int>&__std::__2::tuple<int__int>&&__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<0ul__1ul>_
+    call $void_std::__2::__memberwise_forward_assign_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__int__int__int__0ul__1ul__2ul>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>&&__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<0ul__1ul__2ul>_
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__unwrap_abi:v15007__std::__2::tuple<int__int>*_ (type 0) (param i32) (result i32)
+  (func $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__unwrap_abi:v15007__std::__2::tuple<int__int__int>*_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -15990,14 +16526,14 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::pair<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>::pair_abi:v15007_<std::__2::tuple<int__int>*__std::__2::tuple<int__int>*___void*_0>_std::__2::tuple<int__int>*&&__std::__2::tuple<int__int>*&&_ (type 3) (param i32 i32 i32) (result i32)
+  (func $std::__2::pair<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>::pair_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*___void*_0>_std::__2::tuple<int__int__int>*&&__std::__2::tuple<int__int__int>*&&_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16024,7 +16560,7 @@
     i32.load
     i32.store offset=4
     local.get 4)
-  (func $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int>*__true>::__rewrap_abi:v15007__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__unwrap_iter_impl<std::__2::tuple<int__int__int>*__true>::__rewrap_abi:v15007__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16043,10 +16579,12 @@
     i32.load offset=8
     local.get 2
     i32.load offset=12
-    call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
     i32.sub
-    i32.const -8
-    i32.and
+    i32.const 12
+    i32.div_s
+    i32.const 12
+    i32.mul
     i32.add
     local.set 3
     local.get 2
@@ -16054,10 +16592,10 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__validate_iter_reference_abi:v15007_<std::__2::tuple<int__int>*&>__ (type 7)
+  (func $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__validate_iter_reference_abi:v15007_<std::__2::tuple<int__int__int>*&>__ (type 7)
     nop)
-  (func $void_std::__2::__memberwise_forward_assign_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__int__int__0ul__1ul>_std::__2::tuple<int__int>&__std::__2::tuple<int__int>&&__std::__2::__tuple_types<int__int>__std::__2::__tuple_indices<0ul__1ul>_ (type 2) (param i32 i32)
-    (local i32 i32 i32)
+  (func $void_std::__2::__memberwise_forward_assign_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__int__int__int__0ul__1ul__2ul>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>&&__std::__2::__tuple_types<int__int__int>__std::__2::__tuple_indices<0ul__1ul__2ul>_ (type 2) (param i32 i32)
+    (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
     i32.sub
@@ -16071,12 +16609,12 @@
     i32.store offset=20
     local.get 2
     i32.load offset=20
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     local.set 3
     local.get 2
     i32.load offset=24
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
     local.get 3
     i32.store
     local.get 2
@@ -16084,40 +16622,59 @@
     i32.store offset=16
     local.get 2
     i32.load offset=20
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
     i32.load
     local.set 4
     local.get 2
     i32.load offset=24
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
     local.get 4
     i32.store
     local.get 2
     i32.const 0
     i32.store offset=12
     local.get 2
+    i32.load offset=20
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>&_
+    i32.load
+    local.set 5
+    local.get 2
+    i32.load offset=24
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>&_
+    local.get 5
+    i32.store
+    local.get 2
+    i32.const 0
+    i32.store offset=8
+    local.get 2
     i32.const 16
     i32.add
     local.get 2
     i32.const 12
     i32.add
-    call $void_std::__2::__swallow_abi:v15007_<int__int>_int&&__int&&_
+    local.get 2
+    i32.const 8
+    i32.add
+    call $void_std::__2::__swallow_abi:v15007_<int__int__int>_int&&__int&&__int&&_
     local.get 2
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $void_std::__2::__swallow_abi:v15007_<int__int>_int&&__int&&_ (type 2) (param i32 i32)
+  (func $void_std::__2::__swallow_abi:v15007_<int__int__int>_int&&__int&&__int&&_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 2
+    local.tee 3
     local.get 0
     i32.store offset=12
-    local.get 2
+    local.get 3
     local.get 1
-    i32.store offset=8)
-  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int>>__1__true>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int>>&&_ (type 1) (param i32 i32) (result i32)
+    i32.store offset=8
+    local.get 3
+    local.get 2
+    i32.store offset=4)
+  (func $std::__2::__compressed_pair_elem<std::__2::allocator<std::__2::tuple<int__int__int>>__1__true>::__compressed_pair_elem_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&&_ (type 1) (param i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16130,7 +16687,7 @@
     i32.store offset=8
     local.get 2
     i32.load offset=12)
-  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector>::__transaction_abi:v15007__std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector_ (type 1) (param i32 i32) (result i32)
+  (func $std::__2::__transaction<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector>::__transaction_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector_ (type 1) (param i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16151,7 +16708,7 @@
     i32.const 0
     i32.store8 offset=4
     local.get 3)
-  (func $std::__2::tuple<int__int>*_std::__2::__uninitialized_allocator_copy_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int>>__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*__std::__2::tuple<int__int>*_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__uninitialized_allocator_copy_abi:v15007_<std::__2::allocator<std::__2::tuple<int__int__int>>__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -16186,20 +16743,20 @@
         i32.load offset=28
         local.get 4
         i32.load offset=16
-        call $std::__2::tuple<int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int>>_std::__2::tuple<int__int>*_
+        call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
         local.get 4
         i32.load offset=24
-        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>&__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&_
+        call $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>&__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&_
         local.get 4
         local.get 4
         i32.load offset=24
-        i32.const 8
+        i32.const 12
         i32.add
         i32.store offset=24
         local.get 4
         local.get 4
         i32.load offset=16
-        i32.const 8
+        i32.const 12
         i32.add
         i32.store offset=16
         br 1 (;@1;)
@@ -16213,7 +16770,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 5)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::operator___abi:v15007___ (type 4) (param i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::operator___abi:v15007___ (type 4) (param i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16227,33 +16784,33 @@
     i32.load offset=12
     local.tee 1
     i32.load
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__annotate_delete_abi:v15007____const
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__annotate_delete_abi:v15007____const
     local.get 1
     i32.load
-    call $void_std::__2::__debug_db_erase_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_
+    call $void_std::__2::__debug_db_erase_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
     local.get 1
     i32.load
     i32.load
     if  ;; label = @1
       local.get 1
       i32.load
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__clear_abi:v15007___
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__clear_abi:v15007___
       local.get 1
       i32.load
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__alloc_abi:v15007___
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
       local.get 1
       i32.load
       i32.load
       local.get 1
       i32.load
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::capacity_abi:v15007____const
-      call $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__unsigned_long_
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+      call $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__unsigned_long_
     end
     local.get 2
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>&__void>_std::__2::allocator<std::__2::tuple<int__int>>&__std::__2::tuple<int__int>*__std::__2::tuple<int__int>&_ (type 5) (param i32 i32 i32)
+  (func $void_std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>&__void>_std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&_ (type 5) (param i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -16275,13 +16832,13 @@
     i32.load offset=8
     local.get 3
     i32.load offset=4
-    call $void_std::__2::allocator<std::__2::tuple<int__int>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>&>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>&_
+    call $void_std::__2::allocator<std::__2::tuple<int__int__int>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>&>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&_
     local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $void_std::__2::allocator<std::__2::tuple<int__int>>::construct_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>&>_std::__2::tuple<int__int>*__std::__2::tuple<int__int>&_ (type 5) (param i32 i32 i32)
-    (local i32)
+  (func $void_std::__2::allocator<std::__2::tuple<int__int__int>>::construct_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>&>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>&_ (type 5) (param i32 i32 i32)
+    (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
@@ -16296,11 +16853,17 @@
     i32.store offset=4
     local.get 3
     i32.load offset=8
+    local.tee 4
     local.get 3
     i32.load offset=4
+    local.tee 5
     i64.load align=4
-    i64.store align=4)
-  (func $void_std::__2::__debug_db_erase_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>>_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>*_ (type 4) (param i32)
+    i64.store align=4
+    local.get 4
+    local.get 5
+    i32.load offset=8
+    i32.store offset=8)
+  (func $void_std::__2::__debug_db_erase_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_ (type 4) (param i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
@@ -16517,39 +17080,59 @@
                                   i32.load offset=36
                                   i32.const 8
                                   i32.div_s
-                                  i32.const 4
+                                  i32.const 3
                                   i32.eq
                                   if  ;; label = @16
                                     local.get 1
                                     local.get 1
                                     f64.load offset=40
-                                    f64.const 0x1.6666666666666p+0 (;=1.4;)
+                                    f64.const 0x1.3333333333333p+0 (;=1.2;)
                                     f64.add
                                     f64.store offset=40
                                     br 1 (;@15;)
                                   end
                                   block  ;; label = @16
                                     local.get 1
-                                    i32.load offset=36
-                                    i32.const 8
-                                    i32.div_s
-                                    i32.const 5
+                                    i32.const 168
+                                    i32.add
+                                    local.get 1
+                                    i32.const 36
+                                    i32.add
+                                    call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
+                                    i32.const 1
                                     i32.eq
                                     if  ;; label = @17
                                       local.get 1
                                       local.get 1
                                       f64.load offset=40
-                                      f64.const 0x1.4cccccccccccdp+0 (;=1.3;)
+                                      f64.const 0x1.8p+0 (;=1.5;)
                                       f64.add
                                       f64.store offset=40
                                       br 1 (;@16;)
                                     end
-                                    local.get 1
-                                    local.get 1
-                                    f64.load offset=40
-                                    f64.const 0x1p+0 (;=1;)
-                                    f64.add
-                                    f64.store offset=40
+                                    block  ;; label = @17
+                                      local.get 1
+                                      i32.load offset=36
+                                      i32.const 8
+                                      i32.div_s
+                                      i32.const 6
+                                      i32.eq
+                                      if  ;; label = @18
+                                        local.get 1
+                                        local.get 1
+                                        f64.load offset=40
+                                        f64.const 0x1.e666666666666p+0 (;=1.9;)
+                                        f64.add
+                                        f64.store offset=40
+                                        br 1 (;@17;)
+                                      end
+                                      local.get 1
+                                      local.get 1
+                                      f64.load offset=40
+                                      f64.const 0x1p+0 (;=1;)
+                                      f64.add
+                                      f64.store offset=40
+                                    end
                                   end
                                 end
                                 local.get 1
@@ -16668,17 +17251,41 @@
                           f64.store offset=40
                           br 1 (;@10;)
                         end
-                        local.get 1
-                        i32.load offset=36
-                        i32.const 62
-                        i32.eq
-                        if  ;; label = @11
+                        block  ;; label = @11
                           local.get 1
-                          local.get 1
-                          f64.load offset=40
-                          f64.const 0x1p-1 (;=0.5;)
-                          f64.add
-                          f64.store offset=40
+                          i32.load offset=36
+                          i32.const 62
+                          i32.eq
+                          if  ;; label = @12
+                            local.get 1
+                            local.get 1
+                            f64.load offset=40
+                            f64.const 0x1p-1 (;=0.5;)
+                            f64.add
+                            f64.store offset=40
+                            br 1 (;@11;)
+                          end
+                          block  ;; label = @12
+                            local.get 1
+                            i32.load offset=36
+                            i32.const 60
+                            i32.eq
+                            if  ;; label = @13
+                              local.get 1
+                              local.get 1
+                              f64.load offset=40
+                              f64.const 0x1.999999999999ap-4 (;=0.1;)
+                              f64.add
+                              f64.store offset=40
+                              br 1 (;@12;)
+                            end
+                            local.get 1
+                            local.get 1
+                            f64.load offset=40
+                            f64.const -0x1.3333333333333p-2 (;=-0.3;)
+                            f64.add
+                            f64.store offset=40
+                          end
                         end
                       end
                     end
@@ -16687,39 +17294,59 @@
                       i32.load offset=36
                       i32.const 8
                       i32.div_s
-                      i32.const 3
+                      i32.const 2
                       i32.eq
                       if  ;; label = @10
                         local.get 1
                         local.get 1
                         f64.load offset=40
-                        f64.const -0x1.8p+0 (;=-1.5;)
+                        f64.const -0x1.4cccccccccccdp+0 (;=-1.3;)
                         f64.add
                         f64.store offset=40
                         br 1 (;@9;)
                       end
                       block  ;; label = @10
                         local.get 1
-                        i32.load offset=36
-                        i32.const 8
-                        i32.div_s
-                        i32.const 2
+                        i32.const 168
+                        i32.add
+                        local.get 1
+                        i32.const 36
+                        i32.add
+                        call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
+                        i32.const 1
                         i32.eq
                         if  ;; label = @11
                           local.get 1
                           local.get 1
                           f64.load offset=40
-                          f64.const -0x1.4cccccccccccdp+0 (;=-1.3;)
+                          f64.const -0x1.8p+0 (;=-1.5;)
                           f64.add
                           f64.store offset=40
                           br 1 (;@10;)
                         end
-                        local.get 1
-                        local.get 1
-                        f64.load offset=40
-                        f64.const -0x1p+0 (;=-1;)
-                        f64.add
-                        f64.store offset=40
+                        block  ;; label = @11
+                          local.get 1
+                          i32.load offset=36
+                          i32.const 8
+                          i32.div_s
+                          i32.const 6
+                          i32.eq
+                          if  ;; label = @12
+                            local.get 1
+                            local.get 1
+                            f64.load offset=40
+                            f64.const -0x1.e666666666666p+0 (;=-1.9;)
+                            f64.add
+                            f64.store offset=40
+                            br 1 (;@11;)
+                          end
+                          local.get 1
+                          local.get 1
+                          f64.load offset=40
+                          f64.const -0x1p+0 (;=-1;)
+                          f64.add
+                          f64.store offset=40
+                        end
                       end
                     end
                     local.get 1
@@ -16838,17 +17465,41 @@
               f64.store offset=40
               br 1 (;@4;)
             end
-            local.get 1
-            i32.load offset=36
-            i32.const 6
-            i32.eq
-            if  ;; label = @5
+            block  ;; label = @5
               local.get 1
-              local.get 1
-              f64.load offset=40
-              f64.const -0x1p-1 (;=-0.5;)
-              f64.add
-              f64.store offset=40
+              i32.load offset=36
+              i32.const 6
+              i32.eq
+              if  ;; label = @6
+                local.get 1
+                local.get 1
+                f64.load offset=40
+                f64.const -0x1p-1 (;=-0.5;)
+                f64.add
+                f64.store offset=40
+                br 1 (;@5;)
+              end
+              block  ;; label = @6
+                local.get 1
+                i32.load offset=36
+                i32.const 4
+                i32.eq
+                if  ;; label = @7
+                  local.get 1
+                  local.get 1
+                  f64.load offset=40
+                  f64.const -0x1.999999999999ap-4 (;=-0.1;)
+                  f64.add
+                  f64.store offset=40
+                  br 1 (;@6;)
+                end
+                local.get 1
+                local.get 1
+                f64.load offset=40
+                f64.const 0x1.3333333333333p-2 (;=0.3;)
+                f64.add
+                f64.store offset=40
+              end
             end
           end
         end
@@ -17197,8 +17848,8 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $Board::miniMax_int_ (type 5) (param i32 i32 i32)
-    (local i32 i32 i32 i32)
+  (func $Board::runMiniMax_int_ (type 5) (param i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 112
     i32.sub
@@ -17211,209 +17862,814 @@
     local.get 2
     i32.store offset=104
     local.get 3
+    i32.load offset=108
+    local.set 4
+    local.get 3
     i32.const 92
     i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_abi:v15007___
+    drop
     local.get 3
-    i32.load offset=108
-    local.tee 4
+    i32.const 80
+    i32.add
+    local.get 4
     local.get 4
     i32.load8_u
     i32.extend8_s
     call $Board::genAllValidMoves_char_
     local.get 3
-    f64.const -0x1p+31 (;=-2.14748e+09;)
-    f64.store offset=80
+    i32.const 56
+    i32.add
+    local.get 3
+    i32.const 80
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_const&_
+    drop
+    local.get 3
+    i32.const 68
+    i32.add
+    local.get 4
+    local.get 3
+    i32.const 56
+    i32.add
+    call $Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_
+    local.get 3
+    i32.const 80
+    i32.add
+    local.get 3
+    i32.const 68
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator=_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&&_
+    drop
+    local.get 3
+    i32.const 68
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+    drop
+    local.get 3
+    i32.const 56
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+    drop
+    local.get 3
+    i32.const 0
+    i32.store offset=52
+    loop  ;; label = @1
+      local.get 3
+      i32.load offset=52
+      local.get 3
+      i32.load offset=104
+      i32.ge_s
+      i32.eqz
+      if  ;; label = @2
+        local.get 3
+        i32.load offset=52
+        local.set 5
+        local.get 3
+        i32.const 28
+        i32.add
+        local.get 3
+        i32.const 80
+        i32.add
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_const&_
+        drop
+        local.get 3
+        i32.const 40
+        i32.add
+        local.get 4
+        local.get 5
+        local.get 3
+        i32.const 28
+        i32.add
+        call $Board::miniMax_int__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_
+        local.get 3
+        i32.const 92
+        i32.add
+        local.get 3
+        i32.const 40
+        i32.add
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::push_back_abi:v15007__std::__2::tuple<int__int__int>&&_
+        local.get 3
+        i32.const 28
+        i32.add
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+        drop
+        local.get 3
+        i32.const 0
+        i32.store offset=24
+        loop  ;; label = @3
+          local.get 3
+          i32.load offset=24
+          local.get 3
+          i32.const 80
+          i32.add
+          call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
+          i32.lt_u
+          if  ;; label = @4
+            local.get 3
+            i32.const 92
+            i32.add
+            local.get 3
+            i32.load offset=24
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+            local.get 3
+            i32.const 80
+            i32.add
+            local.get 3
+            i32.load offset=24
+            call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+            call $bool_std::__2::operator==_abi:v15007_<int__int__int__int__int__int>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_
+            i32.const 1
+            i32.and
+            if  ;; label = @5
+              local.get 3
+              local.get 3
+              i32.const 80
+              i32.add
+              local.get 3
+              i32.load offset=24
+              call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+              local.tee 6
+              i32.load offset=8
+              i32.store offset=16
+              local.get 3
+              local.get 6
+              i64.load align=4
+              i64.store offset=8
+              local.get 3
+              local.get 3
+              i32.load offset=24
+              i32.store offset=4
+              loop  ;; label = @6
+                local.get 3
+                i32.load offset=4
+                i32.const 0
+                i32.le_s
+                i32.eqz
+                if  ;; label = @7
+                  local.get 3
+                  i32.const 80
+                  i32.add
+                  local.get 3
+                  i32.load offset=4
+                  i32.const 1
+                  i32.sub
+                  call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+                  local.set 7
+                  local.get 3
+                  i32.const 80
+                  i32.add
+                  local.get 3
+                  i32.load offset=4
+                  call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+                  local.get 7
+                  call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>_const&_
+                  drop
+                  local.get 3
+                  local.get 3
+                  i32.load offset=4
+                  i32.const 1
+                  i32.sub
+                  i32.store offset=4
+                  br 1 (;@6;)
+                end
+              end
+              local.get 3
+              i32.const 80
+              i32.add
+              i32.const 0
+              call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+              local.get 3
+              i32.const 8
+              i32.add
+              call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>_const&_
+              drop
+            end
+            local.get 3
+            local.get 3
+            i32.load offset=24
+            i32.const 1
+            i32.add
+            i32.store offset=24
+            br 1 (;@3;)
+          end
+        end
+        local.get 3
+        local.get 3
+        i32.load offset=52
+        i32.const 1
+        i32.add
+        i32.store offset=52
+        br 1 (;@1;)
+      end
+    end
     local.get 0
     local.get 3
     i32.const 92
     i32.add
-    i32.const 0
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::operator___abi:v15007__unsigned_long_
+    local.get 3
+    i32.const 92
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
+    i32.const 1
+    i32.sub
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+    local.tee 8
     i64.load align=4
     i64.store align=4
+    local.get 0
+    local.get 8
+    i32.load offset=8
+    i32.store offset=8
     local.get 3
+    i32.const 80
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+    drop
     local.get 3
     i32.const 92
     i32.add
-    i32.store offset=76
-    local.get 3
-    local.get 3
-    i32.load offset=76
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007___
-    i32.store offset=72
-    local.get 3
-    local.get 3
-    i32.load offset=76
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::end_abi:v15007___
-    i32.store offset=68
-    loop  ;; label = @1
-      local.get 3
-      i32.const 72
-      i32.add
-      local.get 3
-      i32.const 68
-      i32.add
-      call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&_
-      i32.const 1
-      i32.and
-      if  ;; label = @2
-        local.get 3
-        local.get 3
-        i32.const 72
-        i32.add
-        call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator*_abi:v15007____const
-        i64.load align=4
-        i64.store offset=56
-        local.get 3
-        local.get 4
-        i32.const 60
-        i32.add
-        local.get 3
-        i32.const 56
-        i32.add
-        call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
-        i32.load
-        call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-        i32.load
-        i32.store offset=52
-        local.get 3
-        local.get 4
-        i32.const 60
-        i32.add
-        local.get 3
-        i32.const 56
-        i32.add
-        call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
-        i32.load
-        call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-        i32.load
-        i32.store offset=48
-        local.get 3
-        local.get 3
-        i64.load offset=56 align=4
-        i64.store offset=40
-        local.get 3
-        local.get 3
-        i64.load offset=40 align=4
-        i64.store offset=16
-        local.get 4
-        local.get 3
-        i32.const 16
-        i32.add
-        call $Board::makeMove_std::__2::tuple<int__int>_
-        local.get 3
-        f64.const -0x0p+0 (;=-0;)
-        local.get 4
-        local.get 3
-        i32.load offset=104
-        f64.const -0x1p+31 (;=-2.14748e+09;)
-        local.get 3
-        f64.load offset=80
-        f64.neg
-        call $Board::miniMaxRec_int__double__double_
-        f64.sub
-        f64.store offset=32
-        local.get 3
-        f64.load offset=32
-        local.get 3
-        f64.load offset=80
-        f64.gt
-        if  ;; label = @3
-          local.get 3
-          local.get 3
-          f64.load offset=32
-          f64.store offset=80
-          local.get 0
-          local.get 3
-          i32.const 56
-          i32.add
-          call $std::__2::tuple<int__int>::operator=_abi:v15007__std::__2::tuple<int__int>_const&_
-          drop
-        end
-        local.get 3
-        local.get 3
-        i64.load offset=56
-        i64.store offset=24
-        local.get 3
-        i32.load offset=48
-        local.set 5
-        local.get 3
-        i32.load offset=52
-        local.set 6
-        local.get 3
-        local.get 3
-        i64.load offset=24 align=4
-        i64.store offset=8
-        local.get 4
-        local.get 3
-        i32.const 8
-        i32.add
-        local.get 5
-        local.get 6
-        call $Board::unmakeMove_std::__2::tuple<int__int>__int__int_
-        local.get 3
-        i32.const 72
-        i32.add
-        call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator++_abi:v15007___
-        drop
-        br 1 (;@1;)
-      end
-    end
-    local.get 3
-    i32.const 92
-    i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::~vector_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
     drop
     local.get 3
     i32.const 112
     i32.add
     global.set $__stack_pointer)
-  (func $Board::miniMaxRec_int__double__double_ (type 47) (param i32 i32 f64 f64) (result f64)
-    (local i32 i32 i32 i32 f64)
+  (func $Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_ (type 5) (param i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=28
+    local.get 3
+    local.get 1
+    i32.store offset=24
+    local.get 3
+    local.get 2
+    i32.store offset=20
+    local.get 3
+    local.get 2
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007___
+    i32.store offset=12
+    local.get 3
+    local.get 2
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::end_abi:v15007___
+    i32.store offset=8
+    local.get 3
+    i32.load offset=12
+    local.get 3
+    i32.load offset=8
+    call $void_std::__2::sort_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0_
+    local.get 0
+    local.get 2
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&&_
+    drop
+    local.get 3
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator=_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&&_ (type 1) (param i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.tee 3
+    local.get 2
+    i32.load offset=8
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__std::__2::integral_constant<bool__true>_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 3)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.const 8
+    i32.add
+    local.get 1
+    i32.load offset=12
+    local.tee 2
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&_
+    drop
+    local.get 1
+    i32.const 8
+    i32.add
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__destroy_vector::operator___abi:v15007___
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $Board::miniMax_int__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_ (type 8) (param i32 i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 128
     i32.sub
     local.tee 4
     global.set $__stack_pointer
     local.get 4
-    local.get 0
-    i32.store offset=116
-    local.get 4
     local.get 1
-    i32.store offset=112
+    i32.store offset=124
     local.get 4
     local.get 2
-    f64.store offset=104
+    i32.store offset=120
     local.get 4
     local.get 3
-    f64.store offset=96
+    i32.store offset=116
     local.get 4
-    i32.load offset=116
+    i32.load offset=124
+    local.set 5
+    local.get 4
+    f64.const -0x1p+31 (;=-2.14748e+09;)
+    f64.store offset=104
+    local.get 0
+    local.get 3
+    i32.const 0
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator___abi:v15007__unsigned_long_
+    local.tee 6
+    i64.load align=4
+    i64.store align=4
+    local.get 0
+    local.get 6
+    i32.load offset=8
+    i32.store offset=8
+    local.get 4
+    local.get 3
+    i32.store offset=100
+    local.get 4
+    local.get 4
+    i32.load offset=100
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007___
+    i32.store offset=96
+    local.get 4
+    local.get 4
+    i32.load offset=100
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::end_abi:v15007___
+    i32.store offset=92
+    loop  ;; label = @1
+      local.get 4
+      i32.const 96
+      i32.add
+      local.get 4
+      i32.const 92
+      i32.add
+      call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 4
+        local.get 4
+        i32.const 96
+        i32.add
+        call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const
+        local.tee 7
+        i32.load offset=8
+        i32.store offset=88
+        local.get 4
+        local.get 7
+        i64.load align=4
+        i64.store offset=80
+        local.get 4
+        local.get 5
+        i32.const 60
+        i32.add
+        local.get 4
+        i32.const 80
+        i32.add
+        call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
+        i32.load
+        call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+        i32.load
+        i32.store offset=76
+        local.get 4
+        local.get 5
+        i32.const 60
+        i32.add
+        local.get 4
+        i32.const 80
+        i32.add
+        call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
+        i32.load
+        call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+        i32.load
+        i32.store offset=72
+        local.get 4
+        local.get 4
+        i32.load offset=88
+        i32.store offset=64
+        local.get 4
+        local.get 4
+        i64.load offset=80 align=4
+        i64.store offset=56
+        local.get 4
+        local.get 4
+        i32.load offset=64
+        i32.store offset=24
+        local.get 4
+        local.get 4
+        i64.load offset=56 align=4
+        i64.store offset=16
+        local.get 5
+        local.get 4
+        i32.const 16
+        i32.add
+        call $Board::makeMove_std::__2::tuple<int__int__int>_
+        local.get 4
+        f64.const -0x0p+0 (;=-0;)
+        local.get 5
+        local.get 4
+        i32.load offset=120
+        f64.const -0x1p+31 (;=-2.14748e+09;)
+        local.get 4
+        f64.load offset=104
+        f64.neg
+        call $Board::miniMaxRec_int__double__double_
+        f64.sub
+        f64.store offset=48
+        local.get 4
+        f64.load offset=48
+        local.get 4
+        f64.load offset=104
+        f64.gt
+        if  ;; label = @3
+          local.get 4
+          local.get 4
+          f64.load offset=48
+          f64.store offset=104
+          local.get 0
+          local.get 4
+          i32.const 80
+          i32.add
+          call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>_const&_
+          drop
+        end
+        local.get 4
+        local.get 4
+        i32.load offset=88
+        i32.store offset=40
+        local.get 4
+        local.get 4
+        i64.load offset=80
+        i64.store offset=32
+        local.get 4
+        i32.load offset=72
+        local.set 8
+        local.get 4
+        i32.load offset=76
+        local.set 9
+        local.get 4
+        local.get 4
+        i32.load offset=40
+        i32.store offset=8
+        local.get 4
+        local.get 4
+        i64.load offset=32 align=4
+        i64.store
+        local.get 5
+        local.get 4
+        local.get 8
+        local.get 9
+        call $Board::unmakeMove_std::__2::tuple<int__int__int>__int__int_
+        local.get 4
+        i32.const 96
+        i32.add
+        call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___
+        drop
+        br 1 (;@1;)
+      end
+    end
+    local.get 4
+    i32.const 128
+    i32.add
+    global.set $__stack_pointer)
+  (func $bool_std::__2::operator==_abi:v15007_<int__int__int__int__int__int>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_ (type 1) (param i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.const 7
+    i32.add
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $bool_std::__2::__tuple_equal<3ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_
+    i32.const 1
+    i32.and
+    local.set 3
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 3)
+  (func $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>_const&_ (type 1) (param i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.tee 3
+    local.get 2
+    i32.load offset=8
+    call $void_std::__2::__memberwise_copy_assign_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__0ul__1ul__2ul>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>_const&__std::__2::__tuple_indices<0ul__1ul__2ul>_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 3)
+  (func $void_std::__2::sort_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=28
+    local.get 2
+    local.get 1
+    i32.store offset=24
+    local.get 2
+    local.get 2
+    i32.load offset=28
+    i32.store offset=16
+    local.get 2
+    local.get 2
+    i32.load offset=24
+    i32.store offset=12
+    local.get 2
+    i32.load offset=16
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.const 23
+    i32.add
+    call $void_std::__2::__sort_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    local.get 2
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&&_ (type 1) (param i32 i32) (result i32)
+    (local i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.tee 3
+    i32.const 0
+    i32.store
+    local.get 3
+    i32.const 0
+    i32.store offset=4
+    local.get 2
+    i32.const 0
+    i32.store offset=4
+    local.get 3
+    i32.const 8
+    i32.add
+    local.get 2
+    i32.const 4
+    i32.add
+    local.get 2
+    i32.load offset=8
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
+    call $std::__2::__compressed_pair<std::__2::tuple<int__int__int>*__std::__2::allocator<std::__2::tuple<int__int__int>>>::__compressed_pair_abi:v15007_<std::nullptr_t__std::__2::allocator<std::__2::tuple<int__int__int>>>_std::nullptr_t&&__std::__2::allocator<std::__2::tuple<int__int__int>>&&_
+    drop
+    local.get 3
+    call $void_std::__2::__debug_db_insert_c_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
+    local.get 3
+    local.get 2
+    i32.load offset=8
+    call $void_std::__2::__debug_db_swap_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
+    local.get 3
+    local.get 2
+    i32.load offset=8
+    i32.load
+    i32.store
+    local.get 3
+    local.get 2
+    i32.load offset=8
+    i32.load offset=4
+    i32.store offset=4
+    local.get 2
+    i32.load offset=8
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    i32.load
+    local.set 4
+    local.get 3
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    local.get 4
+    i32.store
+    local.get 2
+    i32.load offset=8
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    i32.const 0
+    i32.store
+    local.get 2
+    i32.load offset=8
+    i32.const 0
+    i32.store offset=4
+    local.get 2
+    i32.load offset=8
+    i32.const 0
+    i32.store
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 3)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__std::__2::integral_constant<bool__true>_ (type 2) (param i32 i32)
+    (local i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=8
+    local.get 2
+    local.get 1
+    i32.store offset=4
+    local.get 2
+    i32.load offset=8
+    local.tee 3
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__vdeallocate__
+    local.get 3
+    local.get 2
+    i32.load offset=4
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_alloc_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&_
+    local.get 3
+    local.get 2
+    i32.load offset=4
+    i32.load
+    i32.store
+    local.get 3
+    local.get 2
+    i32.load offset=4
+    i32.load offset=4
+    i32.store offset=4
+    local.get 2
+    i32.load offset=4
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    i32.load
+    local.set 4
+    local.get 3
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    local.get 4
+    i32.store
+    local.get 2
+    i32.load offset=4
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+    i32.const 0
+    i32.store
+    local.get 2
+    i32.load offset=4
+    i32.const 0
+    i32.store offset=4
+    local.get 2
+    i32.load offset=4
+    i32.const 0
+    i32.store
+    local.get 3
+    local.get 2
+    i32.load offset=4
+    call $void_std::__2::__debug_db_swap_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $Board::miniMaxRec_int__double__double_ (type 47) (param i32 i32 f64 f64) (result f64)
+    (local i32 i32 i32 i32 i32 f64)
+    global.get $__stack_pointer
+    i32.const 176
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=164
+    local.get 4
+    local.get 1
+    i32.store offset=160
+    local.get 4
+    local.get 2
+    f64.store offset=152
+    local.get 4
+    local.get 3
+    f64.store offset=144
+    local.get 4
+    i32.load offset=164
     local.set 5
     block  ;; label = @1
       local.get 4
-      i32.load offset=112
+      i32.load offset=160
       i32.eqz
       if  ;; label = @2
         local.get 4
         local.get 5
         call $Board::evaluate__
-        f64.store offset=120
+        f64.store offset=168
         br 1 (;@1;)
       end
       local.get 4
-      i32.const 84
+      i32.const 132
       i32.add
       local.get 5
       local.get 5
       i32.load8_u
       i32.extend8_s
       call $Board::genAllValidMoves_char_
+      local.get 4
+      i32.const 108
+      i32.add
+      local.get 4
+      i32.const 132
+      i32.add
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::vector_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_const&_
+      drop
+      local.get 4
+      i32.const 120
+      i32.add
+      local.get 5
+      local.get 4
+      i32.const 108
+      i32.add
+      call $Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_
+      local.get 4
+      i32.const 132
+      i32.add
+      local.get 4
+      i32.const 120
+      i32.add
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::operator=_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&&_
+      drop
+      local.get 4
+      i32.const 120
+      i32.add
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+      drop
+      local.get 4
+      i32.const 108
+      i32.add
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
+      drop
       block  ;; label = @2
         local.get 4
-        i32.const 84
+        i32.const 132
         i32.add
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::size_abi:v15007____const
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::size_abi:v15007____const
         i32.eqz
         if  ;; label = @3
           local.get 5
@@ -17441,227 +18697,238 @@
           if  ;; label = @4
             local.get 4
             f64.const -0x1p+31 (;=-2.14748e+09;)
-            f64.store offset=120
+            f64.store offset=168
             br 2 (;@2;)
           end
           local.get 4
           f64.const 0x0p+0 (;=0;)
-          f64.store offset=120
+          f64.store offset=168
           br 1 (;@2;)
         end
         local.get 4
         local.get 4
-        i32.const 84
+        i32.const 132
         i32.add
-        i32.store offset=76
+        i32.store offset=100
         local.get 4
         local.get 4
-        i32.load offset=76
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::begin_abi:v15007___
-        i32.store offset=72
+        i32.load offset=100
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::begin_abi:v15007___
+        i32.store offset=96
         local.get 4
         local.get 4
-        i32.load offset=76
-        call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::end_abi:v15007___
-        i32.store offset=68
+        i32.load offset=100
+        call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::end_abi:v15007___
+        i32.store offset=92
         loop  ;; label = @3
           local.get 4
-          i32.const 72
+          i32.const 96
           i32.add
           local.get 4
-          i32.const 68
+          i32.const 92
           i32.add
-          call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int>*>_const&_
+          call $bool_std::__2::operator!=_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_
           i32.const 1
           i32.and
           if  ;; label = @4
             local.get 4
             local.get 4
-            i32.const 72
+            i32.const 96
             i32.add
-            call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator*_abi:v15007____const
+            call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator*_abi:v15007____const
+            local.tee 6
+            i32.load offset=8
+            i32.store offset=88
+            local.get 4
+            local.get 6
             i64.load align=4
+            i64.store offset=80
+            local.get 4
+            local.get 5
+            i32.const 60
+            i32.add
+            local.get 4
+            i32.const 80
+            i32.add
+            call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
+            i32.load
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.store offset=76
+            local.get 4
+            local.get 5
+            i32.const 60
+            i32.add
+            local.get 4
+            i32.const 80
+            i32.add
+            call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
+            i32.load
+            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
+            i32.load
+            i32.store offset=72
+            local.get 4
+            local.get 4
+            i32.load offset=88
+            i32.store offset=64
+            local.get 4
+            local.get 4
+            i64.load offset=80 align=4
             i64.store offset=56
             local.get 4
-            local.get 5
-            i32.const 60
-            i32.add
             local.get 4
-            i32.const 56
-            i32.add
-            call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
-            i32.load
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.store offset=52
-            local.get 4
-            local.get 5
-            i32.const 60
-            i32.add
-            local.get 4
-            i32.const 56
-            i32.add
-            call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
-            i32.load
-            call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
-            i32.load
-            i32.store offset=48
+            i32.load offset=64
+            i32.store offset=8
             local.get 4
             local.get 4
             i64.load offset=56 align=4
-            i64.store offset=40
-            local.get 4
-            local.get 4
-            i64.load offset=40 align=4
-            i64.store offset=8
+            i64.store
             local.get 5
             local.get 4
-            i32.const 8
-            i32.add
-            call $Board::makeMove_std::__2::tuple<int__int>_
+            call $Board::makeMove_std::__2::tuple<int__int__int>_
             local.get 4
             f64.const -0x0p+0 (;=-0;)
             local.get 5
             local.get 4
-            i32.load offset=112
+            i32.load offset=160
             i32.const 1
             i32.sub
             local.get 4
-            f64.load offset=96
+            f64.load offset=144
             f64.neg
             local.get 4
-            f64.load offset=104
+            f64.load offset=152
             f64.neg
             call $Board::miniMaxRec_int__double__double_
             f64.sub
-            f64.store offset=32
+            f64.store offset=48
             local.get 4
             local.get 4
-            i64.load offset=56 align=4
-            i64.store offset=24
+            i32.load offset=88
+            i32.store offset=40
             local.get 4
-            i32.load offset=48
-            local.set 6
             local.get 4
-            i32.load offset=52
+            i64.load offset=80 align=4
+            i64.store offset=32
+            local.get 4
+            i32.load offset=72
             local.set 7
             local.get 4
+            i32.load offset=76
+            local.set 8
             local.get 4
-            i64.load offset=24 align=4
+            local.get 4
+            i32.load offset=40
+            i32.store offset=24
+            local.get 4
+            local.get 4
+            i64.load offset=32 align=4
             i64.store offset=16
             local.get 5
             local.get 4
             i32.const 16
             i32.add
-            local.get 6
             local.get 7
-            call $Board::unmakeMove_std::__2::tuple<int__int>__int__int_
+            local.get 8
+            call $Board::unmakeMove_std::__2::tuple<int__int__int>__int__int_
             local.get 4
-            f64.load offset=32
+            f64.load offset=48
             local.get 4
-            f64.load offset=96
+            f64.load offset=144
             f64.ge
             if  ;; label = @5
               local.get 4
               local.get 4
-              f64.load offset=96
-              f64.store offset=120
+              f64.load offset=144
+              f64.store offset=168
               br 3 (;@2;)
             end
             local.get 4
-            f64.load offset=32
+            f64.load offset=48
             local.get 4
-            f64.load offset=104
+            f64.load offset=152
             f64.gt
             if  ;; label = @5
               local.get 4
               local.get 4
-              f64.load offset=32
-              f64.store offset=104
+              f64.load offset=48
+              f64.store offset=152
             end
             local.get 4
-            i32.const 72
+            i32.const 96
             i32.add
-            call $std::__2::__wrap_iter<std::__2::tuple<int__int>*>::operator++_abi:v15007___
+            call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::operator++_abi:v15007___
             drop
             br 1 (;@3;)
           end
         end
         local.get 4
         local.get 4
-        f64.load offset=104
-        f64.store offset=120
+        f64.load offset=152
+        f64.store offset=168
       end
       local.get 4
       i32.const 1
-      i32.store offset=80
+      i32.store offset=104
       local.get 4
-      i32.const 84
+      i32.const 132
       i32.add
-      call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::~vector_abi:v15007___
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
       drop
     end
     local.get 4
-    f64.load offset=120
-    local.set 8
+    f64.load offset=168
+    local.set 9
     local.get 4
-    i32.const 128
+    i32.const 176
     i32.add
     global.set $__stack_pointer
-    local.get 8)
-  (func $std::__2::tuple<int__int>::operator=_abi:v15007__std::__2::tuple<int__int>_const&_ (type 1) (param i32 i32) (result i32)
+    local.get 9)
+  (func $bool_std::__2::__tuple_equal<3ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_ (type 3) (param i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
-    local.tee 2
+    local.tee 3
     global.set $__stack_pointer
-    local.get 2
+    local.get 3
     local.get 0
     i32.store offset=12
-    local.get 2
+    local.get 3
     local.get 1
     i32.store offset=8
+    local.get 3
     local.get 2
-    i32.load offset=12
-    local.tee 3
-    local.get 2
+    i32.store offset=4
+    local.get 3
+    i32.const 3
+    i32.add
+    local.get 3
     i32.load offset=8
-    call $void_std::__2::__memberwise_copy_assign_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__0ul__1ul>_std::__2::tuple<int__int>&__std::__2::tuple<int__int>_const&__std::__2::__tuple_indices<0ul__1ul>_
-    local.get 2
+    local.get 3
+    i32.load offset=4
+    call $bool_std::__2::__tuple_equal<2ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_
+    i32.const 1
+    i32.and
+    if  ;; label = @1
+      local.get 3
+      i32.load offset=8
+      call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      local.get 3
+      i32.load offset=4
+      call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      i32.eq
+      local.set 4
+    end
+    local.get 3
     i32.const 16
     i32.add
     global.set $__stack_pointer
-    local.get 3)
-  (func $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::~vector_abi:v15007___ (type 0) (param i32) (result i32)
-    (local i32 i32)
-    global.get $__stack_pointer
-    i32.const 16
-    i32.sub
-    local.tee 1
-    global.set $__stack_pointer
-    local.get 1
-    local.get 0
-    i32.store offset=12
-    local.get 1
-    i32.const 8
-    i32.add
-    local.get 1
-    i32.load offset=12
-    local.tee 2
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::__destroy_vector_std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>&_
-    drop
-    local.get 1
-    i32.const 8
-    i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::__destroy_vector::operator___abi:v15007___
-    local.get 1
-    i32.const 16
-    i32.add
-    global.set $__stack_pointer
-    local.get 2)
-  (func $void_std::__2::__memberwise_copy_assign_abi:v15007_<std::__2::tuple<int__int>__std::__2::tuple<int__int>__0ul__1ul>_std::__2::tuple<int__int>&__std::__2::tuple<int__int>_const&__std::__2::__tuple_indices<0ul__1ul>_ (type 2) (param i32 i32)
-    (local i32 i32 i32)
+    local.get 4)
+  (func $void_std::__2::__memberwise_copy_assign_abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>__0ul__1ul__2ul>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>_const&__std::__2::__tuple_indices<0ul__1ul__2ul>_ (type 2) (param i32 i32)
+    (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 32
     i32.sub
@@ -17675,12 +18942,12 @@
     i32.store offset=20
     local.get 2
     i32.load offset=20
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>_const&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
     i32.load
     local.set 3
     local.get 2
     i32.load offset=24
-    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>&_
     local.get 3
     i32.store
     local.get 2
@@ -17688,28 +18955,307 @@
     i32.store offset=16
     local.get 2
     i32.load offset=20
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>_const&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
     i32.load
     local.set 4
     local.get 2
     i32.load offset=24
-    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>&_
+    call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>&_
     local.get 4
     i32.store
     local.get 2
     i32.const 0
     i32.store offset=12
     local.get 2
+    i32.load offset=20
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+    i32.load
+    local.set 5
+    local.get 2
+    i32.load offset=24
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>&_
+    local.get 5
+    i32.store
+    local.get 2
+    i32.const 0
+    i32.store offset=8
+    local.get 2
     i32.const 16
     i32.add
     local.get 2
     i32.const 12
     i32.add
-    call $void_std::__2::__swallow_abi:v15007_<int__int>_int&&__int&&_
+    local.get 2
+    i32.const 8
+    i32.add
+    call $void_std::__2::__swallow_abi:v15007_<int__int__int>_int&&__int&&__int&&_
     local.get 2
     i32.const 32
     i32.add
     global.set $__stack_pointer)
+  (func $void_std::__2::__sort_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 5) (param i32 i32 i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 48
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=44
+    local.get 3
+    local.get 1
+    i32.store offset=40
+    local.get 3
+    local.get 2
+    i32.store offset=36
+    local.get 3
+    local.get 3
+    i32.load offset=44
+    i32.store offset=32
+    local.get 3
+    local.get 3
+    i32.load offset=40
+    i32.store offset=28
+    local.get 3
+    i32.load offset=32
+    local.get 3
+    i32.load offset=28
+    call $void_std::__2::__debug_randomize_range_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_
+    local.get 3
+    local.get 3
+    i32.load offset=36
+    i32.store offset=24
+    local.get 3
+    local.get 3
+    i32.load offset=24
+    i32.store offset=20
+    local.get 3
+    local.get 3
+    i32.load offset=44
+    i32.store offset=16
+    local.get 3
+    i32.load offset=16
+    call $decltype_std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>::__unwrap_std::declval<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>__0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_
+    local.set 4
+    local.get 3
+    local.get 3
+    i32.load offset=40
+    i32.store offset=12
+    local.get 4
+    local.get 3
+    i32.load offset=12
+    call $decltype_std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>::__unwrap_std::declval<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>__0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_
+    local.get 3
+    i32.load offset=20
+    call $void_std::__2::__sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    local.get 3
+    i32.const 48
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__debug_db_swap_abi:v15007_<std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>>_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>*_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8)
+  (func $bool_std::__2::__tuple_equal<2ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_ (type 3) (param i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=12
+    local.get 3
+    local.get 1
+    i32.store offset=8
+    local.get 3
+    local.get 2
+    i32.store offset=4
+    local.get 3
+    i32.const 3
+    i32.add
+    local.get 3
+    i32.load offset=8
+    local.get 3
+    i32.load offset=4
+    call $bool_std::__2::__tuple_equal<1ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_
+    i32.const 1
+    i32.and
+    if  ;; label = @1
+      local.get 3
+      i32.load offset=8
+      call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      local.get 3
+      i32.load offset=4
+      call $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      i32.eq
+      local.set 4
+    end
+    local.get 3
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 4)
+  (func $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12
+    i32.const 8
+    i32.add
+    call $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007____const
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $bool_std::__2::__tuple_equal<1ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_ (type 3) (param i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=12
+    local.get 3
+    local.get 1
+    i32.store offset=8
+    local.get 3
+    local.get 2
+    i32.store offset=4
+    local.get 3
+    i32.const 3
+    i32.add
+    local.get 3
+    i32.load offset=8
+    local.get 3
+    i32.load offset=4
+    call $bool_std::__2::__tuple_equal<0ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_
+    i32.const 1
+    i32.and
+    if  ;; label = @1
+      local.get 3
+      i32.load offset=8
+      call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      local.get 3
+      i32.load offset=4
+      call $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+      i32.load
+      i32.eq
+      local.set 4
+    end
+    local.get 3
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 4)
+  (func $std::__2::tuple_element<1ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int__int>_std::__2::tuple<int__int__int>_const&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12
+    i32.const 4
+    i32.add
+    call $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007____const
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007____const (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12)
+  (func $bool_std::__2::__tuple_equal<0ul>::operator___abi:v15007_<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&_ (type 3) (param i32 i32 i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 3
+    local.get 0
+    i32.store offset=12
+    local.get 3
+    local.get 1
+    i32.store offset=8
+    local.get 3
+    local.get 2
+    i32.store offset=4
+    i32.const 1)
+  (func $std::__2::tuple_element<0ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int__int>_std::__2::tuple<int__int__int>_const&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007____const
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007____const (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12)
+  (func $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007____const (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12)
   (func $std::__2::__compressed_pair<std::__2::__tree_end_node<std::__2::__tree_node_base<void*>*>__std::__2::allocator<std::__2::__tree_node<int__void*>>>::__compressed_pair_abi:v15007_<true__void>__ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -18241,7 +19787,7 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $std::__2::__tree_node_base<void*>*&_std::__2::__tree<int__std::__2::less<int>__std::__2::allocator<int>>::__find_equal<int>_std::__2::__tree_const_iterator<int__std::__2::__tree_node<int__void*>*__long>__std::__2::__tree_end_node<std::__2::__tree_node_base<void*>*>*&__std::__2::__tree_node_base<void*>*&__int_const&_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::__tree_node_base<void*>*&_std::__2::__tree<int__std::__2::less<int>__std::__2::allocator<int>>::__find_equal<int>_std::__2::__tree_const_iterator<int__std::__2::__tree_node<int__void*>*__long>__std::__2::__tree_end_node<std::__2::__tree_node_base<void*>*>*&__std::__2::__tree_node_base<void*>*&__int_const&_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const -64
@@ -18607,7 +20153,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__tree<int__std::__2::less<int>__std::__2::allocator<int>>::__insert_node_at_std::__2::__tree_end_node<std::__2::__tree_node_base<void*>*>*__std::__2::__tree_node_base<void*>*&__std::__2::__tree_node_base<void*>*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::__tree<int__std::__2::less<int>__std::__2::allocator<int>>::__insert_node_at_std::__2::__tree_end_node<std::__2::__tree_node_base<void*>*>*__std::__2::__tree_node_base<void*>*&__std::__2::__tree_node_base<void*>*_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -20684,7 +22230,106 @@
     i32.store offset=12
     local.get 1
     i32.load offset=12)
-  (func $std::__2::tuple_element<0ul__std::__2::tuple<int__int>>::type_const&_std::__2::get_abi:v15007_<0ul__int__int>_std::__2::tuple<int__int>_const&_ (type 0) (param i32) (result i32)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__vdeallocate__ (type 4) (param i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    i32.load offset=12
+    local.tee 1
+    i32.load
+    if  ;; label = @1
+      local.get 1
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::clear_abi:v15007___
+      local.get 1
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
+      local.get 1
+      i32.load
+      local.get 1
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::capacity_abi:v15007____const
+      call $std::__2::allocator_traits<std::__2::allocator<std::__2::tuple<int__int__int>>>::deallocate_abi:v15007__std::__2::allocator<std::__2::tuple<int__int__int>>&__std::__2::tuple<int__int__int>*__unsigned_long_
+      local.get 1
+      call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__end_cap_abi:v15007___
+      i32.const 0
+      i32.store
+      local.get 1
+      i32.const 0
+      i32.store offset=4
+      local.get 1
+      i32.const 0
+      i32.store
+    end
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_alloc_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_alloc_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__std::__2::integral_constant<bool__true>_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__move_assign_alloc_abi:v15007__std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>&__std::__2::integral_constant<bool__true>_ (type 2) (param i32 i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=8
+    local.get 2
+    local.get 1
+    i32.store offset=4
+    local.get 2
+    i32.load offset=8
+    local.set 3
+    local.get 2
+    i32.load offset=4
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
+    drop
+    local.get 3
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::__alloc_abi:v15007___
+    drop
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__debug_randomize_range_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8)
+  (func $decltype_std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>::__unwrap_std::declval<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>__0>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -20695,15 +22340,874 @@
     local.get 0
     i32.store offset=12
     local.get 1
+    local.get 1
     i32.load offset=12
-    call $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007____const
+    i32.store offset=8
+    local.get 1
+    i32.load offset=8
+    call $std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>::__unwrap_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::tuple_element<1ul__std::__2::tuple<int__int>>::type_const&_std::__2::get_abi:v15007_<1ul__int__int>_std::__2::tuple<int__int>_const&_ (type 0) (param i32) (result i32)
+  (func $void_std::__2::__sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 5) (param i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=28
+    local.get 3
+    local.get 1
+    i32.store offset=24
+    local.get 3
+    local.get 2
+    i32.store offset=20
+    local.get 3
+    local.get 3
+    i32.load offset=24
+    local.get 3
+    i32.load offset=28
+    i32.sub
+    i32.const 12
+    i32.div_s
+    call $long_std::__2::__log2i_abi:v15007_<long>_long_
+    i32.const 1
+    i32.shl
+    i32.store offset=16
+    local.get 3
+    local.get 3
+    i32.load offset=20
+    call $std::__2::_UnwrapAlgPolicy<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&>::__get_comp_abi:v15007__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    i32.store offset=12
+    local.get 3
+    i32.load offset=28
+    local.get 3
+    i32.load offset=24
+    local.get 3
+    i32.load offset=12
+    local.get 3
+    i32.load offset=16
+    call $void_std::__2::__introsort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+    local.get 3
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $long_std::__2::__log2i_abi:v15007_<long>_long_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=8
+    block  ;; label = @1
+      local.get 1
+      i32.load offset=8
+      i32.eqz
+      if  ;; label = @2
+        local.get 1
+        i32.const 0
+        i32.store offset=12
+        br 1 (;@1;)
+      end
+      local.get 1
+      i32.const 31
+      local.get 1
+      i32.load offset=8
+      call $std::__2::__libcpp_clz_abi:v15007__unsigned_int_
+      i32.sub
+      i32.store offset=12
+    end
+    local.get 1
+    i32.load offset=12
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::_UnwrapAlgPolicy<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&>::__get_comp_abi:v15007__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12)
+  (func $void_std::__2::__introsort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_ (type 8) (param i32 i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const -64
+    i32.add
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=60
+    local.get 4
+    local.get 1
+    i32.store offset=56
+    local.get 4
+    local.get 2
+    i32.store offset=52
+    local.get 4
+    local.get 3
+    i32.store offset=48
+    local.get 4
+    i32.const 6
+    i32.store offset=44
+    loop  ;; label = @1
+      block  ;; label = @2
+        loop  ;; label = @3
+          block  ;; label = @4
+            local.get 4
+            local.get 4
+            i32.load offset=56
+            local.get 4
+            i32.load offset=60
+            i32.sub
+            i32.const 12
+            i32.div_s
+            i32.store offset=40
+            block  ;; label = @5
+              block  ;; label = @6
+                block  ;; label = @7
+                  block  ;; label = @8
+                    block  ;; label = @9
+                      local.get 4
+                      i32.load offset=40
+                      br_table 7 (;@2;) 7 (;@2;) 0 (;@9;) 1 (;@8;) 2 (;@7;) 3 (;@6;) 4 (;@5;)
+                    end
+                    local.get 4
+                    i32.load offset=52
+                    local.set 5
+                    local.get 4
+                    local.get 4
+                    i32.load offset=56
+                    i32.const 12
+                    i32.sub
+                    local.tee 6
+                    i32.store offset=56
+                    local.get 5
+                    local.get 6
+                    local.get 4
+                    i32.load offset=60
+                    call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                    i32.const 1
+                    i32.and
+                    if  ;; label = @9
+                      local.get 4
+                      i32.const 60
+                      i32.add
+                      local.get 4
+                      i32.const 56
+                      i32.add
+                      call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+                    end
+                    br 6 (;@2;)
+                  end
+                  local.get 4
+                  i32.load offset=60
+                  local.set 7
+                  local.get 4
+                  i32.load offset=60
+                  i32.const 12
+                  i32.add
+                  local.set 8
+                  local.get 4
+                  local.get 4
+                  i32.load offset=56
+                  i32.const 12
+                  i32.sub
+                  local.tee 9
+                  i32.store offset=56
+                  local.get 7
+                  local.get 8
+                  local.get 9
+                  local.get 4
+                  i32.load offset=52
+                  call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort3_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+                  br 5 (;@2;)
+                end
+                local.get 4
+                i32.load offset=60
+                local.set 10
+                local.get 4
+                i32.load offset=60
+                i32.const 12
+                i32.add
+                local.set 11
+                local.get 4
+                i32.load offset=60
+                i32.const 24
+                i32.add
+                local.set 12
+                local.get 4
+                local.get 4
+                i32.load offset=56
+                i32.const 12
+                i32.sub
+                local.tee 13
+                i32.store offset=56
+                local.get 10
+                local.get 11
+                local.get 12
+                local.get 13
+                local.get 4
+                i32.load offset=52
+                call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort4_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+                br 4 (;@2;)
+              end
+              local.get 4
+              i32.load offset=60
+              local.set 14
+              local.get 4
+              i32.load offset=60
+              i32.const 12
+              i32.add
+              local.set 15
+              local.get 4
+              i32.load offset=60
+              i32.const 24
+              i32.add
+              local.set 16
+              local.get 4
+              i32.load offset=60
+              i32.const 36
+              i32.add
+              local.set 17
+              local.get 4
+              local.get 4
+              i32.load offset=56
+              i32.const 12
+              i32.sub
+              local.tee 18
+              i32.store offset=56
+              local.get 14
+              local.get 15
+              local.get 16
+              local.get 17
+              local.get 18
+              local.get 4
+              i32.load offset=52
+              call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort5_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+              br 3 (;@2;)
+            end
+            local.get 4
+            i32.load offset=40
+            i32.const 6
+            i32.le_s
+            if  ;; label = @5
+              local.get 4
+              i32.load offset=60
+              local.get 4
+              i32.load offset=56
+              local.get 4
+              i32.load offset=52
+              call $void_std::__2::__insertion_sort_3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+              br 3 (;@2;)
+            end
+            local.get 4
+            i32.load offset=48
+            i32.eqz
+            if  ;; label = @5
+              local.get 4
+              i32.load offset=60
+              local.get 4
+              i32.load offset=56
+              local.get 4
+              i32.load offset=56
+              local.get 4
+              i32.load offset=52
+              call $std::__2::tuple<int__int__int>*_std::__2::__partial_sort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+              drop
+              br 3 (;@2;)
+            end
+            local.get 4
+            local.get 4
+            i32.load offset=48
+            i32.const 1
+            i32.sub
+            i32.store offset=48
+            local.get 4
+            local.get 4
+            i32.load offset=60
+            i32.store offset=36
+            local.get 4
+            local.get 4
+            i32.load offset=56
+            i32.store offset=32
+            local.get 4
+            local.get 4
+            i32.load offset=32
+            i32.const 12
+            i32.sub
+            i32.store offset=32
+            block  ;; label = @5
+              local.get 4
+              i32.load offset=40
+              i32.const 1000
+              i32.ge_s
+              if  ;; label = @6
+                local.get 4
+                local.get 4
+                i32.load offset=40
+                i32.const 2
+                i32.div_s
+                i32.store offset=24
+                local.get 4
+                local.get 4
+                i32.load offset=36
+                local.get 4
+                i32.load offset=24
+                i32.const 12
+                i32.mul
+                i32.add
+                i32.store offset=36
+                local.get 4
+                local.get 4
+                i32.load offset=24
+                i32.const 2
+                i32.div_s
+                i32.store offset=24
+                local.get 4
+                local.get 4
+                i32.load offset=60
+                local.get 4
+                i32.load offset=60
+                local.get 4
+                i32.load offset=24
+                i32.const 12
+                i32.mul
+                i32.add
+                local.get 4
+                i32.load offset=36
+                local.get 4
+                i32.load offset=36
+                local.get 4
+                i32.load offset=24
+                i32.const 12
+                i32.mul
+                i32.add
+                local.get 4
+                i32.load offset=32
+                local.get 4
+                i32.load offset=52
+                call $unsigned_int_std::__2::__sort5_wrap_policy<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+                i32.store offset=28
+                br 1 (;@5;)
+              end
+              local.get 4
+              local.get 4
+              i32.load offset=40
+              i32.const 2
+              i32.div_s
+              i32.store offset=24
+              local.get 4
+              local.get 4
+              i32.load offset=36
+              local.get 4
+              i32.load offset=24
+              i32.const 12
+              i32.mul
+              i32.add
+              i32.store offset=36
+              local.get 4
+              local.get 4
+              i32.load offset=60
+              local.get 4
+              i32.load offset=36
+              local.get 4
+              i32.load offset=32
+              local.get 4
+              i32.load offset=52
+              call $unsigned_int_std::__2::__sort3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+              i32.store offset=28
+            end
+            local.get 4
+            local.get 4
+            i32.load offset=60
+            i32.store offset=20
+            local.get 4
+            local.get 4
+            i32.load offset=32
+            i32.store offset=16
+            local.get 4
+            i32.load offset=52
+            local.get 4
+            i32.load offset=20
+            local.get 4
+            i32.load offset=36
+            call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+            i32.const 1
+            i32.and
+            br_if 0 (;@4;)
+            loop  ;; label = @5
+              local.get 4
+              i32.load offset=20
+              local.set 19
+              local.get 4
+              local.get 4
+              i32.load offset=16
+              i32.const 12
+              i32.sub
+              local.tee 20
+              i32.store offset=16
+              local.get 19
+              local.get 20
+              i32.eq
+              if  ;; label = @6
+                local.get 4
+                local.get 4
+                i32.load offset=20
+                i32.const 12
+                i32.add
+                i32.store offset=20
+                local.get 4
+                local.get 4
+                i32.load offset=56
+                i32.store offset=16
+                local.get 4
+                i32.load offset=52
+                local.set 21
+                local.get 4
+                i32.load offset=60
+                local.set 22
+                local.get 4
+                local.get 4
+                i32.load offset=16
+                i32.const 12
+                i32.sub
+                local.tee 23
+                i32.store offset=16
+                local.get 21
+                local.get 22
+                local.get 23
+                call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                i32.const 1
+                i32.and
+                i32.eqz
+                if  ;; label = @7
+                  loop  ;; label = @8
+                    local.get 4
+                    i32.load offset=20
+                    local.get 4
+                    i32.load offset=16
+                    i32.eq
+                    br_if 6 (;@2;)
+                    block  ;; label = @9
+                      local.get 4
+                      i32.load offset=52
+                      local.get 4
+                      i32.load offset=60
+                      local.get 4
+                      i32.load offset=20
+                      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                      i32.const 1
+                      i32.and
+                      if  ;; label = @10
+                        local.get 4
+                        i32.const 20
+                        i32.add
+                        local.get 4
+                        i32.const 16
+                        i32.add
+                        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+                        local.get 4
+                        local.get 4
+                        i32.load offset=28
+                        i32.const 1
+                        i32.add
+                        i32.store offset=28
+                        local.get 4
+                        local.get 4
+                        i32.load offset=20
+                        i32.const 12
+                        i32.add
+                        i32.store offset=20
+                        br 1 (;@9;)
+                      end
+                      local.get 4
+                      local.get 4
+                      i32.load offset=20
+                      i32.const 12
+                      i32.add
+                      i32.store offset=20
+                      br 1 (;@8;)
+                    end
+                  end
+                end
+                local.get 4
+                i32.load offset=20
+                local.get 4
+                i32.load offset=16
+                i32.eq
+                br_if 4 (;@2;)
+                loop  ;; label = @7
+                  loop  ;; label = @8
+                    local.get 4
+                    i32.load offset=52
+                    local.get 4
+                    i32.load offset=60
+                    local.get 4
+                    i32.load offset=20
+                    call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                    i32.const -1
+                    i32.xor
+                    i32.const 1
+                    i32.and
+                    if  ;; label = @9
+                      local.get 4
+                      local.get 4
+                      i32.load offset=20
+                      i32.const 12
+                      i32.add
+                      i32.store offset=20
+                      br 1 (;@8;)
+                    end
+                  end
+                  loop  ;; label = @8
+                    local.get 4
+                    i32.load offset=52
+                    local.set 24
+                    local.get 4
+                    i32.load offset=60
+                    local.set 25
+                    local.get 4
+                    local.get 4
+                    i32.load offset=16
+                    i32.const 12
+                    i32.sub
+                    local.tee 26
+                    i32.store offset=16
+                    local.get 24
+                    local.get 25
+                    local.get 26
+                    call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                    i32.const 1
+                    i32.and
+                    br_if 0 (;@8;)
+                  end
+                  local.get 4
+                  i32.load offset=20
+                  local.get 4
+                  i32.load offset=16
+                  i32.lt_u
+                  if  ;; label = @8
+                    local.get 4
+                    i32.const 20
+                    i32.add
+                    local.get 4
+                    i32.const 16
+                    i32.add
+                    call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+                    local.get 4
+                    local.get 4
+                    i32.load offset=28
+                    i32.const 1
+                    i32.add
+                    i32.store offset=28
+                    local.get 4
+                    local.get 4
+                    i32.load offset=20
+                    i32.const 12
+                    i32.add
+                    i32.store offset=20
+                    br 1 (;@7;)
+                  end
+                end
+                local.get 4
+                local.get 4
+                i32.load offset=20
+                i32.store offset=60
+                br 3 (;@3;)
+              end
+              local.get 4
+              i32.load offset=52
+              local.get 4
+              i32.load offset=16
+              local.get 4
+              i32.load offset=36
+              call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+              i32.const 1
+              i32.and
+              i32.eqz
+              br_if 0 (;@5;)
+            end
+            local.get 4
+            i32.const 20
+            i32.add
+            local.get 4
+            i32.const 16
+            i32.add
+            call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+            local.get 4
+            local.get 4
+            i32.load offset=28
+            i32.const 1
+            i32.add
+            i32.store offset=28
+          end
+        end
+        local.get 4
+        local.get 4
+        i32.load offset=20
+        i32.const 12
+        i32.add
+        i32.store offset=20
+        local.get 4
+        i32.load offset=20
+        local.get 4
+        i32.load offset=16
+        i32.lt_u
+        if  ;; label = @3
+          loop  ;; label = @4
+            loop  ;; label = @5
+              local.get 4
+              i32.load offset=52
+              local.get 4
+              i32.load offset=20
+              local.get 4
+              i32.load offset=36
+              call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+              i32.const 1
+              i32.and
+              if  ;; label = @6
+                local.get 4
+                local.get 4
+                i32.load offset=20
+                i32.const 12
+                i32.add
+                i32.store offset=20
+                br 1 (;@5;)
+              end
+            end
+            loop  ;; label = @5
+              local.get 4
+              i32.load offset=52
+              local.set 27
+              local.get 4
+              local.get 4
+              i32.load offset=16
+              i32.const 12
+              i32.sub
+              local.tee 28
+              i32.store offset=16
+              local.get 27
+              local.get 28
+              local.get 4
+              i32.load offset=36
+              call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+              i32.const -1
+              i32.xor
+              i32.const 1
+              i32.and
+              br_if 0 (;@5;)
+            end
+            local.get 4
+            i32.load offset=20
+            local.get 4
+            i32.load offset=16
+            i32.le_u
+            if  ;; label = @5
+              local.get 4
+              i32.const 20
+              i32.add
+              local.get 4
+              i32.const 16
+              i32.add
+              call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+              local.get 4
+              local.get 4
+              i32.load offset=28
+              i32.const 1
+              i32.add
+              i32.store offset=28
+              local.get 4
+              i32.load offset=36
+              local.get 4
+              i32.load offset=20
+              i32.eq
+              if  ;; label = @6
+                local.get 4
+                local.get 4
+                i32.load offset=16
+                i32.store offset=36
+              end
+              local.get 4
+              local.get 4
+              i32.load offset=20
+              i32.const 12
+              i32.add
+              i32.store offset=20
+              br 1 (;@4;)
+            end
+          end
+        end
+        block  ;; label = @3
+          local.get 4
+          i32.load offset=20
+          local.get 4
+          i32.load offset=36
+          i32.eq
+          br_if 0 (;@3;)
+          local.get 4
+          i32.load offset=52
+          local.get 4
+          i32.load offset=36
+          local.get 4
+          i32.load offset=20
+          call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+          i32.const 1
+          i32.and
+          i32.eqz
+          br_if 0 (;@3;)
+          local.get 4
+          i32.const 20
+          i32.add
+          local.get 4
+          i32.const 36
+          i32.add
+          call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+          local.get 4
+          local.get 4
+          i32.load offset=28
+          i32.const 1
+          i32.add
+          i32.store offset=28
+        end
+        local.get 4
+        i32.load offset=28
+        i32.eqz
+        if  ;; label = @3
+          local.get 4
+          local.get 4
+          i32.load offset=52
+          i32.store offset=12
+          local.get 4
+          local.get 4
+          i32.load offset=60
+          local.get 4
+          i32.load offset=20
+          local.get 4
+          i32.load offset=12
+          call $bool_std::__2::__insertion_sort_incomplete<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+          i32.const 1
+          i32.and
+          i32.store8 offset=11
+          local.get 4
+          i32.load offset=20
+          i32.const 12
+          i32.add
+          local.get 4
+          i32.load offset=56
+          local.get 4
+          i32.load offset=12
+          call $bool_std::__2::__insertion_sort_incomplete<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+          i32.const 1
+          i32.and
+          if  ;; label = @4
+            local.get 4
+            i32.load8_u offset=11
+            i32.const 1
+            i32.and
+            br_if 2 (;@2;)
+            local.get 4
+            local.get 4
+            i32.load offset=20
+            i32.store offset=56
+            br 3 (;@1;)
+          end
+          local.get 4
+          i32.load8_u offset=11
+          i32.const 1
+          i32.and
+          if  ;; label = @4
+            local.get 4
+            local.get 4
+            i32.load offset=20
+            i32.const 12
+            i32.add
+            local.tee 29
+            i32.store offset=20
+            local.get 4
+            local.get 29
+            i32.store offset=60
+            br 3 (;@1;)
+          end
+        end
+        block  ;; label = @3
+          local.get 4
+          i32.load offset=20
+          local.get 4
+          i32.load offset=60
+          i32.sub
+          i32.const 12
+          i32.div_s
+          local.get 4
+          i32.load offset=56
+          local.get 4
+          i32.load offset=20
+          i32.sub
+          i32.const 12
+          i32.div_s
+          i32.lt_s
+          if  ;; label = @4
+            local.get 4
+            i32.load offset=60
+            local.get 4
+            i32.load offset=20
+            local.get 4
+            i32.load offset=52
+            local.get 4
+            i32.load offset=48
+            call $void_std::__2::__introsort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+            local.get 4
+            local.get 4
+            i32.load offset=20
+            i32.const 12
+            i32.add
+            local.tee 30
+            i32.store offset=20
+            local.get 4
+            local.get 30
+            i32.store offset=60
+            br 1 (;@3;)
+          end
+          local.get 4
+          i32.load offset=20
+          i32.const 12
+          i32.add
+          local.get 4
+          i32.load offset=56
+          local.get 4
+          i32.load offset=52
+          local.get 4
+          i32.load offset=48
+          call $void_std::__2::__introsort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+          local.get 4
+          local.get 4
+          i32.load offset=20
+          i32.store offset=56
+        end
+        br 1 (;@1;)
+      end
+    end
+    local.get 4
+    i32.const -64
+    i32.sub
+    global.set $__stack_pointer)
+  (func $std::__2::__unwrap_iter_impl<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__true>::__unwrap_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -20714,36 +23218,2429 @@
     local.get 0
     i32.store offset=12
     local.get 1
+    i32.const 12
+    i32.add
+    call $std::__2::decay<decltype___to_address_helper<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>::__call_declval<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__void>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::__libcpp_clz_abi:v15007__unsigned_int_ (type 0) (param i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
     i32.load offset=12
+    i32.clz)
+  (func $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const (type 3) (param i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=12
+    local.get 3
+    local.get 1
+    i32.store offset=8
+    local.get 3
+    local.get 2
+    i32.store offset=4
+    local.get 3
+    i32.load offset=8
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+    i32.load
+    local.get 3
+    i32.load offset=4
+    call $std::__2::tuple_element<2ul__std::__2::tuple<int__int__int>>::type_const&_std::__2::get_abi:v15007_<2ul__int__int__int>_std::__2::tuple<int__int__int>_const&_
+    i32.load
+    i32.gt_s
+    local.set 4
+    local.get 3
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 4)
+  (func $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    i32.load
+    local.get 2
+    i32.load offset=8
+    i32.load
+    call $void_std::__2::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort3_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 8) (param i32 i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=12
+    local.get 4
+    local.get 1
+    i32.store offset=8
+    local.get 4
+    local.get 2
+    i32.store offset=4
+    local.get 4
+    local.get 3
+    i32.store
+    local.get 4
+    i32.load offset=12
+    local.get 4
+    i32.load offset=8
+    local.get 4
+    i32.load offset=4
+    local.get 4
+    i32.load
+    call $unsigned_int_std::__2::__sort3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    drop
+    local.get 4
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort4_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 14) (param i32 i32 i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 5
+    global.set $__stack_pointer
+    local.get 5
+    local.get 0
+    i32.store offset=28
+    local.get 5
+    local.get 1
+    i32.store offset=24
+    local.get 5
+    local.get 2
+    i32.store offset=20
+    local.get 5
+    local.get 3
+    i32.store offset=16
+    local.get 5
+    local.get 4
+    i32.store offset=12
+    local.get 5
+    i32.load offset=28
+    local.get 5
+    i32.load offset=24
+    local.get 5
+    i32.load offset=20
+    local.get 5
+    i32.load offset=16
+    local.get 5
+    i32.load offset=12
+    call $unsigned_int_std::__2::__sort4<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    drop
+    local.get 5
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort5_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 12) (param i32 i32 i32 i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 6
+    global.set $__stack_pointer
+    local.get 6
+    local.get 0
+    i32.store offset=28
+    local.get 6
+    local.get 1
+    i32.store offset=24
+    local.get 6
+    local.get 2
+    i32.store offset=20
+    local.get 6
+    local.get 3
+    i32.store offset=16
+    local.get 6
+    local.get 4
+    i32.store offset=12
+    local.get 6
+    local.get 5
+    i32.store offset=8
+    local.get 6
+    i32.load offset=28
+    local.get 6
+    i32.load offset=24
+    local.get 6
+    i32.load offset=20
+    local.get 6
+    i32.load offset=16
+    local.get 6
+    i32.load offset=12
+    local.get 6
+    i32.load offset=8
+    call $unsigned_int_std::__2::__sort5_wrap_policy<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    drop
+    local.get 6
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__insertion_sort_3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 5) (param i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 48
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=44
+    local.get 3
+    local.get 1
+    i32.store offset=40
+    local.get 3
+    local.get 2
+    i32.store offset=36
+    local.get 3
+    local.get 3
+    i32.load offset=44
+    i32.const 24
+    i32.add
+    i32.store offset=32
+    local.get 3
+    i32.load offset=44
+    local.get 3
+    i32.load offset=44
+    i32.const 12
+    i32.add
+    local.get 3
+    i32.load offset=32
+    local.get 3
+    i32.load offset=36
+    call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort3_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    local.get 3
+    local.get 3
+    i32.load offset=32
+    i32.const 12
+    i32.add
+    i32.store offset=28
+    loop  ;; label = @1
+      local.get 3
+      i32.load offset=28
+      local.get 3
+      i32.load offset=40
+      i32.ne
+      if  ;; label = @2
+        local.get 3
+        i32.load offset=36
+        local.get 3
+        i32.load offset=28
+        local.get 3
+        i32.load offset=32
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        if  ;; label = @3
+          local.get 3
+          local.get 3
+          i32.const 28
+          i32.add
+          call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+          local.tee 5
+          i32.load offset=8
+          i32.store offset=24
+          local.get 3
+          local.get 5
+          i64.load align=4
+          i64.store offset=16
+          local.get 3
+          local.get 3
+          i32.load offset=32
+          i32.store offset=12
+          local.get 3
+          local.get 3
+          i32.load offset=28
+          i32.store offset=32
+          loop  ;; label = @4
+            local.get 3
+            i32.const 12
+            i32.add
+            call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+            local.set 6
+            local.get 3
+            i32.load offset=32
+            local.get 6
+            call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+            drop
+            local.get 3
+            local.get 3
+            i32.load offset=12
+            i32.store offset=32
+            i32.const 0
+            local.set 4
+            local.get 3
+            i32.load offset=32
+            local.get 3
+            i32.load offset=44
+            i32.ne
+            if  ;; label = @5
+              local.get 3
+              i32.load offset=36
+              local.set 7
+              local.get 3
+              local.get 3
+              i32.load offset=12
+              i32.const 12
+              i32.sub
+              local.tee 8
+              i32.store offset=12
+              local.get 7
+              local.get 3
+              i32.const 16
+              i32.add
+              local.get 8
+              call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+              local.set 4
+            end
+            local.get 4
+            i32.const 1
+            i32.and
+            br_if 0 (;@4;)
+          end
+          local.get 3
+          i32.load offset=32
+          local.get 3
+          i32.const 16
+          i32.add
+          call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+          drop
+        end
+        local.get 3
+        local.get 3
+        i32.load offset=28
+        i32.store offset=32
+        local.get 3
+        local.get 3
+        i32.load offset=28
+        i32.const 12
+        i32.add
+        i32.store offset=28
+        br 1 (;@1;)
+      end
+    end
+    local.get 3
+    i32.const 48
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__partial_sort<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 10) (param i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
+    local.get 3
+    i32.store offset=12
+    block  ;; label = @1
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=20
+      i32.eq
+      if  ;; label = @2
+        local.get 4
+        local.get 4
+        i32.load offset=20
+        local.get 4
+        i32.load offset=16
+        call $std::__2::tuple<int__int__int>*_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::next_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+        i32.store offset=28
+        br 1 (;@1;)
+      end
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=16
+      call $void_std::__2::__debug_randomize_range_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+      local.get 4
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=16
+      local.get 4
+      i32.load offset=12
+      call $std::__2::tuple<int__int__int>*_std::__2::__partial_sort_impl<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+      i32.store offset=8
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=16
+      call $void_std::__2::__debug_randomize_range_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+      local.get 4
+      local.get 4
+      i32.load offset=8
+      i32.store offset=28
+    end
+    local.get 4
+    i32.load offset=28
+    local.set 5
+    local.get 4
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 5)
+  (func $unsigned_int_std::__2::__sort5_wrap_policy<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 6) (param i32 i32 i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 6
+    global.set $__stack_pointer
+    local.get 6
+    local.get 0
+    i32.store offset=28
+    local.get 6
+    local.get 1
+    i32.store offset=24
+    local.get 6
+    local.get 2
+    i32.store offset=20
+    local.get 6
+    local.get 3
+    i32.store offset=16
+    local.get 6
+    local.get 4
+    i32.store offset=12
+    local.get 6
+    local.get 5
+    i32.store offset=8
+    local.get 6
+    local.get 6
+    i32.load offset=8
+    i32.store offset=4
+    local.get 6
+    i32.load offset=28
+    local.get 6
+    i32.load offset=24
+    local.get 6
+    i32.load offset=20
+    local.get 6
+    i32.load offset=16
+    local.get 6
+    i32.load offset=12
+    local.get 6
+    i32.load offset=4
+    call $unsigned_int_std::__2::__sort5<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    local.set 7
+    local.get 6
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 7)
+  (func $unsigned_int_std::__2::__sort3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 10) (param i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
+    local.get 3
+    i32.store offset=12
+    local.get 4
+    i32.const 0
+    i32.store offset=8
+    block  ;; label = @1
+      local.get 4
+      i32.load offset=12
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=24
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      i32.eqz
+      if  ;; label = @2
+        local.get 4
+        i32.load offset=12
+        local.get 4
+        i32.load offset=16
+        local.get 4
+        i32.load offset=20
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        i32.eqz
+        if  ;; label = @3
+          br 2 (;@1;)
+        end
+        local.get 4
+        i32.const 20
+        i32.add
+        local.get 4
+        i32.const 16
+        i32.add
+        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+        local.get 4
+        i32.const 1
+        i32.store offset=8
+        local.get 4
+        i32.load offset=12
+        local.get 4
+        i32.load offset=20
+        local.get 4
+        i32.load offset=24
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        if  ;; label = @3
+          local.get 4
+          i32.const 24
+          i32.add
+          local.get 4
+          i32.const 20
+          i32.add
+          call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+          local.get 4
+          i32.const 2
+          i32.store offset=8
+        end
+        br 1 (;@1;)
+      end
+      local.get 4
+      i32.load offset=12
+      local.get 4
+      i32.load offset=16
+      local.get 4
+      i32.load offset=20
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 4
+        i32.const 24
+        i32.add
+        local.get 4
+        i32.const 16
+        i32.add
+        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+        local.get 4
+        i32.const 1
+        i32.store offset=8
+        br 1 (;@1;)
+      end
+      local.get 4
+      i32.const 24
+      i32.add
+      local.get 4
+      i32.const 20
+      i32.add
+      call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+      local.get 4
+      i32.const 1
+      i32.store offset=8
+      local.get 4
+      i32.load offset=12
+      local.get 4
+      i32.load offset=16
+      local.get 4
+      i32.load offset=20
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 4
+        i32.const 20
+        i32.add
+        local.get 4
+        i32.const 16
+        i32.add
+        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+        local.get 4
+        i32.const 2
+        i32.store offset=8
+      end
+    end
+    local.get 4
+    local.get 4
+    i32.load offset=8
+    i32.store offset=28
+    local.get 4
+    i32.load offset=28
+    local.set 5
+    local.get 4
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 5)
+  (func $bool_std::__2::__insertion_sort_incomplete<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 3) (param i32 i32 i32) (result i32)
+    (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const -64
+    i32.add
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=56
+    local.get 3
+    local.get 1
+    i32.store offset=52
+    local.get 3
+    local.get 2
+    i32.store offset=48
+    local.get 3
+    local.get 3
+    i32.load offset=48
+    call $std::__2::_UnwrapAlgPolicy<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&>::__get_comp_abi:v15007__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    i32.store offset=44
+    block  ;; label = @1
+      block  ;; label = @2
+        block  ;; label = @3
+          block  ;; label = @4
+            block  ;; label = @5
+              block  ;; label = @6
+                block  ;; label = @7
+                  local.get 3
+                  i32.load offset=52
+                  local.get 3
+                  i32.load offset=56
+                  i32.sub
+                  i32.const 12
+                  i32.div_s
+                  br_table 0 (;@7;) 0 (;@7;) 1 (;@6;) 2 (;@5;) 3 (;@4;) 4 (;@3;) 5 (;@2;)
+                end
+                local.get 3
+                i32.const 1
+                i32.store8 offset=63
+                br 5 (;@1;)
+              end
+              local.get 3
+              i32.load offset=44
+              local.set 5
+              local.get 3
+              local.get 3
+              i32.load offset=52
+              i32.const 12
+              i32.sub
+              local.tee 6
+              i32.store offset=52
+              local.get 5
+              local.get 6
+              local.get 3
+              i32.load offset=56
+              call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+              i32.const 1
+              i32.and
+              if  ;; label = @6
+                local.get 3
+                i32.const 56
+                i32.add
+                local.get 3
+                i32.const 52
+                i32.add
+                call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+              end
+              local.get 3
+              i32.const 1
+              i32.store8 offset=63
+              br 4 (;@1;)
+            end
+            local.get 3
+            i32.load offset=56
+            local.set 7
+            local.get 3
+            i32.load offset=56
+            i32.const 12
+            i32.add
+            local.set 8
+            local.get 3
+            local.get 3
+            i32.load offset=52
+            i32.const 12
+            i32.sub
+            local.tee 9
+            i32.store offset=52
+            local.get 7
+            local.get 8
+            local.get 9
+            local.get 3
+            i32.load offset=44
+            call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort3_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+            local.get 3
+            i32.const 1
+            i32.store8 offset=63
+            br 3 (;@1;)
+          end
+          local.get 3
+          i32.load offset=56
+          local.set 10
+          local.get 3
+          i32.load offset=56
+          i32.const 12
+          i32.add
+          local.set 11
+          local.get 3
+          i32.load offset=56
+          i32.const 24
+          i32.add
+          local.set 12
+          local.get 3
+          local.get 3
+          i32.load offset=52
+          i32.const 12
+          i32.sub
+          local.tee 13
+          i32.store offset=52
+          local.get 10
+          local.get 11
+          local.get 12
+          local.get 13
+          local.get 3
+          i32.load offset=44
+          call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort4_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+          local.get 3
+          i32.const 1
+          i32.store8 offset=63
+          br 2 (;@1;)
+        end
+        local.get 3
+        i32.load offset=56
+        local.set 14
+        local.get 3
+        i32.load offset=56
+        i32.const 12
+        i32.add
+        local.set 15
+        local.get 3
+        i32.load offset=56
+        i32.const 24
+        i32.add
+        local.set 16
+        local.get 3
+        i32.load offset=56
+        i32.const 36
+        i32.add
+        local.set 17
+        local.get 3
+        local.get 3
+        i32.load offset=52
+        i32.const 12
+        i32.sub
+        local.tee 18
+        i32.store offset=52
+        local.get 14
+        local.get 15
+        local.get 16
+        local.get 17
+        local.get 18
+        local.get 3
+        i32.load offset=44
+        call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort5_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+        local.get 3
+        i32.const 1
+        i32.store8 offset=63
+        br 1 (;@1;)
+      end
+      local.get 3
+      local.get 3
+      i32.load offset=56
+      i32.const 24
+      i32.add
+      i32.store offset=40
+      local.get 3
+      i32.load offset=56
+      local.get 3
+      i32.load offset=56
+      i32.const 12
+      i32.add
+      local.get 3
+      i32.load offset=40
+      local.get 3
+      i32.load offset=44
+      call $std::__2::enable_if<!__use_branchless_sort<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>::value__void>::type_std::__2::__sort3_maybe_branchless_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+      local.get 3
+      i32.const 8
+      i32.store offset=36
+      local.get 3
+      i32.const 0
+      i32.store offset=32
+      local.get 3
+      local.get 3
+      i32.load offset=40
+      i32.const 12
+      i32.add
+      i32.store offset=28
+      loop  ;; label = @2
+        local.get 3
+        i32.load offset=28
+        local.get 3
+        i32.load offset=52
+        i32.ne
+        if  ;; label = @3
+          local.get 3
+          i32.load offset=44
+          local.get 3
+          i32.load offset=28
+          local.get 3
+          i32.load offset=40
+          call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+          i32.const 1
+          i32.and
+          if  ;; label = @4
+            local.get 3
+            local.get 3
+            i32.const 28
+            i32.add
+            call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+            local.tee 19
+            i32.load offset=8
+            i32.store offset=24
+            local.get 3
+            local.get 19
+            i64.load align=4
+            i64.store offset=16
+            local.get 3
+            local.get 3
+            i32.load offset=40
+            i32.store offset=12
+            local.get 3
+            local.get 3
+            i32.load offset=28
+            i32.store offset=40
+            loop  ;; label = @5
+              local.get 3
+              i32.const 12
+              i32.add
+              call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+              local.set 20
+              local.get 3
+              i32.load offset=40
+              local.get 20
+              call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+              drop
+              local.get 3
+              local.get 3
+              i32.load offset=12
+              i32.store offset=40
+              i32.const 0
+              local.set 4
+              local.get 3
+              i32.load offset=40
+              local.get 3
+              i32.load offset=56
+              i32.ne
+              if  ;; label = @6
+                local.get 3
+                i32.load offset=44
+                local.set 21
+                local.get 3
+                local.get 3
+                i32.load offset=12
+                i32.const 12
+                i32.sub
+                local.tee 22
+                i32.store offset=12
+                local.get 21
+                local.get 3
+                i32.const 16
+                i32.add
+                local.get 22
+                call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+                local.set 4
+              end
+              local.get 4
+              i32.const 1
+              i32.and
+              br_if 0 (;@5;)
+            end
+            local.get 3
+            i32.load offset=40
+            local.get 3
+            i32.const 16
+            i32.add
+            call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+            drop
+            local.get 3
+            local.get 3
+            i32.load offset=32
+            i32.const 1
+            i32.add
+            local.tee 23
+            i32.store offset=32
+            local.get 23
+            i32.const 8
+            i32.eq
+            if  ;; label = @5
+              local.get 3
+              local.get 3
+              i32.load offset=28
+              i32.const 12
+              i32.add
+              local.tee 24
+              i32.store offset=28
+              local.get 3
+              local.get 24
+              local.get 3
+              i32.load offset=52
+              i32.eq
+              i32.store8 offset=63
+              br 4 (;@1;)
+            end
+          end
+          local.get 3
+          local.get 3
+          i32.load offset=28
+          i32.store offset=40
+          local.get 3
+          local.get 3
+          i32.load offset=28
+          i32.const 12
+          i32.add
+          i32.store offset=28
+          br 1 (;@2;)
+        end
+      end
+      local.get 3
+      i32.const 1
+      i32.store8 offset=63
+    end
+    local.get 3
+    i32.load8_u offset=63
+    i32.const 1
+    i32.and
+    local.set 25
+    local.get 3
+    i32.const -64
+    i32.sub
+    global.set $__stack_pointer
+    local.get 25)
+  (func $void_std::__2::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $std::__2::enable_if<__all<__is_swappable<int>::value____is_swappable<int>::value____is_swappable<int>::value>::value__void>::type_std::__2::swap_abi:v15007_<int__int__int>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $unsigned_int_std::__2::__sort4<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 5
+    global.set $__stack_pointer
+    local.get 5
+    local.get 0
+    i32.store offset=28
+    local.get 5
+    local.get 1
+    i32.store offset=24
+    local.get 5
+    local.get 2
+    i32.store offset=20
+    local.get 5
+    local.get 3
+    i32.store offset=16
+    local.get 5
+    local.get 4
+    i32.store offset=12
+    local.get 5
+    local.get 5
+    i32.load offset=28
+    local.get 5
+    i32.load offset=24
+    local.get 5
+    i32.load offset=20
+    local.get 5
+    i32.load offset=12
+    call $unsigned_int_std::__2::__sort3<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    i32.store offset=8
+    local.get 5
+    i32.load offset=12
+    local.get 5
+    i32.load offset=16
+    local.get 5
+    i32.load offset=20
+    call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+    i32.const 1
+    i32.and
+    if  ;; label = @1
+      local.get 5
+      i32.const 20
+      i32.add
+      local.get 5
+      i32.const 16
+      i32.add
+      call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+      local.get 5
+      local.get 5
+      i32.load offset=8
+      i32.const 1
+      i32.add
+      i32.store offset=8
+      local.get 5
+      i32.load offset=12
+      local.get 5
+      i32.load offset=20
+      local.get 5
+      i32.load offset=24
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 5
+        i32.const 24
+        i32.add
+        local.get 5
+        i32.const 20
+        i32.add
+        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+        local.get 5
+        local.get 5
+        i32.load offset=8
+        i32.const 1
+        i32.add
+        i32.store offset=8
+        local.get 5
+        i32.load offset=12
+        local.get 5
+        i32.load offset=24
+        local.get 5
+        i32.load offset=28
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        if  ;; label = @3
+          local.get 5
+          i32.const 28
+          i32.add
+          local.get 5
+          i32.const 24
+          i32.add
+          call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+          local.get 5
+          local.get 5
+          i32.load offset=8
+          i32.const 1
+          i32.add
+          i32.store offset=8
+        end
+      end
+    end
+    local.get 5
+    i32.load offset=8
+    local.set 6
+    local.get 5
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 6)
+  (func $std::__2::tuple<int__int__int>*_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::next_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 1) (param i32 i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=8)
+  (func $void_std::__2::__debug_randomize_range_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__partial_sort_impl<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 10) (param i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=24
+    local.get 4
+    local.get 1
+    i32.store offset=20
+    local.get 4
+    local.get 2
+    i32.store offset=16
+    local.get 4
+    local.get 3
+    i32.store offset=12
+    block  ;; label = @1
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=20
+      i32.eq
+      if  ;; label = @2
+        local.get 4
+        local.get 4
+        i32.load offset=20
+        local.get 4
+        i32.load offset=16
+        call $std::__2::tuple<int__int__int>*_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::next_abi:v15007_<std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*_
+        i32.store offset=28
+        br 1 (;@1;)
+      end
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=12
+      call $void_std::__2::__make_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+      local.get 4
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=24
+      i32.sub
+      i32.const 12
+      i32.div_s
+      i32.store offset=8
+      local.get 4
+      local.get 4
+      i32.load offset=20
+      i32.store offset=4
+      loop  ;; label = @2
+        local.get 4
+        i32.load offset=4
+        local.get 4
+        i32.load offset=16
+        i32.ne
+        if  ;; label = @3
+          local.get 4
+          i32.load offset=12
+          local.get 4
+          i32.load offset=4
+          local.get 4
+          i32.load offset=24
+          call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+          i32.const 1
+          i32.and
+          if  ;; label = @4
+            local.get 4
+            i32.const 4
+            i32.add
+            local.get 4
+            i32.const 24
+            i32.add
+            call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+            local.get 4
+            i32.load offset=24
+            local.get 4
+            i32.load offset=12
+            local.get 4
+            i32.load offset=8
+            local.get 4
+            i32.load offset=24
+            call $void_std::__2::__sift_down<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type__std::__2::tuple<int__int__int>*_
+          end
+          local.get 4
+          local.get 4
+          i32.load offset=4
+          i32.const 12
+          i32.add
+          i32.store offset=4
+          br 1 (;@2;)
+        end
+      end
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=20
+      local.get 4
+      i32.load offset=12
+      call $void_std::__2::__sort_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+      local.get 4
+      local.get 4
+      i32.load offset=4
+      i32.store offset=28
+    end
+    local.get 4
+    i32.load offset=28
+    local.set 5
+    local.get 4
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 5)
+  (func $unsigned_int_std::__2::__sort5<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 6) (param i32 i32 i32 i32 i32 i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 6
+    global.set $__stack_pointer
+    local.get 6
+    local.get 0
+    i32.store offset=28
+    local.get 6
+    local.get 1
+    i32.store offset=24
+    local.get 6
+    local.get 2
+    i32.store offset=20
+    local.get 6
+    local.get 3
+    i32.store offset=16
+    local.get 6
+    local.get 4
+    i32.store offset=12
+    local.get 6
+    local.get 5
+    i32.store offset=8
+    local.get 6
+    local.get 6
+    i32.load offset=8
+    call $std::__2::_UnwrapAlgPolicy<Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&>::__get_comp_abi:v15007__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    i32.store offset=4
+    local.get 6
+    local.get 6
+    i32.load offset=28
+    local.get 6
+    i32.load offset=24
+    local.get 6
+    i32.load offset=20
+    local.get 6
+    i32.load offset=16
+    local.get 6
+    i32.load offset=4
+    call $unsigned_int_std::__2::__sort4<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_
+    i32.store
+    local.get 6
+    i32.load offset=4
+    local.get 6
+    i32.load offset=12
+    local.get 6
+    i32.load offset=16
+    call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+    i32.const 1
+    i32.and
+    if  ;; label = @1
+      local.get 6
+      i32.const 16
+      i32.add
+      local.get 6
+      i32.const 12
+      i32.add
+      call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+      local.get 6
+      local.get 6
+      i32.load
+      i32.const 1
+      i32.add
+      i32.store
+      local.get 6
+      i32.load offset=4
+      local.get 6
+      i32.load offset=16
+      local.get 6
+      i32.load offset=20
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 6
+        i32.const 20
+        i32.add
+        local.get 6
+        i32.const 16
+        i32.add
+        call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+        local.get 6
+        local.get 6
+        i32.load
+        i32.const 1
+        i32.add
+        i32.store
+        local.get 6
+        i32.load offset=4
+        local.get 6
+        i32.load offset=20
+        local.get 6
+        i32.load offset=24
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        if  ;; label = @3
+          local.get 6
+          i32.const 24
+          i32.add
+          local.get 6
+          i32.const 20
+          i32.add
+          call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+          local.get 6
+          local.get 6
+          i32.load
+          i32.const 1
+          i32.add
+          i32.store
+          local.get 6
+          i32.load offset=4
+          local.get 6
+          i32.load offset=24
+          local.get 6
+          i32.load offset=28
+          call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+          i32.const 1
+          i32.and
+          if  ;; label = @4
+            local.get 6
+            i32.const 28
+            i32.add
+            local.get 6
+            i32.const 24
+            i32.add
+            call $void_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::iter_swap_abi:v15007_<std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&__std::__2::tuple<int__int__int>*&_
+            local.get 6
+            local.get 6
+            i32.load
+            i32.const 1
+            i32.add
+            i32.store
+          end
+        end
+      end
+    end
+    local.get 6
+    i32.load
+    local.set 7
+    local.get 6
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer
+    local.get 7)
+  (func $std::__2::enable_if<__all<__is_swappable<int>::value____is_swappable<int>::value____is_swappable<int>::value>::value__void>::type_std::__2::swap_abi:v15007_<int__int__int>_std::__2::tuple<int__int__int>&__std::__2::tuple<int__int__int>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $std::__2::tuple<int__int__int>::swap_abi:v15007__std::__2::tuple<int__int__int>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::tuple<int__int__int>::swap_abi:v15007__std::__2::tuple<int__int__int>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::swap_abi:v15007__std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>::swap_abi:v15007__std::__2::__tuple_impl<std::__2::__tuple_indices<0ul__1ul__2ul>__int__int__int>&_ (type 2) (param i32 i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=28
+    local.get 2
+    local.get 1
+    i32.store offset=24
+    local.get 2
+    local.get 2
+    i32.load offset=28
+    local.tee 3
+    local.get 2
+    i32.load offset=24
+    call $std::__2::__tuple_leaf<0ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<0ul__int__false>&_
+    i32.store offset=20
+    local.get 2
+    local.get 3
     i32.const 4
     i32.add
-    call $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007____const
+    local.get 2
+    i32.load offset=24
+    i32.const 4
+    i32.add
+    call $std::__2::__tuple_leaf<1ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<1ul__int__false>&_
+    i32.store offset=16
+    local.get 2
+    local.get 3
+    i32.const 8
+    i32.add
+    local.get 2
+    i32.load offset=24
+    i32.const 8
+    i32.add
+    call $std::__2::__tuple_leaf<2ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<2ul__int__false>&_
+    i32.store offset=12
+    local.get 2
+    i32.const 20
+    i32.add
+    local.get 2
+    i32.const 16
+    i32.add
+    local.get 2
+    i32.const 12
+    i32.add
+    call $void_std::__2::__swallow_abi:v15007_<int__int__int>_int&&__int&&__int&&_
+    local.get 2
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::__tuple_leaf<0ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<0ul__int__false>&_ (type 1) (param i32 i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $void_std::__2::swap_abi:v15007_<0ul__int__false>_std::__2::__tuple_leaf<0ul__int__false>&__std::__2::__tuple_leaf<0ul__int__false>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    i32.const 0)
+  (func $std::__2::__tuple_leaf<1ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<1ul__int__false>&_ (type 1) (param i32 i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $void_std::__2::swap_abi:v15007_<1ul__int__false>_std::__2::__tuple_leaf<1ul__int__false>&__std::__2::__tuple_leaf<1ul__int__false>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    i32.const 0)
+  (func $std::__2::__tuple_leaf<2ul__int__false>::swap_abi:v15007__std::__2::__tuple_leaf<2ul__int__false>&_ (type 1) (param i32 i32) (result i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    call $void_std::__2::swap_abi:v15007_<2ul__int__false>_std::__2::__tuple_leaf<2ul__int__false>&__std::__2::__tuple_leaf<2ul__int__false>&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    i32.const 0)
+  (func $void_std::__2::swap_abi:v15007_<0ul__int__false>_std::__2::__tuple_leaf<0ul__int__false>&__std::__2::__tuple_leaf<0ul__int__false>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007___
+    local.get 2
+    i32.load offset=8
+    call $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007___
+    call $std::__2::enable_if<is_move_constructible<int>::value_&&_is_move_assignable<int>::value__void>::type_std::__2::swap_abi:v15007_<int>_int&__int&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::swap_abi:v15007_<1ul__int__false>_std::__2::__tuple_leaf<1ul__int__false>&__std::__2::__tuple_leaf<1ul__int__false>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007___
+    local.get 2
+    i32.load offset=8
+    call $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007___
+    call $std::__2::enable_if<is_move_constructible<int>::value_&&_is_move_assignable<int>::value__void>::type_std::__2::swap_abi:v15007_<int>_int&__int&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::swap_abi:v15007_<2ul__int__false>_std::__2::__tuple_leaf<2ul__int__false>&__std::__2::__tuple_leaf<2ul__int__false>&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    global.set $__stack_pointer
+    local.get 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    i32.load offset=12
+    call $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007___
+    local.get 2
+    i32.load offset=8
+    call $std::__2::__tuple_leaf<2ul__int__false>::get_abi:v15007___
+    call $std::__2::enable_if<is_move_constructible<int>::value_&&_is_move_assignable<int>::value__void>::type_std::__2::swap_abi:v15007_<int>_int&__int&_
+    local.get 2
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::enable_if<is_move_constructible<int>::value_&&_is_move_assignable<int>::value__void>::type_std::__2::swap_abi:v15007_<int>_int&__int&_ (type 2) (param i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 2
+    local.get 0
+    i32.store offset=12
+    local.get 2
+    local.get 1
+    i32.store offset=8
+    local.get 2
+    local.get 2
+    i32.load offset=12
+    i32.load
+    i32.store offset=4
+    local.get 2
+    i32.load offset=12
+    local.get 2
+    i32.load offset=8
+    i32.load
+    i32.store
+    local.get 2
+    i32.load offset=8
+    local.get 2
+    i32.load offset=4
+    i32.store)
+  (func $void_std::__2::__make_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 5) (param i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=28
+    local.get 3
+    local.get 1
+    i32.store offset=24
+    local.get 3
+    local.get 2
+    i32.store offset=20
+    local.get 3
+    local.get 3
+    i32.load offset=20
+    i32.store offset=16
+    local.get 3
+    local.get 3
+    i32.load offset=24
+    local.get 3
+    i32.load offset=28
+    i32.sub
+    i32.const 12
+    i32.div_s
+    i32.store offset=12
+    local.get 3
+    i32.load offset=12
+    i32.const 1
+    i32.gt_s
+    if  ;; label = @1
+      local.get 3
+      local.get 3
+      i32.load offset=12
+      i32.const 2
+      i32.sub
+      i32.const 2
+      i32.div_s
+      i32.store offset=8
+      loop  ;; label = @2
+        local.get 3
+        i32.load offset=8
+        i32.const 0
+        i32.lt_s
+        i32.eqz
+        if  ;; label = @3
+          local.get 3
+          i32.load offset=28
+          local.get 3
+          i32.load offset=16
+          local.get 3
+          i32.load offset=12
+          local.get 3
+          i32.load offset=28
+          local.get 3
+          i32.load offset=8
+          i32.const 12
+          i32.mul
+          i32.add
+          call $void_std::__2::__sift_down<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type__std::__2::tuple<int__int__int>*_
+          local.get 3
+          local.get 3
+          i32.load offset=8
+          i32.const 1
+          i32.sub
+          i32.store offset=8
+          br 1 (;@2;)
+        end
+      end
+    end
+    local.get 3
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__sift_down<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type__std::__2::tuple<int__int__int>*_ (type 8) (param i32 i32 i32 i32)
+    (local i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 48
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=44
+    local.get 4
+    local.get 1
+    i32.store offset=40
+    local.get 4
+    local.get 2
+    i32.store offset=36
+    local.get 4
+    local.get 3
+    i32.store offset=32
+    local.get 4
+    local.get 4
+    i32.load offset=32
+    local.get 4
+    i32.load offset=44
+    i32.sub
+    i32.const 12
+    i32.div_s
+    i32.store offset=28
+    block  ;; label = @1
+      local.get 4
+      i32.load offset=36
+      i32.const 2
+      i32.lt_s
+      br_if 0 (;@1;)
+      local.get 4
+      i32.load offset=28
+      local.get 4
+      i32.load offset=36
+      i32.const 2
+      i32.sub
+      i32.const 2
+      i32.div_s
+      i32.gt_s
+      if  ;; label = @2
+        br 1 (;@1;)
+      end
+      local.get 4
+      local.get 4
+      i32.load offset=28
+      i32.const 1
+      i32.shl
+      i32.const 1
+      i32.add
+      i32.store offset=28
+      local.get 4
+      local.get 4
+      i32.load offset=44
+      local.get 4
+      i32.load offset=28
+      i32.const 12
+      i32.mul
+      i32.add
+      i32.store offset=24
+      block  ;; label = @2
+        local.get 4
+        i32.load offset=36
+        local.get 4
+        i32.load offset=28
+        i32.const 1
+        i32.add
+        i32.le_s
+        br_if 0 (;@2;)
+        local.get 4
+        i32.load offset=40
+        local.get 4
+        i32.load offset=24
+        local.get 4
+        i32.load offset=24
+        i32.const 12
+        i32.add
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        i32.eqz
+        br_if 0 (;@2;)
+        local.get 4
+        local.get 4
+        i32.load offset=24
+        i32.const 12
+        i32.add
+        i32.store offset=24
+        local.get 4
+        local.get 4
+        i32.load offset=28
+        i32.const 1
+        i32.add
+        i32.store offset=28
+      end
+      local.get 4
+      i32.load offset=40
+      local.get 4
+      i32.load offset=24
+      local.get 4
+      i32.load offset=32
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      br_if 0 (;@1;)
+      local.get 4
+      local.get 4
+      i32.const 32
+      i32.add
+      call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+      local.tee 5
+      i32.load offset=8
+      i32.store offset=16
+      local.get 4
+      local.get 5
+      i64.load align=4
+      i64.store offset=8
+      loop  ;; label = @2
+        block  ;; label = @3
+          local.get 4
+          i32.const 24
+          i32.add
+          call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+          local.set 6
+          local.get 4
+          i32.load offset=32
+          local.get 6
+          call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+          drop
+          local.get 4
+          local.get 4
+          i32.load offset=24
+          i32.store offset=32
+          local.get 4
+          i32.load offset=28
+          local.get 4
+          i32.load offset=36
+          i32.const 2
+          i32.sub
+          i32.const 2
+          i32.div_s
+          i32.gt_s
+          br_if 0 (;@3;)
+          local.get 4
+          local.get 4
+          i32.load offset=28
+          i32.const 1
+          i32.shl
+          i32.const 1
+          i32.add
+          i32.store offset=28
+          local.get 4
+          local.get 4
+          i32.load offset=44
+          local.get 4
+          i32.load offset=28
+          i32.const 12
+          i32.mul
+          i32.add
+          i32.store offset=24
+          block  ;; label = @4
+            local.get 4
+            i32.load offset=36
+            local.get 4
+            i32.load offset=28
+            i32.const 1
+            i32.add
+            i32.le_s
+            br_if 0 (;@4;)
+            local.get 4
+            i32.load offset=40
+            local.get 4
+            i32.load offset=24
+            local.get 4
+            i32.load offset=24
+            i32.const 12
+            i32.add
+            call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+            i32.const 1
+            i32.and
+            i32.eqz
+            br_if 0 (;@4;)
+            local.get 4
+            local.get 4
+            i32.load offset=24
+            i32.const 12
+            i32.add
+            i32.store offset=24
+            local.get 4
+            local.get 4
+            i32.load offset=28
+            i32.const 1
+            i32.add
+            i32.store offset=28
+          end
+          local.get 4
+          i32.load offset=40
+          local.get 4
+          i32.load offset=24
+          local.get 4
+          i32.const 8
+          i32.add
+          call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+          i32.const -1
+          i32.xor
+          i32.const 1
+          i32.and
+          br_if 1 (;@2;)
+        end
+      end
+      local.get 4
+      i32.load offset=32
+      local.get 4
+      i32.const 8
+      i32.add
+      call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+      drop
+    end
+    local.get 4
+    i32.const 48
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__sort_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&_ (type 5) (param i32 i32 i32)
+    (local i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=28
+    local.get 3
+    local.get 1
+    i32.store offset=24
+    local.get 3
+    local.get 2
+    i32.store offset=20
+    local.get 3
+    local.get 3
+    i32.load offset=20
+    i32.store offset=16
+    local.get 3
+    local.get 3
+    i32.load offset=24
+    local.get 3
+    i32.load offset=28
+    i32.sub
+    i32.const 12
+    i32.div_s
+    i32.store offset=12
+    loop  ;; label = @1
+      local.get 3
+      i32.load offset=12
+      i32.const 1
+      i32.le_s
+      i32.eqz
+      if  ;; label = @2
+        local.get 3
+        i32.load offset=28
+        local.get 3
+        i32.load offset=24
+        local.get 3
+        i32.load offset=16
+        local.get 3
+        i32.load offset=12
+        call $void_std::__2::__pop_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+        local.get 3
+        local.get 3
+        i32.load offset=24
+        i32.const 12
+        i32.sub
+        i32.store offset=24
+        local.get 3
+        local.get 3
+        i32.load offset=12
+        i32.const 1
+        i32.sub
+        i32.store offset=12
+        br 1 (;@1;)
+      end
+    end
+    local.get 3
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $void_std::__2::__pop_heap_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_ (type 8) (param i32 i32 i32 i32)
+    (local i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 48
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=44
+    local.get 4
+    local.get 1
+    i32.store offset=40
+    local.get 4
+    local.get 2
+    i32.store offset=36
+    local.get 4
+    local.get 3
+    i32.store offset=32
+    local.get 4
+    local.get 4
+    i32.load offset=36
+    i32.store offset=28
+    local.get 4
+    i32.load offset=32
+    i32.const 1
+    i32.gt_s
+    if  ;; label = @1
+      local.get 4
+      local.get 4
+      i32.const 44
+      i32.add
+      call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+      local.tee 5
+      i32.load offset=8
+      i32.store offset=24
+      local.get 4
+      local.get 5
+      i64.load align=4
+      i64.store offset=16
+      local.get 4
+      local.get 4
+      i32.load offset=44
+      local.get 4
+      i32.load offset=28
+      local.get 4
+      i32.load offset=32
+      call $std::__2::tuple<int__int__int>*_std::__2::__floyd_sift_down<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+      i32.store offset=12
+      local.get 4
+      local.get 4
+      i32.load offset=40
+      i32.const 12
+      i32.sub
+      i32.store offset=40
+      block  ;; label = @2
+        local.get 4
+        i32.load offset=12
+        local.get 4
+        i32.load offset=40
+        i32.eq
+        if  ;; label = @3
+          local.get 4
+          i32.load offset=12
+          local.get 4
+          i32.const 16
+          i32.add
+          call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+          drop
+          br 1 (;@2;)
+        end
+        local.get 4
+        i32.const 40
+        i32.add
+        call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+        local.set 6
+        local.get 4
+        i32.load offset=12
+        local.get 6
+        call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+        drop
+        local.get 4
+        local.get 4
+        i32.load offset=12
+        i32.const 12
+        i32.add
+        i32.store offset=12
+        local.get 4
+        i32.load offset=40
+        local.get 4
+        i32.const 16
+        i32.add
+        call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+        drop
+        local.get 4
+        i32.load offset=44
+        local.get 4
+        i32.load offset=12
+        local.get 4
+        i32.load offset=28
+        local.get 4
+        i32.load offset=12
+        local.get 4
+        i32.load offset=44
+        i32.sub
+        i32.const 12
+        i32.div_s
+        call $void_std::__2::__sift_up_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_
+      end
+    end
+    local.get 4
+    i32.const 48
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::tuple<int__int__int>*_std::__2::__floyd_sift_down<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_ (type 3) (param i32 i32 i32) (result i32)
+    (local i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 3
+    global.set $__stack_pointer
+    local.get 3
+    local.get 0
+    i32.store offset=28
+    local.get 3
+    local.get 1
+    i32.store offset=24
+    local.get 3
+    local.get 2
+    i32.store offset=20
+    local.get 3
+    local.get 3
+    i32.load offset=28
+    i32.store offset=16
+    local.get 3
+    local.get 3
+    i32.load offset=28
+    i32.store offset=12
+    local.get 3
+    i32.const 0
+    i32.store offset=8
+    loop (result i32)  ;; label = @1
+      local.get 3
+      local.get 3
+      i32.load offset=12
+      local.get 3
+      i32.load offset=8
+      i32.const 1
+      i32.add
+      i32.const 12
+      i32.mul
+      i32.add
+      i32.store offset=12
+      local.get 3
+      local.get 3
+      i32.load offset=8
+      i32.const 1
+      i32.shl
+      i32.const 1
+      i32.add
+      i32.store offset=8
+      block  ;; label = @2
+        local.get 3
+        i32.load offset=20
+        local.get 3
+        i32.load offset=8
+        i32.const 1
+        i32.add
+        i32.le_s
+        br_if 0 (;@2;)
+        local.get 3
+        i32.load offset=24
+        local.get 3
+        i32.load offset=12
+        local.get 3
+        i32.load offset=12
+        i32.const 12
+        i32.add
+        call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+        i32.const 1
+        i32.and
+        i32.eqz
+        br_if 0 (;@2;)
+        local.get 3
+        local.get 3
+        i32.load offset=12
+        i32.const 12
+        i32.add
+        i32.store offset=12
+        local.get 3
+        local.get 3
+        i32.load offset=8
+        i32.const 1
+        i32.add
+        i32.store offset=8
+      end
+      local.get 3
+      i32.const 12
+      i32.add
+      call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+      local.set 4
+      local.get 3
+      i32.load offset=16
+      local.get 4
+      call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+      drop
+      local.get 3
+      local.get 3
+      i32.load offset=12
+      i32.store offset=16
+      local.get 3
+      i32.load offset=8
+      local.get 3
+      i32.load offset=20
+      i32.const 2
+      i32.sub
+      i32.const 2
+      i32.div_s
+      i32.le_s
+      br_if 0 (;@1;)
+      local.get 3
+      i32.load offset=16
+      local.set 5
+      local.get 3
+      i32.const 32
+      i32.add
+      global.set $__stack_pointer
+      local.get 5
+    end)
+  (func $void_std::__2::__sift_up_abi:v15007_<std::__2::_ClassicAlgPolicy__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::tuple<int__int__int>*>_std::__2::tuple<int__int__int>*__std::__2::tuple<int__int__int>*__Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0&__std::__2::iterator_traits<std::__2::tuple<int__int__int>*>::difference_type_ (type 8) (param i32 i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32)
+    global.get $__stack_pointer
+    i32.const 32
+    i32.sub
+    local.tee 4
+    global.set $__stack_pointer
+    local.get 4
+    local.get 0
+    i32.store offset=28
+    local.get 4
+    local.get 1
+    i32.store offset=24
+    local.get 4
+    local.get 2
+    i32.store offset=20
+    local.get 4
+    local.get 3
+    i32.store offset=16
+    local.get 4
+    i32.load offset=16
+    i32.const 1
+    i32.gt_s
+    if  ;; label = @1
+      local.get 4
+      local.get 4
+      i32.load offset=16
+      i32.const 2
+      i32.sub
+      i32.const 2
+      i32.div_s
+      i32.store offset=16
+      local.get 4
+      local.get 4
+      i32.load offset=28
+      local.get 4
+      i32.load offset=16
+      i32.const 12
+      i32.mul
+      i32.add
+      i32.store offset=12
+      local.get 4
+      i32.load offset=20
+      local.set 5
+      local.get 4
+      i32.load offset=12
+      local.set 6
+      local.get 4
+      local.get 4
+      i32.load offset=24
+      i32.const 12
+      i32.sub
+      local.tee 7
+      i32.store offset=24
+      local.get 5
+      local.get 6
+      local.get 7
+      call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+      i32.const 1
+      i32.and
+      if  ;; label = @2
+        local.get 4
+        local.get 4
+        i32.const 24
+        i32.add
+        call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+        local.tee 8
+        i32.load offset=8
+        i32.store offset=8
+        local.get 4
+        local.get 8
+        i64.load align=4
+        i64.store
+        loop  ;; label = @3
+          block  ;; label = @4
+            local.get 4
+            i32.const 12
+            i32.add
+            call $std::__2::enable_if<is_reference<decltype_*std::declval<std::__2::tuple<int__int__int>*&>___>::value__decltype_std::move_*std::declval<std::__2::tuple<int__int__int>*&>____>::type_std::__2::_IterOps<std::__2::_ClassicAlgPolicy>::__iter_move_abi:v15007_<std::__2::tuple<int__int__int>*&>_std::__2::tuple<int__int__int>*&_
+            local.set 9
+            local.get 4
+            i32.load offset=24
+            local.get 9
+            call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+            drop
+            local.get 4
+            local.get 4
+            i32.load offset=12
+            i32.store offset=24
+            local.get 4
+            i32.load offset=16
+            i32.eqz
+            br_if 0 (;@4;)
+            local.get 4
+            local.get 4
+            i32.load offset=16
+            i32.const 1
+            i32.sub
+            i32.const 2
+            i32.div_s
+            i32.store offset=16
+            local.get 4
+            local.get 4
+            i32.load offset=28
+            local.get 4
+            i32.load offset=16
+            i32.const 12
+            i32.mul
+            i32.add
+            i32.store offset=12
+            local.get 4
+            i32.load offset=20
+            local.get 4
+            i32.load offset=12
+            local.get 4
+            call $auto_Board::orderMoves_std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>_::$_0::operator__<std::__2::tuple<int__int__int>__std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>_const&__std::__2::tuple<int__int__int>_const&__const
+            i32.const 1
+            i32.and
+            br_if 1 (;@3;)
+          end
+        end
+        local.get 4
+        i32.load offset=24
+        local.get 4
+        call $std::__2::tuple<int__int__int>::operator=_abi:v15007__std::__2::tuple<int__int__int>&&_
+        drop
+      end
+    end
+    local.get 4
+    i32.const 32
+    i32.add
+    global.set $__stack_pointer)
+  (func $std::__2::decay<decltype___to_address_helper<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>::__call_declval<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&>____>::type_std::__2::__to_address_abi:v15007_<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__void>_std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
+    global.get $__stack_pointer
+    i32.const 16
+    i32.sub
+    local.tee 1
+    global.set $__stack_pointer
+    local.get 1
+    local.get 0
+    i32.store offset=12
+    local.get 1
+    i32.load offset=12
+    call $std::__2::__to_address_helper<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__void>::__call_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_
     local.set 2
     local.get 1
     i32.const 16
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__tuple_leaf<0ul__int__false>::get_abi:v15007____const (type 0) (param i32) (result i32)
-    (local i32)
+  (func $std::__2::__to_address_helper<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>__void>::__call_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_const&_ (type 0) (param i32) (result i32)
+    (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
     local.tee 1
+    global.set $__stack_pointer
+    local.get 1
     local.get 0
     i32.store offset=12
     local.get 1
-    i32.load offset=12)
-  (func $std::__2::__tuple_leaf<1ul__int__false>::get_abi:v15007____const (type 0) (param i32) (result i32)
-    (local i32)
+    local.get 1
+    i32.load offset=12
+    i32.load
+    i32.store offset=8
+    local.get 1
+    i32.load offset=8
+    call $std::__2::pointer_traits<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>::to_address_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
+  (func $std::__2::pointer_traits<std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>>::to_address_abi:v15007__std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>_ (type 0) (param i32) (result i32)
+    (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
     i32.sub
     local.tee 1
+    global.set $__stack_pointer
+    local.get 1
     local.get 0
     i32.store offset=12
     local.get 1
-    i32.load offset=12)
+    i32.const 12
+    i32.add
+    call $std::__2::__wrap_iter<std::__2::tuple<int__int__int>*>::base_abi:v15007____const
+    call $std::__2::tuple<int__int__int>*_std::__2::__to_address_abi:v15007_<std::__2::tuple<int__int__int>>_std::__2::tuple<int__int__int>*_
+    local.set 2
+    local.get 1
+    i32.const 16
+    i32.add
+    global.set $__stack_pointer
+    local.get 2)
   (func $Board::~Board__ (type 0) (param i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
@@ -20759,7 +25656,7 @@
     local.tee 2
     i32.const 4
     i32.add
-    call $std::__2::vector<std::__2::tuple<int__int>__std::__2::allocator<std::__2::tuple<int__int>>>::~vector_abi:v15007___
+    call $std::__2::vector<std::__2::tuple<int__int__int>__std::__2::allocator<std::__2::tuple<int__int__int>>>::~vector_abi:v15007___
     drop
     local.get 1
     i32.const 16
@@ -20931,20 +25828,20 @@
     local.get 1
     call $Board::setBoard_std::__2::array<unsigned_int__64ul>_
     local.get 1
-    i32.const 536
+    i32.const 532
     i32.add
     local.get 1
     i32.const 1056
     i32.add
-    i32.const 4
-    call $Board::miniMax_int_
+    i32.const 5
+    call $Board::runMiniMax_int_
     local.get 1
     local.get 1
-    i64.load offset=536 align=4
-    i64.store offset=528
+    i32.load offset=540
+    i32.store offset=264
     local.get 1
     local.get 1
-    i64.load offset=528 align=4
+    i64.load offset=532 align=4
     i64.store offset=256
     local.get 1
     i32.const 1056
@@ -20952,9 +25849,9 @@
     local.get 1
     i32.const 256
     i32.add
-    call $Board::makeMove_std::__2::tuple<int__int>_
+    call $Board::makeMove_std::__2::tuple<int__int__int>_
     local.get 1
-    i32.const 268
+    i32.const 272
     i32.add
     local.get 1
     i32.const 1056
@@ -20965,12 +25862,12 @@
     i32.const 1056
     i32.add
     local.get 1
-    i32.const 268
+    i32.const 272
     i32.add
     call $Board::encode_fen_c_std::__2::array<unsigned_int__64ul>_const&_
-    i32.store offset=524
+    i32.store offset=528
     local.get 1
-    i32.load offset=524
+    i32.load offset=528
     local.set 2
     local.get 1
     i32.const 1056
@@ -21801,11 +26698,11 @@
     local.get 1
     local.get 0
     i32.sub)
-  (func $std::uncaught_exception__ (type 10) (result i32)
+  (func $std::uncaught_exception__ (type 11) (result i32)
     call $std::uncaught_exceptions__
     i32.const 0
     i32.gt_s)
-  (func $std::uncaught_exceptions__ (type 10) (result i32)
+  (func $std::uncaught_exceptions__ (type 11) (result i32)
     call $__cxa_uncaught_exceptions)
   (func $__strchrnul (type 1) (param i32 i32) (result i32)
     (local i32 i32)
@@ -21919,9 +26816,9 @@
       return
     end
     local.get 0)
-  (func $__errno_location (type 10) (result i32)
+  (func $__errno_location (type 11) (result i32)
     i32.const 16080)
-  (func $emscripten_get_heap_size (type 10) (result i32)
+  (func $emscripten_get_heap_size (type 11) (result i32)
     memory.size
     i32.const 16
     i32.shl)
@@ -27258,7 +32155,7 @@
     nop)
   (func $__unlock (type 4) (param i32)
     nop)
-  (func $__ofl_lock (type 10) (result i32)
+  (func $__ofl_lock (type 11) (result i32)
     i32.const 16636
     call $__lock
     i32.const 16640)
@@ -27613,7 +32510,7 @@
       local.set 4
     end
     local.get 4)
-  (func $fwrite (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $fwrite (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     local.get 1
     local.get 2
@@ -27720,7 +32617,7 @@
     i64.const 0
     i64.store
     local.get 0)
-  (func $std::__2::basic_streambuf<char__std::__2::char_traits<char>>::seekpos_std::__2::fpos<__mbstate_t>__unsigned_int_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::basic_streambuf<char__std::__2::char_traits<char>>::seekpos_std::__2::fpos<__mbstate_t>__unsigned_int_ (type 8) (param i32 i32 i32 i32)
     local.get 0
     i64.const -1
     call $std::__2::fpos<__mbstate_t>::fpos_abi:v15007__long_long_
@@ -28416,7 +33313,7 @@
     i64.const -1
     call $std::__2::fpos<__mbstate_t>::fpos_abi:v15007__long_long_
     drop)
-  (func $std::__2::basic_streambuf<wchar_t__std::__2::char_traits<wchar_t>>::seekpos_std::__2::fpos<__mbstate_t>__unsigned_int_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::basic_streambuf<wchar_t__std::__2::char_traits<wchar_t>>::seekpos_std::__2::fpos<__mbstate_t>__unsigned_int_ (type 8) (param i32 i32 i32 i32)
     local.get 0
     i64.const -1
     call $std::__2::fpos<__mbstate_t>::fpos_abi:v15007__long_long_
@@ -28553,7 +33450,7 @@
     call $wchar_t*_std::__2::copy_abi:v15007_<wchar_t_const*__wchar_t*>_wchar_t_const*__wchar_t_const*__wchar_t*_)
   (func $std::__2::basic_streambuf<wchar_t__std::__2::char_traits<wchar_t>>::underflow__ (type 0) (param i32) (result i32)
     call $std::__2::char_traits<wchar_t>::eof__)
-  (func $std::__2::char_traits<wchar_t>::eof__ (type 10) (result i32)
+  (func $std::__2::char_traits<wchar_t>::eof__ (type 11) (result i32)
     i32.const -1)
   (func $std::__2::basic_streambuf<wchar_t__std::__2::char_traits<wchar_t>>::uflow__ (type 0) (param i32) (result i32)
     (local i32)
@@ -29163,7 +34060,7 @@
     local.get 1
     local.get 2
     i32.store)
-  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::basic_string_abi:v15007_<char*__void>_char*__char*__std::__2::allocator<char>_const&_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::basic_string_abi:v15007_<char*__void>_char*__char*__std::__2::allocator<char>_const&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -29359,7 +34256,7 @@
     i32.load
     i32.load offset=24
     call_indirect (type 0))
-  (func $std::__2::codecvt<char__char____mbstate_t>::unshift_abi:v15007____mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char__char____mbstate_t>::unshift_abi:v15007____mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -29368,7 +34265,7 @@
     local.get 0
     i32.load
     i32.load offset=20
-    call_indirect (type 8))
+    call_indirect (type 9))
   (func $std::__2::__less<long__long>::operator___abi:v15007__long_const&__long_const&__const (type 3) (param i32 i32 i32) (result i32)
     local.get 1
     i32.load
@@ -29397,7 +34294,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::pair<wchar_t_const*__wchar_t*>_std::__2::__copy_abi:v15007_<wchar_t_const*__wchar_t_const*__wchar_t*__0>_wchar_t_const*__wchar_t_const*__wchar_t*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<wchar_t_const*__wchar_t*>_std::__2::__copy_abi:v15007_<wchar_t_const*__wchar_t_const*__wchar_t*__0>_wchar_t_const*__wchar_t_const*__wchar_t*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -29452,7 +34349,7 @@
   (func $decltype_std::__2::__unwrap_iter_impl<wchar_t*__true>::__unwrap_std::declval<wchar_t*>_____std::__2::__unwrap_iter_abi:v15007_<wchar_t*__std::__2::__unwrap_iter_impl<wchar_t*__true>__0>_wchar_t*_ (type 0) (param i32) (result i32)
     local.get 0
     call $std::__2::__unwrap_iter_impl<wchar_t*__true>::__unwrap_abi:v15007__wchar_t*_)
-  (func $std::__2::pair<wchar_t_const*__wchar_t*>_std::__2::__copy_impl_abi:v15007_<wchar_t_const__wchar_t__void>_wchar_t_const*__wchar_t_const*__wchar_t*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<wchar_t_const*__wchar_t*>_std::__2::__copy_impl_abi:v15007_<wchar_t_const__wchar_t__void>_wchar_t_const*__wchar_t_const*__wchar_t*_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -29891,11 +34788,11 @@
       local.set 2
     end
     local.get 2)
-  (func $__syscall_getpid (type 10) (result i32)
+  (func $__syscall_getpid (type 11) (result i32)
     i32.const 42)
-  (func $getpid (type 10) (result i32)
+  (func $getpid (type 11) (result i32)
     call $__syscall_getpid)
-  (func $__get_tp (type 10) (result i32)
+  (func $__get_tp (type 11) (result i32)
     i32.const 18736)
   (func $init_pthread_self (type 7)
     i32.const 18832
@@ -31733,7 +36630,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::unshift_abi:v15007____mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::unshift_abi:v15007____mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -31742,7 +36639,7 @@
     local.get 0
     i32.load
     i32.load offset=20
-    call_indirect (type 8))
+    call_indirect (type 9))
   (func $std::__2::__stdoutbuf<wchar_t>::xsputn_wchar_t_const*__long_ (type 3) (param i32 i32 i32) (result i32)
     (local i32)
     block  ;; label = @1
@@ -33023,9 +37920,9 @@
     i32.const 96
     i32.add
     global.set $__stack_pointer)
-  (func $__fe_getround (type 10) (result i32)
+  (func $__fe_getround (type 11) (result i32)
     i32.const 0)
-  (func $__fe_raise_inexact (type 10) (result i32)
+  (func $__fe_raise_inexact (type 11) (result i32)
     i32.const 0)
   (func $__addtf3 (type 17) (param i32 i64 i64 i64 i64)
     (local i64 i32 i32 i64 i32 i64 i32 i64)
@@ -35737,7 +40634,7 @@
     local.get 0
     local.get 1
     i64.store)
-  (func $__floatscan (type 9) (param i32 i32 i32 i32)
+  (func $__floatscan (type 8) (param i32 i32 i32 i32)
     (local i32 i64 i32 i32 i64 i32 i32 i64)
     global.get $__stack_pointer
     i32.const 48
@@ -36273,7 +41170,7 @@
     i32.const 48
     i32.add
     global.set $__stack_pointer)
-  (func $hexfloat (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $hexfloat (type 12) (param i32 i32 i32 i32 i32 i32)
     (local i32 i32 i64 i64 i64 i64 i64 i32 i64 i32 i32 i64 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 432
@@ -40128,7 +45025,7 @@
     i64.and
     i64.or
     f64.reinterpret_i64)
-  (func $mbrtowc (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $mbrtowc (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     local.get 3
     i32.const 19908
@@ -42764,7 +47661,7 @@
       local.set 0
     end
     local.get 0)
-  (func $__vfprintf_internal (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $__vfprintf_internal (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 208
@@ -44174,7 +49071,7 @@
       br_if 0 (;@1;)
     end
     local.get 1)
-  (func $pop_arg (type 9) (param i32 i32 i32 i32)
+  (func $pop_arg (type 8) (param i32 i32 i32 i32)
     block  ;; label = @1
       block  ;; label = @2
         block  ;; label = @3
@@ -46178,7 +51075,7 @@
   (func $__DOUBLE_BITS (type 59) (param f64) (result i64)
     local.get 0
     i64.reinterpret_f64)
-  (func $vsnprintf (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $vsnprintf (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 160
@@ -46372,7 +51269,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $snprintf (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $snprintf (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -46468,11 +51365,11 @@
     i32.sub
     i32.const 2
     i32.shr_s)
-  (func $__ctype_toupper_loc (type 10) (result i32)
+  (func $__ctype_toupper_loc (type 11) (result i32)
     i32.const 4576)
-  (func $__ctype_tolower_loc (type 10) (result i32)
+  (func $__ctype_tolower_loc (type 11) (result i32)
     i32.const 6128)
-  (func $wcsnrtombs (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $wcsnrtombs (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -46577,7 +51474,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 6)
-  (func $mbsrtowcs (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $mbsrtowcs (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32)
     local.get 1
     i32.load
@@ -47151,7 +52048,7 @@
     local.get 4
     i32.store
     local.get 2)
-  (func $mbsnrtowcs (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $mbsnrtowcs (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 1040
@@ -47532,7 +52429,7 @@
       i32.const -1
     end
     local.tee 2)
-  (func $__ctype_get_mb_cur_max (type 10) (result i32)
+  (func $__ctype_get_mb_cur_max (type 11) (result i32)
     i32.const 4
     i32.const 1
     call $__get_tp
@@ -47889,7 +52786,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $strtox.1 (type 9) (param i32 i32 i32 i32)
+  (func $strtox.1 (type 8) (param i32 i32 i32 i32)
     (local i32 i64 i64)
     global.get $__stack_pointer
     i32.const 160
@@ -48005,7 +52902,7 @@
     local.get 0
     local.get 1
     call $strtod)
-  (func $strtold_l (type 9) (param i32 i32 i32 i32)
+  (func $strtold_l (type 8) (param i32 i32 i32 i32)
     (local i32 i64)
     global.get $__stack_pointer
     i32.const 16
@@ -48042,7 +52939,7 @@
     drop
     local.get 0
     call $operator_delete_void*_)
-  (func $std::__2::collate<char>::do_compare_char_const*__char_const*__char_const*__char_const*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::collate<char>::do_compare_char_const*__char_const*__char_const*__char_const*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     local.get 1
     local.get 4
@@ -48096,7 +52993,7 @@
       local.set 5
     end
     local.get 5)
-  (func $std::__2::collate<char>::do_transform_char_const*__char_const*__const (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::collate<char>::do_transform_char_const*__char_const*__const (type 8) (param i32 i32 i32 i32)
     local.get 0
     local.get 2
     local.get 3
@@ -48261,7 +53158,7 @@
     drop
     local.get 0
     call $operator_delete_void*_)
-  (func $std::__2::collate<wchar_t>::do_compare_wchar_t_const*__wchar_t_const*__wchar_t_const*__wchar_t_const*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::collate<wchar_t>::do_compare_wchar_t_const*__wchar_t_const*__wchar_t_const*__wchar_t_const*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32)
     block  ;; label = @1
       loop  ;; label = @2
@@ -48309,7 +53206,7 @@
       local.set 5
     end
     local.get 5)
-  (func $std::__2::collate<wchar_t>::do_transform_wchar_t_const*__wchar_t_const*__const (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::collate<wchar_t>::do_transform_wchar_t_const*__wchar_t_const*__const (type 8) (param i32 i32 i32 i32)
     local.get 0
     local.get 2
     local.get 3
@@ -49442,7 +54339,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 0)
-  (func $long_std::__2::__num_get_signed_integral<long>_char_const*__char_const*__unsigned_int&__int_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $long_std::__2::__num_get_signed_integral<long>_char_const*__char_const*__unsigned_int&__int_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i64 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -49535,7 +54432,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 0)
-  (func $std::__2::__check_grouping_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__unsigned_int*__unsigned_int*__unsigned_int&_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::__check_grouping_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__unsigned_int*__unsigned_int*__unsigned_int&_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     local.get 0
     call $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::size_abi:v15007____const
@@ -50138,7 +55035,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $unsigned_short_std::__2::__num_get_unsigned_integral<unsigned_short>_char_const*__char_const*__unsigned_int&__int_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $unsigned_short_std::__2::__num_get_unsigned_integral<unsigned_short>_char_const*__char_const*__unsigned_int&__int_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i64 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -50460,7 +55357,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $unsigned_int_std::__2::__num_get_unsigned_integral<unsigned_int>_char_const*__char_const*__unsigned_int&__int_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $unsigned_int_std::__2::__num_get_unsigned_integral<unsigned_int>_char_const*__char_const*__unsigned_int&__int_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i64 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -50780,7 +55677,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $unsigned_long_std::__2::__num_get_unsigned_integral<unsigned_long>_char_const*__char_const*__unsigned_int&__int_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $unsigned_long_std::__2::__num_get_unsigned_integral<unsigned_long>_char_const*__char_const*__unsigned_int&__int_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i64 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -52320,7 +57217,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $long_double_std::__2::__num_get_float<long_double>_char_const*__char_const*__unsigned_int&_ (type 9) (param i32 i32 i32 i32)
+  (func $long_double_std::__2::__num_get_float<long_double>_char_const*__char_const*__unsigned_int&_ (type 8) (param i32 i32 i32 i32)
     (local i32 i64 i64 i32 i64 i64 i32)
     global.get $__stack_pointer
     i32.const 32
@@ -52596,7 +57493,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::ctype<char>::widen_abi:v15007__char_const*__char_const*__char*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<char>::widen_abi:v15007__char_const*__char_const*__char*__const (type 10) (param i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -52604,8 +57501,8 @@
     local.get 0
     i32.load
     i32.load offset=32
-    call_indirect (type 12))
-  (func $std::__2::__cloc__ (type 10) (result i32)
+    call_indirect (type 10))
+  (func $std::__2::__cloc__ (type 11) (result i32)
     (local i32)
     i32.const 20144
     i32.load8_u
@@ -52626,7 +57523,7 @@
     local.get 0
     i32.store
     local.get 0)
-  (func $std::__2::__libcpp_sscanf_l_char_const*____locale_struct*__char_const*__..._ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_sscanf_l_char_const*____locale_struct*__char_const*__..._ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -55838,7 +60735,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::ctype<wchar_t>::widen_abi:v15007__char_const*__char_const*__wchar_t*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::widen_abi:v15007__char_const*__char_const*__wchar_t*__const (type 10) (param i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -55846,7 +60743,7 @@
     local.get 0
     i32.load
     i32.load offset=48
-    call_indirect (type 12))
+    call_indirect (type 10))
   (func $wchar_t_const*_std::__2::find_abi:v15007_<wchar_t_const*__wchar_t>_wchar_t_const*__wchar_t_const*__wchar_t_const&_ (type 3) (param i32 i32 i32) (result i32)
     local.get 2
     i32.load
@@ -56002,7 +60899,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__bool__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__bool__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -56027,7 +60924,7 @@
         local.get 0
         i32.load
         i32.load offset=24
-        call_indirect (type 8)
+        call_indirect (type 9)
         local.set 2
         br 1 (;@1;)
       end
@@ -56197,7 +61094,7 @@
     local.get 1
     call $std::__2::__wrap_iter<char*>::base_abi:v15007____const
     i32.eq)
-  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -56296,7 +61193,7 @@
     i32.sub
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::__num_put_base::__format_int_char*__char_const*__bool__unsigned_int_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::__num_put_base::__format_int_char*__char_const*__bool__unsigned_int_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     block  ;; label = @1
       local.get 3
@@ -56386,7 +61283,7 @@
     end
     local.tee 1
     i32.store8)
-  (func $std::__2::__libcpp_snprintf_l_char*__unsigned_long____locale_struct*__char_const*__..._ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_snprintf_l_char*__unsigned_long____locale_struct*__char_const*__..._ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -56819,7 +61716,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -57397,7 +62294,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::__libcpp_asprintf_l_char**____locale_struct*__char_const*__..._ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_asprintf_l_char**____locale_struct*__char_const*__..._ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -58068,7 +62965,7 @@
     end
     call $std::__throw_bad_alloc__
     unreachable)
-  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__void_const*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::ios_base&__char__void_const*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 96
@@ -58156,7 +63053,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__bool__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__bool__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -58181,7 +63078,7 @@
         local.get 0
         i32.load
         i32.load offset=24
-        call_indirect (type 8)
+        call_indirect (type 9)
         local.set 2
         br 1 (;@1;)
       end
@@ -58363,7 +63260,7 @@
     local.get 1
     call $std::__2::__wrap_iter<wchar_t*>::base_abi:v15007____const
     i32.eq)
-  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -58916,7 +63813,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     local.get 2
@@ -60033,7 +64930,7 @@
     end
     call $std::__throw_bad_alloc__
     unreachable)
-  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__void_const*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::num_put<wchar_t__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::do_put_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::ios_base&__wchar_t__void_const*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 208
@@ -60520,7 +65417,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_weekdayname_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_weekdayname_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 0
@@ -60596,7 +65493,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_monthname_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_monthname_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 0
@@ -60672,7 +65569,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_year_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_year_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -60706,7 +65603,7 @@
       i32.sub
       i32.store
     end)
-  (func $int_std::__2::__get_up_to_n_digits<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__int_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $int_std::__2::__get_up_to_n_digits<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__int_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -61232,7 +66129,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_day_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_day_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61264,7 +66161,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_hour_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_hour_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61294,7 +66191,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_12_hour_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_12_hour_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61326,7 +66223,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_day_year_num_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_day_year_num_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61356,7 +66253,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_month_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_month_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61389,7 +66286,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_minute_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_minute_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61467,7 +66364,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_am_pm_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_am_pm_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     i32.const 8
     i32.add
@@ -61538,7 +66435,7 @@
       i32.add
       i32.store
     end)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_second_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_second_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61568,7 +66465,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_weekday_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_weekday_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -61598,7 +66495,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_year4_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<char__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>>::__get_year4_int&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>&__std::__2::istreambuf_iterator<char__std::__2::char_traits<char>>__unsigned_int&__std::__2::ctype<char>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62062,7 +66959,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_weekdayname_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_weekdayname_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 0
@@ -62138,7 +67035,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_monthname_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_monthname_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 0
@@ -62214,7 +67111,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 1)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_year_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_year_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62248,7 +67145,7 @@
       i32.sub
       i32.store
     end)
-  (func $int_std::__2::__get_up_to_n_digits<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__int_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $int_std::__2::__get_up_to_n_digits<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__int_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -62817,7 +67714,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_day_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_day_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62849,7 +67746,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_hour_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_hour_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62879,7 +67776,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_12_hour_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_12_hour_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62911,7 +67808,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_day_year_num_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_day_year_num_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62941,7 +67838,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_month_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_month_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -62974,7 +67871,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_minute_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_minute_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -63052,7 +67949,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_am_pm_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_am_pm_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     i32.const 8
     i32.add
@@ -63123,7 +68020,7 @@
       i32.add
       i32.store
     end)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_second_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_second_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -63153,7 +68050,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_weekday_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_weekday_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -63183,7 +68080,7 @@
     i32.const 4
     i32.or
     i32.store)
-  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_year4_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::time_get<wchar_t__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>::__get_year4_int&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>&__std::__2::istreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__unsigned_int&__std::__2::ctype<wchar_t>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 2
     local.get 3
     local.get 4
@@ -63293,7 +68190,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 0)
-  (func $std::__2::__time_put::__do_put_char*__char*&__tm_const*__char__char__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::__time_put::__do_put_char*__char*&__tm_const*__char__char__const (type 12) (param i32 i32 i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -63380,7 +68277,7 @@
     local.get 1
     local.get 0
     i32.sub)
-  (func $std::__2::pair<char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::__copy_abi:v15007_<char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__0>_char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::__copy_abi:v15007_<char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__0>_char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -63465,7 +68362,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 0)
-  (func $std::__2::__time_put::__do_put_wchar_t*__wchar_t*&__tm_const*__char__char__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::__time_put::__do_put_wchar_t*__wchar_t*&__tm_const*__char__char__const (type 12) (param i32 i32 i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 144
@@ -63557,7 +68454,7 @@
     i32.sub
     i32.const 2
     i32.shr_s)
-  (func $std::__2::__libcpp_mbsrtowcs_l_abi:v15007__wchar_t*__char_const**__unsigned_long____mbstate_t*____locale_struct*_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_mbsrtowcs_l_abi:v15007__wchar_t*__char_const**__unsigned_long____mbstate_t*____locale_struct*_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -63592,7 +68489,7 @@
   (func $std::__2::__throw_runtime_error_char_const*_ (type 4) (param i32)
     call $abort
     unreachable)
-  (func $std::__2::pair<wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::__copy_abi:v15007_<wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__0>_wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::__copy_abi:v15007_<wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__0>_wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -63641,9 +68538,9 @@
     global.set $__stack_pointer)
   (func $std::__2::moneypunct<char__false>::do_decimal_point___const (type 0) (param i32) (result i32)
     call $std::__2::numeric_limits<char>::max_abi:v15007___)
-  (func $std::__2::numeric_limits<char>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<char>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<char__true>::max_abi:v15007___)
-  (func $std::__2::__libcpp_numeric_limits<char__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<char__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const 127)
   (func $std::__2::moneypunct<char__false>::do_thousands_sep___const (type 0) (param i32) (result i32)
     call $std::__2::numeric_limits<char>::max_abi:v15007___)
@@ -63709,9 +68606,9 @@
     i32.store align=1)
   (func $std::__2::moneypunct<wchar_t__false>::do_decimal_point___const (type 0) (param i32) (result i32)
     call $std::__2::numeric_limits<wchar_t>::max_abi:v15007___)
-  (func $std::__2::numeric_limits<wchar_t>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<wchar_t>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<wchar_t__true>::max_abi:v15007___)
-  (func $std::__2::__libcpp_numeric_limits<wchar_t__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<wchar_t__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const 2147483647)
   (func $std::__2::moneypunct<wchar_t__false>::do_thousands_sep___const (type 0) (param i32) (result i32)
     call $std::__2::numeric_limits<wchar_t>::max_abi:v15007___)
@@ -67982,7 +72879,7 @@
   (func $std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>::__alloc_abi:v15007___ (type 0) (param i32) (result i32)
     local.get 0
     call $std::__2::__compressed_pair<std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>::__rep__std::__2::allocator<wchar_t>>::second_abi:v15007___)
-  (func $std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>::basic_string_abi:v15007_<wchar_t*__void>_wchar_t*__wchar_t*__std::__2::allocator<wchar_t>_const&_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>::basic_string_abi:v15007_<wchar_t*__void>_wchar_t*__wchar_t*__std::__2::allocator<wchar_t>_const&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -69299,7 +74196,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::numeric_limits<unsigned_int>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<unsigned_int>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<unsigned_int__true>::max_abi:v15007___)
   (func $std::__2::money_put<char__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>::do_put_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__bool__std::__2::ios_base&__char__std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__const (type 6) (param i32 i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32 i32 i32)
@@ -70730,7 +75627,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 5)
-  (func $std::__2::pair<std::__2::__wrap_iter<char_const*>__char*>_std::__2::__copy_abi:v15007_<std::__2::__wrap_iter<char_const*>__std::__2::__wrap_iter<char_const*>__char*__0>_std::__2::__wrap_iter<char_const*>__std::__2::__wrap_iter<char_const*>__char*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<std::__2::__wrap_iter<char_const*>__char*>_std::__2::__copy_abi:v15007_<std::__2::__wrap_iter<char_const*>__std::__2::__wrap_iter<char_const*>__char*__0>_std::__2::__wrap_iter<char_const*>__std::__2::__wrap_iter<char_const*>__char*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -70782,7 +75679,7 @@
     local.get 2
     i32.store
     local.get 0)
-  (func $std::__2::__libcpp_numeric_limits<unsigned_int__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<unsigned_int__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const -1)
   (func $std::__2::__wrap_iter<char_const*>::operator+=_abi:v15007__long_ (type 1) (param i32 i32) (result i32)
     local.get 0
@@ -70792,7 +75689,7 @@
     i32.add
     i32.store
     local.get 0)
-  (func $std::__2::pair<std::__2::__wrap_iter<wchar_t_const*>__wchar_t*>_std::__2::__copy_abi:v15007_<std::__2::__wrap_iter<wchar_t_const*>__std::__2::__wrap_iter<wchar_t_const*>__wchar_t*__0>_std::__2::__wrap_iter<wchar_t_const*>__std::__2::__wrap_iter<wchar_t_const*>__wchar_t*_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<std::__2::__wrap_iter<wchar_t_const*>__wchar_t*>_std::__2::__copy_abi:v15007_<std::__2::__wrap_iter<wchar_t_const*>__std::__2::__wrap_iter<wchar_t_const*>__wchar_t*__0>_std::__2::__wrap_iter<wchar_t_const*>__std::__2::__wrap_iter<wchar_t_const*>__wchar_t*_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -70856,7 +75753,7 @@
     local.get 0)
   (func $std::__2::messages<char>::do_open_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__std::__2::locale_const&__const (type 3) (param i32 i32 i32) (result i32)
     i32.const -1)
-  (func $std::__2::messages<char>::do_get_long__int__int__std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::messages<char>::do_get_long__int__int__std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     local.get 5
     call $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::basic_string_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&_
@@ -70865,7 +75762,7 @@
     nop)
   (func $std::__2::messages<wchar_t>::do_open_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__std::__2::locale_const&__const (type 3) (param i32 i32 i32) (result i32)
     i32.const -1)
-  (func $std::__2::messages<wchar_t>::do_get_long__int__int__std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>_const&__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $std::__2::messages<wchar_t>::do_get_long__int__int__std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>_const&__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     local.get 5
     call $std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>::basic_string_std::__2::basic_string<wchar_t__std::__2::char_traits<wchar_t>__std::__2::allocator<wchar_t>>_const&_
@@ -71950,7 +76847,7 @@
     i32.const 13524
     i32.store
     local.get 1)
-  (func $std::__2::locale::classic__ (type 10) (result i32)
+  (func $std::__2::locale::classic__ (type 11) (result i32)
     i32.const 20156
     i32.load8_u
     if  ;; label = @1
@@ -71980,7 +76877,7 @@
     i32.add
     call $long_std::__2::__libcpp_atomic_refcount_increment_abi:v15007_<long>_long&_
     drop)
-  (func $std::__2::locale::__imp::make_classic__ (type 10) (result i32)
+  (func $std::__2::locale::__imp::make_classic__ (type 11) (result i32)
     call $std::__2::locale::__imp&_std::__2::_anonymous_namespace_::make<std::__2::locale::__imp__unsigned_int>_unsigned_int_
     i32.const 20148
     i32.const 21784
@@ -72319,13 +77216,13 @@
     i32.const 1
     call $std::__2::locale::__imp::__imp_unsigned_long_
     drop)
-  (func $std::__2::locale::__imp::make_global__ (type 10) (result i32)
+  (func $std::__2::locale::__imp::make_global__ (type 11) (result i32)
     i32.const 20160
     call $std::__2::locale::classic__
     call $std::__2::locale::locale_std::__2::locale_const&_
     drop
     i32.const 20160)
-  (func $std::__2::locale::__global__ (type 10) (result i32)
+  (func $std::__2::locale::__global__ (type 11) (result i32)
     i32.const 20168
     i32.load8_u
     if  ;; label = @1
@@ -72371,7 +77268,7 @@
     local.get 0
     call $int_std::__2::_anonymous_namespace_::__libcpp_atomic_add_abi:v15007_<int__int>_int*__int__int_
     i32.store offset=4)
-  (func $std::__2::_anonymous_namespace_::__fake_bind::__fake_bind_void__std::__2::locale::id::*_____std::__2::locale::id*_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::_anonymous_namespace_::__fake_bind::__fake_bind_void__std::__2::locale::id::*_____std::__2::locale::id*_ (type 10) (param i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 1
     i32.store offset=4
@@ -72440,7 +77337,7 @@
     i32.load
     i32.load
     call $std::__2::__call_once_param<std::__2::tuple<std::__2::_anonymous_namespace_::__fake_bind&&>>::operator___abi:v15007___)
-  (func $int_std::__2::_anonymous_namespace_::__libcpp_atomic_add_abi:v15007_<int__int>_int*__int__int_ (type 10) (result i32)
+  (func $int_std::__2::_anonymous_namespace_::__libcpp_atomic_add_abi:v15007_<int__int>_int*__int__int_ (type 11) (result i32)
     (local i32)
     i32.const 20172
     i32.const 20172
@@ -72475,7 +77372,7 @@
       local.set 3
     end
     local.get 3)
-  (func $std::__2::ctype<wchar_t>::do_is_wchar_t_const*__wchar_t_const*__unsigned_long*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::do_is_wchar_t_const*__wchar_t_const*__unsigned_long*__const (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     loop  ;; label = @1
       local.get 1
@@ -72514,7 +77411,7 @@
       end
     end
     local.get 2)
-  (func $std::__2::ctype<wchar_t>::do_scan_is_unsigned_long__wchar_t_const*__wchar_t_const*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::do_scan_is_unsigned_long__wchar_t_const*__wchar_t_const*__const (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     loop  ;; label = @1
       block  ;; label = @2
@@ -72551,7 +77448,7 @@
       br 0 (;@1;)
     end
     unreachable)
-  (func $std::__2::ctype<wchar_t>::do_scan_not_unsigned_long__wchar_t_const*__wchar_t_const*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::do_scan_not_unsigned_long__wchar_t_const*__wchar_t_const*__const (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     block  ;; label = @1
       loop  ;; label = @2
@@ -72601,7 +77498,7 @@
       local.set 1
     end
     local.get 1)
-  (func $std::__2::ctype<char>::__classic_upper_table__ (type 10) (result i32)
+  (func $std::__2::ctype<char>::__classic_upper_table__ (type 11) (result i32)
     call $__ctype_toupper_loc
     i32.load)
   (func $std::__2::ctype<wchar_t>::do_toupper_wchar_t*__wchar_t_const*__const (type 3) (param i32 i32 i32) (result i32)
@@ -72652,7 +77549,7 @@
       local.set 1
     end
     local.get 1)
-  (func $std::__2::ctype<char>::__classic_lower_table__ (type 10) (result i32)
+  (func $std::__2::ctype<char>::__classic_lower_table__ (type 11) (result i32)
     call $__ctype_tolower_loc
     i32.load)
   (func $std::__2::ctype<wchar_t>::do_tolower_wchar_t*__wchar_t_const*__const (type 3) (param i32 i32 i32) (result i32)
@@ -72691,7 +77588,7 @@
     local.get 2)
   (func $std::__2::ctype<wchar_t>::do_widen_char__const (type 1) (param i32 i32) (result i32)
     local.get 1)
-  (func $std::__2::ctype<wchar_t>::do_widen_char_const*__char_const*__wchar_t*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::do_widen_char_const*__char_const*__wchar_t*__const (type 10) (param i32 i32 i32 i32) (result i32)
     loop  ;; label = @1
       local.get 1
       local.get 2
@@ -72722,7 +77619,7 @@
     i32.lt_u
     select
     i32.extend8_s)
-  (func $std::__2::ctype<wchar_t>::do_narrow_wchar_t_const*__wchar_t_const*__char__char*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<wchar_t>::do_narrow_wchar_t_const*__wchar_t_const*__char__char*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     loop  ;; label = @1
       local.get 1
@@ -72752,7 +77649,7 @@
       end
     end
     local.get 2)
-  (func $std::__2::ctype<char>::ctype_unsigned_long_const*__bool__unsigned_long_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<char>::ctype_unsigned_long_const*__bool__unsigned_long_ (type 10) (param i32 i32 i32 i32) (result i32)
     local.get 0
     local.get 3
     call $std::__2::locale::facet::facet_abi:v15007__unsigned_long_
@@ -72906,7 +77803,7 @@
     local.get 2)
   (func $std::__2::ctype<char>::do_widen_char__const (type 1) (param i32 i32) (result i32)
     local.get 1)
-  (func $std::__2::ctype<char>::do_widen_char_const*__char_const*__char*__const (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<char>::do_widen_char_const*__char_const*__char*__const (type 10) (param i32 i32 i32 i32) (result i32)
     loop  ;; label = @1
       local.get 1
       local.get 2
@@ -72936,7 +77833,7 @@
     i32.const 0
     i32.lt_s
     select)
-  (func $std::__2::ctype<char>::do_narrow_char_const*__char_const*__char__char*__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::ctype<char>::do_narrow_char_const*__char_const*__char__char*__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     loop  ;; label = @1
       local.get 1
@@ -72988,7 +77885,7 @@
     local.get 5
     i32.store
     i32.const 3)
-  (func $std::__2::codecvt<char__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 4
     local.get 2
     i32.store
@@ -72997,7 +77894,7 @@
     i32.const 1)
   (func $std::__2::codecvt<char__char____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 1)
-  (func $std::__2::codecvt<char__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -73332,7 +78229,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::__libcpp_wcrtomb_l_abi:v15007__char*__wchar_t____mbstate_t*____locale_struct*_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_wcrtomb_l_abi:v15007__char*__wchar_t____mbstate_t*____locale_struct*_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -73627,7 +78524,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 4)
-  (func $std::__2::__libcpp_mbrtowc_l_abi:v15007__wchar_t*__char_const*__unsigned_long____mbstate_t*____locale_struct*_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_mbrtowc_l_abi:v15007__wchar_t*__char_const*__unsigned_long____mbstate_t*____locale_struct*_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -73659,7 +78556,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 3)
-  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -73767,7 +78664,7 @@
       local.set 1
     end
     local.get 1)
-  (func $std::__2::__libcpp_mbtowc_l_abi:v15007__wchar_t*__char_const*__unsigned_long____locale_struct*_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_mbtowc_l_abi:v15007__wchar_t*__char_const*__unsigned_long____locale_struct*_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -73828,7 +78725,7 @@
     local.get 2)
   (func $std::__2::codecvt<wchar_t__char____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 0)
-  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<wchar_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32)
     loop  ;; label = @1
       block  ;; label = @2
@@ -73876,7 +78773,7 @@
       end
     end
     local.get 5)
-  (func $std::__2::__libcpp_mbrlen_l_abi:v15007__char_const*__unsigned_long____mbstate_t*____locale_struct*_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__libcpp_mbrlen_l_abi:v15007__char_const*__unsigned_long____mbstate_t*____locale_struct*_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -74779,7 +79676,7 @@
       return
     end
     i32.const 2)
-  (func $std::__2::codecvt<char16_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char16_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 4
     local.get 2
     i32.store
@@ -74788,14 +79685,14 @@
     i32.const 0)
   (func $std::__2::codecvt<char16_t__char____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 0)
-  (func $std::__2::codecvt<char16_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char16_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 2
     local.get 3
     local.get 4
     i32.const 1114111
     i32.const 0
     call $std::__2::utf8_to_utf16_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_)
-  (func $std::__2::utf8_to_utf16_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::utf8_to_utf16_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32)
     block  ;; label = @1
       local.get 1
@@ -75176,7 +80073,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::codecvt<char16_t__char8_t____mbstate_t>::do_unshift___mbstate_t&__char8_t*__char8_t*__char8_t*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char16_t__char8_t____mbstate_t>::do_unshift___mbstate_t&__char8_t*__char8_t*__char8_t*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 4
     local.get 2
     i32.store
@@ -75185,7 +80082,7 @@
     i32.const 0)
   (func $std::__2::codecvt<char16_t__char8_t____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 0)
-  (func $std::__2::codecvt<char16_t__char8_t____mbstate_t>::do_length___mbstate_t&__char8_t_const*__char8_t_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char16_t__char8_t____mbstate_t>::do_length___mbstate_t&__char8_t_const*__char8_t_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 2
     local.get 3
     local.get 4
@@ -75875,7 +80772,7 @@
       return
     end
     i32.const 1)
-  (func $std::__2::codecvt<char32_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char32_t__char____mbstate_t>::do_unshift___mbstate_t&__char*__char*__char*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 4
     local.get 2
     i32.store
@@ -75884,14 +80781,14 @@
     i32.const 0)
   (func $std::__2::codecvt<char32_t__char____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 0)
-  (func $std::__2::codecvt<char32_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char32_t__char____mbstate_t>::do_length___mbstate_t&__char_const*__char_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 2
     local.get 3
     local.get 4
     i32.const 1114111
     i32.const 0
     call $std::__2::utf8_to_ucs4_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_)
-  (func $std::__2::utf8_to_ucs4_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::utf8_to_ucs4_length_unsigned_char_const*__unsigned_char_const*__unsigned_long__unsigned_long__std::__2::codecvt_mode_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32)
     block  ;; label = @1
       local.get 1
@@ -76265,7 +81162,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::codecvt<char32_t__char8_t____mbstate_t>::do_unshift___mbstate_t&__char8_t*__char8_t*__char8_t*&__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char32_t__char8_t____mbstate_t>::do_unshift___mbstate_t&__char8_t*__char8_t*__char8_t*&__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 4
     local.get 2
     i32.store
@@ -76274,7 +81171,7 @@
     i32.const 0)
   (func $std::__2::codecvt<char32_t__char8_t____mbstate_t>::do_always_noconv___const (type 0) (param i32) (result i32)
     i32.const 0)
-  (func $std::__2::codecvt<char32_t__char8_t____mbstate_t>::do_length___mbstate_t&__char8_t_const*__char8_t_const*__unsigned_long__const (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::codecvt<char32_t__char8_t____mbstate_t>::do_length___mbstate_t&__char8_t_const*__char8_t_const*__unsigned_long__const (type 9) (param i32 i32 i32 i32 i32) (result i32)
     local.get 2
     local.get 3
     local.get 4
@@ -77691,7 +82588,7 @@
   (func $decltype_std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__false>::__unwrap_std::declval<std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__false>__0>_std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_ (type 0) (param i32) (result i32)
     local.get 0
     call $std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>__false>::__unwrap_abi:v15007__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_)
-  (func $std::__2::pair<char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::__copy_impl_abi:v15007_<char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_std::__2::__copy_impl_abi:v15007_<char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>>_char*__char*__std::__2::ostreambuf_iterator<char__std::__2::char_traits<char>>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -77825,7 +82722,7 @@
   (func $decltype_std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__false>::__unwrap_std::declval<std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__false>__0>_std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_ (type 0) (param i32) (result i32)
     local.get 0
     call $std::__2::__unwrap_iter_impl<std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>__false>::__unwrap_abi:v15007__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_)
-  (func $std::__2::pair<wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::__copy_impl_abi:v15007_<wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_std::__2::__copy_impl_abi:v15007_<wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>>_wchar_t*__wchar_t*__std::__2::ostreambuf_iterator<wchar_t__std::__2::char_traits<wchar_t>>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -78818,7 +83715,7 @@
     call $std::__2::locale::facet**_std::__2::__to_address_abi:v15007_<std::__2::locale::facet*>_std::__2::locale::facet**_
     i32.sub
     i32.add)
-  (func $std::__2::__split_buffer<std::__2::locale::facet*__std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::__split_buffer<std::__2::locale::facet*__std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&>::__split_buffer_unsigned_long__unsigned_long__std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -79076,7 +83973,7 @@
     local.get 1
     i32.store
     local.get 0)
-  (func $std::__2::reverse_iterator<std::__2::locale::facet**>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::__sso_allocator<std::__2::locale::facet*__30ul>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::locale::facet*__void>_std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $std::__2::reverse_iterator<std::__2::locale::facet**>_std::__2::__uninitialized_allocator_move_if_noexcept_abi:v15007_<std::__2::__sso_allocator<std::__2::locale::facet*__30ul>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::locale::facet*__void>_std::__2::__sso_allocator<std::__2::locale::facet*__30ul>&__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 10) (param i32 i32 i32 i32) (result i32)
     local.get 1
     local.get 2
     local.get 3
@@ -79148,7 +84045,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 2)
-  (func $std::__2::enable_if<is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value_&&_is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value_&&_is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value__std::__2::pair<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>_std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::enable_if<is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value_&&_is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value_&&_is_copy_constructible<std::__2::reverse_iterator<std::__2::locale::facet**>>::value__std::__2::pair<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>>::type_std::__2::__move_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>_std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -79190,7 +84087,7 @@
   (func $decltype_std::__2::__unwrap_iter_impl<std::__2::reverse_iterator<std::__2::locale::facet**>__false>::__unwrap_std::declval<std::__2::reverse_iterator<std::__2::locale::facet**>>_____std::__2::__unwrap_iter_abi:v15007_<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::__unwrap_iter_impl<std::__2::reverse_iterator<std::__2::locale::facet**>__false>__0>_std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 0) (param i32) (result i32)
     local.get 0
     call $std::__2::__unwrap_iter_impl<std::__2::reverse_iterator<std::__2::locale::facet**>__false>::__unwrap_abi:v15007__std::__2::reverse_iterator<std::__2::locale::facet**>_)
-  (func $std::__2::pair<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::locale::facet**__std::__2::locale::facet**__0>_std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::locale::facet**__std::__2::locale::facet**__0>_std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 32
@@ -79262,7 +84159,7 @@
     local.get 2
     call $std::__2::pair<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>>::pair_abi:v15007_<std::__2::reverse_iterator<std::__2::locale::facet**>__std::__2::reverse_iterator<std::__2::locale::facet**>___void*_0>_std::__2::reverse_iterator<std::__2::locale::facet**>&&__std::__2::reverse_iterator<std::__2::locale::facet**>&&_
     drop)
-  (func $std::__2::pair<std::__2::locale::facet**__std::__2::locale::facet**>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::locale::facet*__std::__2::locale::facet*__void>_std::__2::locale::facet**__std::__2::locale::facet**__std::__2::locale::facet**_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::pair<std::__2::locale::facet**__std::__2::locale::facet**>_std::__2::__move_impl_abi:v15007_<std::__2::_ClassicAlgPolicy__std::__2::locale::facet*__std::__2::locale::facet*__void>_std::__2::locale::facet**__std::__2::locale::facet**__std::__2::locale::facet**_ (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -79583,9 +84480,9 @@
     local.get 1
     local.get 2
     call $strtoll)
-  (func $std::__2::numeric_limits<long>::min_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<long>::min_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<long__true>::min_abi:v15007___)
-  (func $std::__2::__libcpp_numeric_limits<long__true>::min_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<long__true>::min_abi:v15007___ (type 11) (result i32)
     i32.const -2147483648)
   (func $std::__2::numeric_limits<long_long>::min_abi:v15007___ (type 18) (result i64)
     call $std::__2::__libcpp_numeric_limits<long_long__true>::min_abi:v15007___)
@@ -79600,9 +84497,9 @@
     local.get 1
     local.get 2
     call $strtoull)
-  (func $std::__2::numeric_limits<unsigned_short>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::numeric_limits<unsigned_short>::max_abi:v15007___ (type 11) (result i32)
     call $std::__2::__libcpp_numeric_limits<unsigned_short__true>::max_abi:v15007___)
-  (func $std::__2::__libcpp_numeric_limits<unsigned_short__true>::max_abi:v15007___ (type 10) (result i32)
+  (func $std::__2::__libcpp_numeric_limits<unsigned_short__true>::max_abi:v15007___ (type 11) (result i32)
     i32.const 65535)
   (func $std::__2::numeric_limits<unsigned_long_long>::max_abi:v15007___ (type 18) (result i64)
     call $std::__2::__libcpp_numeric_limits<unsigned_long_long__true>::max_abi:v15007___)
@@ -80497,7 +85394,7 @@
     i32.add
     global.set $__stack_pointer
     local.get 0)
-  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::basic_string_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__unsigned_long__unsigned_long__std::__2::allocator<char>_const&_ (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>::basic_string_std::__2::basic_string<char__std::__2::char_traits<char>__std::__2::allocator<char>>_const&__unsigned_long__unsigned_long__std::__2::allocator<char>_const&_ (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -80560,7 +85457,7 @@
     local.get 1
     local.get 2
     call $unsigned_long_std::__2::__str_find_abi:v15007_<char__unsigned_long__std::__2::char_traits<char>__4294967295ul>_char_const*__unsigned_long__char__unsigned_long_)
-  (func $unsigned_long_std::__2::__str_find_abi:v15007_<char__unsigned_long__std::__2::char_traits<char>__4294967295ul>_char_const*__unsigned_long__char__unsigned_long_ (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $unsigned_long_std::__2::__str_find_abi:v15007_<char__unsigned_long__std::__2::char_traits<char>__4294967295ul>_char_const*__unsigned_long__char__unsigned_long_ (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32)
     global.get $__stack_pointer
     i32.const 16
@@ -81694,7 +86591,7 @@
     i32.const 32
     i32.add
     global.set $__stack_pointer)
-  (func $std::__2::to_chars_result_std::__2::to_chars_abi:v15007_<int__0>_char*__char*__int_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::to_chars_result_std::__2::to_chars_abi:v15007_<int__0>_char*__char*__int_ (type 8) (param i32 i32 i32 i32)
     local.get 0
     local.get 1
     local.get 2
@@ -81746,7 +86643,7 @@
       end
     end
     local.get 0)
-  (func $std::__2::to_chars_result_std::__2::__to_chars_itoa_abi:v15007_<int>_char*__char*__int__std::__2::integral_constant<bool__true>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::to_chars_result_std::__2::__to_chars_itoa_abi:v15007_<int>_char*__char*__int__std::__2::integral_constant<bool__true>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     local.get 3
     call $std::__2::make_unsigned<int>::type_std::__2::__to_unsigned_like_abi:v15007_<int>_int_
@@ -81782,7 +86679,7 @@
     i32.const 0
     local.get 0
     i32.sub)
-  (func $std::__2::to_chars_result_std::__2::__to_chars_itoa_abi:v15007_<unsigned_int>_char*__char*__unsigned_int__std::__2::integral_constant<bool__false>_ (type 9) (param i32 i32 i32 i32)
+  (func $std::__2::to_chars_result_std::__2::__to_chars_itoa_abi:v15007_<unsigned_int>_char*__char*__unsigned_int__std::__2::integral_constant<bool__false>_ (type 8) (param i32 i32 i32 i32)
     (local i32)
     local.get 0
     block (result i32)  ;; label = @1
@@ -81837,9 +86734,6 @@
     local.get 0
     local.get 1
     call $std::__2::__itoa::__base_10_u32_abi:v15007__char*__unsigned_int_)
-  (func $std::__2::__libcpp_clz_abi:v15007__unsigned_int_ (type 0) (param i32) (result i32)
-    local.get 0
-    i32.clz)
   (func $std::__2::__itoa::__base_10_u32_abi:v15007__char*__unsigned_int_ (type 1) (param i32 i32) (result i32)
     local.get 1
     i32.const 999999
@@ -82068,10 +86962,10 @@
   (func $void__*std::__2::_anonymous_namespace_::__libcpp_atomic_load_abi:v15007_<void__*___>_void__*_const*_____int____ (type 0) (param i32) (result i32)
     local.get 0
     i32.load)
-  (func $std::get_new_handler__ (type 10) (result i32)
+  (func $std::get_new_handler__ (type 11) (result i32)
     i32.const 22024
     call $void__*std::__2::_anonymous_namespace_::__libcpp_atomic_load_abi:v15007_<void__*___>_void__*_const*_____int____)
-  (func $__cxa_uncaught_exceptions (type 10) (result i32)
+  (func $__cxa_uncaught_exceptions (type 11) (result i32)
     i32.const 0)
   (func $__cxa_allocate_exception (type 0) (param i32) (result i32)
     local.get 0
@@ -82192,7 +87086,7 @@
       local.get 1
       i32.load
       i32.load offset=28
-      call_indirect (type 9)
+      call_indirect (type 8)
       local.get 3
       i32.load offset=32
       local.tee 4
@@ -82214,7 +87108,7 @@
     i32.sub
     global.set $__stack_pointer
     local.get 4)
-  (func $__dynamic_cast (type 12) (param i32 i32 i32 i32) (result i32)
+  (func $__dynamic_cast (type 10) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const -64
@@ -82286,7 +87180,7 @@
         local.get 5
         i32.load
         i32.load offset=20
-        call_indirect (type 11)
+        call_indirect (type 12)
         local.get 0
         i32.const 0
         local.get 4
@@ -82365,7 +87259,7 @@
     i32.sub
     global.set $__stack_pointer
     local.get 3)
-  (func $__cxxabiv1::__class_type_info::process_found_base_class___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 9) (param i32 i32 i32 i32)
+  (func $__cxxabiv1::__class_type_info::process_found_base_class___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 8) (param i32 i32 i32 i32)
     (local i32)
     local.get 1
     i32.load offset=16
@@ -82411,7 +87305,7 @@
       i32.add
       i32.store offset=36
     end)
-  (func $__cxxabiv1::__class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 9) (param i32 i32 i32 i32)
+  (func $__cxxabiv1::__class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 8) (param i32 i32 i32 i32)
     local.get 0
     local.get 1
     i32.load offset=8
@@ -82424,7 +87318,7 @@
       local.get 3
       call $__cxxabiv1::__class_type_info::process_found_base_class___cxxabiv1::__dynamic_cast_info*__void*__int__const
     end)
-  (func $__cxxabiv1::__si_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 9) (param i32 i32 i32 i32)
+  (func $__cxxabiv1::__si_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 8) (param i32 i32 i32 i32)
     local.get 0
     local.get 1
     i32.load offset=8
@@ -82447,8 +87341,8 @@
     local.get 0
     i32.load
     i32.load offset=28
-    call_indirect (type 9))
-  (func $__cxxabiv1::__base_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 9) (param i32 i32 i32 i32)
+    call_indirect (type 8))
+  (func $__cxxabiv1::__base_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     local.get 0
     i32.load offset=4
@@ -82491,13 +87385,13 @@
     local.get 0
     i32.load
     i32.load offset=28
-    call_indirect (type 9))
+    call_indirect (type 8))
   (func $update_offset_to_base_char_const*__long_ (type 1) (param i32 i32) (result i32)
     local.get 0
     local.get 1
     i32.add
     i32.load)
-  (func $__cxxabiv1::__vmi_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 9) (param i32 i32 i32 i32)
+  (func $__cxxabiv1::__vmi_class_type_info::has_unambiguous_public_base___cxxabiv1::__dynamic_cast_info*__void*__int__const (type 8) (param i32 i32 i32 i32)
     (local i32 i32)
     local.get 0
     local.get 1
@@ -82631,7 +87525,7 @@
       i32.const 1
       i32.store8 offset=54
     end)
-  (func $__cxxabiv1::__class_type_info::process_static_type_below_dst___cxxabiv1::__dynamic_cast_info*__void_const*__int__const (type 9) (param i32 i32 i32 i32)
+  (func $__cxxabiv1::__class_type_info::process_static_type_below_dst___cxxabiv1::__dynamic_cast_info*__void_const*__int__const (type 8) (param i32 i32 i32 i32)
     block  ;; label = @1
       local.get 1
       i32.load offset=4
@@ -82937,7 +87831,7 @@
         br_if 0 (;@2;)
       end
     end)
-  (func $__cxxabiv1::__base_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $__cxxabiv1::__base_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 12) (param i32 i32 i32 i32 i32 i32)
     (local i32 i32)
     local.get 0
     i32.load offset=4
@@ -82973,7 +87867,7 @@
     local.get 0
     i32.load
     i32.load offset=20
-    call_indirect (type 11))
+    call_indirect (type 12))
   (func $__cxxabiv1::__base_class_type_info::search_below_dst___cxxabiv1::__dynamic_cast_info*__void_const*__int__bool__const (type 14) (param i32 i32 i32 i32 i32)
     (local i32 i32)
     local.get 0
@@ -83075,7 +87969,7 @@
           local.get 0
           i32.load
           i32.load offset=20
-          call_indirect (type 11)
+          call_indirect (type 12)
           local.get 1
           i32.load8_u offset=53
           if  ;; label = @4
@@ -83202,7 +88096,7 @@
       i32.const 4
       i32.store offset=44
     end)
-  (func $__cxxabiv1::__vmi_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $__cxxabiv1::__vmi_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 12) (param i32 i32 i32 i32 i32 i32)
     (local i32 i32 i32 i32 i32 i32 i32)
     local.get 0
     local.get 1
@@ -83350,7 +88244,7 @@
     i32.const 0
     i32.ne
     i32.store8 offset=52)
-  (func $__cxxabiv1::__si_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 11) (param i32 i32 i32 i32 i32 i32)
+  (func $__cxxabiv1::__si_class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     local.get 1
     i32.load offset=8
@@ -83376,8 +88270,8 @@
     local.get 0
     i32.load
     i32.load offset=20
-    call_indirect (type 11))
-  (func $__cxxabiv1::__class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 11) (param i32 i32 i32 i32 i32 i32)
+    call_indirect (type 12))
+  (func $__cxxabiv1::__class_type_info::search_above_dst___cxxabiv1::__dynamic_cast_info*__void_const*__void_const*__int__bool__const (type 12) (param i32 i32 i32 i32 i32 i32)
     local.get 0
     local.get 1
     i32.load offset=8
@@ -83519,7 +88413,7 @@
     call $operator_delete_void*_)
   (func $std::type_info::~type_info__ (type 0) (param i32) (result i32)
     local.get 0)
-  (func $stackSave (type 10) (result i32)
+  (func $stackSave (type 11) (result i32)
     global.get $__stack_pointer)
   (func $stackRestore (type 4) (param i32)
     local.get 0
@@ -83592,7 +88486,7 @@
     local.get 5
     local.get 6
     call $dynCall_viijii)
-  (func $legalstub$dynCall_jiji (type 8) (param i32 i32 i32 i32 i32) (result i32)
+  (func $legalstub$dynCall_jiji (type 9) (param i32 i32 i32 i32 i32) (result i32)
     (local i64)
     local.get 0
     local.get 1

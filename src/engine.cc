@@ -2,7 +2,9 @@
 
 #include <array>
 #include <unordered_map>
+#include <climits>
 #include <vector>
+#include <algorithm>
 #include <iostream>
 #include <set>
 
@@ -16,10 +18,12 @@ double Board::evaluate() {
   for (int i = 0; i < 64; i++) {
     switch (this->board[i]) {
       case whitePawn:
-        if ((i / 8) == 4) {
-          score += 1.4;
-        } else if ((i / 8) == 5) {
-          score += 1.3;
+        if ((i / 8) == 3) {
+          score += 1.2;
+        } else if (center4Squares.count(i) == 1) {
+          score += 1.5;
+        } else if ((i / 8) == 6) {
+          score += 1.9;
         } else {
           score += 1;
         }
@@ -53,12 +57,18 @@ double Board::evaluate() {
           score += 0.2;
         } else if (i == 62) {
           score += 0.5;
+        } else if (i == 60) {
+          score += 0.1;
+        } else {
+          score -= 0.3;
         }
       case blackPawn:
-        if ((i / 8) == 3) {
-          score -= 1.5;
-        } else if ((i / 8) == 2) {
+        if ((i / 8) == 2) {
           score -= 1.3;
+        } else if (center4Squares.count(i) == 1) {
+          score -= 1.5;
+        } else if ((i / 8) == 6) {
+          score -= 1.9;
         } else {
           score -= 1;
         }
@@ -92,6 +102,10 @@ double Board::evaluate() {
           score -= 0.2;
         } else if (i == 6) {
           score -= 0.5;
+        } else if (i == 4) {
+          score -= 0.1;
+        } else {
+          score += 0.3;
         }
     }
   }
@@ -102,12 +116,37 @@ double Board::evaluate() {
 // Iterate through the first depth (all of black's possible moves) and call the recursive function on each of these moves
 // This will give a score to all of these moves which you can then take the best score and therefore best move
 // In this way you can keep track of which move to make (a number by itself is meaningless) I don't know a better way to do this
-std::tuple<int, int> Board::miniMax(int depth) {
-  std::vector<std::tuple<int, int>> possibleMoves = this->genAllValidMoves(this->turn);
-  double bestMoveScore = (double)INT_MIN;
-  std::tuple<int, int> bestMove = possibleMoves[0];
 
-  for (std::tuple<int, int> move : possibleMoves) {
+std::tuple<int, int, int> Board::runMiniMax(int depth) {
+  std::vector<std::tuple<int, int, int>> bestMoves;
+  std::vector<std::tuple<int, int, int>> possibleMoves = this->genAllValidMoves(this->turn);
+  possibleMoves = this->orderMoves(possibleMoves);
+  for (int i = 0; i < depth; i++) {
+    bestMoves.push_back(this->miniMax(i, possibleMoves));
+
+
+
+    for (int i = 0; i < possibleMoves.size(); i++) {
+      if (bestMoves[i] == possibleMoves[i]) {
+        std::tuple<int, int, int> temp = possibleMoves[i];
+        for (int j = i; j > 0; j--) {
+          possibleMoves[j] = possibleMoves[j - 1];
+        }
+        possibleMoves[0] = temp;
+      }
+    }
+
+
+
+  }
+  return bestMoves[bestMoves.size() - 1];
+}
+
+std::tuple<int, int, int> Board::miniMax(int depth, std::vector<std::tuple<int, int, int>> possibleMoves) {
+  double bestMoveScore = (double)INT_MIN;
+  std::tuple<int, int, int> bestMove = possibleMoves[0];
+
+  for (std::tuple<int, int, int> move : possibleMoves) {
     int pieceMoved = this->board[std::get<0>(move)];
     int pieceAtI2 = this->board[std::get<1>(move)];
     this->makeMove(move);
@@ -130,7 +169,8 @@ double Board::miniMaxRec(int depth, double alpha, double beta) {
   }
 
   // GenAllValidMoves, iterate through, and find best score and return that
-  std::vector<std::tuple<int, int>> moves = this->genAllValidMoves(this->turn);
+  std::vector<std::tuple<int, int, int>> moves = this->genAllValidMoves(this->turn);
+  moves = this->orderMoves(moves);
 
   // if vector is empty, this is checkmate or a draw
   if (moves.size() == 0) {
@@ -142,7 +182,7 @@ double Board::miniMaxRec(int depth, double alpha, double beta) {
     }
   }
   
-  for (std::tuple<int, int> move : moves) {
+  for (std::tuple<int, int, int> move : moves) {
     int pieceMoved = this->board[std::get<0>(move)];
     int pieceAtI2 = this->board[std::get<1>(move)];
     this->makeMove(move);
@@ -158,3 +198,14 @@ double Board::miniMaxRec(int depth, double alpha, double beta) {
   return alpha;
 }
 
+
+// Sorts the move vector by the third int in decreasing order, this value representing a score of how 'good' the move might be
+std::vector<std::tuple<int, int, int>> Board::orderMoves(std::vector<std::tuple<int, int, int>> moves) {
+
+  auto cmp = [](const auto& a, const auto& b) {
+    return std::get<2>(a) > std::get<2>(b);
+  };
+  std::sort(moves.begin(), moves.end(), cmp);
+
+  return moves;
+}

@@ -225,7 +225,7 @@ unsigned int Board::getPos(std::string input) {
   return row.at(input[1]) * 8 + col.at(input[0]);
 }
 
-void Board::printValidMoves(std::vector<std::tuple<int, int>> inputMovesVector) {
+void Board::printValidMoves(std::vector<std::tuple<int, int, int>> inputMovesVector) {
   const std::unordered_map<int, char> col = {{0, 'a'}, {1, 'b'}, {2, 'c'},
                                              {3, 'd'}, {4, 'e'}, {5, 'f'},
                                              {6, 'g'}, {7, 'h'}};
@@ -242,7 +242,7 @@ void Board::printValidMoves(std::vector<std::tuple<int, int>> inputMovesVector) 
     result.push_back(row.at(i1 / 8));
     result.push_back(col.at(i2 % 8));
     result.push_back(row.at(i2 / 8));
-    std::cout << result + " ";
+    std::cout << result + " " << std::get<2>(move) << " ";
   }
   std::cout << std::endl;
 }
@@ -260,7 +260,7 @@ void Board::printBoard() {
   std::cout << std::endl;
 }
 
-void Board::makeMove(std::tuple<int, int> move) {
+void Board::makeMove(std::tuple<int, int, int> move) {
   int pos = std::get<0>(move);
   int i2 = std::get<1>(move);
   bool validMove = false;
@@ -358,7 +358,7 @@ void Board::makeMove(std::tuple<int, int> move) {
 
 
 // doesn't handle en passant
-void Board::unmakeMove(std::tuple<int, int> move, int i2BeforeMove, int pieceMoved) {
+void Board::unmakeMove(std::tuple<int, int, int> move, int i2BeforeMove, int pieceMoved) {
   int pos = std::get<0>(move);
   int i2 = std::get<1>(move);
   board[pos] = board[i2];
@@ -401,21 +401,21 @@ void Board::checkPawnMoves(int pos, char turn) {
   if (turn == 'b') {
     if (pos < 16) {
       if (board[pos + 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos + 8));
+        this->moves.push_back(std::make_tuple(pos, pos + 8, 1));
         if (board[pos + 16] == 0) {
-          this->moves.push_back(std::make_tuple(pos, pos + 16));
+          this->moves.push_back(std::make_tuple(pos, pos + 16, 2));
         }
       }
     } else {
       if (board[pos + 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos + 8));
+        this->moves.push_back(std::make_tuple(pos, pos + 8, 1));
       }
     }
     if (NOT_COL_8(pos) && board[pos + 9] < blackPawn && board[pos + 9] != 0) {
-      this->moves.push_back(std::make_tuple(pos, pos + 9));
+      this->moves.push_back(std::make_tuple(pos, pos + 9, 7));
     }
     if (NOT_COL_1(pos) && board[pos + 7] < blackPawn && board[pos + 7] != 0) {
-      this->moves.push_back(std::make_tuple(pos, pos + 7));
+      this->moves.push_back(std::make_tuple(pos, pos + 7, 7));
     }
     // if (std::get<0>(enPassant) == true &&
     //     abs(std::get<1>(enPassant) - pos) == 1) {
@@ -424,21 +424,21 @@ void Board::checkPawnMoves(int pos, char turn) {
   } else if (turn == 'w') {
     if (pos > 47) {
       if (board[pos - 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos - 8));
+        this->moves.push_back(std::make_tuple(pos, pos - 8, 1));
         if (board[pos - 16] == 0) {
-          this->moves.push_back(std::make_tuple(pos, pos - 16));
+          this->moves.push_back(std::make_tuple(pos, pos - 16, 2));
         }
       }
     } else {
       if (board[pos - 8] == 0) {
-        this->moves.push_back(std::make_tuple(pos, pos - 8));
+        this->moves.push_back(std::make_tuple(pos, pos - 8, 1));
       }
     }
     if (NOT_COL_8(pos) && board[pos - 7] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, pos - 7));
+      this->moves.push_back(std::make_tuple(pos, pos - 7, 7));
     }
     if (NOT_COL_1(pos) && board[pos - 9] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, pos - 9));
+      this->moves.push_back(std::make_tuple(pos, pos - 9, 7));
     }
     // if (std::get<0>(enPassant) == true &&
     //     abs(std::get<1>(enPassant) - pos) == 1) {
@@ -452,12 +452,12 @@ void Board::checkRookMoves(int pos, char turn) {
   // Check row towards right
   for (int i = pos + 1; i < (int)(pos / 8) * 8 + 8; i++) {
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else {
       break;
@@ -466,12 +466,12 @@ void Board::checkRookMoves(int pos, char turn) {
   // Check row towards left
   for (int i = pos - 1; i >= (int)(pos / 8) * 8; i--) {
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else {
       break;
@@ -480,12 +480,12 @@ void Board::checkRookMoves(int pos, char turn) {
   // Check column towards top
   for (int i = pos - 8; i >= 0; i -= 8) {
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else {
       break;
@@ -494,12 +494,12 @@ void Board::checkRookMoves(int pos, char turn) {
   // Check column towards bottom
   for (int i = pos + 8; i < 64; i += 8) {
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 3));
       break;
     } else {
       break;
@@ -515,12 +515,12 @@ void Board::checkBishopMoves(int pos, char turn) {
       break;
     }
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (board[i] > 0) {
       break;
@@ -532,12 +532,12 @@ void Board::checkBishopMoves(int pos, char turn) {
       break;
     }
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (board[i] > 0) {
       break;
@@ -549,12 +549,12 @@ void Board::checkBishopMoves(int pos, char turn) {
       break;
     }
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (board[i] > 0) {
       break;
@@ -566,12 +566,12 @@ void Board::checkBishopMoves(int pos, char turn) {
       break;
     }
     if (board[i] == 0) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 0));
     } else if (turn == 'w' && board[i] > whiteKing) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (turn == 'b' && board[i] < blackPawn) {
-      this->moves.push_back(std::make_tuple(pos, i));
+      this->moves.push_back(std::make_tuple(pos, i, 4));
       break;
     } else if (board[i] > 0) {
       break;
@@ -583,75 +583,221 @@ void Board::checkKnightMoves(int pos, char turn) {
   // Check top right
   if (pos % 8 < 7 && pos - 15 >= 0) {
     if (turn == 'w' && (board[pos - 15] > whiteKing || board[pos - 15] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 15));
+      this->moves.push_back(std::make_tuple(pos, pos - 15, 1));
     } else if (turn == 'b' &&
                (board[pos - 15] < blackPawn || board[pos - 15] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 15));
+      this->moves.push_back(std::make_tuple(pos, pos - 15, 1));
     }
   }
   // Check top left
   if (pos % 8 > 0 && pos - 17 >= 0) {
     if (turn == 'w' && (board[pos - 17] > whiteKing || board[pos - 17] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 17));
+      this->moves.push_back(std::make_tuple(pos, pos - 17, 1));
     } else if (turn == 'b' &&
                (board[pos - 17] < blackPawn || board[pos - 17] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 17));
+      this->moves.push_back(std::make_tuple(pos, pos - 17, 1));
     }
   }
   // Check right top
   if (pos % 8 < 6 && pos - 6 >= 0) {
     if (turn == 'w' && (board[pos - 6] > whiteKing || board[pos - 6] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 6));
+      this->moves.push_back(std::make_tuple(pos, pos - 6, 1));
     } else if (turn == 'b' &&
                (board[pos - 6] < blackPawn || board[pos - 6] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 6));
+      this->moves.push_back(std::make_tuple(pos, pos - 6, 1));
     }
   }
   // Check right bottom
   if (pos % 8 < 6 && pos + 10 < 64) {
     if (turn == 'w' && (board[pos + 10] > whiteKing || board[pos + 10] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 10));
+      this->moves.push_back(std::make_tuple(pos, pos + 10, 1));
     } else if (turn == 'b' &&
                (board[pos + 10] < blackPawn || board[pos + 10] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 10));
+      this->moves.push_back(std::make_tuple(pos, pos + 10, 1));
     }
   }
   // Check bottom right
   if (pos % 8 < 7 && pos + 17 < 64) {
     if (turn == 'w' && (board[pos + 17] > whiteKing || board[pos + 17] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 17));
+      this->moves.push_back(std::make_tuple(pos, pos + 17, 1));
     } else if (turn == 'b' &&
                (board[pos + 17] < blackPawn || board[pos + 17] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 17));
+      this->moves.push_back(std::make_tuple(pos, pos + 17, 1));
     }
   }
   // Check bottom left
   if (pos % 8 > 0 && pos + 15 < 64) {
     if (turn == 'w' && (board[pos + 15] > whiteKing || board[pos + 15] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 15));
+      this->moves.push_back(std::make_tuple(pos, pos + 15, 1));
     } else if (turn == 'b' &&
                (board[pos + 15] < blackPawn || board[pos + 15] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 15));
+      this->moves.push_back(std::make_tuple(pos, pos + 15, 1));
     }
   }
   // Check left top
   if (pos % 8 > 1 && pos - 10 >= 0) {
     if (turn == 'w' && (board[pos - 10] > whiteKing || board[pos - 10] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 10));
+      this->moves.push_back(std::make_tuple(pos, pos - 10, 1));
     } else if (turn == 'b' &&
                (board[pos - 10] < blackPawn || board[pos - 10] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos - 10));
+      this->moves.push_back(std::make_tuple(pos, pos - 10, 1));
     }
   }
   // Check left bottom
   if (pos % 8 > 1 && pos + 6 < 64) {
     if (turn == 'w' && (board[pos + 6] > whiteKing || board[pos + 6] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 6));
+      this->moves.push_back(std::make_tuple(pos, pos + 6, 1));
     } else if (turn == 'b' &&
                (board[pos + 6] < blackPawn || board[pos + 6] == 0)) {
-      this->moves.push_back(std::make_tuple(pos, pos + 6));
+      this->moves.push_back(std::make_tuple(pos, pos + 6, 1));
     }
   }
+}
+
+void Board::checkKingMoves(int pos, char turn) {
+  // Temporarily remove the king from the board because it might block the path of checks (a copy will remain
+  // behind once the king moves)
+  int kingRemoved = board[pos];
+  board[pos] = 0;
+
+  if (turn == 'w') {
+    // Top Left
+    if (NOT_COL_1(pos) && pos - 9 >= 0 &&
+        (board[pos - 9] == 0 || board[pos - 9] > whiteKing)) {
+      if (!checkForChecks(pos - 9, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 9, 0));
+      }
+    }
+    // Top Right
+    if (NOT_COL_8(pos) && pos - 7 >= 0 &&
+        (board[pos - 7] == 0 || board[pos - 7] > whiteKing)) {
+      if (!checkForChecks(pos - 7, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 7, 0));
+      }
+    }
+    // Top
+    if (pos - 8 >= 0 && (board[pos - 8] == 0 || board[pos - 8] > whiteKing)) {
+      if (!checkForChecks(pos - 8, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 8, 0));
+      }
+    }
+    // Bottom Left
+    if (NOT_COL_1(pos) && pos + 7 < 64 &&
+        (board[pos + 7] == 0 || board[pos + 7] > whiteKing)) {
+      if (!checkForChecks(pos + 7, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 7, 0));
+      }
+    }
+    // Bottom Right
+    if (NOT_COL_8(pos) && pos + 9 < 64 &&
+        (board[pos + 9] == 0 || board[pos + 9] > whiteKing)) {
+      if (!checkForChecks(pos + 9, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 9, 0));
+      }
+    }
+    // Bottom
+    if (pos + 8 < 64 && (board[pos + 8] == 0 || board[pos + 8] > whiteKing)) {
+      if (!checkForChecks(pos + 8, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 8, 0));
+      }
+    }
+    // Right
+    if (NOT_COL_8(pos) && (board[pos + 1] == 0 || board[pos + 1] > whiteKing)) {
+      if (!checkForChecks(pos + 1, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 1, 0));
+      }
+    }
+    // Left
+    if (NOT_COL_1(pos) && (board[pos - 1] == 0 || board[pos - 1] > whiteKing)) {
+      if (!checkForChecks(pos - 1, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 1, 0));
+      }
+    }
+    // Castling
+    if (!wKingMoved) {
+      if (!this->queensideWRookMoved && this->board[57] == Empty &&
+          this->board[58] == Empty && this->board[59] == Empty &&
+          !checkForChecks(57, turn) && !checkForChecks(58, turn) &&
+          !checkForChecks(59, turn) && !checkForChecks(60, turn)) {
+        this->moves.push_back(std::make_tuple(60, 58, 2));
+      }
+      if (!this->kingsideWRookMoved && this->board[61] == Empty &&
+          this->board[62] == Empty && !checkForChecks(60, turn) &&
+          !checkForChecks(61, turn) && !checkForChecks(62, turn)) {
+        this->moves.push_back(std::make_tuple(60, 62, 4));
+      }
+    }
+  } else if (turn == 'b') {
+    // Top Left
+    if (NOT_COL_1(pos) && pos - 9 >= 0 &&
+        (board[pos - 9] == 0 || board[pos - 9] < blackPawn)) {
+      if (!checkForChecks(pos - 9, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 9, 0));
+      }
+    }
+    // Top Right
+    if (NOT_COL_8(pos) && pos - 7 >= 0 &&
+        (board[pos - 7] == 0 || board[pos - 7] < blackPawn)) {
+      if (!checkForChecks(pos - 7, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 7, 0));
+      }
+    }
+    // Top
+    if (pos - 8 >= 0 && (board[pos - 8] == 0 || board[pos - 8] < blackPawn)) {
+      if (!checkForChecks(pos - 8, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 8, 0));
+      }
+    }
+    // Bottom Left
+    if (NOT_COL_1(pos) && pos + 7 < 64 &&
+        (board[pos + 7] == 0 || board[pos + 7] < blackPawn)) {
+      if (!checkForChecks(pos + 7, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 7, 0));
+      }
+    }
+    // Bottom Right
+    if (NOT_COL_8(pos) && pos + 9 < 64 &&
+        (board[pos + 9] == 0 || board[pos + 9] < blackPawn)) {
+      if (!checkForChecks(pos + 9, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 9, 0));
+      }
+    }
+    // Bottom
+    if (pos + 8 < 64 && (board[pos + 8] == 0 || board[pos + 8] < blackPawn)) {
+      if (!checkForChecks(pos + 8, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 8, 0));
+      }
+    }
+    // Right
+    if (NOT_COL_8(pos) && (board[pos + 1] == 0 || board[pos + 1] < blackPawn)) {
+      if (!checkForChecks(pos + 1, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos + 1, 0));
+      }
+    }
+    // Left
+    if (NOT_COL_1(pos) && (board[pos - 1] == 0 || board[pos - 1] < blackPawn)) {
+      if (!checkForChecks(pos - 1, turn)) {
+        this->moves.push_back(std::make_tuple(pos, pos - 1, 0));
+      }
+    }
+    // Castling
+    if (!bKingMoved) {
+      if (!this->queensideBRookMoved && this->board[1] == Empty &&
+          this->board[2] == Empty && this->board[3] == Empty &&
+          !checkForChecks(1, turn) && !checkForChecks(2, turn) &&
+          !checkForChecks(3, turn) && !checkForChecks(4, turn)) {
+        this->moves.push_back(std::make_tuple(4, 2, 2));
+      }
+      if (!this->kingsideBRookMoved && this->board[5] == Empty &&
+          this->board[6] == Empty && !checkForChecks(4, turn) &&
+          !checkForChecks(5, turn) && !checkForChecks(6, turn)) {
+        this->moves.push_back(std::make_tuple(4, 6, 4));
+      }
+    }
+  }
+  
+  // Put the king back
+  board[pos] = kingRemoved;
 }
 
 // Checks if a square on the board (pos) is currently in check
@@ -906,154 +1052,8 @@ bool Board::checkForChecks(int pos, char turn) {
   return false;
 }
 
-void Board::checkKingMoves(int pos, char turn) {
 
-  // Temporarily remove the king from the board because it might block the path of checks (a copy will remain
-  // behind once the king moves)
-  int kingRemoved = board[pos];
-  board[pos] = 0;
-
-  if (turn == 'w') {
-    // Top Left
-    if (NOT_COL_1(pos) && pos - 9 >= 0 &&
-        (board[pos - 9] == 0 || board[pos - 9] > whiteKing)) {
-      if (!checkForChecks(pos - 9, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 9));
-      }
-    }
-    // Top Right
-    if (NOT_COL_8(pos) && pos - 7 >= 0 &&
-        (board[pos - 7] == 0 || board[pos - 7] > whiteKing)) {
-      if (!checkForChecks(pos - 7, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 7));
-      }
-    }
-    // Top
-    if (pos - 8 >= 0 && (board[pos - 8] == 0 || board[pos - 8] > whiteKing)) {
-      if (!checkForChecks(pos - 8, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 8));
-      }
-    }
-    // Bottom Left
-    if (NOT_COL_1(pos) && pos + 7 < 64 &&
-        (board[pos + 7] == 0 || board[pos + 7] > whiteKing)) {
-      if (!checkForChecks(pos + 7, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 7));
-      }
-    }
-    // Bottom Right
-    if (NOT_COL_8(pos) && pos + 9 < 64 &&
-        (board[pos + 9] == 0 || board[pos + 9] > whiteKing)) {
-      if (!checkForChecks(pos + 9, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 9));
-      }
-    }
-    // Bottom
-    if (pos + 8 < 64 && (board[pos + 8] == 0 || board[pos + 8] > whiteKing)) {
-      if (!checkForChecks(pos + 8, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 8));
-      }
-    }
-    // Right
-    if (NOT_COL_8(pos) && (board[pos + 1] == 0 || board[pos + 1] > whiteKing)) {
-      if (!checkForChecks(pos + 1, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 1));
-      }
-    }
-    // Left
-    if (NOT_COL_1(pos) && (board[pos - 1] == 0 || board[pos - 1] > whiteKing)) {
-      if (!checkForChecks(pos - 1, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 1));
-      }
-    }
-    // Castling
-    if (!wKingMoved) {
-      if (!this->queensideWRookMoved && this->board[57] == Empty &&
-          this->board[58] == Empty && this->board[59] == Empty &&
-          !checkForChecks(57, turn) && !checkForChecks(58, turn) &&
-          !checkForChecks(59, turn) && !checkForChecks(60, turn)) {
-        this->moves.push_back(std::make_tuple(60, 58));
-      }
-      if (!this->kingsideWRookMoved && this->board[61] == Empty &&
-          this->board[62] == Empty && !checkForChecks(60, turn) &&
-          !checkForChecks(61, turn) && !checkForChecks(62, turn)) {
-        this->moves.push_back(std::make_tuple(60, 62));
-      }
-    }
-  } else if (turn == 'b') {
-    // Top Left
-    if (NOT_COL_1(pos) && pos - 9 >= 0 &&
-        (board[pos - 9] == 0 || board[pos - 9] < blackPawn)) {
-      if (!checkForChecks(pos - 9, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 9));
-      }
-    }
-    // Top Right
-    if (NOT_COL_8(pos) && pos - 7 >= 0 &&
-        (board[pos - 7] == 0 || board[pos - 7] < blackPawn)) {
-      if (!checkForChecks(pos - 7, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 7));
-      }
-    }
-    // Top
-    if (pos - 8 >= 0 && (board[pos - 8] == 0 || board[pos - 8] < blackPawn)) {
-      if (!checkForChecks(pos - 8, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 8));
-      }
-    }
-    // Bottom Left
-    if (NOT_COL_1(pos) && pos + 7 < 64 &&
-        (board[pos + 7] == 0 || board[pos + 7] < blackPawn)) {
-      if (!checkForChecks(pos + 7, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 7));
-      }
-    }
-    // Bottom Right
-    if (NOT_COL_8(pos) && pos + 9 < 64 &&
-        (board[pos + 9] == 0 || board[pos + 9] < blackPawn)) {
-      if (!checkForChecks(pos + 9, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 9));
-      }
-    }
-    // Bottom
-    if (pos + 8 < 64 && (board[pos + 8] == 0 || board[pos + 8] < blackPawn)) {
-      if (!checkForChecks(pos + 8, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 8));
-      }
-    }
-    // Right
-    if (NOT_COL_8(pos) && (board[pos + 1] == 0 || board[pos + 1] < blackPawn)) {
-      if (!checkForChecks(pos + 1, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos + 1));
-      }
-    }
-    // Left
-    if (NOT_COL_1(pos) && (board[pos - 1] == 0 || board[pos - 1] < blackPawn)) {
-      if (!checkForChecks(pos - 1, turn)) {
-        this->moves.push_back(std::make_tuple(pos, pos - 1));
-      }
-    }
-    // Castling
-    if (!bKingMoved) {
-      if (!this->queensideBRookMoved && this->board[1] == Empty &&
-          this->board[2] == Empty && this->board[3] == Empty &&
-          !checkForChecks(1, turn) && !checkForChecks(2, turn) &&
-          !checkForChecks(3, turn) && !checkForChecks(4, turn)) {
-        this->moves.push_back(std::make_tuple(4, 2));
-      }
-      if (!this->kingsideBRookMoved && this->board[5] == Empty &&
-          this->board[6] == Empty && !checkForChecks(4, turn) &&
-          !checkForChecks(5, turn) && !checkForChecks(6, turn)) {
-        this->moves.push_back(std::make_tuple(4, 6));
-      }
-    }
-  }
-  
-  // Put the king back
-  board[pos] = kingRemoved;
-}
-
-std::vector<std::tuple<int, int>> Board::genAllValidMoves(char turn) {
+std::vector<std::tuple<int, int, int>> Board::genAllValidMoves(char turn) {
   // When a fen string is passed back to the engine, the previous moves are not recognied therefore the king
   // positions have to be found again. We only do this once per move, however, because as the engine is looking
   // ahead the king position will be updated everytime makeMove is called

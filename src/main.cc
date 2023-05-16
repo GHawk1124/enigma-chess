@@ -13,7 +13,9 @@ int main() {
   // board.printBoard();
 
 
-  std::vector<std::tuple<int, int>> validMoves = board.genAllValidMoves(board.turn);
+  std::vector<std::tuple<int, int, int>> validMoves = board.genAllValidMoves(board.turn);
+  board.printValidMoves(validMoves);
+  validMoves = board.orderMoves(validMoves);
   board.printValidMoves(validMoves);
   
 }

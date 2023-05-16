@@ -17,8 +17,7 @@ EXTERN EMSCRIPTEN_KEEPALIVE char *make_random_valid_move(char *fen) {
   auto decoded = board.decode_fen_c(fen);
   board.setBoard(decoded);
 
-  std::tuple<int, int> move = board.miniMax(3);
-  board.makeMove(move);
+  board.makeMove(board.runMiniMax(5));
 
 
   // board.genAllValidMoves(board.turn);
