@@ -16872,161 +16872,164 @@
   (func $Board::evaluate__ (type 46) (param i32) (result f64)
     (local i32 i32 f64)
     global.get $__stack_pointer
-    i32.const 272
+    i32.const 288
     i32.sub
     local.tee 1
     global.set $__stack_pointer
     local.get 1
     local.get 0
-    i32.store offset=268
+    i32.store offset=284
     local.get 1
-    i32.load offset=268
+    i32.load offset=284
     local.set 2
     local.get 1
     i32.const 1932
     i64.load align=4
-    i64.store offset=240
+    i64.store offset=256
     local.get 1
     i32.const 1924
     i64.load align=4
-    i64.store offset=232
+    i64.store offset=248
     local.get 1
     i32.const 1916
     i64.load align=4
-    i64.store offset=224
+    i64.store offset=240
     local.get 1
     i32.const 1908
     i64.load align=4
-    i64.store offset=216
+    i64.store offset=232
     local.get 1
     i32.const 1900
     i64.load align=4
-    i64.store offset=208
+    i64.store offset=224
     local.get 1
     i32.const 1892
     i64.load align=4
-    i64.store offset=200
+    i64.store offset=216
     local.get 1
     i32.const 1884
     i64.load align=4
-    i64.store offset=192
+    i64.store offset=208
     local.get 1
     i32.const 1876
     i64.load align=4
-    i64.store offset=184
+    i64.store offset=200
     local.get 1
     local.get 1
-    i32.const 184
+    i32.const 200
     i32.add
-    i32.store offset=248
+    i32.store offset=264
     local.get 1
     i32.const 16
-    i32.store offset=252
+    i32.store offset=268
     local.get 1
     local.get 1
-    i64.load offset=248 align=4
+    i64.load offset=264 align=4
     i64.store offset=8
     local.get 1
-    i32.const 256
+    i32.const 272
     i32.add
     local.get 1
     i32.const 8
     i32.add
     local.get 1
-    i32.const 183
+    i32.const 199
     i32.add
     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::set_abi:v15007__std::initializer_list<int>__std::__2::less<int>_const&_
     drop
     local.get 1
     i32.const 27
-    i32.store offset=144
-    local.get 1
-    i32.const 28
-    i32.store offset=148
-    local.get 1
-    i32.const 35
-    i32.store offset=152
-    local.get 1
-    i32.const 36
-    i32.store offset=156
-    local.get 1
-    local.get 1
-    i32.const 144
-    i32.add
     i32.store offset=160
     local.get 1
-    i32.const 4
+    i32.const 28
     i32.store offset=164
     local.get 1
+    i32.const 35
+    i32.store offset=168
     local.get 1
-    i64.load offset=160 align=4
+    i32.const 36
+    i32.store offset=172
+    local.get 1
+    local.get 1
+    i32.const 160
+    i32.add
+    i32.store offset=176
+    local.get 1
+    i32.const 4
+    i32.store offset=180
+    local.get 1
+    local.get 1
+    i64.load offset=176 align=4
     i64.store offset=16
     local.get 1
-    i32.const 168
+    i32.const 184
     i32.add
     local.get 1
     i32.const 16
     i32.add
     local.get 1
-    i32.const 143
+    i32.const 159
     i32.add
     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::set_abi:v15007__std::initializer_list<int>__std::__2::less<int>_const&_
     drop
     local.get 1
     i32.const 1996
     i64.load align=4
-    i64.store offset=112
+    i64.store offset=128
     local.get 1
     i32.const 1988
     i64.load align=4
-    i64.store offset=104
+    i64.store offset=120
     local.get 1
     i32.const 1980
     i64.load align=4
-    i64.store offset=96
+    i64.store offset=112
     local.get 1
     i32.const 1972
     i64.load align=4
-    i64.store offset=88
+    i64.store offset=104
     local.get 1
     i32.const 1964
     i64.load align=4
-    i64.store offset=80
+    i64.store offset=96
     local.get 1
     i32.const 1956
     i64.load align=4
-    i64.store offset=72
+    i64.store offset=88
     local.get 1
     i32.const 1948
     i64.load align=4
-    i64.store offset=64
+    i64.store offset=80
     local.get 1
     i32.const 1940
     i64.load align=4
-    i64.store offset=56
+    i64.store offset=72
     local.get 1
     local.get 1
-    i32.const 56
+    i32.const 72
     i32.add
-    i32.store offset=120
+    i32.store offset=136
     local.get 1
     i32.const 16
-    i32.store offset=124
+    i32.store offset=140
     local.get 1
     local.get 1
-    i64.load offset=120 align=4
+    i64.load offset=136 align=4
     i64.store offset=24
     local.get 1
-    i32.const 128
+    i32.const 144
     i32.add
     local.get 1
     i32.const 24
     i32.add
     local.get 1
-    i32.const 55
+    i32.const 71
     i32.add
     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::set_abi:v15007__std::initializer_list<int>__std::__2::less<int>_const&_
     drop
+    local.get 1
+    i32.const 0
+    i32.store offset=64
     local.get 1
     i32.const 1
     i32.const -1
@@ -17037,16 +17040,16 @@
     i32.const 119
     i32.eq
     select
-    i32.store offset=48
+    i32.store offset=60
     local.get 1
     f64.const 0x0p+0 (;=0;)
-    f64.store offset=40
+    f64.store offset=48
     local.get 1
     i32.const 0
-    i32.store offset=36
+    i32.store offset=44
     loop  ;; label = @1
       local.get 1
-      i32.load offset=36
+      i32.load offset=44
       i32.const 64
       i32.ge_s
       i32.eqz
@@ -17068,16 +17071,22 @@
                                   i32.const 60
                                   i32.add
                                   local.get 1
-                                  i32.load offset=36
+                                  i32.load offset=44
                                   call $std::__2::array<unsigned_int__64ul>::operator___abi:v15007__unsigned_long_
                                   i32.load
                                   i32.const 1
                                   i32.sub
                                   br_table 0 (;@15;) 3 (;@12;) 2 (;@13;) 1 (;@14;) 4 (;@11;) 5 (;@10;) 6 (;@9;) 9 (;@6;) 8 (;@7;) 7 (;@8;) 10 (;@5;) 11 (;@4;) 12 (;@3;)
                                 end
+                                local.get 1
+                                local.get 1
+                                i32.load offset=64
+                                i32.const 1
+                                i32.add
+                                i32.store offset=64
                                 block  ;; label = @15
                                   local.get 1
-                                  i32.load offset=36
+                                  i32.load offset=44
                                   i32.const 8
                                   i32.div_s
                                   i32.const 3
@@ -17085,18 +17094,18 @@
                                   if  ;; label = @16
                                     local.get 1
                                     local.get 1
-                                    f64.load offset=40
+                                    f64.load offset=48
                                     f64.const 0x1.3333333333333p+0 (;=1.2;)
                                     f64.add
-                                    f64.store offset=40
+                                    f64.store offset=48
                                     br 1 (;@15;)
                                   end
                                   block  ;; label = @16
                                     local.get 1
-                                    i32.const 168
+                                    i32.const 184
                                     i32.add
                                     local.get 1
-                                    i32.const 36
+                                    i32.const 44
                                     i32.add
                                     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                                     i32.const 1
@@ -17104,15 +17113,15 @@
                                     if  ;; label = @17
                                       local.get 1
                                       local.get 1
-                                      f64.load offset=40
+                                      f64.load offset=48
                                       f64.const 0x1.8p+0 (;=1.5;)
                                       f64.add
-                                      f64.store offset=40
+                                      f64.store offset=48
                                       br 1 (;@16;)
                                     end
                                     block  ;; label = @17
                                       local.get 1
-                                      i32.load offset=36
+                                      i32.load offset=44
                                       i32.const 8
                                       i32.div_s
                                       i32.const 6
@@ -17120,26 +17129,26 @@
                                       if  ;; label = @18
                                         local.get 1
                                         local.get 1
-                                        f64.load offset=40
+                                        f64.load offset=48
                                         f64.const 0x1.e666666666666p+0 (;=1.9;)
                                         f64.add
-                                        f64.store offset=40
+                                        f64.store offset=48
                                         br 1 (;@17;)
                                       end
                                       local.get 1
                                       local.get 1
-                                      f64.load offset=40
+                                      f64.load offset=48
                                       f64.const 0x1p+0 (;=1;)
                                       f64.add
-                                      f64.store offset=40
+                                      f64.store offset=48
                                     end
                                   end
                                 end
                                 local.get 1
-                                i32.const 168
+                                i32.const 184
                                 i32.add
                                 local.get 1
-                                i32.const 36
+                                i32.const 44
                                 i32.add
                                 call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                                 i32.const 1
@@ -17147,24 +17156,30 @@
                                 if  ;; label = @15
                                   local.get 1
                                   local.get 1
-                                  f64.load offset=40
+                                  f64.load offset=48
                                   f64.const 0x1.999999999999ap-2 (;=0.4;)
                                   f64.add
-                                  f64.store offset=40
+                                  f64.store offset=48
                                 end
                                 br 11 (;@3;)
                               end
                               local.get 1
                               local.get 1
-                              f64.load offset=40
+                              i32.load offset=64
+                              i32.const 1
+                              i32.add
+                              i32.store offset=64
+                              local.get 1
+                              local.get 1
+                              f64.load offset=48
                               f64.const 0x1.8p+1 (;=3;)
                               f64.add
-                              f64.store offset=40
+                              f64.store offset=48
                               local.get 1
-                              i32.const 256
+                              i32.const 272
                               i32.add
                               local.get 1
-                              i32.const 36
+                              i32.const 44
                               i32.add
                               call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                               i32.const 1
@@ -17172,16 +17187,16 @@
                               if  ;; label = @14
                                 local.get 1
                                 local.get 1
-                                f64.load offset=40
+                                f64.load offset=48
                                 f64.const 0x1p-1 (;=0.5;)
                                 f64.add
-                                f64.store offset=40
+                                f64.store offset=48
                               end
                               local.get 1
-                              i32.const 128
+                              i32.const 144
                               i32.add
                               local.get 1
-                              i32.const 36
+                              i32.const 44
                               i32.add
                               call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                               i32.const 1
@@ -17189,24 +17204,30 @@
                               if  ;; label = @14
                                 local.get 1
                                 local.get 1
-                                f64.load offset=40
+                                f64.load offset=48
                                 f64.const 0x1.999999999999ap-3 (;=0.2;)
                                 f64.add
-                                f64.store offset=40
+                                f64.store offset=48
                               end
                               br 10 (;@3;)
                             end
                             local.get 1
                             local.get 1
-                            f64.load offset=40
+                            i32.load offset=64
+                            i32.const 1
+                            i32.add
+                            i32.store offset=64
+                            local.get 1
+                            local.get 1
+                            f64.load offset=48
                             f64.const 0x1.8p+1 (;=3;)
                             f64.add
-                            f64.store offset=40
+                            f64.store offset=48
                             local.get 1
-                            i32.const 128
+                            i32.const 144
                             i32.add
                             local.get 1
-                            i32.const 36
+                            i32.const 44
                             i32.add
                             call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                             i32.const 1
@@ -17214,84 +17235,102 @@
                             if  ;; label = @13
                               local.get 1
                               local.get 1
-                              f64.load offset=40
+                              f64.load offset=48
                               f64.const 0x1p-1 (;=0.5;)
                               f64.add
-                              f64.store offset=40
+                              f64.store offset=48
                             end
                             br 9 (;@3;)
                           end
                           local.get 1
                           local.get 1
-                          f64.load offset=40
+                          i32.load offset=64
+                          i32.const 1
+                          i32.add
+                          i32.store offset=64
+                          local.get 1
+                          local.get 1
+                          f64.load offset=48
                           f64.const 0x1.4p+2 (;=5;)
                           f64.add
-                          f64.store offset=40
+                          f64.store offset=48
                           br 8 (;@3;)
                         end
                         local.get 1
                         local.get 1
-                        f64.load offset=40
+                        i32.load offset=64
+                        i32.const 1
+                        i32.add
+                        i32.store offset=64
+                        local.get 1
+                        local.get 1
+                        f64.load offset=48
                         f64.const 0x1.6p+3 (;=11;)
                         f64.add
-                        f64.store offset=40
+                        f64.store offset=48
                         br 7 (;@3;)
                       end
                       block  ;; label = @10
                         local.get 1
-                        i32.load offset=36
+                        i32.load offset=44
                         i32.const 58
                         i32.eq
                         if  ;; label = @11
                           local.get 1
                           local.get 1
-                          f64.load offset=40
+                          f64.load offset=48
                           f64.const 0x1.999999999999ap-3 (;=0.2;)
                           f64.add
-                          f64.store offset=40
+                          f64.store offset=48
                           br 1 (;@10;)
                         end
                         block  ;; label = @11
                           local.get 1
-                          i32.load offset=36
+                          i32.load offset=44
                           i32.const 62
                           i32.eq
                           if  ;; label = @12
                             local.get 1
                             local.get 1
-                            f64.load offset=40
+                            f64.load offset=48
                             f64.const 0x1p-1 (;=0.5;)
                             f64.add
-                            f64.store offset=40
+                            f64.store offset=48
                             br 1 (;@11;)
                           end
                           block  ;; label = @12
                             local.get 1
-                            i32.load offset=36
+                            i32.load offset=44
                             i32.const 60
                             i32.eq
                             if  ;; label = @13
                               local.get 1
                               local.get 1
-                              f64.load offset=40
+                              f64.load offset=48
                               f64.const 0x1.999999999999ap-4 (;=0.1;)
                               f64.add
-                              f64.store offset=40
+                              f64.store offset=48
                               br 1 (;@12;)
                             end
                             local.get 1
                             local.get 1
-                            f64.load offset=40
+                            f64.load offset=48
                             f64.const -0x1.3333333333333p-2 (;=-0.3;)
                             f64.add
-                            f64.store offset=40
+                            f64.store offset=48
                           end
                         end
                       end
                     end
+                    local.get 1
+                    local.get 1
+                    i32.load offset=64
+                    i32.const 1
+                    i32.add
+                    i32.store offset=64
                     block  ;; label = @9
                       local.get 1
-                      i32.load offset=36
+                      i32.load offset=44
                       i32.const 8
                       i32.div_s
                       i32.const 2
@@ -17299,18 +17338,18 @@
                       if  ;; label = @10
                         local.get 1
                         local.get 1
-                        f64.load offset=40
+                        f64.load offset=48
                         f64.const -0x1.4cccccccccccdp+0 (;=-1.3;)
                         f64.add
-                        f64.store offset=40
+                        f64.store offset=48
                         br 1 (;@9;)
                       end
                       block  ;; label = @10
                         local.get 1
-                        i32.const 168
+                        i32.const 184
                         i32.add
                         local.get 1
-                        i32.const 36
+                        i32.const 44
                         i32.add
                         call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                         i32.const 1
@@ -17318,15 +17357,15 @@
                         if  ;; label = @11
                           local.get 1
                           local.get 1
-                          f64.load offset=40
+                          f64.load offset=48
                           f64.const -0x1.8p+0 (;=-1.5;)
                           f64.add
-                          f64.store offset=40
+                          f64.store offset=48
                           br 1 (;@10;)
                         end
                         block  ;; label = @11
                           local.get 1
-                          i32.load offset=36
+                          i32.load offset=44
                           i32.const 8
                           i32.div_s
                           i32.const 6
@@ -17334,26 +17373,26 @@
                           if  ;; label = @12
                             local.get 1
                             local.get 1
-                            f64.load offset=40
+                            f64.load offset=48
                             f64.const -0x1.e666666666666p+0 (;=-1.9;)
                             f64.add
-                            f64.store offset=40
+                            f64.store offset=48
                             br 1 (;@11;)
                           end
                           local.get 1
                           local.get 1
-                          f64.load offset=40
+                          f64.load offset=48
                           f64.const -0x1p+0 (;=-1;)
                           f64.add
-                          f64.store offset=40
+                          f64.store offset=48
                         end
                       end
                     end
                     local.get 1
-                    i32.const 168
+                    i32.const 184
                     i32.add
                     local.get 1
-                    i32.const 36
+                    i32.const 44
                     i32.add
                     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                     i32.const 1
@@ -17361,24 +17400,30 @@
                     if  ;; label = @9
                       local.get 1
                       local.get 1
-                      f64.load offset=40
+                      f64.load offset=48
                       f64.const -0x1.999999999999ap-2 (;=-0.4;)
                       f64.add
-                      f64.store offset=40
+                      f64.store offset=48
                     end
                     br 5 (;@3;)
                   end
                   local.get 1
                   local.get 1
-                  f64.load offset=40
+                  i32.load offset=64
+                  i32.const 1
+                  i32.add
+                  i32.store offset=64
+                  local.get 1
+                  local.get 1
+                  f64.load offset=48
                   f64.const -0x1.8p+1 (;=-3;)
                   f64.add
-                  f64.store offset=40
+                  f64.store offset=48
                   local.get 1
-                  i32.const 256
+                  i32.const 272
                   i32.add
                   local.get 1
-                  i32.const 36
+                  i32.const 44
                   i32.add
                   call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                   i32.const 1
@@ -17386,16 +17431,16 @@
                   if  ;; label = @8
                     local.get 1
                     local.get 1
-                    f64.load offset=40
+                    f64.load offset=48
                     f64.const -0x1p-1 (;=-0.5;)
                     f64.add
-                    f64.store offset=40
+                    f64.store offset=48
                   end
                   local.get 1
-                  i32.const 128
+                  i32.const 144
                   i32.add
                   local.get 1
-                  i32.const 36
+                  i32.const 44
                   i32.add
                   call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                   i32.const 1
@@ -17403,24 +17448,30 @@
                   if  ;; label = @8
                     local.get 1
                     local.get 1
-                    f64.load offset=40
+                    f64.load offset=48
                     f64.const -0x1.999999999999ap-3 (;=-0.2;)
                     f64.add
-                    f64.store offset=40
+                    f64.store offset=48
                   end
                   br 4 (;@3;)
                 end
                 local.get 1
                 local.get 1
-                f64.load offset=40
+                i32.load offset=64
+                i32.const 1
+                i32.add
+                i32.store offset=64
+                local.get 1
+                local.get 1
+                f64.load offset=48
                 f64.const -0x1.8p+1 (;=-3;)
                 f64.add
-                f64.store offset=40
+                f64.store offset=48
                 local.get 1
-                i32.const 128
+                i32.const 144
                 i32.add
                 local.get 1
-                i32.const 36
+                i32.const 44
                 i32.add
                 call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::count_abi:v15007__int_const&__const
                 i32.const 1
@@ -17428,114 +17479,136 @@
                 if  ;; label = @7
                   local.get 1
                   local.get 1
-                  f64.load offset=40
+                  f64.load offset=48
                   f64.const -0x1p-1 (;=-0.5;)
                   f64.add
-                  f64.store offset=40
+                  f64.store offset=48
                 end
                 br 3 (;@3;)
               end
               local.get 1
               local.get 1
-              f64.load offset=40
+              i32.load offset=64
+              i32.const 1
+              i32.add
+              i32.store offset=64
+              local.get 1
+              local.get 1
+              f64.load offset=48
               f64.const -0x1.4p+2 (;=-5;)
               f64.add
-              f64.store offset=40
+              f64.store offset=48
               br 2 (;@3;)
             end
             local.get 1
             local.get 1
-            f64.load offset=40
+            i32.load offset=64
+            i32.const 1
+            i32.add
+            i32.store offset=64
+            local.get 1
+            local.get 1
+            f64.load offset=48
             f64.const -0x1.6p+3 (;=-11;)
             f64.add
-            f64.store offset=40
+            f64.store offset=48
             br 1 (;@3;)
           end
           block  ;; label = @4
             local.get 1
-            i32.load offset=36
+            i32.load offset=44
             i32.const 2
             i32.eq
             if  ;; label = @5
               local.get 1
               local.get 1
-              f64.load offset=40
+              f64.load offset=48
               f64.const -0x1.999999999999ap-3 (;=-0.2;)
               f64.add
-              f64.store offset=40
+              f64.store offset=48
               br 1 (;@4;)
             end
             block  ;; label = @5
               local.get 1
-              i32.load offset=36
+              i32.load offset=44
               i32.const 6
               i32.eq
               if  ;; label = @6
                 local.get 1
                 local.get 1
-                f64.load offset=40
+                f64.load offset=48
                 f64.const -0x1p-1 (;=-0.5;)
                 f64.add
-                f64.store offset=40
+                f64.store offset=48
                 br 1 (;@5;)
               end
               block  ;; label = @6
                 local.get 1
-                i32.load offset=36
+                i32.load offset=44
                 i32.const 4
                 i32.eq
                 if  ;; label = @7
                   local.get 1
                   local.get 1
-                  f64.load offset=40
+                  f64.load offset=48
                   f64.const -0x1.999999999999ap-4 (;=-0.1;)
                   f64.add
-                  f64.store offset=40
+                  f64.store offset=48
                   br 1 (;@6;)
                 end
                 local.get 1
                 local.get 1
-                f64.load offset=40
+                f64.load offset=48
                 f64.const 0x1.3333333333333p-2 (;=0.3;)
                 f64.add
-                f64.store offset=40
+                f64.store offset=48
               end
             end
           end
         end
         local.get 1
         local.get 1
-        i32.load offset=36
+        i32.load offset=44
         i32.const 1
         i32.add
-        i32.store offset=36
+        i32.store offset=44
         br 1 (;@1;)
       end
     end
     local.get 1
-    i32.load offset=48
+    local.get 1
+    i32.load offset=64
+    f64.convert_i32_s
+    f64.const 0x1.9p+6 (;=100;)
+    f64.div
+    f64.store offset=32
+    local.get 1
+    i32.load offset=60
     f64.convert_i32_s
     local.get 1
-    f64.load offset=40
+    f64.load offset=48
     f64.mul
+    local.get 1
+    f64.load offset=32
+    f64.add
     local.set 3
     local.get 1
-    i32.const 128
+    i32.const 144
     i32.add
     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::~set_abi:v15007___
     drop
     local.get 1
-    i32.const 168
-    i32.add
-    call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::~set_abi:v15007___
-    drop
-    local.get 1
-    i32.const 256
+    i32.const 184
     i32.add
     call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::~set_abi:v15007___
     drop
     local.get 1
     i32.const 272
+    i32.add
+    call $std::__2::set<int__std::__2::less<int>__std::__2::allocator<int>>::~set_abi:v15007___
+    drop
+    local.get 1
+    i32.const 288
     i32.add
     global.set $__stack_pointer
     local.get 3)
@@ -18847,7 +18920,7 @@
             f64.load offset=48
             local.get 4
             f64.load offset=152
-            f64.gt
+            f64.ge
             if  ;; label = @5
               local.get 4
               local.get 4
@@ -25833,7 +25906,7 @@
     local.get 1
     i32.const 1056
     i32.add
-    i32.const 5
+    i32.const 4
     call $Board::runMiniMax_int_
     local.get 1
     local.get 1
@@ -26698,6 +26771,8 @@
     local.get 1
     local.get 0
     i32.sub)
+  (func $__errno_location (type 11) (result i32)
+    i32.const 16080)
   (func $std::uncaught_exception__ (type 11) (result i32)
     call $std::uncaught_exceptions__
     i32.const 0
@@ -26816,8 +26891,6 @@
       return
     end
     local.get 0)
-  (func $__errno_location (type 11) (result i32)
-    i32.const 16080)
   (func $emscripten_get_heap_size (type 11) (result i32)
     memory.size
     i32.const 16

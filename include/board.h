@@ -69,8 +69,8 @@ public:
   void clearBoard();
 
   double evaluate();
-  std::tuple<int, int, int> miniMax(int depth, std::vector<std::tuple<int, int, int>> possibleMoves);
   std::tuple<int, int, int> runMiniMax(int depth);
+  std::tuple<int, int, int> miniMax(int depth, std::vector<std::tuple<int, int, int>> possibleMoves);
   double miniMaxRec(int depth, double alpha, double beta);
   std::vector<std::tuple<int, int, int>> orderMoves(std::vector<std::tuple<int, int, int>> moves);
 
